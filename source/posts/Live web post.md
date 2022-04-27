@@ -1,6 +1,8 @@
 ---
 title: Live Web Post
-description: “Testing creating new articles from iPhone”
+description: Testing creating new articles from iPhone
+style: "/post.css"
+image: "https://www.notnotjake.com/finding-our-way/images/og-fill.jpg"
 ---
 # {{title}}
 

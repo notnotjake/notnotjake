@@ -1,3 +1,5 @@
 node_modules
 .nova
 .DS_Store
+assets
+assets-large

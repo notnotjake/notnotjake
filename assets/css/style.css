@@ -311,6 +311,7 @@ nav.sections {
 	/* position: relative; */
 	height: 42px;
 	width: 100%;
+	margin-top: -6px;
 	margin-bottom: 30px;
 	
 	background-color: var(--masthead-main);

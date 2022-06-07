@@ -12,6 +12,10 @@
 	--secondary-text: var(--primary-text);
 	
 	--dashed-line: rgba(60, 94, 122, 0.15);
+	
+	
+	--animation-time: 250ms;
+	--animation-delay: 15ms;
 }
 
 @media (prefers-color-scheme: dark)
@@ -148,6 +152,109 @@ header.masthead > div.background > div {
 	
 	background-color: var(--masthead-offset);
 }
+
+@keyframes color-in {
+	0% {background-color: var(--masthead-offset); filter: brightness(110%) opacity(70%);}
+	55% {background-color: #1ca6ff; filter: opacity(40%);}
+	100% {background-color: var(--masthead-offset);}
+}
+header.masthead > div.background > div:nth-of-type(1) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 14);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(2) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 13);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(3) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 12);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(4) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 11);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(5) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 10);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(6) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 9);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(7) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 8);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(8) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 7);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(9) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 6);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(10) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 5);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(11) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 4);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(12) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 3);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(13) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 2);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(14) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 1);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(15) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 0);
+	animation-fill-mode: forwards;
+}
+header.masthead > div.background > div:nth-of-type(16) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 0);
+	animation-fill-mode: forwards;
+}
+
 
 header.masthead div.content {
 	position: absolute;

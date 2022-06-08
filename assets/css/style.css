@@ -304,6 +304,7 @@ header.masthead div.content div.spotlight p {
 }
 header.masthead div.content div.spotlight time {
 	color: #C17811;
+	text-transform: uppercase;
 }
 
 
@@ -312,7 +313,7 @@ nav.sections {
 	height: 42px;
 	width: 100%;
 	margin-top: -6px;
-	margin-bottom: 30px;
+	margin-bottom: 67px;
 	
 	background-color: var(--masthead-main);
 }
@@ -348,9 +349,71 @@ nav.sections span svg {
 
 main.wrapper {
 	font-family: 'Courier Prime', 'Courier';
-	font-weight: bold;
 	color: var(--primary-text);
 }
+
+
+/*
+▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲▼▲
+Post Styling
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+article.post {
+	font-family: Avenir;
+	margin-top: 32px;
+	margin-bottom: 80px;
+}
+
+article.post header {
+	font-family: Courier;
+	padding-bottom: 11px;
+	text-transform: capitalize;
+	margin-bottom: 16px
+}
+article.post header a {
+	text-decoration: none;
+	color: var(--primary-text);
+}
+article.post header h1 {
+	font-size: 1.85rem;
+	line-height: 1.8rem;
+	margin-bottom: 11px;
+}
+article.post header h2 {
+	font-size: 1.4rem;
+	margin-top: 3px;
+	margin-bottom: 11px;
+	filter: opacity(80%);
+}
+article.post header time {
+	margin-top: -2px;
+	font-size: 1.15rem;
+	filter: opacity(60%);
+}
+
+article.post > h1 {
+	font-size: 1.4rem;
+	margin-top: 24px;
+	margin-bottom: 11px;
+}
+article.post > h2 {
+	font-size: 1.17rem;
+	font-weight: 500;
+	margin-bottom: 8px;
+	font-style: oblique;
+}
+article.post > p {
+	line-height: 1.7rem;
+	font-weight: 200;
+	margin-bottom: 15px;
+}
+
+
+article.post p {
+	font-family: 'Avenir', 'Montserrat Thin', 'Montserrat', sans-serif;
+	font-weight: 400;
+}
+
+
 
 @media (max-width: 600px) {
 	header.masthead div.content div.spotlight {

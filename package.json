@@ -4,14 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "start": "npx @11ty/eleventy --serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "watch:sass": "npx sass source/assets/scss:public/css --watch",
+    
+    "build:eleventy": "npx @11ty/elevently",
+    "build:sass": "npx sass source/assets/scss:public/css",
+    
+    "start": "npm run watch:eleventy & npm run watch:sass",
+    "build": "npm run build:eleventy & npm run build:sass"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1"
+    "@11ty/eleventy": "^1.0.1",
+    "sass": "^1.52.3"
   }
 }

@@ -5,6 +5,20 @@
 		<meta charset="utf-8">
 		<title>!!JAKE - HOME</title>
 		<meta name="author" content="Jake Gooch">
+		<!-- OpenGraph -->
+		<meta property="og:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
+		<meta property="og:site_name" content="Not Not Jake">
+		<meta property="og:url" content="{{ site.baseURL }}{{ page.url }}">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
+		<meta property="og:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+		<!-- Twitter Cards -->
+		<meta property="twitter:card" content="summary">
+		<meta property="twitter:site" content="@_notnotjake">
+		<meta property="twitter:creator" content="@_notnotjake">
+		<meta property="twitter:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
+		<meta property="twitter:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
+		<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
 		
 		<!-- Fonts -->
 		<style>
@@ -37,30 +51,7 @@
 		<link rel="apple-touch-icon" href="https://www.notnotjake.com/images/favicon.png">
 		<link rel="icon" type="image/png" sizes="271x271" href="https://www.notnotjake.com/images/favicon.png">
 		
-		<!-- <link rel="stylesheet" type="text/css" href="../assets/css/colors.css"> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../assets/css/style.css"> -->
-		
-		<!-- <link rel="stylesheet" type="text/css" href="https://assets.notnotjake.com/css/colors.css"> -->
-		<!-- <link rel="stylesheet" type="text/css" href="https://assets.notnotjake.com/css/style.css"> -->
-		
-		<link rel="stylesheet" type="text/css" href="https://netlify-assets.notnotjake.com/css/colors.css">
-		<link rel="stylesheet" type="text/css" href="https://netlify-assets.notnotjake.com/css/style.css">
-		
-		<!-- OpenGraph -->
-		<meta property="og:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
-		<meta property="og:site_name" content="Not Not Jake">
-		<meta property="og:url" content="{{ site.baseURL }}{{ page.url }}">
-		<meta property="og:type" content="website">
-		<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-		<meta property="og:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
-		
-		<!-- Twitter Cards -->
-		<meta property="twitter:card" content="summary">
-		<meta property="twitter:site" content="@_notnotjake">
-		<meta property="twitter:creator" content="@_notnotjake">
-		<meta property="twitter:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
-		<meta property="twitter:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-		<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+		<!-- When i'm working on site, I want links to a relative file here, but when in production, I want the links to link to the cdn version -->
 		
 		<!--Feeds-->
 	</head>

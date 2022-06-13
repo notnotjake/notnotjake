@@ -5,13 +5,13 @@
   "main": "index.js",
   "scripts": {
     "watch:eleventy": "npx @11ty/eleventy --serve",
-    "watch:sass": "npx sass source/assets/scss:public/css --watch",
+    "watch:sass": "npx sass source/_assets/scss:public/css --watch",
     
-    "build:eleventy": "npx @11ty/elevently",
-    "build:sass": "npx sass source/assets/scss:public/css",
+    "build:eleventy": "npx @11ty/eleventy",
+    "build:sass": "npx sass source/_assets/scss:public/css",
     
     "start": "npm run watch:eleventy & npm run watch:sass",
-    "build": "npm run build:eleventy & npm run build:sass"
+    "build": "npm run build:eleventy && npm run build:sass"
   },
   "keywords": [],
   "author": "",

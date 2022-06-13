@@ -1,8 +1,8 @@
 node_modules
 .nova
 .DS_Store
+source/_assets/fonts
+source/_assets/images
+source/_assets/videos
+source/_assets/files
 public
-source/assets/fonts
-source/assets/images
-source/assets/videos
-source/assets/files

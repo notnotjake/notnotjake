@@ -16,12 +16,14 @@ Work:
 
 Projects:
 
+
+
 ## Features:
 - Post tagging with archive browsing
 - Heading level links
 - Outline using heading levels
 - Code formatting
-- Drafts and draft previews
+X Drafts and draft previews
 - Pre styling
 - RSS with per-tag RSS feeds
 - Time to read

@@ -8,7 +8,7 @@
     "watch:sass": "npx sass --watch source/_assets/scss:public/css",
     
     "build:eleventy": "npx @11ty/eleventy",
-    "build:sass": "npx sass source/_assets/scss:public/css",
+    "build:sass": "npx sass --no-source-map source/_assets/scss:public/css",
     
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*"

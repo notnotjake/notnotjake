@@ -9,9 +9,11 @@ module.exports = function(eleventyConfig) {
   }
   
   // LiveReload when css updates (from SCSS)
-  eleventyConfig.setBrowserSyncConfig({
-    files: './public/**/*.css'
-  })
+  eleventyConfig.addWatchTarget("source/_assets/scss")
+  eleventyConfig.setWatchThrottleWaitTime(2000)
+  
+  // eleventyConfig.addWatchTarget('./source/_assets/scss/')
+  // eleventyConfig.addPassthroughCopy('./source/_assets/css')
   
   // Returns the current year at time of build
   eleventyConfig.addShortcode("year", () => {

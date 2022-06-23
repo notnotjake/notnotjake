@@ -48,8 +48,9 @@
 		
 		<!--Appearance-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-		<link rel="apple-touch-icon" href="https://www.notnotjake.com/images/favicon.png">
-		<link rel="icon" type="image/png" sizes="271x271" href="https://www.notnotjake.com/images/favicon.png">
+		
+		<!-- <link rel="icon" type="image/png" sizes="271x271" href="https://assets.notnotjake.com/images/favicon-dark.png"> -->
+		<link rel="icon" type="image/png" sizes="271x271" href="/_assets/images/favicon.png">
 		
 		<!-- View source scss on GitHub https://github.com/notnotjake/notnotjake-11ty/tree/main/source/assets/scss -->
 		<!-- When i'm working on site, I want links to a relative file here, but when in production, I want the links to link to the cdn version -->
@@ -107,7 +108,7 @@
 				</div>
 			</div>
 		</header>
-		
+			
 		<nav class="sections">
 			<ul class="width-narrow">
 				<li class="active">Posts</li>
@@ -176,10 +177,8 @@
 			
 		</div>
 		
-		<footer class="width-narrow">
-			<h3>THANKS FOR VISITING</h3>
-			<img src="../assets/images/bird-light.jpg" alt="a white, angelic image of a bird flying away">
-		</footer>
-
+		
+		{% include "partials/_footer.njk" %}
+		
 	</body>
 </html>

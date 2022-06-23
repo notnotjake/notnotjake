@@ -5,9 +5,10 @@ $cream: #f9f7ef;
 $cream-10: #fbf2e8;
 $cream-20: #faeada;
 
+$light-blue: #C7E3FF;
+$midnight-blue: #323e4d;
 
-:root
-{       	
+:root { 	
 	--cream: #f9f7ef;
 	--cream-10: #fbf2e8;
 	--cream-20: #faeada;
@@ -36,10 +37,8 @@ $cream-20: #faeada;
 }
 
 /* P3 variants */
-@supports (color: color(display-p3 1 1 1 / 1))
-{
-	:root
-	{
+@supports (color: color(display-p3 1 1 1 / 1)) {
+	:root {
 		--black: color(display-p3 0.098 0.098 0.095);
 		--screen-black: color(display-p3 0.192 0.184 0.157);
 		--screen-white: color(display-p3 0.694 0.686 0.659);
@@ -65,3 +64,10 @@ $cream-20: #faeada;
 	}
 }
 
+$footer-bg: $light-blue;
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		$footer-bg: $midnight-blue;
+	}
+}

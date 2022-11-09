@@ -1,0 +1,134 @@
+---
+layout: custom.njk
+title: "leadership"
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--Site Info-->
+		<meta charset="utf-8">
+		<title>Jake's Leadership Lesson</title>
+		<meta name="author" content="Jake Gooch">
+		<!-- Site Info [End] -->
+		
+		<!-- OpenGraph -->
+		<meta property="og:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
+		<meta property="og:site_name" content="Not Not Jake">
+		<meta property="og:url" content="{{ site.baseURL }}{{ page.url }}">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
+		<meta property="og:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+		<!-- OpenGraph [End] -->
+		
+		<!-- Twitter Cards -->
+		<meta property="twitter:card" content="summary">
+		<meta property="twitter:site" content="@_notnotjake">
+		<meta property="twitter:creator" content="@_notnotjake">
+		<meta property="twitter:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
+		<meta property="twitter:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
+		<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+		<!-- Twitter Cards [End] -->
+		
+		<!-- Fonts -->
+		<style>
+			/* Sono Variable Font */
+			@font-face {
+				font-family: 'Sono Var';
+				src: url('https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2') format("woff2-variations");
+				font-style: normal;
+				font-weight: 200 800;
+			}
+			/* courier-prime-regular */
+			@font-face {
+			  font-family: 'Courier Prime';
+			  font-style: normal;
+			  font-weight: 400;
+			  src: local(''),
+				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+			  font-display: swap;
+			}
+			/* courier-prime-700 */
+			@font-face {
+				font-family: 'Courier Prime';
+				font-style: normal;
+				font-weight: 700;
+				src: local(''),
+					url('https://assets.notnotjake.com/fonts/courier-prime-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+					url('https://assets.notnotjake.com/fonts/courier-prime-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+				font-display: swap;
+			}
+		</style>
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-regular.woff2" type="font/woff2" crossorigin="">
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin="">
+		<!-- Fonts [End] -->
+		
+		<!-- Appearance-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+		<link rel="apple-touch-icon" href="https://www.notnotjake.com/images/favicon.png">
+		<link rel="icon" type="image/png" sizes="271x271" href="https://www.notnotjake.com/images/favicon.png">
+		
+		<!-- View source scss on GitHub https://github.com/notnotjake/notnotjake-11ty/tree/main/source/assets/scss -->
+		<!-- When i'm working on site, I want links to a relative file here, but when in production, I want the links to link to the cdn version -->
+		<link rel="stylesheet" type="text/css" href="../css/leadership.css">
+		<!-- Appearance [End] -->
+		
+		<!-- Feeds -->
+		<!-- Feeds [End] -->
+		
+		<!-- Fathom Analytics -->
+		<script src="https://joy-books.notnotjake.com/script.js" data-site="QMSKHICJ" defer></script>
+		<!-- Fathom Analytics [End] -->
+	</head>
+	<body>
+		
+		<div class="landing">
+			<h3>Time Until</h3>
+			<h1>NOV 14</h1>
+			<p><span class="orange-text" id="days-left">?</span>DAYS</p>
+			<p><span class="orange-text" id="hours-left">?</span>HOURS</p>
+			<p><span class="orange-text" id="mins-left">?</span>M <span class="orange-text" id="secs-left">?</span>S</p>
+			
+			<h2>I'm only asking for 8(ish) minutes</h2>
+			
+			<p>800 WORDS</p>
+			<p>2 MIN VIDEO</p>
+			<p>1 QUESTION</p>
+			
+			<a href=""></a>
+		</div>
+		
+		
+		<script type="text/javascript">
+			
+			/* Countdown Functionality
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			let x = setInterval( function() {
+				// Sets the time we are counting down to
+				const countdownEndTime = new Date("Nov 14, 2022 15:25:00").getTime()
+				// Today's date/time
+				let now = new Date().getTime()
+				// Delta on the time
+				let remaining = countdownEndTime - now
+				
+				// Human Readable Time
+				let days = Math.floor(remaining / (1000 * 60 * 60 *24))
+				let hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+				let minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60))
+				let seconds = Math.floor((remaining % (1000 * 60)) / 1000)
+				
+				// Display results in the element
+				document.querySelector('#days-left').innerText = days
+				document.querySelector('#hours-left').innerText = hours
+				document.querySelector('#mins-left').innerText = minutes
+				document.querySelector('#secs-left').innerText = seconds
+				
+				if (remaining <= 0 ) {
+					clearInterval(x)
+					countdownTargetElem.innerHTML = "Time's Up!"
+				}
+			}, 1000)
+			
+		</script>
+	</body>
+</html>

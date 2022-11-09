@@ -1,0 +1,72 @@
+@use './utilities/_index';
+
+@import url('https://rsms.me/inter/inter.css');
+
+body {
+	// font-family: 'Inter', sans-serif;
+	color: black;
+	background-color: #54258F;
+}
+
+.landing {
+	font-family: 'Sono Var', system-ui, sans-serif;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	padding: 32px 21px;
+	background-image: linear-gradient(to bottom,
+		#54258F 5%,
+		#4371D7 37%,
+		#4371D7 55%,
+		#6A54D6 62%,
+		#9C2ED5 69%,
+		#9C2ED5 73%,
+		#AE56DA 80%,
+		#CA96E2 90%,
+		#F3EFD0 100%
+	)
+}
+.landing h1 {
+	color: #09FFF4;
+	font-size: 5em;
+	word-spacing: -35px;
+}
+@media (min-width: 700px) {
+	body {
+		background-color: #1f2021;
+	}
+	.landing {
+		width: 620px;
+		height: calc(100% - 24px);
+		margin: 12px auto;
+		border-radius: 21px;
+	}
+	.landing h1 {
+		font-size: 6em;
+	}
+}
+.landing h2 {
+	font-size: 2.3em;
+	font-weight: 700;
+	word-spacing: -5px;
+	letter-spacing: .08rem;
+	margin-top: 80px;
+	margin-bottom: 80px;
+	color: #09FFF4;
+}
+.landing h3 {
+	color: #E9CFA8;
+	font-size: 2.5em;
+}
+.landing p {
+	color: #E9CFA8;
+	font-size: 2.1em;
+	font-weight: 550;
+}
+.landing .orange-text {
+	color: #FFA622;
+}
+.landing span {
+	margin-right: 3px;
+}

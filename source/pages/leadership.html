@@ -354,11 +354,11 @@ title: "leadership"
 				
 				// Request (POST https://services.lightdance.dev/api/notnotjake/leadership)
 				fetch("https://services.lightdance.dev/api/notnotjake/leadership", {
-					  "method": "POST",
-					  "headers": {
-							"Content-Type": "application/json; charset=utf-8"
+					  method: "POST",
+					  headers: {
+							"Content-Type": "application/json"
 					  },
-					  "body": "{\"answer\":payload}"
+					  body: JSON.stringify({answer: payload})
 				})
 				.then((res) => res.text())
 				.then(console.log.bind(console))

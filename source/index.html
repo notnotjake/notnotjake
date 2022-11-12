@@ -5,6 +5,8 @@
 		<meta charset="utf-8">
 		<title>!!JAKE - HOME</title>
 		<meta name="author" content="Jake Gooch">
+		<!-- Site Info [End] -->
+		
 		<!-- OpenGraph -->
 		<meta property="og:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
 		<meta property="og:site_name" content="Not Not Jake">
@@ -12,6 +14,8 @@
 		<meta property="og:type" content="website">
 		<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
 		<meta property="og:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+		<!-- OpenGraph [End] -->
+		
 		<!-- Twitter Cards -->
 		<meta property="twitter:card" content="summary">
 		<meta property="twitter:site" content="@_notnotjake">
@@ -19,9 +23,17 @@
 		<meta property="twitter:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
 		<meta property="twitter:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
 		<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+		<!-- Twitter Cards [End] -->
 		
 		<!-- Fonts -->
 		<style>
+			/* Sono Variable Font */
+			@font-face {
+				font-family: 'Sono Var';
+				src: url('https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2') format("woff2-variations");
+				font-style: normal;
+				font-weight: 200 800;
+			}
 			/* courier-prime-regular */
 			@font-face {
 			  font-family: 'Courier Prime';
@@ -45,8 +57,9 @@
 		</style>
 		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-regular.woff2" type="font/woff2" crossorigin="">
 		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin="">
+		<!-- Fonts [End] -->
 		
-		<!--Appearance-->
+		<!-- Appearance-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
 		<link rel="apple-touch-icon" href="https://www.notnotjake.com/images/favicon.png">
 		<link rel="icon" type="image/png" sizes="271x271" href="https://www.notnotjake.com/images/favicon.png">
@@ -54,13 +67,26 @@
 		<!-- View source scss on GitHub https://github.com/notnotjake/notnotjake-11ty/tree/main/source/assets/scss -->
 		<!-- When i'm working on site, I want links to a relative file here, but when in production, I want the links to link to the cdn version -->
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<!-- Appearance [End] -->
 		
-		<!--Feeds-->
+		<!-- Feeds -->
+		<!-- Feeds [End] -->
 		
 		<!-- Fathom Analytics -->
 		<script src="https://joy-books.notnotjake.com/script.js" data-site="QMSKHICJ" defer></script>
+		<!-- Fathom Analytics [End] -->
 	</head>
 	<body>
+		<!-- <div id="splash">
+			<h1>Make Something Great</h1>
+			<h2>That's my mission.</h2>
+		</div> -->
+		<!-- <div id="splash">
+			<h1>Delight++</h1>
+			<h1>Meaning++</h1>
+			<h2>That 's my <a href="/about#meaning">goal</a>.</h2>
+		</div> -->
+		
 		<div class="overscroll top"></div>
 		
 		<header class="masthead">
@@ -102,9 +128,9 @@
 					</div>
 					<div class="spotlight">
 						<a href="/">
-							<h2>Working on it!</h2>
+							<h2><a href="/posts/2022/hello-world">Working on It!</a></h2>
 							<p>I'm in the process of rebuilding this site, check back later.</p>
-							<time datetime="2022-6-17" pubdate="pubdate">Jun 17, 22</time>
+							<time datetime="2022-6-17" pubdate="pubdate">OCT 27, 22</time>
 						</a>
 					</div>
 				</div>
@@ -136,7 +162,7 @@
 					<a href="/">
 						<h1>Be Back Soon</h1>
 					</a>
-					<time datetime="2020-06-17 12:00:00-5:00" pubdate="pubdate">June 17, 2022</time>
+					<time datetime="2020-10-27 12:00:00-5:00" pubdate="pubdate">Oct 27, 2022</time>
 				</header>
 				<p>I'm making some changes to the site, but will be back soon.</p>
 			</article>
@@ -149,7 +175,7 @@
 		
 		<!-- <footer class="width-narrow">
 			<h3>THANKS FOR VISITING</h3>
-			<!-- <img src="../assets/images/bird-light.jpg" alt="a white, angelic image of a bird flying away"> -->
+			img src="../assets/images/bird-light.jpg" alt="a white, angelic image of a bird flying away">
 		</footer> -->
 
 	</body>

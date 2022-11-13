@@ -1,9 +1,14 @@
 /* Color Definitions */
-$cream: #f9f7ef;
-$red: red;
+// $cream: #f9f7ef;
 
-:root
-{       	
+$cream: #f9f7ef;
+$cream-10: #fbf2e8;
+$cream-20: #faeada;
+
+$light-blue: #C7E3FF;
+$midnight-blue: #323e4d;
+
+:root { 	
 	--cream: #f9f7ef;
 	--cream-10: #fbf2e8;
 	--cream-20: #faeada;
@@ -32,10 +37,8 @@ $red: red;
 }
 
 /* P3 variants */
-@supports (color: color(display-p3 1 1 1 / 1))
-{
-	:root
-	{
+@supports (color: color(display-p3 1 1 1 / 1)) {
+	:root {
 		--black: color(display-p3 0.098 0.098 0.095);
 		--screen-black: color(display-p3 0.192 0.184 0.157);
 		--screen-white: color(display-p3 0.694 0.686 0.659);
@@ -61,3 +64,10 @@ $red: red;
 	}
 }
 
+$footer-bg: $light-blue;
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		$footer-bg: $midnight-blue;
+	}
+}

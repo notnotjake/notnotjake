@@ -1,0 +1,49 @@
+:root {
+	--footer-bg: #C7E3FF;
+	--footer-obg: #ebeae1;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--footer-bg: #323e4d;
+		--footer-obg: #151410;
+	}
+}
+
+/*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Footer
+■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+footer {
+	min-height: 100px;
+	// background-color: var(--footer-bg);
+	font-family: 'Inter V', 'Inter', 'Avenir', 'sans-serif';
+	padding: 20px 0;
+	margin-bottom: 10px;
+}
+footer div.links > * {
+	display: inline;
+	margin-right: 12px;	
+}
+footer h3 {
+	width: 100%;
+	padding-left: 0.5em;
+}
+footer p.site-info {
+	font-size: 16px;
+	padding: 0.5em 0.5em;
+	margin: 0.5em 0;
+	background-color: var(--footer-obg);
+	border-radius: 10px;
+	font-weight: 400;
+}
+footer p.site-info img {
+	height: 25px;
+	border-radius: 15%;
+	vertical-align: middle;
+}
+
+footer p.last-updated {
+	padding-left: 0.5em;
+	font-family: 'Courier', 'Courier Prime';
+	filter: opacity(80%);
+}

@@ -1,5 +1,7 @@
 # notnotjake
 
+👷‍♂️ A work in progress 🛠
+
 New site under construction, built with 11ty.
 
 ## Pages:

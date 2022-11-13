@@ -7,12 +7,11 @@
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "watch:sass": "npx sass --watch source/_assets/scss:public/css",
     
-    "build:prod": "MY_ENVIRONMENT=prod npx @11ty/eleventy",
     "build:eleventy": "npx @11ty/eleventy",
     "build:sass": "npx sass --no-source-map source/_assets/scss:public/css",
     
     "start": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*"
+    "build": "MY_ENVIRONMENT=prod npm-run-all build:*"
   },
   "keywords": [],
   "author": "",

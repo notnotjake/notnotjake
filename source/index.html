@@ -34,6 +34,15 @@
 				font-style: normal;
 				font-weight: 200 800;
 			}
+			/* Hubot Sans */
+			@font-face {
+			  font-family: 'Hubot Sans';
+			  src:
+				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2 supports variations'),
+				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2-variations');
+			  font-weight: 200 900;
+			  font-stretch: 75% 125%;
+			}
 			/* courier-prime-regular */
 			@font-face {
 			  font-family: 'Courier Prime';
@@ -81,19 +90,23 @@
 			<h1>Make Something Great</h1>
 			<h2>That's my mission.</h2>
 		</div> -->
-		<!-- <div id="splash">
+		<div id="splash" class="hide">
 			<h1>Delight++</h1>
 			<h1>Meaning++</h1>
-			<h2>That 's my <a href="/about#meaning">goal</a>.</h2>
-		</div> -->
+			<h2>That&rsquo;s my <a href="/about#meaning">goal</a>.</h2>
+		</div>
+		
+		<div class="top-thing-container">
+			<div class="top-thing">
+				<h3>Delight&&Meaning</h3>
+				<p>That's my goal</p>
+			</div>
+		</div>
 		
 		<div class="overscroll top"></div>
 		
 		<header class="masthead">
 			<div class="background border-box unselectable">
-				<div></div>
-				<div></div>
-				<div></div>
 				<div></div>
 				<div></div>
 				<div></div>

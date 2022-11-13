@@ -7,6 +7,7 @@
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "watch:sass": "npx sass --watch source/_assets/scss:public/css",
     
+    "build:prod": "MY_ENVIRONMENT=prod npx @11ty/eleventy",
     "build:eleventy": "npx @11ty/eleventy",
     "build:sass": "npx sass --no-source-map source/_assets/scss:public/css",
     
@@ -17,8 +18,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^1.0.2",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.52.3"
+    "sass": "^1.56.1"
   }
 }

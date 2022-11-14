@@ -1,0 +1,32 @@
+#splash {
+	display: none;
+}
+
+#text {
+	font-family: 'Hubot Sans', 'Inter';
+	font-weight: 750;
+	font-size: 1.5em;
+	font-variation-settings: 'ital' 4, 'wdth' 96;
+	color: hsl(193, 6%, 23%);
+	text-transform: uppercase;
+	width: 50ch;
+}
+.test2 {
+	font-family: 'Courier Prime';
+	font-weight: 700;
+	font-size: 3em;
+	margin: 20px 0;
+	font-variation-settings: 'ital' 4, 'wdth' 96;
+	color: color(display-p3 0.902 0.424 0.243);
+	text-transform: uppercase;
+	width: 50ch;
+}
+#text span.insp {
+	color: hsl(39, 74%, 50%);
+}
+#text span.made {
+	color: hsl(154, 74%, 50%);
+}
+#text span.think {
+	color: hsl(194, 69%, 57%);
+}

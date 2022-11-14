@@ -1,5 +1,20 @@
+a#site-title {
+	position: absolute;
+	top: 12px;
+	font-family: 'Courier', 'Courier Prime';
+	font-size: 50px;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--site-orange);
+}
+a#site-title span {
+	margin-right: 9px;
+	fill: var(--site-orange);
+}
+
+
+
 #splash {
-	display: none;
 }
 
 #text {

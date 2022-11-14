@@ -173,10 +173,16 @@ img.hide-overscroll {
 	margin-bottom: 45px;
 	z-index: 1;
 	
-	animation: header_headline 0.9s 0.15s forwards;
+	animation: header_headline 0.9s 0.3s forwards;
 	font-weight: 400; /* Animation Start Value */
 	transform: scale(94%); /* Animation Start Value */
 	color: hsl(205, 67%, 31%); /* Animation Start Value */
+}
+#splash h1:nth-of-type(1) {
+	animation: header_headline 0.9s 0.2s forwards;
+}
+#splash h1:nth-of-type(2) {
+	animation: header_headline 0.9s 0.7s forwards;
 }
 @media (max-width: 1100px) {
 	#splash h1 {
@@ -204,7 +210,7 @@ img.hide-overscroll {
 	z-index: 1;
 	color: hsl(36, 60%, 79%);
 
-	animation: header_subheadline 0.5s 0.8s forwards;
+	animation: header_subheadline 0.5s 1.3s forwards;
 	filter: opacity(10%); /* Animation Start Value */
 	transform: scaleX(108%); /* Animation Start Value */
 }

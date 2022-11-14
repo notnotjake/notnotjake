@@ -42,10 +42,11 @@ html {
 }
 body {
 	min-height: 100vh;
-	background-color: var(--page-bg);
+	// background-color: var(--page-bg);
 	color: var(--primary-text);
 	font-family: 'Courier', 'Courier Prime', serif;
 	// background-color: #54258F;
+	background-color: #54258F;
 }
 * {
 	margin: 0;

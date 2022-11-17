@@ -261,3 +261,39 @@ iframe {
 		margin-left: 0;
 	}
 }
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Results Page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.results h1.headline {
+	font-family: 'Sono Var';
+	text-transform: uppercase;
+	text-align: center;
+	color: #5c00ff;
+	font-size: 47px;
+	font-weight: 750;
+}
+.results .countdown {
+	text-align: center;
+	font-family: 'Sono Var';
+	font-size: 28px;
+	color: rgb(88, 82, 66);
+}
+.results .orange-text {
+	font-size: 32px;
+	font-weight: 600;
+	color: rgb(249, 136, 0);
+}
+.results .res-mount {
+	margin-top: 32px;
+}
+.results .res-mount h3 {
+	font-weight: 550;
+	color: rgb(42, 42, 42);
+	margin-bottom: 22px;
+}
+.results #page-views {
+	font-family: 'Sono Var';
+	font-size: 28px;
+	color: rgb(88, 82, 66);
+}

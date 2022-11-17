@@ -1,16 +1,99 @@
+:root {
+	--animation-time: 250ms;
+	--animation-delay: 12ms;
+}
+
+body * {
+	z-index: 1;
+}
+
+
 a#site-title {
+	margin: auto;
 	position: absolute;
-	top: 12px;
+	top: 0px;
+	margin-bottom: -20px;
 	font-family: 'Courier', 'Courier Prime';
 	font-size: 50px;
 	font-weight: bold;
 	text-decoration: none;
 	color: var(--site-orange);
+	text-align: center;
+	width: 100%;
 }
 a#site-title span {
 	margin-right: 9px;
 	fill: var(--site-orange);
 }
+
+
+div.blocks {
+	padding: 0 0 5px 5px;
+	z-index: 0;
+	overflow: scroll;
+}
+div.blocks > div {
+	// background-color: red;
+	min-height: 9px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+div.blocks > div > div {
+	width: calc(1.92307692vw - 5px);
+	min-width: 18px;
+	height: calc(1.92307692vw - 5px);
+	min-height: 18px;
+	background-color: rgb(74, 74, 85);
+	border-radius: 4px;
+	margin: 5px 5px 0 0;
+}
+@keyframes color-in {
+	0% {background-color: var(--masthead-offset); filter: brightness(110%) opacity(70%);}
+	55% {background-color: #1ca6ff; filter: opacity(40%);}
+	100% {background-color: var(--masthead-offset);}
+}
+div.blocks > div:nth-of-type(1) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 14);
+}
+div.blocks > div:nth-of-type(2) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 13);
+}
+div.blocks > div:nth-of-type(3) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 12);
+}
+div.blocks > div:nth-of-type(4) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 11);
+}
+div.blocks > div:nth-of-type(5) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 10);
+}
+div.blocks > div:nth-of-type(6) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 9);
+}
+div.blocks > div:nth-of-type(7) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 8);
+}
+div.blocks > div:nth-of-type(8) * {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 7);
+}
+
 
 
 
@@ -24,7 +107,7 @@ a#site-title span {
 	font-variation-settings: 'ital' 4, 'wdth' 96;
 	color: hsl(193, 6%, 23%);
 	text-transform: uppercase;
-	width: 50ch;
+	max-width: 50ch;
 }
 .test2 {
 	font-family: 'Courier Prime';

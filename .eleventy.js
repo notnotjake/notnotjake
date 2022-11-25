@@ -12,7 +12,7 @@ module.exports = function(eleventyConfig) {
 	// env vars will be set via the npm script. the server will use build:prod instead of build or run script which will pass the prod variable to this function to replace links
 	module.exports = function() {
 		return {
-		environment: process.env.MY_ENVIRONMENT || "dev"
+			environment: process.env.MY_ENVIRONMENT || "dev"
 		}
 	}
 	

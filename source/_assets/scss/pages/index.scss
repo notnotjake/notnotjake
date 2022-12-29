@@ -1,10 +1,24 @@
 :root {
 	--animation-time: 250ms;
 	--animation-delay: 12ms;
+	
+	--blocks-color: rgb(230, 213, 197);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--blocks-color: rgb(74, 74, 85);
+	}
 }
 
 body * {
 	z-index: 1;
+}
+
+#splash {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 
@@ -40,13 +54,13 @@ div.blocks > div {
 	justify-content: space-between;
 }
 div.blocks > div > div {
-	width: calc(1.92307692vw - 5px);
+	width: calc(1.92307692vw - 4px);
 	min-width: 18px;
-	height: calc(1.92307692vw - 5px);
+	height: calc(1.92307692vw - 4px);
 	min-height: 18px;
-	background-color: rgb(74, 74, 85);
-	border-radius: 4px;
-	margin: 5px 5px 0 0;
+	background-color: var(--blocks-color);
+	border-radius: 0px;
+	margin: 3px 3px 0 0;
 }
 @keyframes color-in {
 	0% {background-color: var(--masthead-offset); filter: brightness(110%) opacity(70%);}
@@ -127,4 +141,24 @@ div.blocks > div:nth-of-type(8) * {
 }
 #text span.think {
 	color: hsl(194, 69%, 57%);
+}
+
+
+
+
+
+
+.test-2 {
+	width: 300px;
+	height: 200px;
+	background-color: red;
+}
+.test-3 {
+	width: 200px;
+	height: 150px;
+	background-color: aquamarine;
+}
+
+.test-3 .test-2:hover {
+	width: 300px;
 }

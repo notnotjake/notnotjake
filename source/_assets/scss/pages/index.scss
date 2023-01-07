@@ -1,0 +1,351 @@
+:root {
+	--animation-time: 260ms;
+	--animation-delay: 14ms;
+	
+	--blocks-color: #D6D7D8;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--blocks-color: #D6D7D8;
+	}
+}
+
+body {
+	color: #454545;
+	font-family: "Maru Var";
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Header / Story Ticker
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+header {
+	height: 50px;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	
+	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0) 60%)
+}
+header a {
+	padding: 10px;
+}
+header svg {
+	height: 21px;
+	width: 21px;
+}
+header ul {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+	list-style-type: none;
+	overflow: scroll;
+	-ms-overflow-style: none; /* Edge hide scrollbar */
+	scrollbar-width: none; /* FF hide scrollbar */
+}
+header ul::-webkit-scrollbar {
+	display: none; /* Safari, Chrome hide scrollbar */
+}
+header li {
+	height: calc(100% - 15px);
+	display: flex;
+	align-items: center;
+	
+	// padding: 0 17px;
+	flex-shrink: 0;
+	font-family: 'Maru Var', 'Sono Var';
+	font-style: normal;
+	font-size: 1.3em;
+	font-weight: 500;
+	color: white;
+	background-color: #6f7a8c;
+	border-radius: 20px;
+}
+header li span {
+	background-image: linear-gradient(to right, rgb(182, 159, 16), transparent);
+	// background-blend-mode: darken;
+	height: 100%;
+	width: 20px;
+	margin-right: -20px;
+	z-index: 2;
+}
+header li div {
+	aspect-ratio: 1 / 2;
+	height: 100%;
+	border-radius: 5px;
+}
+/* Header [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Timeline Graph (Blocks)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.graph {
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row-reverse;
+	gap: 5px;
+	padding: 10px;
+	overflow: scroll;
+	-ms-overflow-style: none; /* Edge hide scrollbar */
+	scrollbar-width: none; /* FF hide scrollbar */
+}
+div.graph::-webkit-scrollbar {
+	display: none; /* Safari, Chrome hide scrollbar */
+}
+div.graph div {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 5px;
+}
+div.graph a {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background-color: #D6D7D8;
+	border-radius: 2px;
+}
+div.graph a.high {
+	background-color: #1576FF;
+}
+div.graph a.med {
+	background-color: #12B02B;
+}
+div.graph a.low {
+	background-color: #87D894;
+}
+
+/* Load Animation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@keyframes color-in {
+	0% {background-color: var(--masthead-offset); filter: brightness(110%) opacity(70%);}
+	55% {background-color: #1ca6ff; filter: opacity(40%);}
+	100% {background-color: var(--masthead-offset);}
+}
+
+div.graph > div > a:nth-of-type(1) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 1);
+}
+div.graph > div > a:nth-of-type(2) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 2);
+}
+div.graph > div > a:nth-of-type(3) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 3);
+}
+div.graph > div > a:nth-of-type(4) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 4);
+}
+div.graph > div > a:nth-of-type(5) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 5);
+}
+div.graph > div > a:nth-of-type(6) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 6);
+}
+div.graph > div > a:nth-of-type(7) {
+	animation-name: color-in;
+	animation-duration: var(--animation-time);
+	animation-delay: calc(var(--animation-delay) * 7);
+}
+
+/* Timeline Block [End] */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Sentence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+article.sentence {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 0;
+	padding-top: clamp(15px, 8vh, 90px);
+	padding-bottom: clamp(15px, 8vh, 90px);
+}
+article.sentence > p {
+	text-align: center;
+}
+article.sentence div {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	justify-content: center;
+}
+article.sentence h1 {
+	font-size: 1.5em;
+	font-weight: 550;
+	letter-spacing: -0.04em;
+	max-width: 50ch;
+}
+/* The Sentence [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showcase Cards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+main {
+	// height: ;
+	padding: 20px;
+	display: flex;
+	gap: 12px;
+	overflow-y: scroll;
+}
+main div.card {
+	height: 300px;
+	width: 400px;
+	flex-shrink: 0;
+	background-color: #3a7fd6;
+	border-radius: 8px;
+	display: flex;
+	align-items: flex-end;
+}
+main div.container {
+	height: 300px;
+	width: 100%;
+	position: relative;
+}
+main div p {
+	color: white;
+	font-size: 1.2em;
+	font-weight: 550;
+	padding: 0.6em 1em;
+	position: sticky;
+	bottom: 0;
+}
+/* Showcase Cards [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Splash (New Visitor)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#splash {
+	width: 100%;
+	height: 100%;
+	min-height: 600px;
+	z-index: 5;
+	display: flex;
+	flex-direction: column;
+
+	background-image: linear-gradient(to bottom,
+		#54258F 5%,
+		#4371D7 37%,
+		#4371D7 55%,
+		#6A54D6 62%,
+		#9C2ED5 69%,
+		#9C2ED5 73%,
+		#AE56DA 80%,
+		#CA96E2 90%,
+		#EDF0F0 100%
+	);
+	color: hsl(177, 100%, 52%);
+	font-family: 'Sono Var';
+	text-align: center;
+}
+#splash .site-title {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	font-family: 'Courier', 'Courier Prime';
+	font-size: 50px;
+	font-weight: bold;
+	text-decoration: none;
+	color: var(--site-orange);
+}
+#splash .site-title span {
+	margin-right: 9px;
+	fill: var(--site-orange);
+}
+#splash div {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 30px;
+}
+#splash h1 {
+	font-size: clamp(12vw, 12vw, 9.2em);
+	line-height: 0.9;
+	margin-bottom: 45px;
+	z-index: 1;
+	
+	animation: header_headline 0.9s 0.3s forwards;
+	font-weight: 400; /* Animation Start Value */
+	transform: scale(94%); /* Animation Start Value */
+	color: hsl(205, 67%, 31%); /* Animation Start Value */
+}
+#splash h1:nth-of-type(1) {
+	animation: header_headline 0.9s 0.2s forwards;
+}
+#splash h1:nth-of-type(2) {
+	animation: header_headline 0.9s 0.7s forwards;
+}
+@media (max-width: 1100px) {
+	#splash h1 {
+		font-size: 15vw;
+	}
+}
+@media (max-width: 800px) {
+	#splash h1 {
+		font-size: 16vw;
+	}
+}
+@keyframes header_headline {
+	0% { transform: scale(94%); }
+	14% { color: hsl(280, 65%, 57%); }
+	30% { color: hsl(52, 100%, 50%); }
+	55% { color: hsl(156, 100%, 50%); }
+	80% { transform: scale(100%); }
+	100% { font-weight: 800; transform: scale(100%); color: hsl(177, 100%, 52%); }
+}
+#splash h2 {
+	letter-spacing: -0.06em;
+	font-size: clamp(5vw, 5vw, 5.8em);
+	padding: 0 3rem;
+	z-index: 1;
+	color: hsl(36, 60%, 79%);
+
+	animation: header_subheadline 0.5s 1.3s forwards;
+	filter: opacity(10%); /* Animation Start Value */
+	transform: scaleX(108%); /* Animation Start Value */
+}
+#splash h2 a,
+#splash h2 a:visited,
+#splash h2 a:active {
+	color: #0faceb;
+}
+@media (max-width: 1000px) {
+	#splash h2 {
+		font-size: 6vw;
+	}
+}
+@media (max-width: 650px) {
+	#splash h2 {
+		font-size: 8.8vw;
+	}
+	#splash div {
+		padding: 0px;
+	}
+	#splash h2 {
+		padding: 0;
+	}
+}
+@keyframes header_subheadline {
+	from { filter: opacity(10%); transform: scaleX(108%); }
+	to { filter: opacity(100%); transform: scaleX(100%); }
+}
+/* Splash [END] */

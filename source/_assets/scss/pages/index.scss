@@ -11,6 +11,9 @@
 	}
 }
 
+html { scroll-behavior: initial; }
+html:focus-within {scroll-behavior: unset;}
+
 body {
 	color: #454545;
 	font-family: "Maru Var";
@@ -25,11 +28,21 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	
-	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0) 60%)
 }
-header a {
-	padding: 10px;
+.header-background::before {
+	content: "";
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	left: 0;
+	// background-color: red;
+	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0) 60%);
+	animation-name: header-background;
+	animation-duration: 1s;
+}
+@keyframes header-background {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
 }
 header svg {
 	height: 21px;
@@ -38,6 +51,8 @@ header svg {
 header ul {
 	width: 100%;
 	height: 100%;
+	margin-left: 10px;
+	margin-right: 10px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -85,16 +100,21 @@ Timeline Graph (Blocks)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 div.graph {
 	display: flex;
-	justify-content: flex-start;
 	flex-direction: row-reverse;
-	gap: 5px;
-	padding: 10px;
+	
 	overflow: scroll;
 	-ms-overflow-style: none; /* Edge hide scrollbar */
 	scrollbar-width: none; /* FF hide scrollbar */
 }
 div.graph::-webkit-scrollbar {
 	display: none; /* Safari, Chrome hide scrollbar */
+}
+div.graph div.flex {
+	padding: 10px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row-reverse;
+	gap: 5px;
 }
 div.graph div {
 	display: flex;
@@ -199,7 +219,7 @@ Showcase Cards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 main {
 	// height: ;
-	padding: 20px;
+	padding: 10px;
 	display: flex;
 	gap: 12px;
 	overflow-y: scroll;
@@ -207,6 +227,7 @@ main {
 main div.card {
 	height: 300px;
 	width: 400px;
+	max-width: 70vw;
 	flex-shrink: 0;
 	background-color: #3a7fd6;
 	border-radius: 8px;
@@ -229,15 +250,24 @@ main div p {
 /* Showcase Cards [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.footer {
+	height: 230px;
+}
+/* Footer [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Splash (New Visitor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #splash {
 	width: 100%;
-	height: 100%;
+	height: 100dvh;
 	min-height: 600px;
 	z-index: 5;
 	display: flex;
 	flex-direction: column;
+	margin: auto;
 
 	background-image: linear-gradient(to bottom,
 		#54258F 5%,
@@ -253,6 +283,14 @@ Splash (New Visitor)
 	color: hsl(177, 100%, 52%);
 	font-family: 'Sono Var';
 	text-align: center;
+}
+.anim_scroll-off {
+	animation-name: splash-scroll-off;
+	animation-duration: 1.3s;
+}
+@keyframes splash-scroll-off {
+	0% { margin-top: 0; }
+	100% { margin-top: -100%; }
 }
 #splash .site-title {
 	width: 100%;
@@ -277,10 +315,28 @@ Splash (New Visitor)
 	justify-content: center;
 	padding: 30px;
 }
+#splash div.scroll-indicator {
+	// fill: hsl(36deg, 60%, 79%);
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	animation: fadeIn 800ms;
+}
+#splash div.scroll-indicator svg {
+	// fill: hsl(36deg, 60%, 79%);
+	margin: auto;
+}
+#splash div.scroll-indicator svg * {
+	fill: #FFFFFF;
+}
+@keyframes fadeIn {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
 #splash h1 {
 	font-size: clamp(12vw, 12vw, 9.2em);
 	line-height: 0.9;
-	margin-bottom: 45px;
+	margin-bottom: 0.3em;
 	z-index: 1;
 	
 	animation: header_headline 0.9s 0.3s forwards;

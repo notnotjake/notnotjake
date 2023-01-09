@@ -105,11 +105,20 @@
 				<h1>Meaning<span>++</span></h1>
 				<h2>That&rsquo;s my <a href="/about#meaning">goal</a>.</h2>
 			</div>
+			<div class="scroll-indicator hide">
+				<svg width="50px" height="17px" viewBox="0 0 50 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="New-Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<g id="Artboard-Copy-2" transform="translate(-18.000000, -40.000000)" fill="#000000" fill-rule="nonzero">
+							<path d="M62.649691,40.2804096 C64.6506415,39.4784753 66.9208893,40.4553232 67.7204314,42.4622605 C68.5199736,44.4691978 67.5460396,46.7462382 65.5450891,47.5481725 L44.5702407,55.9544026 C43.6458241,56.3248872 42.6151765,56.3269474 41.689295,55.9601613 L20.4693679,47.5539312 C18.4652464,46.7600026 17.4822713,44.4868739 18.2738316,42.4767562 C19.0653918,40.4666384 21.3317397,39.4807223 23.3358612,40.2746509 L43.1141594,48.1095796 L62.649691,40.2804096 Z" id="Path"></path>
+						</g>
+					</g>
+				</svg>
+			</div>
 		</div>
 		
 		
-		<header>
-			<a href="https://www.notnotjake.com">
+		<header class="header-background">
+			<a id="start-test" href="https://www.notnotjake.com">
 				<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 						<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
@@ -118,14 +127,14 @@
 					</g>
 				</svg>
 			</a>
-			<ul>
+			<ul id="trigger">
 				<li id="test-sample" style="background: rgb(182, 159, 16)">
 					<div id="test-test"></div>
 					<span></span>
 					<p id="ttt">Sample Article Title 2</p>
 					<div id="test-test-end"></div>
 				</li>
-				<li style="background-color: #5c43c8;">
+				<li id="ff" style="background-color: #5c43c8;">
 					<div></div>
 					<p>Macintosh in the Twentieth Century</p>
 					<div></div>
@@ -155,24 +164,24 @@
 		
 		
 		<div class="graph">
-			<!-- Need a good way of integrating and creating contribution data. I would need a CMS/Input side to make it easy and then an efficient way of bringing that data into the site -->
-			<div class="week-0">
-				<a href="" class="high"></a>
-				<a href="" class="med"></a>
-				<a href="" class="low"></a>
-				<a href=""></a>
-				<a href=""></a>
-				<a href=""></a>
-				<a href=""></a>
-			</div>
-			
-			{% for week in weeks %}
-			<div class="week">
-				{% for day in days %}
+			<div class="flex">
+				<div class="week-0">
+					<a href="" class="high"></a>
+					<a href="" class="med"></a>
+					<a href="" class="low"></a>
 					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+					<a href=""></a>
+				</div>
+				{% for week in weeks %}
+				<div class="week">
+					{% for day in days %}
+						<a href=""></a>
+					{% endfor %}
+				</div>
 				{% endfor %}
 			</div>
-			{% endfor %}
 		</div>
 		
 		<article class="sentence">
@@ -185,6 +194,14 @@
 		</article>
 		
 		<main>
+			<div class="card latest-posts">
+				<ul>
+					<li>Title</li>
+					<li>Title</li>
+					<li>Title</li>
+				</ul>
+				<a href="">Older Posts</a>
+			</div>
 			<div class="card">
 				<img src="" alt="">
 				<div class="container">
@@ -212,6 +229,10 @@
 
 		</main>
 		
+		<div class="footer">
+			
+		</div>
+		
 		{% include "partials/_footer.njk" %}
 		
 		<!-- Cookie Decides if First Time -->
@@ -220,7 +241,7 @@
 				document.cookie = 'crumb'
 				document.querySelector('#splash').classList.remove('hide')
 				document.body.style.background = '#54258F'
-				document.querySelector('header').style.backgroundImage = ""
+				document.querySelector('header').classList.remove('header-background')
 			}
 		</script>
 		<!-- Cookie Decision [End] -->
@@ -229,31 +250,90 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/CustomEase.min.js"></script>
 		<script>
 			gsap.registerPlugin(ScrollTrigger)
 			gsap.registerPlugin(ScrollToPlugin)
+			gsap.registerPlugin(CustomEase)
 			
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Splash
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			
+			// ScrollTrigger.create({
+			// 	trigger: '#splash',
+			// 	start: 'top top',
+			// 	pin: true,
+			// 	pinSpacing: 100
+			// })
+			
+			CustomEase.create("bounce", "M0,0 C0.14,0 0.34,0.314 0.4,0.5 0.458,0.68 0.516,0.963 0.524,1 0.532,0.985 0.614,0.622 0.77,0.622 0.912,0.622 0.993,0.983 1,1 ")
+			
+			function testSplashExit () {
+				// gsap.to("#splash", {
+				// 	duration: 2,
+				// 	marginTop: -(document.querySelector('#splash').offsetHeight)
+				// })
+				document.querySelector('#splash').classList.add('anim_scroll-off')
+			}
+			
+			// Scroll Hint
+			gsap.delayedCall(3.5, () => {
+				if ( document.documentElement.scrollTop < 10 ) {
+					gsap.to(window, {
+						keyframes: [
+							{scrollTo: '50', ease: 'Power1.easeOut', duration: 0.4},
+							{scrollTo: '0', ease: 'Power3.easeIn', duration: 0.6}
+						]
+					})
+				}
+				// Show a scroll indicator
+				document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
+			})
+
+			
 			if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				document.body.style.background = '#54258F'
-				
-				document.querySelector('header').style.backgroundImage = 'none'
+				document.querySelector('header').classList.remove('header-background')
 				
 				// Change Background Color When Scrolling
 				window.addEventListener('scroll', () => {
-					if (window.scrollY > 300) {
+					if (window.scrollY > 300 && !document.querySelector('#splash').classList.contains('hide') ) {
 						document.body.style.background = '#edf0f0'
 					}
-				})
-				// Scroll splash section out after 3.5 sec
-				gsap.delayedCall(3.5, scrollSplash)
-				function scrollSplash () {
-					if ( document.documentElement.scrollTop < 10 ) {		
-						gsap.to(window, {duration: 1.4, scrollTo:'header', ease: Power3.easeOut});
+					else if ( !document.querySelector('#splash').classList.contains('hide') ) {
+						document.body.style.background = '#54258F'
 					}
-				}
+				})
+				
+				
+				// Handle Splash when exiting view
+				ScrollTrigger.create({
+					trigger: "header",
+					start: 'top 20',
+					onEnter: () => {
+						// Header Background Gradient
+						document.querySelector('header').classList.add('header-background')
+						// Remove splash section
+						// gsap.to("#splash", {
+						// 	duration: 1,
+						// 	top: 0,
+						// 	yPercent: -100
+						// })
+						// gsap.delayedCall(1.5, () => {
+						// 	document.querySelector('#splash').classList.add('hide')
+						// })
+					}
+				})
+				
+				
+				// Scroll splash section out after 3.5 sec
+				// gsap.delayedCall(3.5, scrollSplash)
+				// function scrollSplash () {
+				// 	if ( document.documentElement.scrollTop < 10 ) {		
+				// 		gsap.to(window, {duration: 1.4, scrollTo:'header', ease: Power3.easeOut});
+				// 	}
+				// }
 				// Animate in the header gradient
 				
 			}
@@ -262,23 +342,21 @@
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Header, Marquee
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			function test () {
+			function testScrollHeader () {
 				let myDiv = document.querySelector('header ul')
 				gsap.to(myDiv, {duration: 2, scrollTo: {y: 0, x: 200}})
 				console.log('aaa')
 			}
-			gsap.to('#ttt', {
-				scrollTrigger: {
-					scroller: 'header ul',
-					trigger: 'header ul',
-					horizontal: true,
-					start: 'left left',
-					endTrigger: '#test-test',
-					end: 'right right',
-					scrub: true,
-					markers: true
-				},
-				rotation: 360
+			
+			ScrollTrigger.create({
+				trigger: 'header ul',
+				scroller: 'header ul',
+				horizontal: true,
+				pin: '#trigger #test-sample',
+				start: 'left',
+				endTrigger: '#ff',
+				end: 'left left',
+				markers: true
 			})
 			/* Header, Marquee [End] */
 			

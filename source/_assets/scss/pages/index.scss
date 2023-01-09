@@ -399,8 +399,19 @@ main div p {
 Footer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 div.footer {
-	height: 230px;
+	height: 370px;
+	position: relative;
+	width: 100%;
 }
+.footer-wrapper {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+// footer {
+// 	position: absolute;
+// 	bottom: 0;
+// }
 div.footer::after {
 	content: "";
 	position: absolute;

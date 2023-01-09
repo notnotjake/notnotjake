@@ -16,8 +16,52 @@ html:focus-within {scroll-behavior: unset;}
 
 body {
 	color: #454545;
-	font-family: "Maru Var";
+	font-family: "Maru Var", sans-serif;
 }
+div.wrapper {
+	background: #eef0f0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overscrolls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.overscroll-top {
+	height: 300px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -2;
+	transform: translateY(-299px);
+	background-image: linear-gradient(to bottom, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
+	// background: rgba(221, 201, 249, 1.0);
+}
+.overscroll-top_mobile {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -3;
+	background-image: linear-gradient(to top, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
+}
+
+.overscroll-bottom {
+	height: 300px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: -2;
+	transform: translateY(299px);
+	background-image: linear-gradient(to bottom, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+}
+.overscroll-bottom_mobile {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: -3;
+	background-image: linear-gradient(to top, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+}
+/* Overscrolls [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Header / Story Ticker
@@ -73,7 +117,7 @@ header li {
 	
 	// padding: 0 17px;
 	flex-shrink: 0;
-	font-family: 'Maru Var', 'Sono Var';
+	font-family: 'Maru Var', 'Sono Var', sans-serif;
 	font-style: normal;
 	font-size: 1.3em;
 	font-weight: 500;
@@ -104,7 +148,8 @@ div.graph {
 	flex-direction: row-reverse;
 	background: #EDF0F0;
 	
-	overflow: scroll;
+	overflow-y: hidden;
+	overflow-x: scroll;
 	-ms-overflow-style: none; /* Edge hide scrollbar */
 	scrollbar-width: none; /* FF hide scrollbar */
 }
@@ -138,6 +183,75 @@ div.graph a.med {
 }
 div.graph a.low {
 	background-color: #87D894;
+}
+
+div.graph a:hover {
+	border: 2px solid #1ca6ff;
+}
+
+div.graph a img {
+	width: 150px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 9px;
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.graph a div.activity {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-left: -200px;
+	z-index: 2;
+}
+div.graph a p {
+	font-size: 0.8em;
+	width: 150px;
+	padding: 2px 5px 0;
+	color: #1b1b1b;
+	background: hsl(0, 0%, 97%);
+	border-radius: 7px;
+	margin-top: 2px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.graph a p span.date::before {
+	content: " ";
+}
+div.graph a p span.date {
+	font-weight: 500;
+	color: hsl(0, 0%, 47%);
+	white-space: nowrap;
+}
+div.graph a p span.level {
+	color: #30d079;
+}
+
+div.test {
+	margin-left: 20px;
+	position: absolute;
+	margin-top: -250px;
+}
+div.test img {
+	width: 150px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 9px;
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.test p {
+	font-size: 0.8em;
+	width: 150px;
+	padding: 2px 5px 0;
+	background: hsl(0, 0%, 97%);
+	color: #1b1b1b;
+	border-radius: 7px;
+	margin-top: 2px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.test p span.date {
+	font-weight: 500;
+	color: hsl(0, 0%, 47%);
 }
 
 /* Load Animation
@@ -202,7 +316,7 @@ article.sentence {
 	padding-right: 10px;
 }
 article.sentence h1 {
-	font-family: 'Pressura Var';
+	font-family: 'Pressura Var', 'Maru Var', sans-serif;
 	font-variation-settings: "wght" 490, "wdth" 110, "ital" 0.15;
 	font-size: 1.6em;
 	font-weight: 550;
@@ -228,14 +342,15 @@ article.sentence div a {
 	padding-top: 0.6em;
 	color: black;
 }
+article.sentence div a:visited {
+	color: black;
+}
 article.sentence div a:hover {
-	color: hsl(213, 63%, 20%);
+	color: hsl(213, 48%, 55%);
+	transition: color 100ms ease-in-out;
 }
 article.sentence div a:active {
 	color: hsl(186, 59%, 54%);
-}
-article.sentence div a:visited {
-	color: black;
 }
 article.sentence div {
 	display: flex;
@@ -286,6 +401,18 @@ Footer
 div.footer {
 	height: 230px;
 }
+div.footer::after {
+	content: "";
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-image: linear-gradient(to top,
+		rgba(147, 184, 246, 1) 0%, 
+		// #b4caee 25%,
+		rgba(237, 240, 240, 0) 60%);
+}
 /* Footer [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -312,7 +439,7 @@ Splash (New Visitor)
 		#EDF0F0 100%
 	);
 	color: hsl(177, 100%, 52%);
-	font-family: 'Sono Var';
+	font-family: 'Sono Var', sans-serif;
 	text-align: center;
 }
 .anim_scroll-off {
@@ -329,7 +456,7 @@ Splash (New Visitor)
 	align-items: center;
 	justify-content: center;
 
-	font-family: 'Courier', 'Courier Prime';
+	font-family: 'Courier', 'Courier Prime', monospace;
 	font-size: 50px;
 	font-weight: bold;
 	text-decoration: none;

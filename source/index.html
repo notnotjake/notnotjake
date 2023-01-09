@@ -36,8 +36,14 @@
 			/* GT MARU - VARIABLE */
 			@font-face {
 				font-family: 'Maru Var';
-				  src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
-				  font-style: normal;
+				src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
+				font-style: normal;
+			}
+			/* GT PRESSURA - VARIABLE */
+			@font-face {
+				font-family: 'Pressura Var';
+				src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
+				font-style: normal;
 			}
 			/* Hubot Sans */
 			@font-face {
@@ -47,16 +53,6 @@
 				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2-variations');
 			  font-weight: 200 900;
 			  font-stretch: 75% 125%;
-			}
-			/* courier-prime-regular */
-			@font-face {
-			  font-family: 'Courier Prime';
-			  font-style: normal;
-			  font-weight: 400;
-			  src: local(''),
-				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-			  font-display: swap;
 			}
 			/* courier-prime-700 */
 			@font-face {
@@ -116,9 +112,8 @@
 			</div>
 		</div>
 		
-		
 		<header class="header-background">
-			<a id="start-test" href="https://www.notnotjake.com">
+			<a href="https://www.notnotjake.com">
 				<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 						<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
@@ -127,7 +122,7 @@
 					</g>
 				</svg>
 			</a>
-			<ul id="trigger">
+			<ul>
 				<li id="test-sample" style="background: rgb(182, 159, 16)">
 					<div id="test-test"></div>
 					<span></span>
@@ -185,11 +180,12 @@
 		</div>
 		
 		<article class="sentence">
-			<h1>Dedicated to trying. I run LightDance, creating amazing websites for my clients. On Instagram, I share my art. My goal is to inspire and express love for mankind. Design and product drive everything I do.</h1>
+			<h1>Dedicated to trying. I run <span>LightDance</span>, creating amazing websites for my clients. On Instagram, I share my art. My goal is to inspire and express love for mankind. Design and product drive everything I do.</h1>
 			<p>Jan 6 '23</p>
 			<div>
-				<p>About Me</p>
-				<p>Resume</p>
+				<a href="">Contact</a>
+				<a href="">Hire Me</a>
+				<a href="google.com">Resume</a>
 			</div>
 		</article>
 		
@@ -266,8 +262,6 @@
 			// 	pin: true,
 			// 	pinSpacing: 100
 			// })
-			
-			CustomEase.create("bounce", "M0,0 C0.14,0 0.34,0.314 0.4,0.5 0.458,0.68 0.516,0.963 0.524,1 0.532,0.985 0.614,0.622 0.77,0.622 0.912,0.622 0.993,0.983 1,1 ")
 			
 			function testSplashExit () {
 				// gsap.to("#splash", {
@@ -355,8 +349,8 @@
 				pin: '#trigger #test-sample',
 				start: 'left',
 				endTrigger: '#ff',
-				end: 'left left',
-				markers: true
+				end: 'left left'
+				// markers: true
 			})
 			/* Header, Marquee [End] */
 			

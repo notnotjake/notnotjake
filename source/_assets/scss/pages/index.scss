@@ -1,5 +1,5 @@
 :root {
-	--animation-time: 260ms;
+	--animation-time: 270ms;
 	--animation-delay: 14ms;
 	
 	--blocks-color: #D6D7D8;
@@ -28,6 +28,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background: #EDF0F0;
 }
 .header-background::before {
 	content: "";
@@ -101,6 +102,7 @@ Timeline Graph (Blocks)
 div.graph {
 	display: flex;
 	flex-direction: row-reverse;
+	background: #EDF0F0;
 	
 	overflow: scroll;
 	-ms-overflow-style: none; /* Edge hide scrollbar */
@@ -146,37 +148,37 @@ div.graph a.low {
 	100% {background-color: var(--masthead-offset);}
 }
 
-div.graph > div > a:nth-of-type(1) {
+div.graph > div.flex > div > a:nth-of-type(1) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 1);
 }
-div.graph > div > a:nth-of-type(2) {
+div.graph > div.flex > div > a:nth-of-type(2) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 2);
 }
-div.graph > div > a:nth-of-type(3) {
+div.graph > div.flex > div > a:nth-of-type(3) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 3);
 }
-div.graph > div > a:nth-of-type(4) {
+div.graph > div.flex > div > a:nth-of-type(4) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 4);
 }
-div.graph > div > a:nth-of-type(5) {
+div.graph > div.flex > div > a:nth-of-type(5) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 5);
 }
-div.graph > div > a:nth-of-type(6) {
+div.graph > div.flex > div > a:nth-of-type(6) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 6);
 }
-div.graph > div > a:nth-of-type(7) {
+div.graph > div.flex > div > a:nth-of-type(7) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 7);
@@ -194,23 +196,52 @@ article.sentence {
 	flex-direction: column;
 	align-items: center;
 	margin: 0 0;
-	padding-top: clamp(15px, 8vh, 90px);
-	padding-bottom: clamp(15px, 8vh, 90px);
+	padding-top: clamp(40px, 10vh, 90px);
+	padding-bottom: clamp(40px, 10vh, 90px);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+article.sentence h1 {
+	font-family: 'Pressura Var';
+	font-variation-settings: "wght" 490, "wdth" 110, "ital" 0.15;
+	font-size: 1.6em;
+	font-weight: 550;
+	letter-spacing: 0.0em;
+	max-width: 50ch;
+}
+article.sentence h1 span {
+	background: #d6d7d8;
+	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
+	padding: 4px 5px 2px;
+	border-radius: 6px;
+	color: black;
 }
 article.sentence > p {
 	text-align: center;
+	color: hsl(0, 0%, 43%);
+	font-size: 1.05em;
+	padding: 0.3em;
+}
+article.sentence div a {
+	font-size: 1.1em;
+	font-weight: 510;
+	padding-top: 0.6em;
+	color: black;
+}
+article.sentence div a:hover {
+	color: hsl(213, 63%, 20%);
+}
+article.sentence div a:active {
+	color: hsl(186, 59%, 54%);
+}
+article.sentence div a:visited {
+	color: black;
 }
 article.sentence div {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 18px;
 	justify-content: center;
-}
-article.sentence h1 {
-	font-size: 1.5em;
-	font-weight: 550;
-	letter-spacing: -0.04em;
-	max-width: 50ch;
 }
 /* The Sentence [End] */
 
@@ -262,7 +293,7 @@ Splash (New Visitor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #splash {
 	width: 100%;
-	height: 100dvh;
+	height: 100svh;
 	min-height: 600px;
 	z-index: 5;
 	display: flex;

@@ -3,7 +3,7 @@
 	<head>
 		<!--Site Info-->
 		<meta charset="utf-8">
-		<title>!!JAKE - HOME</title>
+		<title>!!JAKE</title>
 		<meta name="author" content="Jake Gooch">
 		<!-- Site Info [End] -->
 		
@@ -36,8 +36,14 @@
 			/* GT MARU - VARIABLE */
 			@font-face {
 				font-family: 'Maru Var';
-				  src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
-				  font-style: normal;
+				src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
+				font-style: normal;
+			}
+			/* GT PRESSURA - VARIABLE */
+			@font-face {
+				font-family: 'Pressura Var';
+				src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
+				font-style: normal;
 			}
 			/* Hubot Sans */
 			@font-face {
@@ -48,20 +54,10 @@
 			  font-weight: 200 900;
 			  font-stretch: 75% 125%;
 			}
-			/* courier-prime-regular */
-			@font-face {
-			  font-family: 'Courier Prime';
-			  font-style: normal;
-			  font-weight: 400;
-			  src: local(''),
-				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-			  font-display: swap;
-			}
 			/* courier-prime-700 */
 			@font-face {
 				font-family: 'Courier Prime';
-				font-style: normal;
+				font-style: bold;
 				font-weight: 700;
 				src: local(''),
 					url('https://assets.notnotjake.com/fonts/courier-prime-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -69,8 +65,8 @@
 				font-display: swap;
 			}
 		</style>
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-regular.woff2" type="font/woff2" crossorigin="">
 		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin="">
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin="">
 		<!-- Fonts [End] -->
 		
 		<!-- Appearance-->
@@ -89,7 +85,7 @@
 		<!-- Fathom Analytics [End] -->
 	</head>
 	<body>
-		<div id="splash" class="">
+		<div id="splash" class="hide">
 			<a href="https://www.notnotjake.com" class="site-title">
 				<span>
 					<svg width="25px" height="32px" viewBox="0 0 25 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -116,124 +112,145 @@
 			</div>
 		</div>
 		
+		<div class="overscroll-top"></div>
+		<div class="overscroll-top_mobile"></div>
 		
-		<header class="header-background">
-			<a id="start-test" href="https://www.notnotjake.com">
-				<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
-							<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+		<div class="wrapper">
+			<header class="header-background">
+				<a href="https://www.notnotjake.com">
+					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
+								<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+							</g>
 						</g>
-					</g>
-				</svg>
-			</a>
-			<ul id="trigger">
-				<li id="test-sample" style="background: rgb(182, 159, 16)">
-					<div id="test-test"></div>
-					<span></span>
-					<p id="ttt">Sample Article Title 2</p>
-					<div id="test-test-end"></div>
-				</li>
-				<li id="ff" style="background-color: #5c43c8;">
-					<div></div>
-					<p>Macintosh in the Twentieth Century</p>
-					<div></div>
-				</li>
-				<li style="background-color: #3197e7;">
-					<div></div>
-					<p>The Apollo Moon Landing and Consequences</p>
-					<div></div>
-				</li>
-				<li style="background-color: #6f7a8c;">
-					<div></div>
-					<p>What I Would Tell Kan(YE)</p>
-					<div></div>
-				</li>
-			</ul>
-			<a href="/more">
-				<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-					<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-						<g transform="translate(-21.000000, -21.000000)" fill="#ACACAC">
-							<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+					</svg>
+				</a>
+				<ul>
+					<li id="test-sample" style="background: rgb(182, 159, 16)">
+						<div id="test-test"></div>
+						<p id="ttt">Sample Article Title 2</p>
+						<div id="test-test-end"></div>
+					</li>
+					<li id="ff" style="background-color: #5c43c8;">
+						<div></div>
+						<p>Macintosh in the Twentieth Century</p>
+						<div></div>
+					</li>
+					<li style="background-color: #3197e7;">
+						<div></div>
+						<p>The Apollo Moon Landing and Consequences</p>
+						<div></div>
+					</li>
+					<li style="background-color: #6f7a8c;">
+						<div></div>
+						<p>What I Would Tell Kan(YE)</p>
+						<div></div>
+					</li>
+					<li class="splash-mini">
+						<div></div>
+						<p>Delight&&Meaning <span>• That's my <a href="">goal</a></span></p>
+						<div></div>
+					</li>
+				</ul>
+				<a href="/more">
+					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-21.000000, -21.000000)" fill="#ACACAC">
+								<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+							</g>
 						</g>
-					</g>
-				</svg>
-			</a>
-		</header>
-		
-		
-		
-		<div class="graph">
-			<div class="flex">
-				<div class="week-0">
-					<a href="" class="high"></a>
-					<a href="" class="med"></a>
-					<a href="" class="low"></a>
-					<a href=""></a>
-					<a href=""></a>
-					<a href=""></a>
-					<a href=""></a>
-				</div>
-				{% for week in weeks %}
-				<div class="week">
-					{% for day in days %}
+					</svg>
+				</a>
+			</header>
+			
+			
+			<div class="graph">
+				<div class="flex">
+					<div class="week-0">
+						<a href="" class="high">
+							<div class="activity">
+								<img src="https://large-assets.notnotjake.com/images/finding-our-way/morning.jpg" alt="">
+								<p class="date"><span class="level">Productive Day</span><span class="date">Jan 9</span></p>
+							</div>
+						</a>
+						<a href="" class="med"></a>
+						<a href="" class="low"></a>
+						<a href="" class="release"></a>
 						<a href=""></a>
+						<a href=""></a>
+						<a href=""></a>
+					</div>
+					{% for week in weeks %}
+					<div class="week">
+						{% for day in days %}
+							<a href=""></a>
+						{% endfor %}
+					</div>
 					{% endfor %}
 				</div>
-				{% endfor %}
 			</div>
-		</div>
-		
-		<article class="sentence">
-			<h1>Dedicated to trying. I run LightDance, creating amazing websites for my clients. On Instagram, I share my art. My goal is to inspire and express love for mankind. Design and product drive everything I do.</h1>
-			<p>Jan 6 '23</p>
-			<div>
-				<p>About Me</p>
-				<p>Resume</p>
-			</div>
-		</article>
-		
-		<main>
-			<div class="card latest-posts">
-				<ul>
-					<li>Title</li>
-					<li>Title</li>
-					<li>Title</li>
-				</ul>
-				<a href="">Older Posts</a>
-			</div>
-			<div class="card">
-				<img src="" alt="">
-				<div class="container">
-					<p>Description</p>
-				</div>
-			</div>
-			<div class="card">
-				<img src="" alt="">
-				<div class="container">
-					<p>Description</p>
-				</div>
-			</div>
-			<div class="card">
-				<img src="" alt="">
-				<div class="container">
-					<p>Description</p>
-				</div>
-			</div>
-			<div class="card">
-				<img src="" alt="">
-				<div class="container">
-					<p>Description</p>
-				</div>
-			</div>
-
-		</main>
-		
-		<div class="footer">
 			
+			<div class="test">
+				<img src="https://large-assets.notnotjake.com/images/finding-our-way/morning.jpg" alt="">
+				<p>Worked on my new site<span>Jan 9</span></p>
+			</div>
+			
+			
+			<article class="sentence">
+				<h1>Dedicated to trying. I run <span>LightDance</span>, creating amazing websites for my clients. On Instagram, I share my art. My goal is to inspire and express love for mankind. Design and product drive everything I do.</h1>
+				<p>Jan 6 '23</p>
+				<div>
+					<a href="">Contact</a>
+					<a href="">Hire Me</a>
+					<a href="google.com">Resume</a>
+				</div>
+			</article>
+			
+			<main>
+				<div class="card latest-posts">
+					<ul>
+						<li>Title</li>
+						<li>Title</li>
+						<li>Title</li>
+					</ul>
+					<a href="">Older Posts</a>
+				</div>
+				<div class="card">
+					<img src="" alt="">
+					<div class="container">
+						<p>Description</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="" alt="">
+					<div class="container">
+						<p>Description</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="" alt="">
+					<div class="container">
+						<p>Description</p>
+					</div>
+				</div>
+				<div class="card">
+					<img src="" alt="">
+					<div class="container">
+						<p>Description</p>
+					</div>
+				</div>
+			</main>
+			
+			<div class="footer">
+				<div class="footer-wrapper">
+					{% include "partials/_footer.njk" %}
+				</div>
+			</div>
 		</div>
 		
-		{% include "partials/_footer.njk" %}
+		<div class="overscroll-bottom"></div>
+		<div class="overscroll-bottom_mobile"></div>
 		
 		<!-- Cookie Decides if First Time -->
 		<script>
@@ -259,27 +276,10 @@
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Splash
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			
-			// ScrollTrigger.create({
-			// 	trigger: '#splash',
-			// 	start: 'top top',
-			// 	pin: true,
-			// 	pinSpacing: 100
-			// })
-			
-			CustomEase.create("bounce", "M0,0 C0.14,0 0.34,0.314 0.4,0.5 0.458,0.68 0.516,0.963 0.524,1 0.532,0.985 0.614,0.622 0.77,0.622 0.912,0.622 0.993,0.983 1,1 ")
-			
-			function testSplashExit () {
-				// gsap.to("#splash", {
-				// 	duration: 2,
-				// 	marginTop: -(document.querySelector('#splash').offsetHeight)
-				// })
-				document.querySelector('#splash').classList.add('anim_scroll-off')
-			}
-			
-			// Scroll Hint
+			// Scroll Hinting
 			gsap.delayedCall(3.5, () => {
-				if ( document.documentElement.scrollTop < 10 ) {
+				if ( document.documentElement.scrollTop < 10 && !document.querySelector('#splash').classList.contains('hide') ) {
+					// Scroll bounce
 					gsap.to(window, {
 						keyframes: [
 							{scrollTo: '50', ease: 'Power1.easeOut', duration: 0.4},
@@ -290,7 +290,50 @@
 				// Show a scroll indicator
 				document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
 			})
-
+			
+			function splashScroll (e) {
+				console.log('Scroll Event')
+				
+				if ( document.querySelector('#splash').classList.contains('hide') ) {
+					window.removeEventListener('scroll', splashScroll)
+					return
+				}
+				else if ( window.scrollY < 300 ) {
+					document.body.style.background = '#54258F'
+				}
+				// else if ( window.scrollY > 300 && window.scrollY < 400 ) {
+				// 	gsap.to(window, {scrollTo: 'header',duration: 0.1})
+				// 	testingMove()
+				// }
+				else {
+					document.body.style.background = '#edf0f0'
+				}
+				
+			}
+			window.addEventListener('scroll', splashScroll)
+			
+			function testingMove () {
+				const splashHeight = document.querySelector('#splash').offsetHeight * -1
+				console.log('El Height: ' + splashHeight)
+				
+				const scrollPos = document.documentElement.scrollTop
+				console.log('Scroll Start: ' + scrollPos)
+				let scrollTo = scrollPos + splashHeight
+				console.log('Target: ' + scrollTo)
+				
+				gsap.to(window, {
+					scrollTo: scrollTo,
+					duration: 1
+				})
+				gsap.to('#splash', {
+					marginTop: splashHeight,
+					duration: 1,
+					onComplete: () => {
+						document.querySelector('#splash').classList.add('hide')
+						document.body.style.background = '#edf0f0'
+					}
+				})
+			}
 			
 			if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				document.body.style.background = '#54258F'
@@ -348,16 +391,16 @@
 				console.log('aaa')
 			}
 			
-			ScrollTrigger.create({
-				trigger: 'header ul',
-				scroller: 'header ul',
-				horizontal: true,
-				pin: '#trigger #test-sample',
-				start: 'left',
-				endTrigger: '#ff',
-				end: 'left left',
-				markers: true
-			})
+			// ScrollTrigger.create({
+			// 	trigger: 'header ul',
+			// 	scroller: 'header ul',
+			// 	horizontal: true,
+			// 	pin: '#trigger #test-sample',
+			// 	start: 'left',
+			// 	endTrigger: '#ff',
+			// 	end: 'left left'
+			// 	// markers: true
+			// })
 			/* Header, Marquee [End] */
 			
 			

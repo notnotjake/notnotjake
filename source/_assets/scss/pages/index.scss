@@ -1,5 +1,5 @@
 :root {
-	--animation-time: 260ms;
+	--animation-time: 270ms;
 	--animation-delay: 14ms;
 	
 	--blocks-color: #D6D7D8;
@@ -16,8 +16,52 @@ html:focus-within {scroll-behavior: unset;}
 
 body {
 	color: #454545;
-	font-family: "Maru Var";
+	font-family: "Maru Var", sans-serif;
 }
+div.wrapper {
+	background: #eef0f0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overscrolls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.overscroll-top {
+	height: 300px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -2;
+	transform: translateY(-299px);
+	background-image: linear-gradient(to bottom, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
+	// background: rgba(221, 201, 249, 1.0);
+}
+.overscroll-top_mobile {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -3;
+	background-image: linear-gradient(to top, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
+}
+
+.overscroll-bottom {
+	height: 300px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: -2;
+	transform: translateY(299px);
+	background-image: linear-gradient(to bottom, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+}
+.overscroll-bottom_mobile {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: -3;
+	background-image: linear-gradient(to top, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+}
+/* Overscrolls [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Header / Story Ticker
@@ -28,6 +72,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background: #EDF0F0;
 }
 .header-background::before {
 	content: "";
@@ -72,7 +117,7 @@ header li {
 	
 	// padding: 0 17px;
 	flex-shrink: 0;
-	font-family: 'Maru Var', 'Sono Var';
+	font-family: 'Maru Var', 'Sono Var', sans-serif;
 	font-style: normal;
 	font-size: 1.3em;
 	font-weight: 500;
@@ -80,18 +125,26 @@ header li {
 	background-color: #6f7a8c;
 	border-radius: 20px;
 }
-header li span {
-	background-image: linear-gradient(to right, rgb(182, 159, 16), transparent);
-	// background-blend-mode: darken;
-	height: 100%;
-	width: 20px;
-	margin-right: -20px;
-	z-index: 2;
-}
 header li div {
 	aspect-ratio: 1 / 2;
 	height: 100%;
 	border-radius: 5px;
+}
+header li.splash-mini {
+	background-image: linear-gradient(#9400ff, #5c00ff);
+	color: rgba(207, 229, 255, 1);
+	font-family: 'Sono Var';
+	font-weight: 550;
+	// box-shadow: inset 0 0.05em 0.05em rgba(255,255,255,0.6),  /* top highlight */
+	// inset 0 -0.05em 0.08em rgba(0,0,0,.5),		  /* bottom inner shadow  */
+	// inset 0 -0.01em 0.5em rgba(255,255,255,0.3),  /* bottom underlight  */
+	// 0 .05em .1em rgba(0,0,0,.4);
+}
+header li.splash-mini span {
+	font-family: 'Maru Var';
+	font-size: 0.9em;
+	color: rgba(255, 255, 255, 0.91);
+	font-style: italic;
 }
 /* Header [End] */
 
@@ -101,8 +154,10 @@ Timeline Graph (Blocks)
 div.graph {
 	display: flex;
 	flex-direction: row-reverse;
+	background: #EDF0F0;
 	
-	overflow: scroll;
+	overflow-y: hidden;
+	overflow-x: scroll;
 	-ms-overflow-style: none; /* Edge hide scrollbar */
 	scrollbar-width: none; /* FF hide scrollbar */
 }
@@ -138,6 +193,75 @@ div.graph a.low {
 	background-color: #87D894;
 }
 
+div.graph a:hover {
+	border: 2px solid #1ca6ff;
+}
+
+div.graph a img {
+	width: 150px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 9px;
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.graph a div.activity {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-left: -200px;
+	z-index: 2;
+}
+div.graph a p {
+	font-size: 0.8em;
+	width: 150px;
+	padding: 2px 5px 0;
+	color: #1b1b1b;
+	background: hsl(0, 0%, 97%);
+	border-radius: 7px;
+	margin-top: 2px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.graph a p span.date::before {
+	content: " ";
+}
+div.graph a p span.date {
+	font-weight: 500;
+	color: hsl(0, 0%, 47%);
+	white-space: nowrap;
+}
+div.graph a p span.level {
+	color: #30d079;
+}
+
+div.test {
+	margin-left: 20px;
+	position: absolute;
+	margin-top: -250px;
+}
+div.test img {
+	width: 150px;
+	height: 180px;
+	object-fit: cover;
+	border-radius: 9px;
+	border: 2px solid rgba(255, 255, 255, 0.9);
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.test p {
+	font-size: 0.8em;
+	width: 150px;
+	padding: 2px 5px 0;
+	background: hsl(0, 0%, 97%);
+	color: #1b1b1b;
+	border-radius: 7px;
+	margin-top: 2px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+div.test p span.date {
+	font-weight: 500;
+	color: hsl(0, 0%, 47%);
+}
+
 /* Load Animation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @keyframes color-in {
@@ -146,42 +270,41 @@ div.graph a.low {
 	100% {background-color: var(--masthead-offset);}
 }
 
-div.graph > div > a:nth-of-type(1) {
+div.graph > div.flex > div > a:nth-of-type(1) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 1);
 }
-div.graph > div > a:nth-of-type(2) {
+div.graph > div.flex > div > a:nth-of-type(2) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 2);
 }
-div.graph > div > a:nth-of-type(3) {
+div.graph > div.flex > div > a:nth-of-type(3) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 3);
 }
-div.graph > div > a:nth-of-type(4) {
+div.graph > div.flex > div > a:nth-of-type(4) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 4);
 }
-div.graph > div > a:nth-of-type(5) {
+div.graph > div.flex > div > a:nth-of-type(5) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 5);
 }
-div.graph > div > a:nth-of-type(6) {
+div.graph > div.flex > div > a:nth-of-type(6) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 6);
 }
-div.graph > div > a:nth-of-type(7) {
+div.graph > div.flex > div > a:nth-of-type(7) {
 	animation-name: color-in;
 	animation-duration: var(--animation-time);
 	animation-delay: calc(var(--animation-delay) * 7);
 }
-
 /* Timeline Block [End] */
 
 
@@ -194,23 +317,53 @@ article.sentence {
 	flex-direction: column;
 	align-items: center;
 	margin: 0 0;
-	padding-top: clamp(15px, 8vh, 90px);
-	padding-bottom: clamp(15px, 8vh, 90px);
+	padding-top: clamp(40px, 10vh, 90px);
+	padding-bottom: clamp(40px, 10vh, 90px);
+	padding-left: 10px;
+	padding-right: 10px;
+}
+article.sentence h1 {
+	font-family: 'Pressura Var', 'Maru Var', sans-serif;
+	font-variation-settings: "wght" 490, "wdth" 110, "ital" 0.15;
+	font-size: 1.6em;
+	font-weight: 550;
+	letter-spacing: 0.0em;
+	max-width: 50ch;
+}
+article.sentence h1 span {
+	background: #d6d7d8;
+	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
+	padding: 4px 5px 2px;
+	border-radius: 6px;
+	color: black;
 }
 article.sentence > p {
 	text-align: center;
+	color: hsl(0, 0%, 43%);
+	font-size: 1.05em;
+	padding: 0.3em;
+}
+article.sentence div a {
+	font-size: 1.1em;
+	font-weight: 510;
+	padding-top: 0.6em;
+	color: black;
+}
+article.sentence div a:visited {
+	color: black;
+}
+article.sentence div a:hover {
+	color: hsl(213, 48%, 55%);
+	transition: color 100ms ease-in-out;
+}
+article.sentence div a:active {
+	color: hsl(186, 59%, 54%);
 }
 article.sentence div {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 18px;
 	justify-content: center;
-}
-article.sentence h1 {
-	font-size: 1.5em;
-	font-weight: 550;
-	letter-spacing: -0.04em;
-	max-width: 50ch;
 }
 /* The Sentence [End] */
 
@@ -253,7 +406,26 @@ main div p {
 Footer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 div.footer {
-	height: 230px;
+	height: 370px;
+	position: relative;
+	width: 100%;
+}
+.footer-wrapper {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+div.footer::after {
+	content: "";
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-image: linear-gradient(to top,
+		rgba(147, 184, 246, 1) 0%, 
+		// #b4caee 25%,
+		rgba(237, 240, 240, 0) 60%);
 }
 /* Footer [End] */
 
@@ -262,7 +434,7 @@ Splash (New Visitor)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #splash {
 	width: 100%;
-	height: 100dvh;
+	height: 100svh;
 	min-height: 600px;
 	z-index: 5;
 	display: flex;
@@ -281,7 +453,7 @@ Splash (New Visitor)
 		#EDF0F0 100%
 	);
 	color: hsl(177, 100%, 52%);
-	font-family: 'Sono Var';
+	font-family: 'Sono Var', sans-serif;
 	text-align: center;
 }
 .anim_scroll-off {
@@ -298,7 +470,7 @@ Splash (New Visitor)
 	align-items: center;
 	justify-content: center;
 
-	font-family: 'Courier', 'Courier Prime';
+	font-family: 'Courier', 'Courier Prime', monospace;
 	font-size: 50px;
 	font-weight: bold;
 	text-decoration: none;

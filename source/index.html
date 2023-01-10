@@ -198,10 +198,20 @@
 			
 			
 			<article class="sentence">
-				<h1>Hi&mdash;I'm Jake! I'm <span id="E01">passionate
-					<img src="https://large-assets.notnotjake.com/images/sentence-svg/passion.svg" alt="Red heart icon"></span> about creating great user experiences. At <span id="L01">
-					<img src="https://large-assets.notnotjake.com/images/sentence-svg/light-dance1.svg" alt="Icon. Light blue. Shaped like a spinning top or a starburst of light.">LightDance</span> I build web experiences. Online, I share <span id="E02">fun things I make <img src="https://large-assets.notnotjake.com/images/sentence-svg/made2.svg" alt="Icon of a hand"></span>, and thoughts about product and the <span id="E03">future <img src="https://large-assets.notnotjake.com/images/sentence-svg/future4.svg" alt="Spiral icon"></span>.</h1>
-				<p>Jan 6 '23</p>
+				<h1>Hi&mdash;I'm 
+					<button type="button" id="btn-d1" onClick="expandDef('1')">
+						<span class="define" id="prm-d1">Jake</span>
+						<span class="definition hide" id="alt-d1">optimistic, persistent, intense</span>
+					</button>! I'm 
+					<button type="button" id="btn-e1" onClick="expansion('1')"><span class="expand" id="prm-e1">passionate
+					<img src="https://large-assets.notnotjake.com/images/sentence-svg/passion.svg" alt="Red heart icon"></span></button> about creating 
+					 <button type="button" id="btn-d2" onClick="expandDef('2')">
+						 <span class="define" id="prm-d2">great</span>
+						 <span class="definition hide" id="alt-d2">delightful and meaningful</span>
+					 </button> user experiences.
+					 <span class="expansion hide" id="ex-e1"> I believe we can help people unlock their potential, and explore the world.</span> At <button type="button" id="btn-e2" onClick="expansion('2')"><span class="expand" id="prm-e2">
+					<img src="https://large-assets.notnotjake.com/images/sentence-svg/light-dance1.svg" alt="Icon. Light blue. Shaped like a spinning top or a starburst of light.">LightDance</span></button> I build web experiences<span class="expansion hide" id="ex-e2"> that wow users, and deliver results for my clients</span>. Online, I share <button type="button" id="btn-e3" onClick="expansion('3')"><span class="expand" id="prm-e3">fun things I make <img src="https://large-assets.notnotjake.com/images/sentence-svg/made2.svg" alt="Icon of a hand"></span></button>,<span class="expansion hide" id="ex-e3"> like an illustrated-story about forgetting,</span> thoughts about products, and the <button type="button" id="btn-e4" onClick="expansion('4')"><span class="expand" id="prm-e4">future <img src="https://large-assets.notnotjake.com/images/sentence-svg/future4.svg" alt="Spiral icon"></span></button>. <span class="expansion hide" id="ex-e4">The future is the only way, but the past is full of learning. My writing on this site stretches that boundary and explores my own views on where I want to go in life.</span></h1>
+				<p>Jan 9 '23</p>
 				<div>
 					<a href="">Contact</a>
 					<a href="">Hire Me</a>
@@ -264,6 +274,41 @@
 			}
 		</script>
 		<!-- Cookie Decision [End] -->
+		
+		<!-- Sentence Expansion -->
+		<script>
+			function expandDef ( t ) {
+				const primary = document.querySelector('#prm-d' + t)
+				const alternate = document.querySelector('#alt-d' + t)
+				
+				if ( alternate.classList.contains('hide') ) {
+					primary.classList.add('hide')
+					alternate.classList.remove('hide')
+				}
+				else if ( primary.classList.contains('hide') ) {
+					primary.classList.remove('hide')
+					alternate.classList.add('hide')
+				}
+				else {
+					primary.classList.remove('hide')
+					alternate.classList.add('hide')
+				}
+			}
+			
+			function expansion ( t ) {
+				const primary = document.querySelector('#prm-e' + t)
+				const expanded = document.querySelector('#ex-e' + t)
+				
+				if ( expanded.classList.contains('hide') ) {
+					expanded.classList.remove('hide')
+				}
+				else {
+					expanded.classList.add('hide')
+				}
+			}
+			
+		</script>
+		<!-- Sentence Expansion [End] -->
 		
 		<!-- GSAP Animations, Scrolling, Visual Improvements -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>

@@ -459,7 +459,7 @@ div.footer {
 	height: 370px;
 	position: relative;
 	width: 100%;
-	padding-top: 60px;
+	padding-top: 90px;
 }
 div.footer > div.links {
 	display: flex;
@@ -471,8 +471,76 @@ div.footer > div.links {
 div.footer svg {
 	height: 31px;
 	width: 31px;
-	color: #656D84;
+	color: #88adc4;
 	fill: currentColor;
+}
+div.footer > div.links a:hover svg {
+	color: #2172b9;
+	transition: color 300ms;
+}
+div.footer picture, div.footer img {
+	height: 90px;
+	max-width: 100px;
+}
+#beach-ball {
+	position: absolute;
+	top: 80px;
+	left: 12vw;
+}
+#pillar {
+	position: absolute;
+	top: 190px;
+	right: 9vw;
+}
+#sun {
+	position: absolute;
+	top: 40px;
+	right: 23vw;
+}
+#wave {
+	position: absolute;
+	top: 154px;
+	right: 36vw;
+	z-index: 3;
+}
+@media (max-width: 1200px) {
+	#beach-ball {
+		position: absolute;
+		top: 80px;
+		left: 3vw;
+	}
+	#pillar {
+		display: none;
+	}
+	#sun {
+		position: absolute;
+		top: 40px;
+		right: 9vw;
+	}
+	#wave {
+		position: absolute;
+		top: 140px;
+		right: 20vw;
+		z-index: 3;
+	}
+}
+@media (max-width: 700px) {
+	#beach-ball {
+		position: absolute;
+		top: 80px;
+		left: -23px;
+	}
+	#pillar {
+		display: none;
+	}
+	#sun {
+		position: absolute;
+		top: 40px;
+		right: -30px;
+	}
+	#wave {
+		display: none;
+	}
 }
 .footer-wrapper {
 	position: absolute;

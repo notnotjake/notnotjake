@@ -50,6 +50,13 @@ footer p.site-info img {
 	vertical-align: middle;
 	display: inline;
 }
+footer p.site-info a {
+	color: unset;
+	text-decoration: none;
+}
+footer p.site-info a:visited {
+	color: unset;
+}
 footer p.last-updated {
 	font-family: 'Courier', 'Courier Prime';
 	filter: opacity(80%);

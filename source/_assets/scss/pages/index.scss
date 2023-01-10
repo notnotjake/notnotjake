@@ -459,6 +459,20 @@ div.footer {
 	height: 370px;
 	position: relative;
 	width: 100%;
+	padding-top: 60px;
+}
+div.footer > div.links {
+	display: flex;
+	flex-direction: row;
+	gap: 27px;
+	margin: auto;
+	width: fit-content;
+}
+div.footer svg {
+	height: 31px;
+	width: 31px;
+	color: #656D84;
+	fill: currentColor;
 }
 .footer-wrapper {
 	position: absolute;

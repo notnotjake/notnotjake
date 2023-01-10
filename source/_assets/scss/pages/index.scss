@@ -67,7 +67,7 @@ Header / Story Ticker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
 	height: 50px;
-	padding: 0 10px;
+	// padding: 0 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -88,6 +88,25 @@ header {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
 }
+header > a {
+	position: absolute;
+	top: 0;
+	height: 50px;
+	width: 41px;
+	z-index: 2;
+	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0.7) 60%);
+	// opacity: 0.8;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	-webkit-backdrop-filter: blur(2px);
+}
+header > a:nth-of-type(1) {
+	left: 0;
+}
+header > a:nth-of-type(2) {
+	right: 0;
+}
 header svg {
 	height: 21px;
 	width: 21px;
@@ -95,12 +114,12 @@ header svg {
 header ul {
 	width: 100%;
 	height: 100%;
-	margin-left: 10px;
-	margin-right: 10px;
+	z-index: 0;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: 12px;
+	padding: 0 41px;
 	list-style-type: none;
 	overflow: scroll;
 	-ms-overflow-style: none; /* Edge hide scrollbar */
@@ -109,12 +128,28 @@ header ul {
 header ul::-webkit-scrollbar {
 	display: none; /* Safari, Chrome hide scrollbar */
 }
-header li {
+header ul div {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12px;
+	height: 100%;
+}
+header ul a {
+	white-space: nowrap;
+	text-decoration: none;
 	height: calc(100% - 15px);
+}
+header ul a:hover {
+	transform: scale(1.01);
+	filter: brightness(1.1)
+}
+header li {
+	height: 100%;
 	display: flex;
 	align-items: center;
 	
-	// padding: 0 17px;
+	padding: 0 17px;
 	flex-shrink: 0;
 	font-family: 'Maru Var', 'Sono Var', sans-serif;
 	font-style: normal;
@@ -124,20 +159,11 @@ header li {
 	background-color: #6f7a8c;
 	border-radius: 20px;
 }
-header li div {
-	aspect-ratio: 1 / 2;
-	height: 100%;
-	border-radius: 5px;
-}
 header li.splash-mini {
 	background-image: linear-gradient(#9400ff, #5c00ff);
 	color: rgba(207, 229, 255, 1);
 	font-family: 'Sono Var';
 	font-weight: 550;
-	// box-shadow: inset 0 0.05em 0.05em rgba(255,255,255,0.6),  /* top highlight */
-	// inset 0 -0.05em 0.08em rgba(0,0,0,.5),		  /* bottom inner shadow  */
-	// inset 0 -0.01em 0.5em rgba(255,255,255,0.3),  /* bottom underlight  */
-	// 0 .05em .1em rgba(0,0,0,.4);
 }
 header li.splash-mini span {
 	font-family: 'Maru Var';

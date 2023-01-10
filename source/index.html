@@ -127,31 +127,64 @@
 					</svg>
 				</a>
 				<ul>
-					<li id="test-sample" style="background: rgb(182, 159, 16)">
-						<div id="test-test"></div>
-						<p id="ttt">Sample Article Title 2</p>
-						<div id="test-test-end"></div>
-					</li>
-					<li id="ff" style="background-color: #5c43c8;">
-						<div></div>
-						<p>Macintosh in the Twentieth Century</p>
-						<div></div>
-					</li>
-					<li style="background-color: #3197e7;">
-						<div></div>
-						<p>The Apollo Moon Landing and Consequences</p>
-						<div></div>
-					</li>
-					<li style="background-color: #6f7a8c;">
-						<div></div>
-						<p>What I Would Tell Kan(YE)</p>
-						<div></div>
-					</li>
-					<li class="splash-mini">
-						<div></div>
-						<p>Delight&&Meaning <span>• That's my <a href="">goal</a></span></p>
-						<div></div>
-					</li>
+					<div class="copy1">
+						<a href="">
+							<li id="test-sample" style="background: rgb(182, 159, 16)">
+								<p id="ttt">Welcome to an All-New Site</p>
+							</li>
+						</a>
+						<a href="">
+							<li id="ff" style="background-color: #5c43c8;">
+							<p>Macintosh in the Twentieth Century</p>
+							</li>
+						</a>
+						<a href="">
+							<li style="background-color: #3197e7;">
+								<div></div>
+								<p>The Apollo Moon Landing and Consequences</p>
+								<div></div>
+							</li>
+						</a>
+						<a href="">
+							<li style="background-color: #6f7a8c;">
+								<p>What I Would Tell Kan(YE)</p>
+							</li>
+						</a>
+						<a href="">
+							<li class="splash-mini">
+								<p>Delight&&Meaning <span>• That's my goal</span></p>
+							</li>
+						</a>
+					</div>
+					<div class="copy2 hide">
+						<a href="">
+							<li id="test-sample" style="background: rgb(182, 159, 16)">
+								<p id="ttt">Welcome to an All-New Site</p>
+							</li>
+						</a>
+						<a href="">
+							<li id="ff" style="background-color: #5c43c8;">
+							<p>Macintosh in the Twentieth Century</p>
+							</li>
+						</a>
+						<a href="">
+							<li style="background-color: #3197e7;">
+								<div></div>
+								<p>The Apollo Moon Landing and Consequences</p>
+								<div></div>
+							</li>
+						</a>
+						<a href="">
+							<li style="background-color: #6f7a8c;">
+								<p>What I Would Tell Kan(YE)</p>
+							</li>
+						</a>
+						<a href="">
+							<li class="splash-mini">
+								<p>Delight&&Meaning <span>• That's my goal</span></p>
+							</li>
+						</a>
+					</div>
 				</ul>
 				<a href="/more">
 					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -464,22 +497,31 @@
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Header, Marquee
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			function testScrollHeader () {
-				let myDiv = document.querySelector('header ul')
-				gsap.to(myDiv, {duration: 2, scrollTo: {y: 0, x: 200}})
-				console.log('aaa')
-			}
+			document.querySelector('header ul div.copy2').classList.remove('hide')
 			
-			// ScrollTrigger.create({
-			// 	trigger: 'header ul',
-			// 	scroller: 'header ul',
-			// 	horizontal: true,
-			// 	pin: '#trigger #test-sample',
-			// 	start: 'left',
-			// 	endTrigger: '#ff',
-			// 	end: 'left left'
-			// 	// markers: true
-			// })
+			const headerScroller = document.querySelector('header ul')
+			const headerContent1 = document.querySelector('header ul div.copy1')
+			const headerContent2 = document.querySelector('header ul div.copy2')
+			
+			const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
+			let speed = 60
+			let scrollDuration = scrollEnd / speed
+			
+			let headerScrollTimeline = gsap.timeline()
+			headerScrollTimeline.to(headerScroller, {
+					scrollTo: {y: 0, x: scrollEnd, autoKill: true},
+					duration: scrollDuration,
+					delay: 2,
+					ease: 'linear'
+				})
+			headerScrollTimeline.play()
+			
+			headerScroller.addEventListener('mouseover', () => {
+				headerScrollTimeline.pause()
+			})
+			headerScroller.addEventListener('mouseout', () => {
+				headerScrollTimeline.play()
+			})
 			/* Header, Marquee [End] */
 			
 			

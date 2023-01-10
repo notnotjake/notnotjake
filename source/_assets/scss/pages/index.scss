@@ -43,7 +43,6 @@ Overscrolls
 	z-index: -3;
 	background-image: linear-gradient(to top, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
 }
-
 .overscroll-bottom {
 	height: 300px;
 	width: 100%;
@@ -325,17 +324,36 @@ article.sentence {
 article.sentence h1 {
 	font-family: 'Pressura Var', 'Maru Var', sans-serif;
 	font-variation-settings: "wght" 490, "wdth" 110, "ital" 0.15;
-	font-size: 1.6em;
+	font-size: 1.7em;
+	line-height: 1.5;
 	font-weight: 550;
 	letter-spacing: 0.0em;
-	max-width: 50ch;
+	max-width: 57ch;
+	text-align: center;
 }
 article.sentence h1 span {
-	background: #d6d7d8;
+	background: hsl(0, 0%, 89%);
 	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
-	padding: 4px 5px 2px;
+	padding: 4px 8px 2px;
 	border-radius: 6px;
 	color: black;
+	white-space: nowrap;
+}
+article.sentence svg {
+	height: 1em;
+	display: inline;
+	width: 1em;
+	margin: 0 0.05em -0.15em;
+}
+article.sentence img {
+	height: 1em;
+	width: 1em;
+	display: inline;
+	object-fit: contain;
+	margin: 0 0.05em -0.15em;
+}
+#E01 {
+	
 }
 article.sentence > p {
 	text-align: center;

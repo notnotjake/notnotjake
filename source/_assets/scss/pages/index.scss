@@ -99,7 +99,8 @@ header > a {
 	padding: 10px;
 	display: flex;
 	align-items: center;
-	-webkit-backdrop-filter: blur(2px);
+	backdrop-filter: blur(3px);
+	-webkit-backdrop-filter: blur(3px);
 }
 header > a:nth-of-type(1) {
 	left: 0;

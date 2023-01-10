@@ -459,7 +459,7 @@ div.footer {
 	height: 370px;
 	position: relative;
 	width: 100%;
-	padding-top: 60px;
+	padding-top: 90px;
 }
 div.footer > div.links {
 	display: flex;
@@ -471,8 +471,12 @@ div.footer > div.links {
 div.footer svg {
 	height: 31px;
 	width: 31px;
-	color: #656D84;
+	color: #88adc4;
 	fill: currentColor;
+}
+div.footer > div.links a:hover svg {
+	color: #2172b9;
+	transition: color 300ms;
 }
 .footer-wrapper {
 	position: absolute;

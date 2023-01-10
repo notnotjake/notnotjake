@@ -391,6 +391,16 @@
 			gsap.registerPlugin(CustomEase)
 			
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Prefers Reduced Motion
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			// const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+			// if (!mediaQuery || mediaQuery.matches) {
+			// 	doSomethingWithoutAnimation();
+			// } else {
+			// 	doSomethingWithAnimation();
+			// }
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Splash
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 			// Scroll Hinting
@@ -494,34 +504,89 @@
 			}
 			/* Splash [End] */
 			
+			
+			
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Header, Marquee
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 			document.querySelector('header ul div.copy2').classList.remove('hide')
 			
+			const header = document.querySelector('header')
 			const headerScroller = document.querySelector('header ul')
 			const headerContent1 = document.querySelector('header ul div.copy1')
 			const headerContent2 = document.querySelector('header ul div.copy2')
 			
+			const speed = 60 // Set the horiz. scroll speed for marquee
 			const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
-			let speed = 60
 			let scrollDuration = scrollEnd / speed
 			
-			let headerScrollTimeline = gsap.timeline()
-			headerScrollTimeline.to(headerScroller, {
+			
+			if ( !window.matchMedia("(prefers-reduced-motion: reduce)").matches ) {
+				// Only continues if Prefers-Reduced-Motion is OFF
+				
+				function scrollHandler ( arg ) {
+					// This might help by abstracting the scroll functionality and allowing it to be modified by anyone at any time. Should be more reliable (?)
+					
+				}
+				
+				
+				/* On Load: Start scroll
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				// On load: start scrolling to end, after 2s delay
+				let headerScrollTimelineDefault = gsap.timeline()
+				headerScrollTimelineDefault.to(headerScroller, {
+					scrollTo: {y:0, x: 20, autoKill: true},
+					duration: 1.9,
+					delay: 1.9,
+					ease: 'power3.in'
+				})
+				headerScrollTimelineDefault.to(headerScroller, {
 					scrollTo: {y: 0, x: scrollEnd, autoKill: true},
 					duration: scrollDuration,
-					delay: 2,
 					ease: 'linear'
 				})
-			headerScrollTimeline.play()
+				headerScrollTimelineDefault.play()
+				
+				/* Hover: stop scrolling with ease-out
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				header.addEventListener('mouseenter', () => {
+					console.log('Mouse Enter')
+					
+					headerScrollTimelineDefault.kill()
+					
+					let scrollEase = headerScroller.scrollLeft + 10
+					gsap.to(headerScroller, {
+						scrollTo: {x: scrollEase, y: 0, autoKill: true},
+						duration: 0.8,
+						ease: 'power3.out'
+					})
+				})
+				/* Hover-Out: start up new scroller
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				headerScroller.addEventListener('mouseleave', () => {
+					console.log('Mouse Exit')
+					
+					let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
+					scrollDuration = scrollDistanceToEnd / speed
+					
+					gsap.to(headerScroller, {
+						scrollTo: {x: scrollEnd, y: 0, autoKill: true},
+						duration: scrollDuration,
+						ease: 'linear'
+					})
+					
+				})
+			}
 			
-			headerScroller.addEventListener('mouseover', () => {
-				headerScrollTimeline.pause()
-			})
-			headerScroller.addEventListener('mouseout', () => {
-				headerScrollTimeline.play()
-			})
+			
+			/*
+			reliability issues. sometimes does not fire off correctly
+			mobile (touch) cancels scroll and no mouseleave to resume it - need to fix
+			
+			loop: when the end of self reaches beginning of scroll-area, move it to end of container and reset scroll to 0 at same time
+			
+			*/
+			
 			/* Header, Marquee [End] */
 			
 			

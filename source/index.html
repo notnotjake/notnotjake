@@ -129,7 +129,6 @@
 				<ul>
 					<li id="test-sample" style="background: rgb(182, 159, 16)">
 						<div id="test-test"></div>
-						<span></span>
 						<p id="ttt">Sample Article Title 2</p>
 						<div id="test-test-end"></div>
 					</li>
@@ -148,6 +147,11 @@
 						<p>What I Would Tell Kan(YE)</p>
 						<div></div>
 					</li>
+					<li class="splash-mini">
+						<div></div>
+						<p>Delight&&Meaning <span>• That's my <a href="">goal</a></span></p>
+						<div></div>
+					</li>
 				</ul>
 				<a href="/more">
 					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -159,7 +163,6 @@
 					</svg>
 				</a>
 			</header>
-			
 			
 			
 			<div class="graph">
@@ -193,9 +196,6 @@
 				<p>Worked on my new site<span>Jan 9</span></p>
 			</div>
 			
-			<div class="test-splash-mini">
-				<p>Delight&&Meaning • That's my <a href="">goal</a>.</p>
-			</div>
 			
 			<article class="sentence">
 				<h1>Dedicated to trying. I run <span>LightDance</span>, creating amazing websites for my clients. On Instagram, I share my art. My goal is to inspire and express love for mankind. Design and product drive everything I do.</h1>
@@ -278,8 +278,7 @@
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 			// Scroll Hinting
 			gsap.delayedCall(3.5, () => {
-				if ( document.documentElement.scrollTop < 10 ) {
-					console.log('aaa')
+				if ( document.documentElement.scrollTop < 10 && !document.querySelector('#splash').classList.contains('hide') ) {
 					// Scroll bounce
 					gsap.to(window, {
 						keyframes: [

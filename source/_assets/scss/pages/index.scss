@@ -140,10 +140,11 @@ header ul a {
 	white-space: nowrap;
 	text-decoration: none;
 	height: calc(100% - 15px);
+	transition: transform 500ms;
 }
 header ul a:hover {
 	transform: scale(1.01);
-	filter: brightness(1.1)
+	filter: brightness(1.1);
 }
 header li {
 	height: 100%;

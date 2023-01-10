@@ -331,20 +331,6 @@ article.sentence h1 {
 	max-width: 57ch;
 	text-align: center;
 }
-article.sentence h1 span {
-	background: hsl(0, 0%, 89%);
-	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
-	padding: 4px 8px 2px;
-	border-radius: 6px;
-	color: black;
-	white-space: nowrap;
-}
-article.sentence svg {
-	height: 1em;
-	display: inline;
-	width: 1em;
-	margin: 0 0.05em -0.15em;
-}
 article.sentence img {
 	height: 1em;
 	width: 1em;
@@ -352,9 +338,55 @@ article.sentence img {
 	object-fit: contain;
 	margin: 0 0.05em -0.15em;
 }
-#E01 {
-	
+
+article.sentence h1 span.expand {
+	background: hsl(0, 0%, 89%);
+	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
+	padding: 4px 8px 2px;
+	border-radius: 6px;
+	color: black;
+	white-space: nowrap;
 }
+article.sentence h1 span.expansion {
+	color: rgb(0, 0, 0);
+	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.5;
+	animation-name: expandIn;
+	animation-duration: 500ms; 
+}
+@keyframes expandIn {
+	0% { 
+		opacity: 0; 
+		color: rgb(0, 119, 255);
+		background: hsl(0, 0%, 89%);  
+	}
+	50% { 
+		opacity: 1; 
+		color: rgb(0, 119, 255); 
+		background: hsl(0, 0%, 89%, 60%);
+	}
+	100% { 
+		opacity: 1; 
+		color: black; 
+		background: hsl(0, 0%, 89%, 0%);
+	}
+}
+article.sentence h1 span.define {
+	// text-decoration: underline;
+	border-bottom: 2px dotted rgb(157, 157, 157);
+}
+article.sentence h1 span.definition {
+	// display: none;
+	border-bottom: 2px dotted rgb(157, 157, 157);
+	color: rgb(86, 86, 86);
+	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+}
+article.sentence button {
+	border: none;
+	background: none;
+	cursor: cell;
+	color: unset;
+}
+
 article.sentence > p {
 	text-align: center;
 	color: hsl(0, 0%, 43%);

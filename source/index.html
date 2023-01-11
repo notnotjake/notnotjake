@@ -228,7 +228,11 @@
 			
 			<div class="graph-hover">
 				<div class="container">
-					<div class="test activity hide" id="gt-01-05-23">
+					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
+						<img src="https://large-assets.notnotjake.com/images/index/test.jpeg" alt="">
+						<p>Worked on my new site<span class="date">Jan 9</span></p>
+					</div>
+					<div class="activity hide" id="gt-01-06-23" data-date="01-06-23">
 						<img src="https://large-assets.notnotjake.com/images/index/test.jpeg" alt="">
 						<p>Worked on my new site<span class="date">Jan 9</span></p>
 					</div>
@@ -640,13 +644,18 @@
 				const graphDays = [...document.querySelectorAll('div.graph a')]
 				
 				graphDays.forEach( (a) => {
+					// get a's data-date
+					let date = a.dataset.date
+					let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+					
+					let targetElemDate = '01-05-23'
+					let targetSelector = 'div.graph-hover div.activity[data-date="' + targetElemDate + '"]'
+					
 					a.addEventListener('mouseenter', () => {
-						// get a's data-date
-						// find the activity card with same data-date, then show it
-						document.querySelector('div.graph-hover div.activity').classList.remove('hide')
+						document.querySelector(targetSelector).classList.remove('hide')
 					})
 					a.addEventListener('mouseleave', () => {
-						document.querySelector('div.graph-hover div.activity').classList.add('hide')
+						document.querySelector(targetSelector).classList.add('hide')
 					})
 				})
 			})

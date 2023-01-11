@@ -245,10 +245,7 @@ div.graph a:hover {
 	transition: filter 0ms;
 }
 @media not all and (hover: hover) {
-	div.test {
-		display: none;
-	}
-	div.graph a div.activity {
+	div.graph-hover {
 		display: none;
 	}
 	div.graph a:hover {

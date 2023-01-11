@@ -219,6 +219,15 @@ div.graph a.med {
 div.graph a.low {
 	background-color: #87D894;
 }
+div.graph p.label {
+	display: block;
+	min-height: 32px;
+	width: 32px;
+	margin-top: -5px;
+	vertical-align: top;
+	white-space: nowrap;
+	overflow-y: visible;
+}
 
 div.graph a:hover {
 	border: 2px solid #1ca6ff;
@@ -259,6 +268,18 @@ div.graph a p span.date {
 }
 div.graph a p span.level {
 	color: #30d079;
+}
+
+@media not all and (hover: hover) {
+	div.test {
+		display: none;
+	}
+	div.graph a div.activity {
+		display: none;
+	}
+	div.graph a:hover {
+		border: none;
+	}
 }
 
 div.test {

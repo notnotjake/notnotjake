@@ -66,7 +66,7 @@
 			}
 		</style>
 		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin="">
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin="">
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2" type="font/woff2" crossorigin="">
 		<!-- Fonts [End] -->
 		
 		<!-- Appearance-->
@@ -229,7 +229,14 @@
 			<div class="graph-hover">
 				<div class="container">
 					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
-						<img src="https://large-assets.notnotjake.com/images/index/test.jpeg" alt="">
+						<picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<picture class="loading-lazy">
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
+						</picture>
 						<p>Worked on my new site<span class="date">Jan 9</span></p>
 					</div>
 					<div class="activity hide" id="gt-01-06-23" data-date="01-06-23">
@@ -395,21 +402,9 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/CustomEase.min.js"></script>
 		<script>
 			gsap.registerPlugin(ScrollTrigger)
 			gsap.registerPlugin(ScrollToPlugin)
-			gsap.registerPlugin(CustomEase)
-			
-			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Prefers Reduced Motion
-			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			// const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-			// if (!mediaQuery || mediaQuery.matches) {
-			// 	doSomethingWithoutAnimation();
-			// } else {
-			// 	doSomethingWithAnimation();
-			// }
 			
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Splash
@@ -433,24 +428,40 @@
 			function splashScroll (e) {
 				console.log('Scroll Event')
 				
+				let splashEndY = document.querySelector('#splash').offsetHeight
+				
 				if ( document.querySelector('#splash').classList.contains('hide') ) {
 					window.removeEventListener('scroll', splashScroll)
 					return
 				}
-				else if ( window.scrollY < 300 ) {
+				else if ( window.scrollY < 250 ) {
 					document.body.style.background = '#54258F'
 				}
-				// else if ( window.scrollY > 300 && window.scrollY < 400 ) {
-				// 	gsap.to(window, {scrollTo: 'header',duration: 0.1})
-				// 	testingMove()
-				// }
+				else if ( window.scrollY > 250 && window.scrollY <= splashEndY ) {
+					scrollPastSplash()
+				}
 				else {
 					document.body.style.background = '#edf0f0'
 				}
 				
+				
+				
+				
+				// If we scroll past the element, then remove it
+				// if ( window.scrsollY > splashEndY ) {
+				// 	
+				// }
+				
 			}
 			window.addEventListener('scroll', splashScroll)
 			
+			function scrollPastSplash () {
+				window.removeEventListener('scroll', splashScroll)
+				
+				testingMove()
+				// gsap.to(window, {scrollTo: 'header',duration: 1})
+				// gsap.delayedCall(1, testingMove)
+			}
 			
 			// Testing func for moving splash out of the way
 			function testingMove () {
@@ -463,7 +474,7 @@
 				console.log('Target: ' + scrollTo)
 				
 				gsap.to(window, {
-					scrollTo: scrollTo,
+					scrollTo: {x: scrollTo, y: 0, autoKill: false, ease: 'power2.in'},
 					duration: 1
 				})
 				gsap.to('#splash', {
@@ -520,20 +531,20 @@
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Header, Marquee
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			document.querySelector('header ul div.copy2').classList.remove('hide')
-			
-			const header = document.querySelector('header')
-			const headerScroller = document.querySelector('header ul')
-			const headerContent1 = document.querySelector('header ul div.copy1')
-			const headerContent2 = document.querySelector('header ul div.copy2')
-			
-			const speed = 60 // Set the horiz. scroll speed for marquee
-			const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
-			let scrollDuration = scrollEnd / speed
-			
-			
 			if ( !window.matchMedia("(prefers-reduced-motion: reduce)").matches ) {
-				// Only continues if Prefers-Reduced-Motion is OFF
+				/* Only continues if Prefers-Reduced-Motion is OFF
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				
+				document.querySelector('header ul div.copy2').classList.remove('hide')
+				
+				const header = document.querySelector('header')
+				const headerScroller = document.querySelector('header ul')
+				const headerContent1 = document.querySelector('header ul div.copy1')
+				const headerContent2 = document.querySelector('header ul div.copy2')
+				
+				const speed = 60 // Set the horiz. scroll speed for marquee
+				const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
+				let scrollDuration = scrollEnd / speed
 				
 				function scrollHandler ( arg ) {
 					// This might help by abstracting the scroll functionality and allowing it to be modified by anyone at any time. Should be more reliable (?)
@@ -602,14 +613,11 @@
 					})
 				})
 			}
-			
-			
-			
-			
 			/*
 			reliability issues. sometimes does not fire off correctly
 			
 			i believe issue is if mouseleave triggers before the animation completes from mouseenter
+			another issue is where it won't stop...
 			
 			try: creating a timeline which can then be controlled by both listeners
 			mobile (touch) cancels scroll and no mouseleave to resume it - need to fix
@@ -619,6 +627,10 @@
 			*/
 			
 			/* Header, Marquee [End] */
+			
+			
+			
+			
 			
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Graph Hover
@@ -661,14 +673,14 @@
 			})
 			/* Graph Hover [End] */
 			
-			function is_touch_enabled() {
-				return ( 'ontouchstart' in window ) ||
-					   ( navigator.maxTouchPoints > 0 ) ||
-					   ( navigator.msMaxTouchPoints > 0 );
-			}
-			
-			if ( is_touch_enabled() ) {
-			}
+			// function is_touch_enabled() {
+			// 	return ( 'ontouchstart' in window ) ||
+			// 		   ( navigator.maxTouchPoints > 0 ) ||
+			// 		   ( navigator.msMaxTouchPoints > 0 );
+			// }
+			// 
+			// if ( is_touch_enabled() ) {
+			// }
 		</script>
 		<!-- GSAP Animations, Scrolling [End] -->
 	</body>

@@ -201,20 +201,15 @@
 				<div class="flex">
 					<div class="week-0">
 						<p class="label">Now</p>
-						<a href="" class="future"></a>
-						<a href="" class="future"></a>
-						<a href="" class="high">
-							<div class="activity">
-								<img src="https://large-assets.notnotjake.com/images/finding-our-way/morning.jpg" alt="">
-								<p class="date"><span class="level">Productive Day</span><span class="date">Jan 9</span></p>
-							</div>
-						</a>
-						<a href="" class="med"></a>
-						<a href="" class="low"></a>
-						<a href="" class="release">
+						<a href="" class="future" id="gd-01-07-23" data-date="01-07-23"></a>
+						<a href="" class="future" id="gd-01-06-23" data-date="01-06-23"></a>
+						<a href="" class="high" id="gd-01-05-23" data-date="01-05-23"></a>
+						<a href="" class="med" id="gd-01-04-23" data-date="01-04-23"></a>
+						<a href="" class="low" id="gd-01-03-23" data-date="01-03-23"></a>
+						<a href="" class="release" id="gd-01-02-23" data-date="01-02-23">
 							<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="">
 						</a>
-						<a href=""></a>
+						<a href="" id="gd-01-01-23" data-date="01-01-23"></a>
 					</div>
 					{% for week in weeks %}
 					<div class="week">
@@ -231,10 +226,19 @@
 				</div>
 			</div>
 			
-			<div class="test">
-				<img src="https://large-assets.notnotjake.com/images/finding-our-way/morning.jpg" alt="">
-				<p>Worked on my new site<span>Jan 9</span></p>
+			<div class="graph-hover">
+				<div class="container">
+					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
+						<img src="https://large-assets.notnotjake.com/images/index/test.jpeg" alt="">
+						<p>Worked on my new site<span class="date">Jan 9</span></p>
+					</div>
+					<div class="activity hide" id="gt-01-06-23" data-date="01-06-23">
+						<img src="https://large-assets.notnotjake.com/images/index/test.jpeg" alt="">
+						<p>Worked on my new site<span class="date">Jan 9</span></p>
+					</div>
+				</div>
 			</div>
+			
 			
 			
 			<article class="sentence">
@@ -604,6 +608,9 @@
 			
 			/*
 			reliability issues. sometimes does not fire off correctly
+			
+			i believe issue is if mouseleave triggers before the animation completes from mouseenter
+			
 			try: creating a timeline which can then be controlled by both listeners
 			mobile (touch) cancels scroll and no mouseleave to resume it - need to fix
 			
@@ -612,6 +619,47 @@
 			*/
 			
 			/* Header, Marquee [End] */
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Graph Hover
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			document.querySelector('div.graph').addEventListener('mouseenter', () => {
+				const activityCard = document.querySelector('div.graph-hover div.container')
+				
+				window.addEventListener('mousemove', (e) => {
+					// Uses mouse position to place activity-card on x-axis
+					const windowWidth = window.innerWidth
+					const mouseX = e.clientX
+					
+					if ( mouseX < (windowWidth * 0.5) ) { // On Left Side
+						const offsetX = mouseX + 30
+						activityCard.style.left = offsetX + "px"
+					}
+					else if ( mouseX >= (windowWidth * 0.5) ) { // On Right Side
+						const offsetX = mouseX - 190
+						activityCard.style.left = offsetX + "px"
+					}
+				})
+				
+				const graphDays = [...document.querySelectorAll('div.graph a')]
+				
+				graphDays.forEach( (a) => {
+					// get a's data-date
+					let date = a.dataset.date
+					let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+					
+					let targetElemDate = '01-05-23'
+					let targetSelector = 'div.graph-hover div.activity[data-date="' + targetElemDate + '"]'
+					
+					a.addEventListener('mouseenter', () => {
+						document.querySelector(targetSelector).classList.remove('hide')
+					})
+					a.addEventListener('mouseleave', () => {
+						document.querySelector(targetSelector).classList.add('hide')
+					})
+				})
+			})
+			/* Graph Hover [End] */
 			
 			function is_touch_enabled() {
 				return ( 'ontouchstart' in window ) ||

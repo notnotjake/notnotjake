@@ -295,10 +295,35 @@ div.graph a p span.level {
 	}
 }
 
+div.graph div.more {
+	height: calc( 100% - 32px );
+	width: 200px;
+	margin-right: 10px;
+	background: rgba(219, 219, 219, 0.3);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	gap: 14px;
+}
+div.graph div.more a {
+	// width: 200px;
+	width: fit-content;
+	white-space: nowrap;
+	background: rgba(219, 219, 219, 0.6);
+	font-weight: 550;
+	text-align: center;
+	padding: 4px 20px;
+	border-radius: 10px;
+	font-size: 1em;
+}
+
 div.test {
 	margin-left: 20px;
 	position: absolute;
 	margin-top: -250px;
+	display: none;
 }
 div.test img {
 	width: 150px;

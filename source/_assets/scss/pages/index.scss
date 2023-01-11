@@ -209,6 +209,7 @@ div.graph a {
 	height: 32px;
 	background-color: #D6D7D8;
 	border-radius: 2px;
+	transition: filter 900ms;
 }
 div.graph a.high {
 	background-color: #1576FF;
@@ -219,12 +220,32 @@ div.graph a.med {
 div.graph a.low {
 	background-color: #87D894;
 }
-
-div.graph a:hover {
-	border: 2px solid #1ca6ff;
+div.graph a.release img {
+	width: 28px;
+	height: 28px;
+	object-fit: contain;
+	margin-left: 2px;
+	margin-top: 2px;
+}
+div.graph a.future {
+	background: rgba(231, 231, 231, 1);
+}
+div.graph p.label {
+	display: block;
+	min-height: 32px;
+	width: 32px;
+	margin-top: -5px;
+	vertical-align: top;
+	white-space: nowrap;
+	overflow-y: visible;
 }
 
-div.graph a img {
+div.graph a:hover {
+	filter: brightness(0.9);
+	transition: filter 0ms;
+}
+
+div.graph div.activity a img {
 	width: 150px;
 	height: 180px;
 	object-fit: cover;
@@ -238,6 +259,7 @@ div.graph a div.activity {
 	right: 0;
 	margin-left: -200px;
 	z-index: 2;
+	display: none;
 }
 div.graph a p {
 	font-size: 0.8em;
@@ -261,10 +283,47 @@ div.graph a p span.level {
 	color: #30d079;
 }
 
+@media not all and (hover: hover) {
+	div.test {
+		display: none;
+	}
+	div.graph a div.activity {
+		display: none;
+	}
+	div.graph a:hover {
+		border: none;
+	}
+}
+
+div.graph div.more {
+	height: calc( 100% - 32px );
+	width: 200px;
+	margin-right: 10px;
+	background: rgba(219, 219, 219, 0.3);
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	gap: 14px;
+}
+div.graph div.more a {
+	// width: 200px;
+	width: fit-content;
+	white-space: nowrap;
+	background: rgba(219, 219, 219, 0.6);
+	font-weight: 550;
+	text-align: center;
+	padding: 4px 20px;
+	border-radius: 10px;
+	font-size: 1em;
+}
+
 div.test {
 	margin-left: 20px;
 	position: absolute;
 	margin-top: -250px;
+	display: none;
 }
 div.test img {
 	width: 150px;

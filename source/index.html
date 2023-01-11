@@ -197,10 +197,12 @@
 				</a>
 			</header>
 			
-			
 			<div class="graph">
 				<div class="flex">
 					<div class="week-0">
+						<p class="label">Now</p>
+						<a href="" class="future"></a>
+						<a href="" class="future"></a>
 						<a href="" class="high">
 							<div class="activity">
 								<img src="https://large-assets.notnotjake.com/images/finding-our-way/morning.jpg" alt="">
@@ -209,18 +211,23 @@
 						</a>
 						<a href="" class="med"></a>
 						<a href="" class="low"></a>
-						<a href="" class="release"></a>
-						<a href=""></a>
-						<a href=""></a>
+						<a href="" class="release">
+							<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="">
+						</a>
 						<a href=""></a>
 					</div>
 					{% for week in weeks %}
 					<div class="week">
+						<p class="label">{{ week[1] }}</p>
 						{% for day in days %}
 							<a href=""></a>
 						{% endfor %}
 					</div>
 					{% endfor %}
+					<div class="more">
+						<a href="">More Graphs</a>
+						<a href="">History</a>
+					</div>
 				</div>
 			</div>
 			
@@ -576,11 +583,28 @@
 					})
 					
 				})
+				/* Finger-Up: when touch event ends, start up new scroller
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				headerScroller.addEventListener('touchend', () => {
+					let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
+					scrollDuration = scrollDistanceToEnd / speed
+					
+					gsap.delayedCall(0.5, () => {
+						gsap.to(headerScroller, {
+							scrollTo: {x: scrollEnd, y: 0, autoKill: true},
+							duration: scrollDuration,
+							ease: 'linear'
+						})
+					})
+				})
 			}
+			
+			
 			
 			
 			/*
 			reliability issues. sometimes does not fire off correctly
+			try: creating a timeline which can then be controlled by both listeners
 			mobile (touch) cancels scroll and no mouseleave to resume it - need to fix
 			
 			loop: when the end of self reaches beginning of scroll-area, move it to end of container and reset scroll to 0 at same time
@@ -589,7 +613,14 @@
 			
 			/* Header, Marquee [End] */
 			
+			function is_touch_enabled() {
+				return ( 'ontouchstart' in window ) ||
+					   ( navigator.maxTouchPoints > 0 ) ||
+					   ( navigator.msMaxTouchPoints > 0 );
+			}
 			
+			if ( is_touch_enabled() ) {
+			}
 		</script>
 		<!-- GSAP Animations, Scrolling [End] -->
 	</body>

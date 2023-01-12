@@ -79,7 +79,14 @@ header {
 	height: 50px;
 	width: 100%;
 	left: 0;
-	// background-color: red;
+	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0) 60%);
+}
+.header-background-animation::before {
+	content: "";
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	left: 0;
 	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0) 60%);
 	animation-name: header-background;
 	animation-duration: 1s;
@@ -102,12 +109,15 @@ header > a {
 	backdrop-filter: blur(3px);
 	-webkit-backdrop-filter: blur(3px);
 }
-header > a:nth-of-type(1) {
+header > a.home-button {
 	left: 0;
+	border-radius: 0 50px 50px 0;
 }
-header > a:nth-of-type(2) {
+header > a.more-button {
 	right: 0;
+	border-radius: 50px 0 0 50px;
 }
+
 header svg {
 	height: 21px;
 	width: 21px;
@@ -172,6 +182,12 @@ header li.splash-mini span {
 	font-size: 0.9em;
 	color: rgba(255, 255, 255, 0.91);
 	font-style: italic;
+}
+
+@media (max-width: 750px) {
+	header > a.more-button {
+		display: none;
+	}
 }
 /* Header [End] */
 
@@ -281,7 +297,7 @@ div.graph-hover {
 	width: 100%;
 	padding: 10px;
 	height: 260px;
-	transform: translateY(-300px);
+	transform: translateY(-306px);
 	pointer-events: none;
 }
 div.graph-hover div.container {
@@ -289,13 +305,17 @@ div.graph-hover div.container {
 }
 div.graph-hover div.activity {
 	width: 160px;
+	height: 254px;
 	opacity: 0;
 	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	animation-name: fadeCardIn;
 	animation-duration: 400ms;
 	animation-delay: 150ms;
 	animation-fill-mode: forwards;
-	// position: absolute;
 }
 @keyframes fadeCardIn {
 	0% { opacity: 0; }
@@ -667,19 +687,12 @@ Splash (New Visitor)
 	font-family: 'Sono Var', sans-serif;
 	text-align: center;
 }
-.anim_scroll-off {
-	animation-name: splash-scroll-off;
-	animation-duration: 1.3s;
-}
-@keyframes splash-scroll-off {
-	0% { margin-top: 0; }
-	100% { margin-top: -100%; }
-}
 #splash .site-title {
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	z-index: 5;
 
 	font-family: 'Courier', 'Courier Prime', monospace;
 	font-size: 50px;

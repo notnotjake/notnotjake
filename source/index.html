@@ -116,8 +116,9 @@
 		<div class="overscroll-top_mobile"></div>
 		
 		<div class="wrapper">
+			
 			<header class="header-background">
-				<a href="https://www.notnotjake.com">
+				<a href="https://www.notnotjake.com" class="home-button">
 					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 							<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
@@ -184,9 +185,14 @@
 								<p>Delight&&Meaning <span>• That's my goal</span></p>
 							</li>
 						</a>
+						<a href="">
+							<li class="">
+								<p>Older Posts</p>
+							</li>
+						</a>
 					</div>
 				</ul>
-				<!-- <a href="/more">
+				<a href="/more" class="more-button">
 					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
 							<g transform="translate(-21.000000, -21.000000)" fill="#ACACAC">
@@ -194,7 +200,7 @@
 							</g>
 						</g>
 					</svg>
-				</a> -->
+				</a>
 			</header>
 			
 			<div class="graph">
@@ -237,10 +243,6 @@
 							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
 							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
 						</picture>
-						<p>Worked on my new site<span class="date">Jan 9</span></p>
-					</div>
-					<div class="activity hide" id="gt-01-06-23" data-date="01-06-23">
-						<img src="https://large-assets.notnotjake.com/images/index/test.jpeg" alt="">
 						<p>Worked on my new site<span class="date">Jan 9</span></p>
 					</div>
 				</div>
@@ -357,8 +359,12 @@
 			if ( document.cookie == '' ) {
 				document.cookie = 'crumb'
 				document.querySelector('#splash').classList.remove('hide')
+			}
+			if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				document.body.style.background = '#54258F'
 				document.querySelector('header').classList.remove('header-background')
+				document.querySelector('.overscroll-top').style.display = 'none'
+				document.querySelector('.overscroll-top_mobile').style.display= 'none'
 			}
 		</script>
 		<!-- Cookie Decision [End] -->
@@ -406,125 +412,92 @@
 			gsap.registerPlugin(ScrollTrigger)
 			gsap.registerPlugin(ScrollToPlugin)
 			
-			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			Splash
+			
+			/* Check for PREFERS-REDUCED-MOTION
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			// Scroll Hinting
-			gsap.delayedCall(3.5, () => {
-				if ( document.documentElement.scrollTop < 10 && !document.querySelector('#splash').classList.contains('hide') ) {
-					// Scroll bounce
-					gsap.to(window, {
-						keyframes: [
-							{scrollTo: '50', ease: 'Power1.easeOut', duration: 0.4},
-							{scrollTo: '0', ease: 'Power3.easeIn', duration: 0.6}
-						]
-					})
-				}
-				// Show a scroll indicator
-				document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
-			})
-			
-			// Handle Scrolling Events
-			function splashScroll (e) {
-				console.log('Scroll Event')
-				
-				let splashEndY = document.querySelector('#splash').offsetHeight
-				
-				if ( document.querySelector('#splash').classList.contains('hide') ) {
-					window.removeEventListener('scroll', splashScroll)
-					return
-				}
-				else if ( window.scrollY < 250 ) {
-					document.body.style.background = '#54258F'
-				}
-				else if ( window.scrollY > 250 && window.scrollY <= splashEndY ) {
-					scrollPastSplash()
-				}
-				else {
-					document.body.style.background = '#edf0f0'
-				}
-				
-				
-				
-				
-				// If we scroll past the element, then remove it
-				// if ( window.scrsollY > splashEndY ) {
-				// 	
-				// }
-				
-			}
-			window.addEventListener('scroll', splashScroll)
-			
-			function scrollPastSplash () {
-				window.removeEventListener('scroll', splashScroll)
-				
-				testingMove()
-				// gsap.to(window, {scrollTo: 'header',duration: 1})
-				// gsap.delayedCall(1, testingMove)
+			let prefersReducedMotion = false // Defaults to false
+			if ( window.matchMedia("(prefers-reduced-motion: reduce)").matches ) {
+				prefersReducedMotion = true
 			}
 			
-			// Testing func for moving splash out of the way
-			function testingMove () {
-				const splashHeight = document.querySelector('#splash').offsetHeight * -1
-				console.log('El Height: ' + splashHeight)
-				
-				const scrollPos = document.documentElement.scrollTop
-				console.log('Scroll Start: ' + scrollPos)
-				let scrollTo = scrollPos + splashHeight
-				console.log('Target: ' + scrollTo)
-				
-				gsap.to(window, {
-					scrollTo: {x: scrollTo, y: 0, autoKill: false, ease: 'power2.in'},
-					duration: 1
-				})
-				gsap.to('#splash', {
-					marginTop: splashHeight,
-					duration: 1,
-					onComplete: () => {
-						document.querySelector('#splash').classList.add('hide')
-						document.body.style.background = '#edf0f0'
-					}
-				})
-			}
-			
-			
-			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Splash (if visible)
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 			if ( !document.querySelector('#splash').classList.contains('hide') ) {
-				document.body.style.background = '#54258F'
+				
 				document.querySelector('header').classList.remove('header-background')
 				
-				// Change Background Color When Scrolling
-				window.addEventListener('scroll', () => {
-					if (window.scrollY > 300 && !document.querySelector('#splash').classList.contains('hide') ) {
-						document.body.style.background = '#edf0f0'
+				/* Scroll Hint Bounce (after 3.5s if under 10px scrolled)
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				gsap.delayedCall(3.1, () => {
+					if ( document.documentElement.scrollTop < 10 && !document.querySelector('#splash').classList.contains('hide') && !prefersReducedMotion ) {
+						// Scroll bounce
+						gsap.to(window, {
+							keyframes: [
+								{scrollTo: '50', ease: 'Power1.easeOut', duration: 0.4},
+								{scrollTo: '0', ease: 'Power3.easeIn', duration: 0.6}
+							]
+						})
 					}
-					else if ( !document.querySelector('#splash').classList.contains('hide') ) {
+					// Show a scroll indicator
+					document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
+				})
+				
+				/* Scroll Handler: triggers at 250px scroll-y
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				function splashScroll (e) {
+					let scrollTriggerY = 250
+					let splashEndY = document.querySelector('#splash').offsetHeight
+					
+					if ( document.querySelector('#splash').classList.contains('hide') ) {
+						window.removeEventListener('scroll', splashScroll)
+						return
+					}
+					else if ( window.scrollY < scrollTriggerY ) {
 						document.body.style.background = '#54258F'
 					}
-				})
-				
-				
-				// Handle Splash when exiting view
-				ScrollTrigger.create({
-					trigger: "header",
-					start: 'top 20',
-					onEnter: () => {
-						// Header Background Gradient
-						document.querySelector('header').classList.add('header-background')
-						// Remove splash section
-						// gsap.to("#splash", {
-						// 	duration: 1,
-						// 	top: 0,
-						// 	yPercent: -100
-						// })
-						// gsap.delayedCall(1.5, () => {
-						// 	document.querySelector('#splash').classList.add('hide')
-						// })
+					else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
+						scrollPastSplash()
 					}
-				})
+					else {
+						document.body.style.background = '#edf0f0'
+					}
+					
+				}
+				window.addEventListener('scroll', splashScroll)
 				
+				// Function called by scroll handler
+				function scrollPastSplash () {
+					window.removeEventListener('scroll', splashScroll)
+					
+					const splashHeight = document.querySelector('#splash').offsetHeight * -1
+					const scrollPos = document.documentElement.scrollTop
+					let scrollTo = scrollPos + splashHeight
+					
+					// Scroll to current position minus splash element's height
+					gsap.to(window, {
+						scrollTo: {x: scrollTo, y: 0, autoKill: false, ease: 'power2.in'},
+						duration: 1
+					})
+					
+					// Move splash element off top, then hide
+					gsap.to('#splash', {
+						marginTop: splashHeight,
+						duration: 1,
+						onComplete: () => {
+							document.querySelector('#splash').classList.add('hide')
+							document.body.style.background = '#edf0f0'
+							document.querySelector('header').classList.add('header-background-animation')
+							document.querySelector('.overscroll-top').style.display = 'block'
+							document.querySelector('.overscroll-top_mobile').style.display= 'block'
+						}
+					})
+				}
 			}
 			/* Splash [End] */
+			
+			
+			
 			
 			
 			

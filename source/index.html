@@ -260,44 +260,74 @@
 			</article>
 			
 			<main>
-				<div class="card latest-posts">
-					<h2>Latest Posts</h2>
-					<ul>
-						<li>Title</li>
-						<li>Title</li>
-						<li>Title</li>
-						<li><a href="">Older Posts</a></li>
-					</ul>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
+				<div class="scroll-container">
+					<div class="card latest-posts">
+						<h2>Latest Posts</h2>
+						<ul>
+							<li>Title</li>
+							<li>Title</li>
+							<li>Title</li>
+							<li><a href="">Older Posts</a></li>
+						</ul>
+					</div>
+					<div class="card">
+						<picture>
+							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
+							<img src="https://large-assets.notnotjake.com/images/finding-our-way/sharing-cover.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<p>Description</p>
+					</div>
+					<div class="card" id="roadmap">
+						<!-- <img src="https://large-assets.notnotjake.com/images/index/showcase-assets/repeatable-dot-background.png"> -->
+						<div class="image-container"></div>
+						<p>Description</p>
+					</div>
+					<div class="card">
+						<picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<p>Description</p>
+					</div>
+					<div class="card">
+						<picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<p>Description</p>
+					</div>
 				</div>
 			</main>
+			
+			<div class="last-note width-narrow">
+				<div class="container">
+					<div class="first-word">
+						<p>Learning</p>
+						<p>Inspiration</p>
+						<p>Research</p>
+						<p>Listening</p>
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+					</svg>
+					<div class="second-word">
+						<p>Thinking</p>
+						<p>Writing</p>
+						<p>Strategy</p>
+						<p>Insight</p>
+					</div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+					</svg>
+					<div class="third-word">
+						<p>Making</p>
+						<p>Product</p>
+						<p>Execution</p>
+						<p>Deliver</p>
+					</div>
+				</div>
+				<h1>It's a Constant Cycle</h1>
+			</div>
 			
 			<div class="footer">
 				
@@ -458,17 +488,24 @@
 						return
 					}
 					else if ( window.scrollY < scrollTriggerY ) {
-						document.body.style.background = '#54258F'
+						// document.body.style.background = '#54258F'
+						updateBodyBackground("#54258F")
 					}
 					else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 						scrollPastSplash()
 					}
 					else {
-						document.body.style.background = '#edf0f0'
+						// document.body.style.background = '#edf0f0'
+						updateBodyBackground("#edf0f0")
 					}
 					
 				}
 				window.addEventListener('scroll', splashScroll)
+				
+				// Function for changing the theme-color/body color
+				function updateBodyBackground ( arg ) {
+					gsap.to('body', { background: arg, duration: 1})
+				}
 				
 				// Function called by scroll handler
 				function scrollPastSplash () {
@@ -649,6 +686,76 @@
 				})
 			})
 			/* Graph Hover [End] */
+			
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Showcase
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			const showcase = document.querySelector('main div.scroll-container')
+			const showcaseCards = document.querySelector('main div.card')
+			
+			let showcaseTimeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: showcase,
+					start: "top 60%",
+					end: "center 40%",
+					// toggleActions: "play pause reverse reset",
+					scrub: 0.5,
+					snap: 0.5
+				}
+			})
+			showcaseTimeline.to('main div.scroll-container', {scale: 1}, 'showcase-start')
+			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')
+			showcaseTimeline.to('body', {background: "#516074"}, 'showcase-start')
+			
+			
+			ScrollTrigger.create({
+				trigger: showcase,
+				start: "center center",
+				onEnter: () => {
+					console.log("entered")
+				}
+			})
+			
+			
+			/* Showcase */
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Last Note
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			/*
+			need to animate the text up, then reorder without affecting the positions
+			*/
+			
+			// Convert ems 
+			
+			function testMove ( target ) {
+				const el = gsap.utils.toArray(target)
+				console.log(el)
+				
+				const move = -1 * document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
+				
+				gsap.to(".container .first-word p:nth-of-type(1)", {
+					y: move,
+					duration: 1.2
+				})
+			}
+			
+			/* Last Note [End] */
+			
+			
+			
+			
 			
 			// function is_touch_enabled() {
 			// 	return ( 'ontouchstart' in window ) ||

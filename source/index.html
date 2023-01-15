@@ -1,3 +1,6 @@
+---
+date: Last Modified
+---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -260,44 +263,82 @@
 			</article>
 			
 			<main>
-				<div class="card latest-posts">
-					<h2>Latest Posts</h2>
-					<ul>
-						<li>Title</li>
-						<li>Title</li>
-						<li>Title</li>
-						<li><a href="">Older Posts</a></li>
-					</ul>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
-				</div>
-				<div class="card">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-						<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-					</picture>
-					<p>Description</p>
+				<div class="scroll-container">
+					<div class="card latest-posts">
+						<h2>Latest Posts</h2>
+						<ul>
+							<li>Title</li>
+							<li>Title</li>
+							<li>Title</li>
+							<li><a href="">Older Posts</a></li>
+						</ul>
+					</div>
+					<div class="card">
+						<picture>
+							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
+							<img src="https://large-assets.notnotjake.com/images/finding-our-way/sharing-cover.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<p>Description</p>
+					</div>
+					<div class="card" id="roadmap">
+						<!-- <img src="https://large-assets.notnotjake.com/images/index/showcase-assets/repeatable-dot-background.png"> -->
+						<div class="image-container"></div>
+						<p>Description</p>
+					</div>
+					<div class="card">
+						<picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<p>Description</p>
+					</div>
+					<div class="card">
+						<picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+						</picture>
+						<p>Description</p>
+					</div>
 				</div>
 			</main>
+			
+			<div class="last-note hide" id="last-note">
+				<div class="container">
+					<div class="first-word">
+						<p>Learning</p>
+						<p>Research</p>
+						<p>Listening</p>
+						<p>Inspiration</p>
+						<p>Research</p>
+						<p>Inspiration</p>
+						<p>Listening</p>
+						<p>Learning</p>
+					</div>
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+					</svg> -->
+					<div class="second-word">
+						<p>Thinking</p>
+						<p>Strategy</p>
+						<p>Writing</p>
+						<p>Insight</p>
+					</div>
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+					</svg> -->
+					<div class="third-word">
+						<p>Sharing</p>
+						<p>Execution</p>
+						<p>Making</p>
+						<p>Product</p>
+						<p>Deliver</p>
+						<p>Execution</p>
+						<p>Making</p>
+						<p>Product</p>
+					</div>
+				</div>
+				<h1>Always trying to make it <span>real</span>. <strong>Follow along on my journey and see how</strong></h1>
+			</div>
 			
 			<div class="footer">
 				
@@ -458,17 +499,24 @@
 						return
 					}
 					else if ( window.scrollY < scrollTriggerY ) {
-						document.body.style.background = '#54258F'
+						// document.body.style.background = '#54258F'
+						updateBodyBackground("#54258F")
 					}
 					else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 						scrollPastSplash()
 					}
 					else {
-						document.body.style.background = '#edf0f0'
+						// document.body.style.background = '#edf0f0'
+						updateBodyBackground("#edf0f0")
 					}
 					
 				}
 				window.addEventListener('scroll', splashScroll)
+				
+				// Function for changing the theme-color/body color
+				function updateBodyBackground ( arg ) {
+					gsap.to('body', { background: arg, duration: 1})
+				}
 				
 				// Function called by scroll handler
 				function scrollPastSplash () {
@@ -649,6 +697,101 @@
 				})
 			})
 			/* Graph Hover [End] */
+			
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Showcase
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			const showcase = document.querySelector('main div.scroll-container')
+			const showcaseCards = document.querySelector('main div.card')
+			
+			let showcaseTimeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: showcase,
+					start: "top 60%",
+					end: "center 40%",
+					// toggleActions: "play pause reverse reset",
+					scrub: 0.5
+				}
+			})
+			showcaseTimeline.to('main div.scroll-container', {scale: 1}, 'showcase-start')
+			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')
+			showcaseTimeline.to('body', {background: "#516074"}, 'showcase-start')
+			
+			
+			ScrollTrigger.create({
+				trigger: showcase,
+				start: "center center",
+				onEnter: () => {
+					console.log("entered")
+				}
+			})
+			
+			
+			/* Showcase */
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Last Note
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			if ( !prefersReducedMotion ) {
+				document.querySelector('#last-note').classList.remove('hide')
+				
+				gsap.delayedCall(0, () => { wordCycle('div.last-note div.first-word p') })
+				gsap.delayedCall(1, () => { wordCycle('div.last-note div.second-word p') })
+				gsap.delayedCall(2, () => { wordCycle('div.last-note div.third-word p') })
+				
+				function wordCycle ( target ) {
+					const move = document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
+					const el = gsap.utils.toArray(target)
+					const length = el.length
+					
+					el.forEach( ( p, i ) => {
+						const pHeight = p.offsetHeight
+						
+						const hangTime = 4
+						const moveSpeed = 1
+						const nonoverlapDuration = moveSpeed + hangTime
+						const stagger = i * nonoverlapDuration
+						const delayBetween = (length * nonoverlapDuration) - nonoverlapDuration -1
+						
+						gsap.delayedCall(stagger, () => {
+							gsap.timeline({repeat: -1})
+								.to(p, {
+									y: pHeight,
+									opacity: 1,
+									duration: moveSpeed
+								}, 0)
+								.to(p, {
+									y: 2 * pHeight,
+									opacity: 0,
+									delay: hangTime,
+									duration: 1
+								}, '>')
+								.to(p, {
+									y: 0,
+									opacity: 0,
+									duration: delayBetween
+								}, '>')
+						})
+					})
+				}
+			}
+			
+			/* Last Note [End] */
+			
+			
+			
+			
 			
 			// function is_touch_enabled() {
 			// 	return ( 'ontouchstart' in window ) ||

@@ -522,9 +522,16 @@ main {
 	height: 50svh;
 	min-height: 200px;
 	padding: 10px 10px 18px;
+	overflow-y: scroll;
+	margin-bottom: 70px;
+}
+main div.scroll-container {
+	transform: scale(0.8);
+	transform-origin: left;
 	display: flex;
 	gap: 12px;
-	overflow-y: scroll;
+	height: 100%;
+	// background: #b6bfcb;
 }
 main div.card {
 	position: relative;
@@ -561,13 +568,24 @@ main div p {
 	position: sticky;
 	bottom: 0;
 }
+main div.card:hover {
+	transform: scale(1.01);
+	filter: brightness(1.01);
+}
+
 /* Showcase Cards [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Showcase Section: Latest Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 main div.card.latest-posts {
-	background: rgba(241, 231, 203, 1);
+	background: rgba(255, 200, 43, 1);
+	background-image: linear-gradient(to bottom,
+		hsl(44, 100%, 58%) 0%,
+		hsl(44, 99%, 87%) 20%,
+		hsl(44, 99%, 87%) 100%
+	);
+	aspect-ratio: 10/12;
 	padding: 14px 10px;
 	display: flex;
 	flex-direction: column;
@@ -575,6 +593,8 @@ main div.card.latest-posts {
 }
 main div.card.latest-posts h2 {
 	margin-bottom: 12px;
+	text-align: center;
+	width: 100%;
 }
 main div.card.latest-posts ul {
 	list-style: none;
@@ -587,9 +607,192 @@ main div.card.latest-posts li {
 
 /* Showcase Section: Latest Posts [End] */
 
+#roadmap {
+	background: rgb(233, 222, 189);
+	flex-direction: column;
+	// filter: brightness(1.1)
+}
+#roadmap div.image-container {
+	background-image: linear-gradient(to bottom,
+		rgb(254, 207, 66) 0%,
+		rgba(254, 207, 66, 0) 100%
+	);
+	filter: brightness(1.01);
+	overflow: hidden;
+	width: 100%;
+	height: 20%;
+	max-height: 160px;
+}
+#roadmap div.image-container::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	background-image: url("https://large-assets.notnotjake.com/images/index/showcase-assets/repeatable-dot-background.png");
+	background-repeat: repeat;
+	background-size: 25px;
+	transform: rotate(15deg);
+	transform-origin: top center;
+	width: 300%;
+	height: 400%;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Footer
+Last Note
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.last-note {
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+	padding: 20px 0 10px;
+	width: clamp(300px, 85%, 750px);
+	margin-left: auto;
+	margin-right: auto;
+}
+div.last-note h1 {
+	width: 90%;
+	margin: auto;
+	font-size: 2.4rem;
+	font-weight: 800;
+	letter-spacing: 0.12rem;
+	color: rgb(152, 152, 152);
+	text-align: center;
+	font-family: 'Inter Var';
+	letter-spacing: -0.017em; 
+}
+div.last-note h1 span {
+	// color: rgb(105, 105, 105);
+	font-style: italic;
+}
+div.last-note h1 strong {
+	color: rgb(86, 86, 86);
+	font-weight: 880;
+}
+div.last-note div.container {
+	display: flex;
+	justify-content: space-between;
+	gap: 8px;
+	margin-bottom: 28px;
+}
+div.last-note div.container > div {
+	padding: 5px 0 10px;
+	flex-grow: 1;
+	display: flex;
+	height: 3.6rem;
+	overflow: hidden;
+}
+div.last-note p {
+	position: absolute;
+	top: -3.6rem;
+	height: 3.6rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	color: rgb(149, 149, 149);
+	font-size: 2.9rem;
+	font-weight: 800;
+	width: 100%;
+	// border: 1px solid red;
+}
+div.last-note div.first-word p {
+	justify-content: flex-end;
+	color: rgb(146, 146, 146);
+	background: -webkit-linear-gradient(
+		rgb(155, 184, 179), 
+		rgb(89, 182, 144)
+	);
+	background: linear-gradient(to right,
+		rgb(155, 184, 179),
+		rgb(89, 182, 144)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+}
+div.last-note div.second-word p {
+	color: rgb(73, 171, 149);
+	background: -webkit-linear-gradient(
+		rgb(89, 182, 144), 
+		rgb(29, 211, 126)
+	);
+	background: linear-gradient(to right,
+		rgb(89, 182, 144), 
+		rgb(29, 211, 126)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+}
+div.last-note div.third-word p {
+	justify-content: flex-start;
+	color: rgb(29, 211, 126);
+	background: -webkit-linear-gradient(
+		rgb(29, 211, 126), 
+		rgb(13, 196, 110)
+	);
+	background: linear-gradient(to right,
+		rgb(29, 211, 126), 
+		rgb(13, 196, 110)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+}
+div.last-note svg {
+	height: 4em;
+	width: 24px;
+	fill: rgb(83, 96, 90);
+	color: #42c15b;
+	margin: 0 8px;
+}
+div.last-note svg path {
+	fill: #42c15b;
+}
+@media (max-width: 850px) {
+	div.last-note h1 {
+		width: 100%;
+	}
+}
+@media (max-width: 800px) {
+	div.last-note {
+		width: 100%;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	div.last-note div.container {
+		font-size: 2.0vw;
+		gap: 0px;
+		justify-content: center;
+	}
+	div.last-note h1 {
+		max-width: 650px;
+	}
+}
+@media (max-width: 750px) {
+	div.last-note div.container {
+		flex-direction: column;
+		gap: 12px;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-size: clamp(18px,4vw, 2.7em);
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	div.last-note div.first-word p {
+		justify-content: flex-start;
+		text-align: left;
+	}
+	div.last-note div.third-word p {
+		justify-content: flex-end;
+		text-align: right;
+	}
+}
+/* Last Note [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+rgb(89, 182, 144)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 div.footer {
 	height: 370px;
 	position: relative;

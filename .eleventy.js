@@ -1,3 +1,5 @@
+const {DateTime} = require('luxon')
+
 module.exports = function(eleventyConfig) {
 	// Watch CSS files for changes
 	eleventyConfig.setBrowserSyncConfig({
@@ -25,7 +27,10 @@ module.exports = function(eleventyConfig) {
         }
 	})
 	
-	
+	// Convert the page date to a nicer format
+	eleventyConfig.addShortcode("prettyDate", ( pageDate ) => {
+		return DateTime.fromJSDate(pageDate, {zone: 'est'}).toLocaleString(DateTime.DATE_MED)
+	})
 	
 	// Returns the current year at time of build
 	eleventyConfig.addShortcode("year", () => {

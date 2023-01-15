@@ -1,3 +1,6 @@
+---
+date: Last Modified
+---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -299,34 +302,42 @@
 				</div>
 			</main>
 			
-			<div class="last-note width-narrow">
+			<div class="last-note hide" id="last-note">
 				<div class="container">
 					<div class="first-word">
 						<p>Learning</p>
-						<p>Inspiration</p>
 						<p>Research</p>
 						<p>Listening</p>
+						<p>Inspiration</p>
+						<p>Research</p>
+						<p>Inspiration</p>
+						<p>Listening</p>
+						<p>Learning</p>
 					</div>
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
 						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-					</svg>
+					</svg> -->
 					<div class="second-word">
 						<p>Thinking</p>
-						<p>Writing</p>
 						<p>Strategy</p>
+						<p>Writing</p>
 						<p>Insight</p>
 					</div>
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
 						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-					</svg>
+					</svg> -->
 					<div class="third-word">
+						<p>Sharing</p>
+						<p>Execution</p>
 						<p>Making</p>
 						<p>Product</p>
-						<p>Execution</p>
 						<p>Deliver</p>
+						<p>Execution</p>
+						<p>Making</p>
+						<p>Product</p>
 					</div>
 				</div>
-				<h1>It's a Constant Cycle</h1>
+				<h1>Always trying to make it <span>real</span>. <strong>Follow along on my journey and see how</strong></h1>
 			</div>
 			
 			<div class="footer">
@@ -705,8 +716,7 @@
 					start: "top 60%",
 					end: "center 40%",
 					// toggleActions: "play pause reverse reset",
-					scrub: 0.5,
-					snap: 0.5
+					scrub: 0.5
 				}
 			})
 			showcaseTimeline.to('main div.scroll-container', {scale: 1}, 'showcase-start')
@@ -733,22 +743,48 @@
 			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			Last Note
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-			/*
-			need to animate the text up, then reorder without affecting the positions
-			*/
-			
-			// Convert ems 
-			
-			function testMove ( target ) {
-				const el = gsap.utils.toArray(target)
-				console.log(el)
+			if ( !prefersReducedMotion ) {
+				document.querySelector('#last-note').classList.remove('hide')
 				
-				const move = -1 * document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
+				gsap.delayedCall(0, () => { wordCycle('div.last-note div.first-word p') })
+				gsap.delayedCall(1, () => { wordCycle('div.last-note div.second-word p') })
+				gsap.delayedCall(2, () => { wordCycle('div.last-note div.third-word p') })
 				
-				gsap.to(".container .first-word p:nth-of-type(1)", {
-					y: move,
-					duration: 1.2
-				})
+				function wordCycle ( target ) {
+					const move = document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
+					const el = gsap.utils.toArray(target)
+					const length = el.length
+					
+					el.forEach( ( p, i ) => {
+						const pHeight = p.offsetHeight
+						
+						const hangTime = 4
+						const moveSpeed = 1
+						const nonoverlapDuration = moveSpeed + hangTime
+						const stagger = i * nonoverlapDuration
+						const delayBetween = (length * nonoverlapDuration) - nonoverlapDuration -1
+						
+						gsap.delayedCall(stagger, () => {
+							gsap.timeline({repeat: -1})
+								.to(p, {
+									y: pHeight,
+									opacity: 1,
+									duration: moveSpeed
+								}, 0)
+								.to(p, {
+									y: 2 * pHeight,
+									opacity: 0,
+									delay: hangTime,
+									duration: 1
+								}, '>')
+								.to(p, {
+									y: 0,
+									opacity: 0,
+									duration: delayBetween
+								}, '>')
+						})
+					})
+				}
 			}
 			
 			/* Last Note [End] */

@@ -18,6 +18,14 @@ module.exports = function(eleventyConfig) {
 		}
 	}
 	
+	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	Limits the number of objects returned in a collection
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	eleventyConfig.addFilter("limit", (array, limit) => {
+		return array.slice(0, limit)
+	})
+	// Sample Use: {%- for post in collections.posts reversed | limit(3) -%}
+	
 	eleventyConfig.addShortcode("asset", (linkRelative, assetHost) => {
         if ( process.env.MY_ENVIRONMENT === "prod" ) {
             return `${assetHost}/${linkRelative}`

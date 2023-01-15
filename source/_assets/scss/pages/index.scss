@@ -524,7 +524,7 @@ article.sentence div {
 Showcase Cards
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 main {
-	height: 50svh;
+	height: 60svh;
 	min-height: 200px;
 	padding: 10px 10px 18px;
 	overflow-y: scroll;
@@ -542,7 +542,7 @@ main div.card {
 	position: relative;
 	height: 100%;
 	aspect-ratio: 14/12;
-	max-width: 70vw;
+	max-width: 77vw;
 	flex-shrink: 0;
 	// background-color: #3a7fd6;
 	border-radius: 13px;
@@ -575,9 +575,8 @@ main div p {
 }
 main div.card:hover {
 	transform: scale(1.01);
-	filter: brightness(1.01);
+	// filter: brightness(1.01);
 }
-
 /* Showcase Cards [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -590,7 +589,7 @@ main div.card.latest-posts {
 		hsl(44, 99%, 87%) 20%,
 		hsl(44, 99%, 87%) 100%
 	);
-	aspect-ratio: 10/12;
+	aspect-ratio: 8.8/12;
 	padding: 14px 10px;
 	display: flex;
 	flex-direction: column;
@@ -601,13 +600,68 @@ main div.card.latest-posts h2 {
 	text-align: center;
 	width: 100%;
 }
+main div.card.latest-posts h3 {
+	text-align: center;
+	width: 100%;
+	letter-spacing: -0.05em;
+}
+main div.card.latest-posts h3 a {
+	color: rgba(203, 141, 0, 1);
+}
+main div.card.latest-posts h3 a:hover {
+	color: rgba(124, 86, 0, 1);
+}
 main div.card.latest-posts ul {
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
 	list-style: none;
-	font-size: 1.1em;
-	font-weight: 500;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	flex-grow: 1;
+}
+main div.card.latest-posts ul::after {
+	content: "";
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	// background: red;
+	background-image: linear-gradient(to bottom,
+		rgba(255, 237, 189, 0),
+		hsl(44, 99%, 87%)
+	);
 }
 main div.card.latest-posts li {
 	margin-bottom: 10px;
+}
+main div.card.latest-posts ul a {
+	color: rgba(3, 122, 213, 1);
+}
+main div.card.latest-posts ul a:hover {
+	color: rgba(46, 164, 255, 1);
+}
+main div.card.latest-posts ul a:visited {
+	color: rgba(96, 125, 147, 1);
+}
+main div.card.latest-posts ul a:visited:hover {
+	color: rgba(93, 162, 214, 1);
+}
+main div.card.latest-posts ul a {
+	padding: 6px 0;
+	border-radius: 8px;
+	// background: rgba(255, 255, 255, 0.3);
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0;
+	font-size: 1.4rem;
+	font-weight: 550;
+}
+main div.card.latest-posts ul a span {
+	font-weight: 400;
+	font-size: 1.28rem;
+	// font-style: italic;
+	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+	opacity: 0.8;
 }
 
 /* Showcase Section: Latest Posts [End] */

@@ -127,7 +127,7 @@ date: Last Modified
 				</a>
 				<ul>
 					<div class="copy1">
-						{%- for post in collections.posts reversed -%}
+						{%- for post in collections.posts reversed limit:5 -%}
 						<a href="{{ post.url }}">
 							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
 								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
@@ -141,7 +141,7 @@ date: Last Modified
 						</a>
 					</div>
 					<div class="copy2 hide">
-						{%- for post in collections.posts reversed -%}
+						{%- for post in collections.posts reversed limit:5 -%}
 						<a href="{{ post.url }}">
 							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
 								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
@@ -232,15 +232,15 @@ date: Last Modified
 					<div class="card latest-posts">
 						<h2>Latest Posts</h2>
 						<ul>
-							{%- for post in collections.posts -%}
-							<a href="{{ post.url }}">
-								<li id="test-sample" style="background: rgb(182, 159, 16)">
-									<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</p>
+							{% for post in collections.posts reversed limit:8 %}
+							
+								<li><a href="{{ post.url }}">
+									{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</a>
 								</li>
-							</a>
-							{%- endfor -%}
-							<li><a href="">Older Posts</a></li>
+							
+							{% endfor %}
 						</ul>
+						<h3><a href="">Older Posts</a></h3>
 					</div>
 					<div class="card">
 						<picture>

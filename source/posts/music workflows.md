@@ -1,10 +1,10 @@
 ---
-title: "Mach 1"
-subtitle: "The First Batch of Apple Silicon Macs"
+title: "Music Workflows"
+subtitle: "Turning it up to 11"
 year: 2022
-date: 2022-04-25
-description: "A lot of people are starting off with the performance and speed of these new Macs but I want to start with battery. It's basically doubled. Doubled. Need I say more."
-theme-color: "#32D0BB"
+date: 2023-01-10
+description: "Music is more than just enjoyable, it's necessary. Here's how I leverage Apple Music and other apps and services to get the most out of my listening time."
+theme-color: "#5c43c8"
 ---
 A lot of people are starting off with the performance and speed of these new Macs but I want to start with battery. It's basically doubled. _Doubled_. Need I say more.
 

@@ -1,6 +1,7 @@
 {
 	"layout": "posts",
-	"year": 1969,
 	"permalink": "/posts/{{ year }}/p/{{ title | slug }}/",
-	"tags": "drafts"
+	"tags": "drafts",
+	"draft": true,
+	"eleventyExcludeFromCollections": true
 }

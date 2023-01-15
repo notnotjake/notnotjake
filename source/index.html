@@ -48,16 +48,7 @@ date: Last Modified
 				src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
 				font-style: normal;
 			}
-			/* Hubot Sans */
-			@font-face {
-			  font-family: 'Hubot Sans';
-			  src:
-				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2 supports variations'),
-				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2-variations');
-			  font-weight: 200 900;
-			  font-stretch: 75% 125%;
-			}
-			/* courier-prime-700 */
+			/* COURIER PRIME - 700 */
 			@font-face {
 				font-family: 'Courier Prime';
 				font-style: bold;
@@ -68,8 +59,12 @@ date: Last Modified
 				font-display: swap;
 			}
 		</style>
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin="">
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2" type="font/woff2" crossorigin="">
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin>
+		
+		<link rel="preconnect" href="https://rsms.me/">
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 		<!-- Fonts [End] -->
 		
 		<!-- Appearance-->
@@ -132,28 +127,13 @@ date: Last Modified
 				</a>
 				<ul>
 					<div class="copy1">
-						<a href="">
-							<li id="test-sample" style="background: rgb(182, 159, 16)">
-								<p id="ttt">Welcome to an All-New Site</p>
+						{%- for post in collections.posts reversed -%}
+						<a href="{{ post.url }}">
+							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
+								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
 							</li>
 						</a>
-						<a href="">
-							<li id="ff" style="background-color: #5c43c8;">
-							<p>Macintosh in the Twentieth Century</p>
-							</li>
-						</a>
-						<a href="">
-							<li style="background-color: #3197e7;">
-								<div></div>
-								<p>The Apollo Moon Landing and Consequences</p>
-								<div></div>
-							</li>
-						</a>
-						<a href="">
-							<li style="background-color: #6f7a8c;">
-								<p>What I Would Tell Kan(YE)</p>
-							</li>
-						</a>
+						{%- endfor -%}
 						<a href="">
 							<li class="splash-mini">
 								<p>Delight&&Meaning <span>• That's my goal</span></p>
@@ -161,28 +141,13 @@ date: Last Modified
 						</a>
 					</div>
 					<div class="copy2 hide">
-						<a href="">
-							<li id="test-sample" style="background: rgb(182, 159, 16)">
-								<p id="ttt">Welcome to an All-New Site</p>
+						{%- for post in collections.posts reversed -%}
+						<a href="{{ post.url }}">
+							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
+								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
 							</li>
 						</a>
-						<a href="">
-							<li id="ff" style="background-color: #5c43c8;">
-							<p>Macintosh in the Twentieth Century</p>
-							</li>
-						</a>
-						<a href="">
-							<li style="background-color: #3197e7;">
-								<div></div>
-								<p>The Apollo Moon Landing and Consequences</p>
-								<div></div>
-							</li>
-						</a>
-						<a href="">
-							<li style="background-color: #6f7a8c;">
-								<p>What I Would Tell Kan(YE)</p>
-							</li>
-						</a>
+						{%- endfor -%}
 						<a href="">
 							<li class="splash-mini">
 								<p>Delight&&Meaning <span>• That's my goal</span></p>
@@ -267,9 +232,13 @@ date: Last Modified
 					<div class="card latest-posts">
 						<h2>Latest Posts</h2>
 						<ul>
-							<li>Title</li>
-							<li>Title</li>
-							<li>Title</li>
+							{%- for post in collections.posts -%}
+							<a href="{{ post.url }}">
+								<li id="test-sample" style="background: rgb(182, 159, 16)">
+									<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</p>
+								</li>
+							</a>
+							{%- endfor -%}
 							<li><a href="">Older Posts</a></li>
 						</ul>
 					</div>
@@ -310,9 +279,9 @@ date: Last Modified
 						<p>Listening</p>
 						<p>Inspiration</p>
 						<p>Research</p>
-						<p>Inspiration</p>
-						<p>Listening</p>
 						<p>Learning</p>
+						<p>Listening</p>
+						<p>Inspiration</p>
 					</div>
 					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
 						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
@@ -713,15 +682,15 @@ date: Last Modified
 			let showcaseTimeline = gsap.timeline({
 				scrollTrigger: {
 					trigger: showcase,
-					start: "top 60%",
-					end: "center 40%",
+					start: "top 65%",
+					end: "center 55%",
 					// toggleActions: "play pause reverse reset",
 					scrub: 0.5
 				}
 			})
 			showcaseTimeline.to('main div.scroll-container', {scale: 1}, 'showcase-start')
 			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')
-			showcaseTimeline.to('body', {background: "#516074"}, 'showcase-start')
+			// showcaseTimeline.to('body', {background: "#516074"}, 'showcase-start')
 			
 			
 			ScrollTrigger.create({
@@ -786,7 +755,6 @@ date: Last Modified
 					})
 				}
 			}
-			
 			/* Last Note [End] */
 			
 			

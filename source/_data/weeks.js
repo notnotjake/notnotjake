@@ -38,3 +38,12 @@ module.exports = {
 	"37": "",
 	"38": ""
 }
+
+
+// the object should look like:
+
+// year: {
+// 	month: {
+// 		"01": 
+// 	}
+// }

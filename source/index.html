@@ -126,6 +126,16 @@ date: Last Modified
 					</svg>
 				</a>
 				<ul>
+					<li class="scrolling-home-button">
+						<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
+									<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+								</g>
+							</g>
+						</svg>
+					</li>
+					
 					<div class="copy1">
 						{%- for post in collections.posts reversed limit:5 -%}
 						<a href="{{ post.url }}">
@@ -216,6 +226,11 @@ date: Last Modified
 				</div>
 			</div>
 			
+			<p>{{ contribution.2022.12.17.description }}</p>
+			
+			<div class="profile">
+				
+			</div>
 			
 			<article class="sentence">
 				<h1>Hi&mdash;I'm <button type="button" id="btn-d1" onClick="expandDef('1')"><span class="define" id="prm-d1">Jake</span><span class="definition hide" id="alt-d1">optimistic, persistent, and intense</span></button>! I'm <button type="button" id="btn-e1" onClick="expansion('1')"><span class="expand" id="prm-e1">passionate<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/passion.svg" alt="Red heart icon"></span></button> about creating <button type="button" id="btn-d2" onClick="expandDef('2')"><span class="define" id="prm-d2">great</span><span class="definition hide" id="alt-d2">delightful and meaningful</span></button> user experiences.<span class="expansion hide" id="ex-e1"> I believe we can help people unlock their potential, and explore the world.</span> At <button type="button" id="btn-e2" onClick="expansion('2')"><span class="expand" id="prm-e2"><img src="https://large-assets.notnotjake.com/images/index/sentence-svg/light-dance.svg" alt="Icon. Light blue. Shaped like a spinning top or a starburst of light.">LightDance</span></button> I build web experiences<span class="expansion hide" id="ex-e2"> that wow users, and deliver results for my clients</span>. Online, I share <button type="button" id="btn-e3" onClick="expansion('3')"><span class="expand" id="prm-e3">fun things I make <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="Icon of a hand"></span></button>,<span class="expansion hide" id="ex-e3"> like an illustrated-story about forgetting,</span> thoughts about products, and the <button type="button" id="btn-e4" onClick="expansion('4')"><span class="expand" id="prm-e4">future <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/future.svg" alt="Spiral icon"></span></button>. <span class="expansion hide" id="ex-e4">The future is the only way, but the past is full of learning. My writing on this site connects those dots, and explores my own views on where I want to go in life.</span></h1>
@@ -539,12 +554,7 @@ date: Last Modified
 				const speed = 60 // Set the horiz. scroll speed for marquee
 				const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
 				let scrollDuration = scrollEnd / speed
-				
-				function scrollHandler ( arg ) {
-					// This might help by abstracting the scroll functionality and allowing it to be modified by anyone at any time. Should be more reliable (?)
-					
-				}
-				
+
 				
 				/* On Load: Start scroll
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -563,6 +573,8 @@ date: Last Modified
 				})
 				headerScrollTimelineDefault.play()
 				
+				let headerScrollControl = gsap.timeline() // Used by mouse enter/leave to reset the animation
+				
 				/* Hover: stop scrolling with ease-out
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 				header.addEventListener('mouseenter', () => {
@@ -570,27 +582,34 @@ date: Last Modified
 					
 					headerScrollTimelineDefault.kill()
 					
+					headerScrollControl.kill()
+					headerScrollControl.clear()
+					
 					let scrollEase = headerScroller.scrollLeft + 10
-					gsap.to(headerScroller, {
-						scrollTo: {x: scrollEase, y: 0, autoKill: true},
-						duration: 0.8,
-						ease: 'power3.out'
-					})
+					headerScrollControl.to(headerScroller, {
+							scrollTo: {x: scrollEase, y: 0, autoKill: true},
+							duration: 0.8,
+							ease: 'power3.out'
+						})
+					headerScrollControl.play()
 				})
 				/* Hover-Out: start up new scroller
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 				headerScroller.addEventListener('mouseleave', () => {
 					console.log('Mouse Exit')
 					
+					headerScrollControl.kill()
+					headerScrollControl.clear()
+					
 					let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
 					scrollDuration = scrollDistanceToEnd / speed
 					
-					gsap.to(headerScroller, {
+					headerScrollControl.to(headerScroller, {
 						scrollTo: {x: scrollEnd, y: 0, autoKill: true},
 						duration: scrollDuration,
 						ease: 'linear'
 					})
-					
+					headerScrollControl.play()
 				})
 				/* Finger-Up: when touch event ends, start up new scroller
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -679,28 +698,51 @@ date: Last Modified
 			const showcase = document.querySelector('main div.scroll-container')
 			const showcaseCards = document.querySelector('main div.card')
 			
+			showcase.classList.add('js-scale')
+			
 			let showcaseTimeline = gsap.timeline({
 				scrollTrigger: {
 					trigger: showcase,
 					start: "top 65%",
 					end: "center 55%",
-					// toggleActions: "play pause reverse reset",
 					scrub: 0.5
 				}
 			})
-			showcaseTimeline.to('main div.scroll-container', {scale: 1}, 'showcase-start')
-			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')
-			// showcaseTimeline.to('body', {background: "#516074"}, 'showcase-start')
+			showcaseTimeline.to(showcase, {scale: 1}, 'showcase-start')
+			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')			
 			
+			// ScrollTrigger.create({
+			// 	trigger: showcase,
+			// 	start: "center center",
+			// 	onEnter: () => {
+			// 		console.log("entered")
+			// 	}
+			// })
 			
-			ScrollTrigger.create({
-				trigger: showcase,
-				start: "center center",
-				onEnter: () => {
-					console.log("entered")
+			// Keep the transform-origin correct
+			document.querySelector('main').addEventListener('scroll', () => {
+				let scrollPos = document.querySelector('main').scrollLeft
+				let elementWidth = document.querySelector('main div.scroll-container').offsetWidth
+				
+				// The actual current width
+				let elementTrueWidth = document.querySelector('main').getBoundingClientRect().width
+				
+				let scaleFactor = elementTrueWidth / elementWidth
+				
+				let scrollPercent = ((scrollPos * (elementTrueWidth / elementWidth)) / elementTrueWidth)
+				
+				
+				console.log(scrollPercent + " / " + elementTrueWidth + " - " + elementWidth)
+				
+				// showcase.style.transformOrigin = scrollPos
+				if (scrollPercent > 1) {
+					showcase.style.transformOrigin = "right"
 				}
+				else {
+					showcase.style.transformOrigin = scrollPercent
+				}
+				
 			})
-			
 			
 			/* Showcase */
 			

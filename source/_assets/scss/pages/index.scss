@@ -139,6 +139,15 @@ header ul {
 header ul::-webkit-scrollbar {
 	display: none; /* Safari, Chrome hide scrollbar */
 }
+header ul li.scrolling-home-button {
+	background: none;
+	padding: 0;
+	display: none;
+}
+header ul li.scrolling-home-button svg {
+	height: 50px;
+	width: 21px;
+}
 header ul div {
 	display: flex;
 	flex-direction: row;
@@ -192,6 +201,16 @@ header li.splash-mini span {
 @media (max-width: 750px) {
 	header > a.more-button {
 		display: none;
+	}
+	header > a.home-button {
+		display: none;
+	}
+	header ul li.scrolling-home-button {
+		display: block;
+	}
+	header ul {
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 /* Header [End] */
@@ -531,12 +550,23 @@ main {
 	margin-bottom: 70px;
 }
 main div.scroll-container {
-	transform: scale(0.8);
-	transform-origin: left;
+	transform-origin: 0%;
 	display: flex;
 	gap: 12px;
 	height: 100%;
 	// background: #b6bfcb;
+}
+main div.scroll-container::after {
+	content: "";
+	width: 10px;
+	min-width: 10px;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	// background: red;
+}
+.js-scale {
+	transform: scale(0.8);
 }
 main div.card {
 	position: relative;
@@ -545,7 +575,7 @@ main div.card {
 	max-width: 77vw;
 	flex-shrink: 0;
 	// background-color: #3a7fd6;
-	border-radius: 13px;
+	border-radius: 15px;
 	display: flex;
 	align-items: flex-end;
 	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -575,7 +605,7 @@ main div p {
 }
 main div.card:hover {
 	transform: scale(1.01);
-	// filter: brightness(1.01);
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
 }
 /* Showcase Cards [End] */
 
@@ -701,7 +731,8 @@ Last Note
 div.last-note {
 	font-family: 'Pressura Var', 'Inter Var', sans-serif;
 	padding: 20px 0 10px;
-	width: clamp(300px, 85%, 750px);
+	width: 100%;
+	max-width: 750px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -835,7 +866,8 @@ div.last-note svg path {
 		padding-left: 10px;
 		padding-right: 10px;
 		font-size: clamp(18px,4vw, 2.7em);
-		max-width: 600px;
+		width: 100%;
+		max-width: 320px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -851,7 +883,8 @@ div.last-note svg path {
 /* Last Note [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-rgb(89, 182, 144)~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+Footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 div.footer {
 	height: 370px;
 	position: relative;

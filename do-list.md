@@ -14,14 +14,25 @@ Sentence:
 
 Showcase:
 - snap scrolling
-- fix scroll as scale
-- content-fill in a few of them
-- click sides of screen to advance
-- dim the screen when focused
+- improve scroll as scale
+- content
 - ability to open them into cards and linked to their partial's page
 
-Recommends:
-- what i've been consuming/recommend?
+- more immersive experience
+	- click sides of screen to advance
+	- dim the screen when focused
+
+The Shelf
+
+# Content:
+- my goal
+- roadmap
+- welcome to the new site
+
+showcase:
+- finding our way
+- jmu graduate
+- monkey swingin
 
 # More Pages:
 - post

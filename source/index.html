@@ -555,7 +555,6 @@ date: Last Modified
 					
 				}
 				
-				
 				/* On Load: Start scroll
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 				// On load: start scrolling to end, after 2s delay
@@ -573,6 +572,8 @@ date: Last Modified
 				})
 				headerScrollTimelineDefault.play()
 				
+				let headerScrollControl = gsap.timeline()
+				
 				/* Hover: stop scrolling with ease-out
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 				header.addEventListener('mouseenter', () => {
@@ -580,27 +581,34 @@ date: Last Modified
 					
 					headerScrollTimelineDefault.kill()
 					
+					headerScrollControl.kill()
+					headerScrollControl.clear()
+					
 					let scrollEase = headerScroller.scrollLeft + 10
-					gsap.to(headerScroller, {
-						scrollTo: {x: scrollEase, y: 0, autoKill: true},
-						duration: 0.8,
-						ease: 'power3.out'
-					})
+					headerScrollControl.to(headerScroller, {
+							scrollTo: {x: scrollEase, y: 0, autoKill: true},
+							duration: 0.8,
+							ease: 'power3.out'
+						})
+					headerScrollControl.play()
 				})
 				/* Hover-Out: start up new scroller
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 				headerScroller.addEventListener('mouseleave', () => {
 					console.log('Mouse Exit')
 					
+					headerScrollControl.kill()
+					headerScrollControl.clear()
+					
 					let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
 					scrollDuration = scrollDistanceToEnd / speed
 					
-					gsap.to(headerScroller, {
+					headerScrollControl.to(headerScroller, {
 						scrollTo: {x: scrollEnd, y: 0, autoKill: true},
 						duration: scrollDuration,
 						ease: 'linear'
 					})
-					
+					headerScrollControl.play()
 				})
 				/* Finger-Up: when touch event ends, start up new scroller
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

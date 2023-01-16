@@ -1,9 +1,5 @@
 # To Do List (Index)
 
-Header:
-- issue: sometimes on hover, it stops temporarily then continues
-- issue: scroll cancels if you exit before the end ease-animation completes
-
 Graph:
 - support text only activity
 - mobile support

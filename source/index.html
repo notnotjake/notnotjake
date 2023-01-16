@@ -204,8 +204,9 @@ date: Last Modified
 					</div>
 					{% endfor %}
 					<div class="more">
-						<a href="">More Graphs</a>
 						<a href="">History</a>
+						<a href="">More Graphs</a>
+						<p>This graph shows what I've done over the past year.</p>
 					</div>
 				</div>
 			</div>
@@ -696,6 +697,7 @@ date: Last Modified
 			Showcase
 			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 			const showcase = document.querySelector('main div.scroll-container')
+			const showcaseContainer = document.querySelector('main')
 			const showcaseCards = document.querySelector('main div.card')
 			
 			showcase.classList.add('js-scale')
@@ -721,22 +723,26 @@ date: Last Modified
 			
 			// Keep the transform-origin correct
 			document.querySelector('main').addEventListener('scroll', () => {
-				let scrollPos = document.querySelector('main').scrollLeft
-				let elementWidth = document.querySelector('main div.scroll-container').offsetWidth
+				let scrollElementWidth = showcaseContainer.offsetWidth
+				let elementWidth = showcase.getBoundingClientRect().width
 				
-				// The actual current width
-				let elementTrueWidth = document.querySelector('main').getBoundingClientRect().width
+				let scrollPosition = showcaseContainer.scrollLeft
+				let scrollWidth = showcaseContainer.scrollWidth
 				
-				let scaleFactor = elementTrueWidth / elementWidth
-				
-				let scrollPercent = ((scrollPos * (elementTrueWidth / elementWidth)) / elementTrueWidth)
+				let scrollPercent = 100 * (scrollPosition / (scrollWidth - scrollElementWidth))
 				
 				
-				console.log(scrollPercent + " / " + elementTrueWidth + " - " + elementWidth)
+				// console.log(scrollPercent)
+				
+				// let scaleFactor = elementTrueWidth / elementWidth
 				
 				// showcase.style.transformOrigin = scrollPos
-				if (scrollPercent > 1) {
+				
+				if (scrollPercent > 95) {
 					showcase.style.transformOrigin = "right"
+				}
+				else if (scrollPosition < 5) {
+					showcase.style.transformOrigin = "left"
 				}
 				else {
 					showcase.style.transformOrigin = scrollPercent

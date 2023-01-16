@@ -549,11 +549,7 @@ date: Last Modified
 				const speed = 60 // Set the horiz. scroll speed for marquee
 				const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
 				let scrollDuration = scrollEnd / speed
-				
-				function scrollHandler ( arg ) {
-					// This might help by abstracting the scroll functionality and allowing it to be modified by anyone at any time. Should be more reliable (?)
-					
-				}
+
 				
 				/* On Load: Start scroll
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -572,7 +568,7 @@ date: Last Modified
 				})
 				headerScrollTimelineDefault.play()
 				
-				let headerScrollControl = gsap.timeline()
+				let headerScrollControl = gsap.timeline() // Used by mouse enter/leave to reset the animation
 				
 				/* Hover: stop scrolling with ease-out
 				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -697,28 +693,51 @@ date: Last Modified
 			const showcase = document.querySelector('main div.scroll-container')
 			const showcaseCards = document.querySelector('main div.card')
 			
+			showcase.classList.add('js-scale')
+			
 			let showcaseTimeline = gsap.timeline({
 				scrollTrigger: {
 					trigger: showcase,
 					start: "top 65%",
 					end: "center 55%",
-					// toggleActions: "play pause reverse reset",
 					scrub: 0.5
 				}
 			})
-			showcaseTimeline.to('main div.scroll-container', {scale: 1}, 'showcase-start')
-			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')
-			// showcaseTimeline.to('body', {background: "#516074"}, 'showcase-start')
+			showcaseTimeline.to(showcase, {scale: 1}, 'showcase-start')
+			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')			
 			
+			// ScrollTrigger.create({
+			// 	trigger: showcase,
+			// 	start: "center center",
+			// 	onEnter: () => {
+			// 		console.log("entered")
+			// 	}
+			// })
 			
-			ScrollTrigger.create({
-				trigger: showcase,
-				start: "center center",
-				onEnter: () => {
-					console.log("entered")
+			// Keep the transform-origin correct
+			document.querySelector('main').addEventListener('scroll', () => {
+				let scrollPos = document.querySelector('main').scrollLeft
+				let elementWidth = document.querySelector('main div.scroll-container').offsetWidth
+				
+				// The actual current width
+				let elementTrueWidth = document.querySelector('main').getBoundingClientRect().width
+				
+				let scaleFactor = elementTrueWidth / elementWidth
+				
+				let scrollPercent = ((scrollPos * (elementTrueWidth / elementWidth)) / elementTrueWidth)
+				
+				
+				console.log(scrollPercent + " / " + elementTrueWidth + " - " + elementWidth)
+				
+				// showcase.style.transformOrigin = scrollPos
+				if (scrollPercent > 1) {
+					showcase.style.transformOrigin = "right"
 				}
+				else {
+					showcase.style.transformOrigin = scrollPercent
+				}
+				
 			})
-			
 			
 			/* Showcase */
 			

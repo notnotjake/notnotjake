@@ -1,20 +1,14 @@
 # To Do List (Index)
 
-- 3 words sizing clips inspiration on smaller screens
-
 Header:
 - issue: sometimes on hover, it stops temporarily then continues
 - issue: scroll cancels if you exit before the end ease-animation completes
-- extra right space on mobile breakpoint
-- rotate for infinite scroll [js]
-
-- think about moving the orange dot on mobile
 
 Graph:
+- support text only activity
 - mobile support
 - vertical tracking?
 - lazy loading of the images
-- support text only activity
 - 11ty function to fill in dates
 - 11ty/njk hookup
 - connect to service (?) / establish workflow
@@ -25,7 +19,6 @@ Sentence:
 Showcase:
 - snap scrolling
 - fix scroll as scale
-- content-recent posts card styling
 - content-fill in a few of them
 - click sides of screen to advance
 - dim the screen when focused

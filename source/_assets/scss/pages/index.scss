@@ -139,6 +139,15 @@ header ul {
 header ul::-webkit-scrollbar {
 	display: none; /* Safari, Chrome hide scrollbar */
 }
+header ul li.scrolling-home-button {
+	background: none;
+	padding: 0;
+	display: none;
+}
+header ul li.scrolling-home-button svg {
+	height: 50px;
+	width: 21px;
+}
 header ul div {
 	display: flex;
 	flex-direction: row;
@@ -192,6 +201,16 @@ header li.splash-mini span {
 @media (max-width: 750px) {
 	header > a.more-button {
 		display: none;
+	}
+	header > a.home-button {
+		display: none;
+	}
+	header ul li.scrolling-home-button {
+		display: block;
+	}
+	header ul {
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 }
 /* Header [End] */
@@ -575,7 +594,7 @@ main div p {
 }
 main div.card:hover {
 	transform: scale(1.01);
-	// filter: brightness(1.01);
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
 }
 /* Showcase Cards [End] */
 

@@ -1,5 +1,6 @@
 {
 	"layout": "posts",
+	"style": "/css/pages/posts.css",
 	"permalink": "/posts/{{ year }}/{{ title | slug }}/",
 	"tags": "posts"
 }

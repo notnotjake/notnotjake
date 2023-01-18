@@ -182,6 +182,46 @@ img.hide-overscroll {
 	color: #edebff;
 }
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Overscrolls
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.overscroll-top {
+	height: 300px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -2;
+	transform: translateY(-299px);
+	background-image: linear-gradient(to bottom, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
+	// background: rgba(221, 201, 249, 1.0);
+}
+.overscroll-top_mobile {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: -3;
+	background-image: linear-gradient(to top, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
+}
+.overscroll-bottom {
+	height: 300px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: -2;
+	transform: translateY(299px);
+	background-image: linear-gradient(to bottom, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+}
+.overscroll-bottom_mobile {
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: -3;
+	background-image: linear-gradient(to top, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+}
+/* Overscrolls [End] */
+
 
 
 /* MASTHEAD

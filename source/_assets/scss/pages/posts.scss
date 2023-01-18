@@ -1,0 +1,99 @@
+html {
+	backgrond: #eef0f0;
+}
+body {
+	color: #454545;
+	font-family: "Maru Var", sans-serif;
+	z-index: 2;
+}
+
+main {
+	background: #eef0f0;
+	z-index: 2;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nav Element
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+nav {
+	height: 50px;
+	align-items: center;
+	display: flex;
+	gap: 10px;
+	margin-bottom: 5rem;
+}
+nav h2 {
+	flex-grow: 1;
+	text-align: center;
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+	font-size: 1.2rem;
+	font-weight: 1.4rem;
+}
+nav h2 span {
+	font-weight: 400;
+	font-size: 1.28rem;
+	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+	opacity: 0.8;
+}
+nav svg {
+	height: 21px;
+	width: 21px;
+	// padding: 0 10px;
+}
+/* Nav [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Header Element
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+header {
+	margin-bottom: 2.8rem;
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+}
+header h1 {
+	font-size: 2.2rem;
+	margin-bottom: 0.12em;
+}
+header h2 {
+	font-size: 1.8rem;
+	font-weight: 500;
+	font-variation-settings: "wght" 500, "wdth" 110, "ital" 0.5;
+	opacity: 0.8;
+}
+header p {
+	font-size: 1.3rem;
+	margin-top: 0.7em;
+}
+/* Header [End] */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Article
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+article {
+	padding-bottom: clamp(100px, 25vh, 300px);
+	font-family: 'Avenir';
+	
+}
+article p {
+	font-size: 1.1rem;
+	line-height: 1.65;
+	padding-bottom: 1.64em;
+}
+/* Article */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Footer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.footer::after {
+	content: "";
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-image: linear-gradient(to top,
+		rgba(147, 184, 246, 1) 0%, 
+		// #b4caee 25%,
+		rgba(237, 240, 240, 0) 60%);
+}
+/* Footer [End] */

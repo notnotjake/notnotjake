@@ -71,13 +71,33 @@ Article
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 article {
 	padding-bottom: clamp(100px, 25vh, 300px);
-	font-family: 'Avenir';
+	font-family: 'Avenir', 'Inter Var', sans-serif;
 	
 }
 article p {
 	font-size: 1.1rem;
 	line-height: 1.65;
 	padding-bottom: 1.64em;
+}
+article h1, h2, h3 {
+	font-family: 'Pressura Var', 'Avenir', 'Inter Var', sans-serif;
+	font-variation-settings: "wght" 600, "wdth" 120, "ital" 0.5;
+}
+article h1 {
+	font-size: 2.05rem;
+	font-variation-settings: "wght" 700, "wdth" 120;
+	padding-bottom: 0.12em;
+	color: #000;
+}
+article h2 {
+	font-size: 1.75rem;
+	font-variation-settings: "wght" 650, "wdth" 110, "ital" 0.3;
+	padding-bottom: 0.12em;
+}
+article h3 {
+	font-size: 1.25rem;
+	font-variation-settings: "wght" 500, "wdth" 110, "ital" 0.5;
+	padding-bottom: 0.08em;
 }
 /* Article */
 

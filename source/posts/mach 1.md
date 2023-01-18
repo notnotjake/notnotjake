@@ -12,7 +12,7 @@ Onto speed; these new Macs are a big upgrade over the models they're replacing. 
 
 The M1 is based off the A14. It's a 5nm chip and features the same cores as the A14, but more of them. The M1 has 4 “Firestorm” high performance cores and 4 “Icestorm” low power cores (compared to the A14’s 2 and 4 respectively). The M1 also has an 8-core GPU barring the Airs optionally chip-binned 7-core (that option doesn't exist on either of the other two Macs introduced on Tuesday). The M1 is more than CPU and GPU though, it has all the functionality previously in the T2 chip as well: SSD controller, Secure Enclave and support for TouchBar which is (still) unchanged. In addition to all that specific to the Mac, it carries over some features from iPhone and iPad like an Image Signal Processor which Apple said will improve the garbage webcam (slightly). The neural engine also comes to the Mac making ML tasks much faster.
 
-## Gripes
+# Gripes
 
 ### Limitations
 

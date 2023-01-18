@@ -26,6 +26,7 @@ nav h2 {
 	flex-grow: 1;
 	text-align: center;
 	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+	font-variation-settings: "wght" 500, "wdth" 110, "ital" 0.3;
 	font-size: 1.2rem;
 	font-weight: 1.4rem;
 }
@@ -34,6 +35,13 @@ nav h2 span {
 	font-size: 1.28rem;
 	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
 	opacity: 0.8;
+}
+nav a {
+	color: #454545;
+	text-decoration: none;
+}
+nav a:hover {
+	color: #316fa1;
 }
 nav svg {
 	height: 21px;
@@ -51,7 +59,7 @@ header {
 }
 header h1 {
 	font-size: 2.2rem;
-	margin-bottom: 0.12em;
+	margin-bottom: 0.04em;
 }
 header h2 {
 	font-size: 1.8rem;
@@ -70,9 +78,9 @@ header p {
 Article
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 article {
-	padding-bottom: clamp(100px, 25vh, 300px);
+	padding-bottom: clamp(100px, 25vh, 250px);
 	font-family: 'Avenir', 'Inter Var', sans-serif;
-	
+	min-height: calc(100vh - 300px);
 }
 article p {
 	font-size: 1.1rem;

@@ -1,9 +1,10 @@
 # To Do List (Index)
 
+- Dark theme
+- P3 color range
+
 Graph:
-- support text only activity
 - mobile support
-- vertical tracking?
 - lazy loading of the images
 - 11ty function to fill in dates
 - 11ty/njk hookup
@@ -25,7 +26,9 @@ Showcase:
 The Shelf
 
 # Content:
-- my goal
+- my goal (delight&&meaning)
+- belief stack
+- connect to something bigger
 - roadmap
 - welcome to the new site
 

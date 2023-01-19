@@ -9,31 +9,46 @@ for all days 6mo before today and the days remaining in the week:
 	automatically fill the empty dates and those from the future 
 	also, needs to insert labels into the week level if transition point falls in that week
 */
+const { DateTime } = require('luxon')
 
-module.exports = {
-	2023: {
-		1: {
+module.exports = function () {
+	const data = {
+		2023: {
 			1: {
-				
-			},
-			3: {
-				
+				1: {
+					
+				},
+				3: {
+					
+				}
 			}
-		}
-	},
-	2022: {
-		12: {
-			17: {
-				"description": "Graduated from JMU",
-				"level": "special",
-				"icon": "",
-				"picture": {
-					"webp": "",
-					"jpg": ""
+		},
+		2022: {
+			12: {
+				17: {
+					"description": "Graduated from JMU",
+					"level": "special",
+					"icon": "",
+					"picture": {
+						"webp": "",
+						"jpg": ""
+					}
 				}
 			}
 		}
 	}
+	
+	// Create Dates Object
+	const today = DateTime.now()
+	const currentWeek = today.weekNumber
+	const currentWeekFull = DateTime.fromObject({
+		weekYear: '2023',
+		weekNumber: currentWeek
+	})
+	console.log(currentWeekFull.startOf('week').toISO())
+	
+	// return data
+	return currentWeek
 }
 
 // 1st: get the data from somewhere

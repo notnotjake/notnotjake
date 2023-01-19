@@ -213,15 +213,26 @@ date: Last Modified
 			
 			<div class="graph-hover">
 				<div class="container">
-					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
-						<picture>
+					<div class="activity hide" id="gt-empty" data-date="empty">
+						<!-- <picture>
 							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
 							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
 						</picture>
 						<picture class="loading-lazy">
 							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
 							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
+						</picture> -->
+						<p>zZzz<span class="date">Jan 9</span></p>
+					</div>
+					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
+						<!-- <picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
 						</picture>
+						<picture class="loading-lazy">
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
+						</picture> -->
 						<p>Worked on my new site<span class="date">Jan 9</span></p>
 					</div>
 				</div>
@@ -627,19 +638,6 @@ date: Last Modified
 					})
 				})
 			}
-			/*
-			reliability issues. sometimes does not fire off correctly
-			
-			i believe issue is if mouseleave triggers before the animation completes from mouseenter
-			another issue is where it won't stop...
-			
-			try: creating a timeline which can then be controlled by both listeners
-			mobile (touch) cancels scroll and no mouseleave to resume it - need to fix
-			
-			loop: when the end of self reaches beginning of scroll-area, move it to end of container and reset scroll to 0 at same time
-			
-			*/
-			
 			/* Header, Marquee [End] */
 			
 			
@@ -665,6 +663,23 @@ date: Last Modified
 						const offsetX = mouseX - 190
 						activityCard.style.left = offsetX + "px"
 					}
+					
+					// Use mouse position to place activity card on y-axis
+					const mouseY = e.clientY
+					const offsetElement = document.querySelector('div.graph').getBoundingClientRect().top
+					const cardHeight = activityCard.offsetHeight
+					
+					if (cardHeight >= 50) {
+						const offsetY = mouseY - offsetElement - (0.3 * cardHeight)
+						// const offsetY = Math.min(mouseY - offsetElement - (0.3 * cardHeight), 130)
+						const boundOffsetY = Math.min(Math.max(offsetY, (-offsetElement + 15)), 130)
+						activityCard.style.top = boundOffsetY + "px"
+					}
+					else if (cardHeight < 50 && cardHeight > 3) {
+						const offsetY = mouseY - offsetElement - 18
+						activityCard.style.top = offsetY + "px"
+					}
+					
 				})
 				
 				const graphDays = [...document.querySelectorAll('div.graph a')]

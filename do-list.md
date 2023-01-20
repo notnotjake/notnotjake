@@ -1,23 +1,22 @@
 # To Do List (Index)
+- Dark theme
+- P3 color range
 
 Graph:
-- support text only activity
 - mobile support
-- vertical tracking?
 - lazy loading of the images
-- 11ty function to fill in dates
-- 11ty/njk hookup
+- fix 11ty if picture problem
+
 - connect to service (?) / establish workflow
 
 Sentence:
 - picture?
 
 Showcase:
-- snap scrolling
-- improve scroll as scale
 - content
 - ability to open them into cards and linked to their partial's page
 
+- improve scroll as scale
 - more immersive experience
 	- click sides of screen to advance
 	- dim the screen when focused
@@ -25,7 +24,9 @@ Showcase:
 The Shelf
 
 # Content:
-- my goal
+- my goal (delight&&meaning)
+- belief stack
+- connect to something bigger
 - roadmap
 - welcome to the new site
 

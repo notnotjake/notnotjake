@@ -183,26 +183,17 @@ date: Last Modified
 			
 			<div class="graph">
 				<div class="flex">
-					<div class="week-0">
-						<p class="label">Now</p>
-						<a href="" class="future" id="gd-01-07-23" data-date="01-07-23"></a>
-						<a href="" class="future" id="gd-01-06-23" data-date="01-06-23"></a>
-						<a href="" class="high" id="gd-01-05-23" data-date="01-05-23"></a>
-						<a href="" class="med" id="gd-01-04-23" data-date="01-04-23"></a>
-						<a href="" class="low" id="gd-01-03-23" data-date="01-03-23"></a>
-						<a href="" class="release" id="gd-01-02-23" data-date="01-02-23">
-							<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="">
-						</a>
-						<a href="" id="gd-01-01-23" data-date="01-01-23"></a>
-					</div>
-					{% for week in weeks %}
+					{% for week in contribution.graph %}
 					<div class="week">
-						<p class="label">{{ week[1] }}</p>
-						{% for day in days %}
-							<a href=""></a>
+						<p class="label">{{ week.label }}</p>
+						{% for day in week.week %}
+						<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
+							{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
+						</a>
 						{% endfor %}
 					</div>
 					{% endfor %}
+					
 					<div class="more">
 						<a href="">History</a>
 						<a href="">More Graphs</a>
@@ -213,21 +204,40 @@ date: Last Modified
 			
 			<div class="graph-hover">
 				<div class="container">
-					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
-						<picture>
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-						</picture>
-						<picture class="loading-lazy">
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
-						</picture>
-						<p>Worked on my new site<span class="date">Jan 9</span></p>
+					<div class="activity hide" id="gt-empty" data-date="empty">
+						<p>zZzz<span class="date">Jan 9</span></p>
 					</div>
+					
+					{% for week in contribution.graph %}
+						{% for day in week.week %}
+							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
+								{% if day.picture %}
+									<!-- <p>{{ day.picture.webp }}</p> -->
+									
+									<picture>
+										<source srcset="{{ day.picture.webp}}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %}
+								
+								<!-- {% if day.picture %}
+									<picture class="placeholder">
+										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+										<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+									</picture>
+									<picture class="loading-lazy">
+										<source srcset="{{ day.picture.webp }}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %} -->
+								
+								<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
+							</div>
+						{% endfor %}
+					{% endfor %}
+					
 				</div>
 			</div>
-			
-			<p>{{ contribution.2022.12.17.description }}</p>
 			
 			<div class="profile">
 				
@@ -627,19 +637,6 @@ date: Last Modified
 					})
 				})
 			}
-			/*
-			reliability issues. sometimes does not fire off correctly
-			
-			i believe issue is if mouseleave triggers before the animation completes from mouseenter
-			another issue is where it won't stop...
-			
-			try: creating a timeline which can then be controlled by both listeners
-			mobile (touch) cancels scroll and no mouseleave to resume it - need to fix
-			
-			loop: when the end of self reaches beginning of scroll-area, move it to end of container and reset scroll to 0 at same time
-			
-			*/
-			
 			/* Header, Marquee [End] */
 			
 			
@@ -665,6 +662,23 @@ date: Last Modified
 						const offsetX = mouseX - 190
 						activityCard.style.left = offsetX + "px"
 					}
+					
+					// Use mouse position to place activity card on y-axis
+					const mouseY = e.clientY
+					const offsetElement = document.querySelector('div.graph').getBoundingClientRect().top
+					const cardHeight = activityCard.offsetHeight
+					
+					if (cardHeight >= 50) {
+						const offsetY = mouseY - offsetElement - (0.3 * cardHeight)
+						// const offsetY = Math.min(mouseY - offsetElement - (0.3 * cardHeight), 130)
+						const boundOffsetY = Math.min(Math.max(offsetY, (-offsetElement + 15)), 130)
+						activityCard.style.top = boundOffsetY + "px"
+					}
+					else if (cardHeight < 50 && cardHeight > 3) {
+						const offsetY = mouseY - offsetElement - 18
+						activityCard.style.top = offsetY + "px"
+					}
+					
 				})
 				
 				const graphDays = [...document.querySelectorAll('div.graph a')]
@@ -675,7 +689,7 @@ date: Last Modified
 					let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
 					
 					let targetElemDate = '01-05-23'
-					let targetSelector = 'div.graph-hover div.activity[data-date="' + targetElemDate + '"]'
+					let targetSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
 					
 					a.addEventListener('mouseenter', () => {
 						document.querySelector(targetSelector).classList.remove('hide')

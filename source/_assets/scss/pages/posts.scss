@@ -107,6 +107,20 @@ article h3 {
 	font-variation-settings: "wght" 500, "wdth" 110, "ital" 0.5;
 	padding-bottom: 0.08em;
 }
+
+article ol {
+	list-style-position: outside;
+	font-size: 1.05rem;
+	padding-left: 2em;
+	padding-bottom: 1.64em;
+}
+article ol > li {
+	padding-bottom: 0.3em;
+}
+article ol > li::marker {
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.5);
+}
 /* Article */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

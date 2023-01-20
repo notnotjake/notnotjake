@@ -272,7 +272,7 @@ div.graph a.med {
 div.graph a.high {
 	background: #1576FF;
 }
-div.graph a.release img {
+div.graph a.special img {
 	width: 28px;
 	height: 28px;
 	object-fit: contain;
@@ -323,19 +323,23 @@ div.graph-hover {
 	height: 260px;
 	transform: translateY(-306px);
 	pointer-events: none;
+	z-index: 3;
 }
 div.graph-hover div.container {
 	position: absolute;
+	// border: 1px solid red;
 }
 div.graph-hover div.activity {
 	width: 160px;
-	height: 254px;
+	// height: 254px;
+	min-height: 44px;
 	opacity: 0;
 	z-index: 3;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: center;
+	gap: 3px;
 	animation-name: fadeCardIn;
 	animation-duration: 400ms;
 	animation-delay: 150ms;
@@ -363,7 +367,7 @@ div.graph-hover div.activity p {
 	overflow: scroll;
 	line-height: 1.4;
 	padding: 3px 5px 0;
-	margin-top: 3px;
+	// margin-top: 3px;
 	font-size: 0.8em;
 	color: #1b1b1b;
 	border-radius: 7px;
@@ -442,6 +446,7 @@ article.sentence {
 	padding-bottom: clamp(40px, 10vh, 90px);
 	padding-left: 10px;
 	padding-right: 10px;
+	z-index: 0;
 }
 article.sentence h1 {
 	font-family: 'Pressura Var', 'Maru Var', sans-serif;

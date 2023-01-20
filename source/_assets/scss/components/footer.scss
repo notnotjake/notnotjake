@@ -1,49 +1,63 @@
 :root {
 	--footer-bg: #C7E3FF;
-	--footer-obg: #d6e0de;
+	--footer-obg: #d6dee0;
 }
-@media (prefers-color-scheme: dark) {
-	:root {
-		--footer-bg: #323e4d;
-		--footer-obg: #151410;
-	}
-}
+// @media (prefers-color-scheme: dark) {
+// 	:root {
+// 		--footer-bg: #323e4d;
+// 		--footer-obg: #151410;
+// 	}
+// }
 
-/*
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Footer
-■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ */
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 footer {
 	min-height: 100px;
-	// background-color: var(--footer-bg);
 	font-family: 'Inter V', 'Inter', 'Avenir', 'sans-serif';
 	padding: 20px 0;
-	margin-bottom: 10px;
+	margin-bottom: 14px;
+	background: #eef0f0;
 }
-footer div.links > * {
-	display: inline;
-	margin-right: 12px;	
-}
-footer h3 {
-	width: 100%;
-	padding-left: 0.5em;
+footer p.site-info, footer p.last-updated {
+	padding-left: 0.6em;
 }
 footer p.site-info {
 	font-size: 16px;
-	padding: 0.5em 0.5em;
+	padding: 0.6em 0.6em;
 	margin: 0.5em 0;
 	background-color: var(--footer-obg);
 	border-radius: 10px;
 	font-weight: 400;
+	overflow: scroll;
+	white-space:nowrap;
+}
+footer p.site-info span {
+	font-weight: 500;
+}
+footer p.site-info span.thanks {
+	font-weight: 600;
+	font-size: 18px;
+	margin-right: 12px;
 }
 footer p.site-info img {
 	height: 25px;
 	border-radius: 15%;
 	vertical-align: middle;
+	display: inline;
 }
-
+footer p.site-info a {
+	color: unset;
+	text-decoration: none;
+}
+footer p.site-info a:hover {
+	text-decoration: underline;
+}
+footer p.site-info a:visited {
+	color: unset;
+}
 footer p.last-updated {
-	padding-left: 0.5em;
 	font-family: 'Courier', 'Courier Prime';
 	filter: opacity(80%);
 }
+/* Footer [End] */

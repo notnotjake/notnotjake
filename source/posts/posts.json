@@ -1,5 +1,7 @@
 {
 	"layout": "posts",
+	"date": "Last Modified",
+	"style": "/css/pages/posts.css",
 	"permalink": "/posts/{{ year }}/{{ title | slug }}/",
 	"tags": "posts"
 }

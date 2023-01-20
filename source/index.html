@@ -1,9 +1,12 @@
+---
+date: Last Modified
+---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<!--Site Info-->
 		<meta charset="utf-8">
-		<title>!!JAKE - HOME</title>
+		<title>!!JAKE</title>
 		<meta name="author" content="Jake Gooch">
 		<!-- Site Info [End] -->
 		
@@ -27,36 +30,28 @@
 		
 		<!-- Fonts -->
 		<style>
-			/* Sono Variable Font */
+			/* SONO - VARIABLE */
 			@font-face {
 				font-family: 'Sono Var';
 				src: url('https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2') format("woff2-variations");
-				font-style: normal;
 				font-weight: 200 800;
 			}
-			/* Hubot Sans */
+			/* GT MARU - VARIABLE */
 			@font-face {
-			  font-family: 'Hubot Sans';
-			  src:
-				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2 supports variations'),
-				url('https://assets.notnotjake.com/fonts/hubot-sans/Hubot-Sans.woff2') format('woff2-variations');
-			  font-weight: 200 900;
-			  font-stretch: 75% 125%;
+				font-family: 'Maru Var';
+				src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
+				font-style: normal;
 			}
-			/* courier-prime-regular */
+			/* GT PRESSURA - VARIABLE */
 			@font-face {
-			  font-family: 'Courier Prime';
-			  font-style: normal;
-			  font-weight: 400;
-			  src: local(''),
-				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-				   url('https://assets.notnotjake.com/fonts/courier-prime-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-			  font-display: swap;
+				font-family: 'Pressura Var';
+				src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
+				font-style: normal;
 			}
-			/* courier-prime-700 */
+			/* COURIER PRIME - 700 */
 			@font-face {
 				font-family: 'Courier Prime';
-				font-style: normal;
+				font-style: bold;
 				font-weight: 700;
 				src: local(''),
 					url('https://assets.notnotjake.com/fonts/courier-prime-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -64,19 +59,20 @@
 				font-display: swap;
 			}
 		</style>
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-regular.woff2" type="font/woff2" crossorigin="">
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin="">
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2" type="font/woff2" crossorigin>
+		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin>
+		
+		<link rel="preconnect" href="https://rsms.me/">
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 		<!-- Fonts [End] -->
 		
 		<!-- Appearance-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+		<link rel="icon" type="image/png" href="https://assets.notnotjake.com/images/favicon.png">
 		
-		<!-- <link rel="icon" type="image/png" sizes="271x271" href="https://assets.notnotjake.com/images/favicon-dark.png"> -->
-		<link rel="icon" type="image/png" sizes="271x271" href="/_assets/images/favicon.png">
-		
-		<!-- View source scss on GitHub https://github.com/notnotjake/notnotjake-11ty/tree/main/source/assets/scss -->
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
-		<link rel="stylesheet" type="text/css" href="./css/pages/index.css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/pages/index.css">
 		<!-- Appearance [End] -->
 		
 		<!-- Feeds -->
@@ -87,8 +83,8 @@
 		<!-- Fathom Analytics [End] -->
 	</head>
 	<body>
-		<div id="splash" class="">
-			<a href="https://www.notnotjake.com" id="site-title">
+		<div id="splash" class="hide">
+			<a href="https://www.notnotjake.com" class="site-title">
 				<span>
 					<svg width="25px" height="32px" viewBox="0 0 25 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<g id="notnotjake" stroke="none" stroke-width="1" fill-rule="evenodd">
@@ -98,14 +94,742 @@
 					</g>
 				</svg></span>JAKE
 			</a>
-			<h1>Delight++</h1>
-			<h1>Meaning++</h1>
-			<h2>That&rsquo;s my <a href="/about#meaning">goal</a>.</h2>
+			<div>
+				<h1>Delight<span>++</span></h1>
+				<h1>Meaning<span>++</span></h1>
+				<h2>That&rsquo;s my <a href="/about#meaning">goal</a>.</h2>
+			</div>
+			<div class="scroll-indicator hide">
+				<svg width="50px" height="17px" viewBox="0 0 50 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					<g id="New-Site" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+						<g id="Artboard-Copy-2" transform="translate(-18.000000, -40.000000)" fill="#000000" fill-rule="nonzero">
+							<path d="M62.649691,40.2804096 C64.6506415,39.4784753 66.9208893,40.4553232 67.7204314,42.4622605 C68.5199736,44.4691978 67.5460396,46.7462382 65.5450891,47.5481725 L44.5702407,55.9544026 C43.6458241,56.3248872 42.6151765,56.3269474 41.689295,55.9601613 L20.4693679,47.5539312 C18.4652464,46.7600026 17.4822713,44.4868739 18.2738316,42.4767562 C19.0653918,40.4666384 21.3317397,39.4807223 23.3358612,40.2746509 L43.1141594,48.1095796 L62.649691,40.2804096 Z" id="Path"></path>
+						</g>
+					</g>
+				</svg>
+			</div>
 		</div>
 		
-		<!-- GSAP Animations, Scrolling -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+		<div class="overscroll-top"></div>
+		<div class="overscroll-top_mobile"></div>
+		
+		<div class="wrapper">
+			
+			<header class="header-background">
+				<a href="https://www.notnotjake.com" class="home-button">
+					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
+								<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+							</g>
+						</g>
+					</svg>
+				</a>
+				<ul>
+					<li class="scrolling-home-button">
+						<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+							<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+								<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
+									<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+								</g>
+							</g>
+						</svg>
+					</li>
+					
+					<div class="copy1">
+						{%- for post in collections.posts reversed limit:5 -%}
+						<a href="{{ post.url }}">
+							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
+								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
+							</li>
+						</a>
+						{%- endfor -%}
+						<a href="">
+							<li class="splash-mini">
+								<p>Delight&&Meaning <span>• That's my goal</span></p>
+							</li>
+						</a>
+					</div>
+					<div class="copy2 hide">
+						{%- for post in collections.posts reversed limit:5 -%}
+						<a href="{{ post.url }}">
+							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
+								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
+							</li>
+						</a>
+						{%- endfor -%}
+						<a href="">
+							<li class="splash-mini">
+								<p>Delight&&Meaning <span>• That's my goal</span></p>
+							</li>
+						</a>
+						<a href="">
+							<li class="">
+								<p>Older Posts</p>
+							</li>
+						</a>
+					</div>
+				</ul>
+				<a href="/more" class="more-button">
+					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-21.000000, -21.000000)" fill="#ACACAC">
+								<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+							</g>
+						</g>
+					</svg>
+				</a>
+			</header>
+			
+			<div class="graph">
+				<div class="flex">
+					{% for week in contribution.graph %}
+					<div class="week">
+						<p class="label">{{ week.label }}</p>
+						{% for day in week.week %}
+						<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
+							{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
+						</a>
+						{% endfor %}
+					</div>
+					{% endfor %}
+					
+					<div class="more">
+						<a href="">History</a>
+						<a href="">More Graphs</a>
+						<p>This graph shows what I've done over the past year.</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="graph-hover">
+				<div class="container">
+					<div class="activity hide" id="gt-empty" data-date="empty">
+						<p>zZzz<span class="date">Jan 9</span></p>
+					</div>
+					
+					{% for week in contribution.graph %}
+						{% for day in week.week %}
+							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
+								{% if day.picture %}
+									<!-- <p>{{ day.picture.webp }}</p> -->
+									
+									<picture>
+										<source srcset="{{ day.picture.webp}}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %}
+								
+								<!-- {% if day.picture %}
+									<picture class="placeholder">
+										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+										<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+									</picture>
+									<picture class="loading-lazy">
+										<source srcset="{{ day.picture.webp }}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %} -->
+								
+								<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
+							</div>
+						{% endfor %}
+					{% endfor %}
+					
+				</div>
+			</div>
+			
+			<div class="profile">
+				
+			</div>
+			
+			<article class="sentence">
+				<h1>Hi&mdash;I'm <button type="button" id="btn-d1" onClick="expandDef('1')"><span class="define" id="prm-d1">Jake</span><span class="definition hide" id="alt-d1">optimistic, persistent, and intense</span></button>! I'm <button type="button" id="btn-e1" onClick="expansion('1')"><span class="expand" id="prm-e1">passionate<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/passion.svg" alt="Red heart icon"></span></button> about creating <button type="button" id="btn-d2" onClick="expandDef('2')"><span class="define" id="prm-d2">great</span><span class="definition hide" id="alt-d2">delightful and meaningful</span></button> user experiences.<span class="expansion hide" id="ex-e1"> I believe we can help people unlock their potential, and explore the world.</span> At <button type="button" id="btn-e2" onClick="expansion('2')"><span class="expand" id="prm-e2"><img src="https://large-assets.notnotjake.com/images/index/sentence-svg/light-dance.svg" alt="Icon. Light blue. Shaped like a spinning top or a starburst of light.">LightDance</span></button> I build web experiences<span class="expansion hide" id="ex-e2"> that wow users, and deliver results for my clients</span>. Online, I share <button type="button" id="btn-e3" onClick="expansion('3')"><span class="expand" id="prm-e3">fun things I make <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="Icon of a hand"></span></button>,<span class="expansion hide" id="ex-e3"> like an illustrated-story about forgetting,</span> thoughts about products, and the <button type="button" id="btn-e4" onClick="expansion('4')"><span class="expand" id="prm-e4">future <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/future.svg" alt="Spiral icon"></span></button>. <span class="expansion hide" id="ex-e4">The future is the only way, but the past is full of learning. My writing on this site connects those dots, and explores my own views on where I want to go in life.</span></h1>
+				<p>Jan 9 '23&mdash;VA, USA</p>
+				<div>
+					<a href="mailto:jake@notnotjake.com?subject=Hi!">Contact</a>
+					<a href="https://www.lightdance.design">Hire Me</a>
+					<a href="https://read.cv/notnotjake">Resume</a>
+				</div>
+			</article>
+			
+			<main>
+				<div class="scroll-container">
+					<div class="card latest-posts">
+						<h2>Latest Posts</h2>
+						<ul>
+							{% for post in collections.posts reversed limit:8 %}
+							
+								<li><a href="{{ post.url }}">
+									{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</a>
+								</li>
+							
+							{% endfor %}
+						</ul>
+						<h3><a href="">Older Posts</a></h3>
+					</div>
+					<a href="/projects/finding-our-way/" class="card">
+						<picture>
+							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
+							<img src="https://large-assets.notnotjake.com/images/index/showcase-assets/finding-our-way.jpg">
+						</picture>
+						<p class="title">Finding Our Way</p>
+						<p class="description">An illustrated story about going with the flow. <span>June 2022</span></p>
+					</a>
+					<a href="/projects/monkey-swingin/" class="card">
+						<picture>
+							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
+							<img src="https://large-assets.notnotjake.com/images/index/showcase-assets/monkey-swingin.jpeg">
+						</picture>
+						<p class="title">Monkey Swing'in</p>
+						<p class="description">Beautiful and durable "monkey fist" rope swings. Monkey see, Monkey Swing!</p>
+					</a>
+					<a href="javascript:void(0)" class="card">
+						<picture>
+							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg">
+						</picture>
+						<p class="title">Check Back Soon!</p>
+						<p class="description">I'll be adding a lot of content to the site over the next few weeks.</p>
+					</a>
+				</div>
+			</main>
+			
+			<div class="last-note hide" id="last-note">
+				<div class="container">
+					<div class="first-word">
+						<p>Learning</p>
+						<p>Research</p>
+						<p>Listening</p>
+						<p>Inspiration</p>
+						<p>Research</p>
+						<p>Learning</p>
+						<p>Listening</p>
+						<p>Inspiration</p>
+					</div>
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+					</svg> -->
+					<div class="second-word">
+						<p>Thinking</p>
+						<p>Strategy</p>
+						<p>Writing</p>
+						<p>Insight</p>
+					</div>
+					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+					</svg> -->
+					<div class="third-word">
+						<p>Sharing</p>
+						<p>Execution</p>
+						<p>Making</p>
+						<p>Product</p>
+						<p>Deliver</p>
+						<p>Execution</p>
+						<p>Making</p>
+						<p>Product</p>
+					</div>
+				</div>
+				<h1>Always trying to make it <span>real</span>. <strong>Follow along on my journey and see how</strong></h1>
+			</div>
+			
+			<div class="footer">
+				
+				<div class="links">
+					<!-- Twitter -->
+					<a href="https://twitter.com/_notnotjake"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+					  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+					</svg></a>
+					
+					<!-- Instagram -->
+					<a href="https://www.instagram.com/notnotjake"><svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill-rule="evenodd">
+							<g transform="translate(-12.000000, -12.000000)" fill="currentColor" fill-rule="nonzero">
+								<path d="M29.8783028,12.4967514 L32.0129559,12.5027261 L32.4109604,12.5027577 L33.8593646,12.503582 C37.0718057,12.5070251 38.47703,12.5217433 39.7650893,12.5634412 L40.0610231,12.5735499 L40.328582,12.5835393 C40.7318997,12.5991515 41.147951,12.6176258 41.6283889,12.6394422 C43.9484746,12.7454625 45.207656,13.1328247 46.0464572,13.4582874 C47.1569248,13.8892624 47.94863,14.4044635 48.7809727,15.2366852 C49.6138234,16.0689312 50.1293873,16.8615314 50.5616927,17.9711524 C50.8873972,18.8083329 51.2755578,20.0665951 51.3811427,22.3849635 C51.4029776,22.8649474 51.4215405,23.2806299 51.4372838,23.683594 L51.4473667,23.9509186 L51.4575588,24.2456018 C51.5012763,25.5775018 51.5164137,27.0342541 51.5193847,30.4870899 L51.5193847,33.4934758 C51.5164137,36.9463011 51.5012763,38.40306 51.4575588,39.734965 L51.4473667,40.0296492 L51.4372838,40.2969747 C51.4215405,40.6999401 51.4029776,41.1156235 51.3811427,41.5956074 C51.2750498,43.9139516 50.8873972,45.1722138 50.5616927,46.0093943 C50.1304032,47.1190395 49.6138234,47.9091724 48.7809727,48.7408862 C47.9481462,49.5731322 47.1574086,50.088309 46.0464572,50.519284 C45.2086478,50.8462464 43.9484746,51.232617 41.6283889,51.3386372 C39.3334282,51.4428711 38.5073808,51.472475 33.5179655,51.4767589 L30.5078433,51.4767589 C27.2587276,51.4739694 25.7752397,51.4604439 24.5019765,51.4225678 L24.2317853,51.4140738 C23.6508864,51.3948411 23.0913549,51.3701498 22.3975229,51.3386372 C20.0774613,51.2316494 18.8182799,50.8442629 17.9789708,50.5188002 C16.8685032,50.0878252 16.0752983,49.5726242 15.2424718,48.7404024 C14.4096211,47.9081807 13.8940572,47.1175639 13.4617518,46.0074108 C13.1360472,45.1702303 12.7478867,43.9119681 12.6423018,41.5936239 C12.6204669,41.1136354 12.6019767,40.69795 12.586351,40.2949564 L12.5763529,40.0276079 C12.5316264,38.7834698 12.5135915,37.5511645 12.5077847,34.7765418 L12.5063216,33.8296717 L12.5063216,30.1391287 L12.5077847,29.1924405 C12.5133841,26.5175573 12.5303537,25.277641 12.5716623,24.0777045 L12.5812478,23.8111431 C12.5979091,23.3660809 12.6180408,22.9123285 12.6423018,22.379013 C12.7483947,20.0606446 13.1360472,18.8024066 13.4617518,17.9642343 C13.8930413,16.8545892 14.4096211,16.061989 15.2424718,15.2297672 C16.0752983,14.3975212 16.8685032,13.8823444 17.9789708,13.4503776 C18.817772,13.1234152 20.0774613,12.7370447 22.3975229,12.6305164 C22.8631607,12.6094999 23.2683046,12.5916048 23.6599961,12.5764051 L23.9935344,12.5640269 C25.3232873,12.5170749 26.6529006,12.5003753 29.8783028,12.4967514 Z M32.0124721,19.784721 C25.2644005,19.784721 19.7929022,25.2521797 19.7929022,31.995728 C19.7929022,38.7392762 25.2644005,44.2042435 32.0129559,44.2042435 C38.7615113,44.2042435 44.2310503,38.7392762 44.2310503,31.995728 C44.2310503,25.2521797 38.7610275,19.784721 32.0124721,19.784721 Z M32.0129559,24.0697257 C36.3933378,24.0697257 39.9448602,27.6181036 39.9448602,31.995728 C39.9448602,36.3728686 36.3933378,39.9217302 32.0129559,39.9217302 C27.6320902,39.9217302 24.0810757,36.3728686 24.0810757,31.995728 C24.0810757,27.6181036 27.6320902,24.0697257 32.0129559,24.0697257 Z M44.7148782,16.4498834 C43.1384341,16.450851 41.8593936,17.7274484 41.8593936,19.3032152 C41.8593936,20.8785223 43.1384341,22.1565953 44.7149024,22.1565953 C46.2913464,22.1565953 47.570387,20.8785223 47.570387,19.3032152 C47.570387,17.7279322 46.2913464,16.4498834 44.7148782,16.4498834 Z"></path>
+							</g>
+						</g>
+					</svg></a>
+					
+					<!-- GitHub -->
+					<a href="https://github.com/notnotjake"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+					  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+					</svg></a>
+					
+					<!-- Email -->
+					<a href="mailto:jake@notnotjake.com?subject=Hey!"><svg width="52px" height="38px" viewBox="0 0 52 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-6.000000, -13.000000)" fill="currentColor">
+								<path d="M5.99909903,22.335 L31.8871425,35.7278506 C32.5885917,36.0907165 33.4114083,36.0907165 34.1128575,35.7278506 L57.999099,23.371 L58,41.3083444 C58,43.9829006 57.7215232,44.9527593 57.1986019,45.9305371 C56.6756806,46.9083149 55.9083149,47.6756806 54.9305371,48.1986019 C53.9527593,48.7215232 52.9829006,49 50.3083444,49 L13.6916556,49 C11.0170994,49 10.0472407,48.7215232 9.06946289,48.1986019 C8.09168511,47.6756806 7.32431939,46.9083149 6.80139811,45.9305371 C6.27847683,44.9527593 6,43.9829006 6,41.3083444 L5.99909903,22.335 Z M50.3083444,13 C52.9829006,13 53.9527593,13.2784768 54.9305371,13.8013981 C55.9083149,14.3243194 56.6756806,15.0916851 57.1986019,16.0694629 C57.4441134,16.5285296 57.635742,16.9858506 57.7699656,17.6186682 L32.9990472,30.4327948 L6.49584624,16.7224025 C6.58595352,16.4934609 6.68792008,16.2816484 6.80139811,16.0694629 C7.32431939,15.0916851 8.09168511,14.3243194 9.06946289,13.8013981 C10.0472407,13.2784768 11.0170994,13 13.6916556,13 L50.3083444,13 Z" id="Combined-Shape"></path>
+							</g>
+						</g>
+					</svg></a>
+				</div>
+				
+				<picture id="beach-ball">
+					<source srcset="https://large-assets.notnotjake.com/images/index/footer-fun/beach%20ball.webp">
+					<img src="https://large-assets.notnotjake.com/images/index/footer-fun/beach%20ball.png" alt="Drawing of a beach ball">
+				</picture>
+				<picture id="pillar">
+					<source srcset="https://large-assets.notnotjake.com/images/index/footer-fun/pillar.webp">
+					<img src="https://large-assets.notnotjake.com/images/index/footer-fun/pillar.png" alt="Drawing of a roman style column">
+				</picture>
+				<picture id="sun">
+					<source srcset="https://large-assets.notnotjake.com/images/index/footer-fun/sun.webp">
+					<img src="https://large-assets.notnotjake.com/images/index/footer-fun/sun.png" alt="Drawing of a roman style column">
+				</picture>
+				<picture id="wave">
+					<source srcset="https://large-assets.notnotjake.com/images/index/footer-fun/wave.webp">
+					<img src="https://large-assets.notnotjake.com/images/index/footer-fun/wave.png" alt="Drawing of wave crashing">
+				</picture>
+				
+				
+				<div class="footer-wrapper">
+					{% include "partials/_footer.njk" %}
+				</div>
+			</div>
+		</div>
+		
+		<div class="overscroll-bottom"></div>
+		<div class="overscroll-bottom_mobile"></div>
+		
+		<!-- Cookie Decides if First Time -->
+		<script>
+			if ( document.cookie == '' ) {
+				document.cookie = 'crumb'
+				document.querySelector('#splash').classList.remove('hide')
+			}
+			if ( !document.querySelector('#splash').classList.contains('hide') ) {
+				document.body.style.background = '#54258F'
+				document.querySelector('header').classList.remove('header-background')
+				document.querySelector('.overscroll-top').style.display = 'none'
+				document.querySelector('.overscroll-top_mobile').style.display= 'none'
+			}
+		</script>
+		<!-- Cookie Decision [End] -->
+		
+		<!-- Sentence Expansion -->
+		<script>
+			// Swaps the definitions
+			function expandDef ( t ) {
+				const primary = document.querySelector('#prm-d' + t)
+				const alternate = document.querySelector('#alt-d' + t)
+				
+				if ( alternate.classList.contains('hide') ) {
+					primary.classList.add('hide')
+					alternate.classList.remove('hide')
+				}
+				else if ( primary.classList.contains('hide') ) {
+					primary.classList.remove('hide')
+					alternate.classList.add('hide')
+				}
+				else {
+					primary.classList.remove('hide')
+					alternate.classList.add('hide')
+				}
+			}
+			// Expands the other ones
+			function expansion ( t ) {
+				const primary = document.querySelector('#prm-e' + t)
+				const expanded = document.querySelector('#ex-e' + t)
+				
+				if ( expanded.classList.contains('hide') ) {
+					expanded.classList.remove('hide')
+				}
+				else {
+					expanded.classList.add('hide')
+				}
+			}
+		</script>
+		<!-- Sentence Expansion [End] -->
+		
+		<!-- GSAP Animations, Scrolling, Visual Improvements -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+		<script>
+			gsap.registerPlugin(ScrollTrigger)
+			gsap.registerPlugin(ScrollToPlugin)
+			
+			
+			/* Check for PREFERS-REDUCED-MOTION
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			let prefersReducedMotion = false // Defaults to false
+			if ( window.matchMedia("(prefers-reduced-motion: reduce)").matches ) {
+				prefersReducedMotion = true
+			}
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Splash (if visible)
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			if ( !document.querySelector('#splash').classList.contains('hide') ) {
+				
+				document.querySelector('header').classList.remove('header-background')
+				
+				/* Scroll Hint Bounce (after 3.5s if under 10px scrolled)
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				gsap.delayedCall(3.1, () => {
+					if ( document.documentElement.scrollTop < 10 && !document.querySelector('#splash').classList.contains('hide') && !prefersReducedMotion ) {
+						// Scroll bounce
+						gsap.to(window, {
+							keyframes: [
+								{scrollTo: '50', ease: 'Power1.easeOut', duration: 0.4},
+								{scrollTo: '0', ease: 'Power3.easeIn', duration: 0.6}
+							]
+						})
+					}
+					// Show a scroll indicator
+					document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
+				})
+				
+				/* Scroll Handler: triggers at 250px scroll-y
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				function splashScroll (e) {
+					let scrollTriggerY = 250
+					let splashEndY = document.querySelector('#splash').offsetHeight
+					
+					if ( document.querySelector('#splash').classList.contains('hide') ) {
+						window.removeEventListener('scroll', splashScroll)
+						return
+					}
+					else if ( window.scrollY < scrollTriggerY ) {
+						// document.body.style.background = '#54258F'
+						updateBodyBackground("#54258F")
+					}
+					else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
+						scrollPastSplash()
+					}
+					else {
+						// document.body.style.background = '#edf0f0'
+						updateBodyBackground("#edf0f0")
+					}
+					
+				}
+				window.addEventListener('scroll', splashScroll)
+				
+				// Function for changing the theme-color/body color
+				function updateBodyBackground ( arg ) {
+					gsap.to('body', { background: arg, duration: 1})
+				}
+				
+				// Function called by scroll handler
+				function scrollPastSplash () {
+					window.removeEventListener('scroll', splashScroll)
+					
+					const splashHeight = document.querySelector('#splash').offsetHeight * -1
+					const scrollPos = document.documentElement.scrollTop
+					let scrollTo = scrollPos + splashHeight
+					
+					// Scroll to current position minus splash element's height
+					gsap.to(window, {
+						scrollTo: {x: scrollTo, y: 0, autoKill: false, ease: 'power2.in'},
+						duration: 1
+					})
+					
+					// Move splash element off top, then hide
+					gsap.to('#splash', {
+						marginTop: splashHeight,
+						duration: 1,
+						onComplete: () => {
+							document.querySelector('#splash').classList.add('hide')
+							document.body.style.background = '#edf0f0'
+							document.querySelector('header').classList.add('header-background-animation')
+							document.querySelector('.overscroll-top').style.display = 'block'
+							document.querySelector('.overscroll-top_mobile').style.display= 'block'
+						}
+					})
+				}
+			}
+			/* Splash [End] */
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Header, Marquee
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			if ( !prefersReducedMotion ) {
+				/* Only continues if Prefers-Reduced-Motion is OFF
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				
+				document.querySelector('header ul div.copy2').classList.remove('hide')
+				
+				const header = document.querySelector('header')
+				const headerScroller = document.querySelector('header ul')
+				const headerContent1 = document.querySelector('header ul div.copy1')
+				const headerContent2 = document.querySelector('header ul div.copy2')
+				
+				const speed = 60 // Set the horiz. scroll speed for marquee
+				const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
+				let scrollDuration = scrollEnd / speed
+
+				
+				/* On Load: Start scroll
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				// On load: start scrolling to end, after 2s delay
+				let headerScrollTimelineDefault = gsap.timeline()
+				headerScrollTimelineDefault.to(headerScroller, {
+					scrollTo: {y:0, x: 20, autoKill: true},
+					duration: 1.9,
+					delay: 1.9,
+					ease: 'power3.in'
+				})
+				headerScrollTimelineDefault.to(headerScroller, {
+					scrollTo: {y: 0, x: scrollEnd, autoKill: true},
+					duration: scrollDuration,
+					ease: 'linear'
+				})
+				headerScrollTimelineDefault.play()
+				
+				let headerScrollControl = gsap.timeline() // Used by mouse enter/leave to reset the animation
+				
+				/* Hover: stop scrolling with ease-out
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				header.addEventListener('mouseenter', () => {
+					console.log('Mouse Enter')
+					
+					headerScrollTimelineDefault.kill()
+					
+					headerScrollControl.kill()
+					headerScrollControl.clear()
+					
+					let scrollEase = headerScroller.scrollLeft + 10
+					headerScrollControl.to(headerScroller, {
+							scrollTo: {x: scrollEase, y: 0, autoKill: true},
+							duration: 0.8,
+							ease: 'power3.out'
+						})
+					headerScrollControl.play()
+				})
+				/* Hover-Out: start up new scroller
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				headerScroller.addEventListener('mouseleave', () => {
+					console.log('Mouse Exit')
+					
+					headerScrollControl.kill()
+					headerScrollControl.clear()
+					
+					let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
+					scrollDuration = scrollDistanceToEnd / speed
+					
+					headerScrollControl.to(headerScroller, {
+						scrollTo: {x: scrollEnd, y: 0, autoKill: true},
+						duration: scrollDuration,
+						ease: 'linear'
+					})
+					headerScrollControl.play()
+				})
+				/* Finger-Up: when touch event ends, start up new scroller
+				~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+				headerScroller.addEventListener('touchend', () => {
+					let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
+					scrollDuration = scrollDistanceToEnd / speed
+					
+					gsap.delayedCall(0.5, () => {
+						gsap.to(headerScroller, {
+							scrollTo: {x: scrollEnd, y: 0, autoKill: true},
+							duration: scrollDuration,
+							ease: 'linear'
+						})
+					})
+				})
+			}
+			/* Header, Marquee [End] */
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Graph Hover
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			document.querySelector('div.graph').addEventListener('mouseenter', () => {
+				const activityCard = document.querySelector('div.graph-hover div.container')
+				
+				window.addEventListener('mousemove', (e) => {
+					// Uses mouse position to place activity-card on x-axis
+					const windowWidth = window.innerWidth
+					const mouseX = e.clientX
+					
+					if ( mouseX < (windowWidth * 0.5) ) { // On Left Side
+						const offsetX = mouseX + 30
+						activityCard.style.left = offsetX + "px"
+					}
+					else if ( mouseX >= (windowWidth * 0.5) ) { // On Right Side
+						const offsetX = mouseX - 190
+						activityCard.style.left = offsetX + "px"
+					}
+					
+					// Use mouse position to place activity card on y-axis
+					const mouseY = e.clientY
+					const offsetElement = document.querySelector('div.graph').getBoundingClientRect().top
+					const cardHeight = activityCard.offsetHeight
+					
+					if (cardHeight >= 50) {
+						const offsetY = mouseY - offsetElement - (0.3 * cardHeight)
+						// const offsetY = Math.min(mouseY - offsetElement - (0.3 * cardHeight), 130)
+						const boundOffsetY = Math.min(Math.max(offsetY, (-offsetElement + 15)), 130)
+						activityCard.style.top = boundOffsetY + "px"
+					}
+					else if (cardHeight < 50 && cardHeight > 3) {
+						const offsetY = mouseY - offsetElement - 18
+						activityCard.style.top = offsetY + "px"
+					}
+					
+				})
+				
+				const graphDays = [...document.querySelectorAll('div.graph a')]
+				
+				graphDays.forEach( (a) => {
+					// get a's data-date
+					let date = a.dataset.date
+					let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+					
+					let targetElemDate = '01-05-23'
+					let targetSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+					
+					a.addEventListener('mouseenter', () => {
+						document.querySelector(targetSelector).classList.remove('hide')
+					})
+					a.addEventListener('mouseleave', () => {
+						document.querySelector(targetSelector).classList.add('hide')
+					})
+				})
+			})
+			/* Graph Hover [End] */
+			
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Showcase
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			const showcase = document.querySelector('main div.scroll-container')
+			const showcaseContainer = document.querySelector('main')
+			const showcaseCards = document.querySelector('main div.card')
+			
+			showcase.classList.add('js-scale')
+			
+			let showcaseTimeline = gsap.timeline({
+				scrollTrigger: {
+					trigger: showcase,
+					start: "top 65%",
+					end: "center 55%",
+					scrub: 0.5
+				}
+			})
+			showcaseTimeline.to(showcase, {scale: 1}, 'showcase-start')
+			showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')			
+			
+			// ScrollTrigger.create({
+			// 	trigger: showcase,
+			// 	start: "center center",
+			// 	onEnter: () => {
+			// 		console.log("entered")
+			// 	}
+			// })
+			
+			// Keep the transform-origin correct
+			document.querySelector('main').addEventListener('scroll', () => {
+				let scrollElementWidth = showcaseContainer.offsetWidth
+				let elementWidth = showcase.getBoundingClientRect().width
+				
+				let scrollPosition = showcaseContainer.scrollLeft
+				let scrollWidth = showcaseContainer.scrollWidth
+				
+				let scrollPercent = 100 * (scrollPosition / (scrollWidth - scrollElementWidth))
+				
+				
+				// console.log(scrollPercent)
+				
+				// let scaleFactor = elementTrueWidth / elementWidth
+				
+				// showcase.style.transformOrigin = scrollPos
+				
+				if (scrollPercent > 95) {
+					showcase.style.transformOrigin = "right"
+				}
+				else if (scrollPosition < 5) {
+					showcase.style.transformOrigin = "left"
+				}
+				else {
+					showcase.style.transformOrigin = scrollPercent
+				}
+				
+			})
+			
+			/* Showcase */
+			
+			
+			
+			
+			
+			
+			/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			Last Note
+			~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+			if ( !prefersReducedMotion ) {
+				document.querySelector('#last-note').classList.remove('hide')
+				
+				gsap.delayedCall(0.0, () => { wordCycle('div.last-note div.first-word p') })
+				gsap.delayedCall(0.6, () => { wordCycle('div.last-note div.second-word p') })
+				gsap.delayedCall(1.2, () => { wordCycle('div.last-note div.third-word p') })
+				
+				function wordCycle ( target ) {
+					const move = document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
+					const el = gsap.utils.toArray(target)
+					const length = el.length
+					
+					el.forEach( ( p, i ) => {
+						const pHeight = p.offsetHeight
+						
+						const hangTime = 4
+						const moveSpeed = 1
+						const nonoverlapDuration = moveSpeed + hangTime
+						const stagger = i * nonoverlapDuration
+						const delayBetween = (length * nonoverlapDuration) - nonoverlapDuration -1
+						
+						gsap.delayedCall(stagger, () => {
+							gsap.timeline({repeat: -1})
+								.to(p, {
+									y: pHeight,
+									opacity: 1,
+									duration: moveSpeed
+								}, 0)
+								.to(p, {
+									y: 2 * pHeight,
+									opacity: 0,
+									delay: hangTime,
+									duration: 1
+								}, '>')
+								.to(p, {
+									y: 0,
+									opacity: 0,
+									duration: delayBetween
+								}, '>')
+						})
+					})
+				}
+			}
+			/* Last Note [End] */
+			
+			
+			
+			
+			
+			// function is_touch_enabled() {
+			// 	return ( 'ontouchstart' in window ) ||
+			// 		   ( navigator.maxTouchPoints > 0 ) ||
+			// 		   ( navigator.msMaxTouchPoints > 0 );
+			// }
+			// 
+			// if ( is_touch_enabled() ) {
+			// }
+		</script>
 		<!-- GSAP Animations, Scrolling [End] -->
 	</body>
 </html>

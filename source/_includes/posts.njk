@@ -4,6 +4,45 @@
 		{% include "partials/_head.njk" %}
 	</head>
 	<body>
-		{{content | safe}}
+		<main>
+			<nav class="width-narrow">
+				<a href="https://www.notnotjake.com" class="home-button">
+					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-21.000000, -21.000000)" fill="#FF5F25">
+								<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+							</g>
+						</g>
+					</svg>
+				</a>
+				<h2><a href="{{page.url}}">{{ title }} <span>{{ subtitle }}</span></a></h2>
+				<a href="/more" class="more-button">
+					<svg width="119px" height="119px" viewBox="0 0 119 119" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g transform="translate(-21.000000, -21.000000)" fill="#ACACAC">
+								<circle id="Oval" cx="80.5" cy="80.5" r="59.5"></circle>
+							</g>
+						</g>
+					</svg>
+				</a>
+			</nav>
+			
+			<header class="width-narrow">
+				<h1>{{ title }}</h1>
+				<h2>{{ subtitle }}</h2>
+				<p><time datetime="{{ date }}">{% prettyDate page.date %}</p>
+			</header>
+			
+			<article class="width-narrow">
+				{{content | safe}}
+			</article>
+			
+			<div class="footer">
+				{% include "partials/_footer.njk" %}
+			</div>
+		</main>
+		
+		<div class="overscroll-bottom"></div>
+		<div class="overscroll-bottom_mobile"></div>
 	</body>
 </html>

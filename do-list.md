@@ -1,35 +1,40 @@
-# To Do List (Index)
+# To Do List 
+
+# Posts
+font changes(?)
+link to github history for page
+styling:
+- images
+- ul
+- links
+- code blocks
+- quote blocks
+- footnotes
+ability to comment on post on twitter
+link previews(?)
+
+## Index
 - Dark theme
 - P3 color range
-
 Graph:
 - mobile support
 - lazy loading of the images
-
 - connect to service (?) / establish workflow
-
 Showcase:
-- content
 - ability to open them into cards and linked to their partial's page
-
 - more immersive experience
 	- click sides of screen to advance
 	- dim the screen when focused
-
-- improve scroll as scale
-
+	- swiperjs(?)
 
 # Content:
 - my goal (delight&&meaning)
 - belief stack
 - connect to something bigger
 - roadmap
-- welcome to the new site
 
 showcase:
-- finding our way
 - jmu graduate
-- monkey swingin
 
 # More Pages:
 - post

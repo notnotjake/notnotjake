@@ -92,7 +92,8 @@ module.exports = function () {
 	const dateFormat = 'yyyy-MM-dd'
 	
 	// Start from Sunday of this week:
-	const today = DateTime.now()
+	const local = DateTime.now()
+	const today = today.setZone('America/New_York')
 	const currentWeekFull = DateTime.fromObject({
 		weekYear: today.year,
 		weekNumber: today.weekNumber

@@ -5,23 +5,19 @@
 Graph:
 - mobile support
 - lazy loading of the images
-- fix 11ty if picture problem
 
 - connect to service (?) / establish workflow
-
-Sentence:
-- picture?
 
 Showcase:
 - content
 - ability to open them into cards and linked to their partial's page
 
-- improve scroll as scale
 - more immersive experience
 	- click sides of screen to advance
 	- dim the screen when focused
 
-The Shelf
+- improve scroll as scale
+
 
 # Content:
 - my goal (delight&&meaning)

@@ -777,9 +777,9 @@ date: Last Modified
 			if ( !prefersReducedMotion ) {
 				document.querySelector('#last-note').classList.remove('hide')
 				
-				gsap.delayedCall(0, () => { wordCycle('div.last-note div.first-word p') })
-				gsap.delayedCall(1, () => { wordCycle('div.last-note div.second-word p') })
-				gsap.delayedCall(2, () => { wordCycle('div.last-note div.third-word p') })
+				gsap.delayedCall(0.0, () => { wordCycle('div.last-note div.first-word p') })
+				gsap.delayedCall(0.6, () => { wordCycle('div.last-note div.second-word p') })
+				gsap.delayedCall(1.2, () => { wordCycle('div.last-note div.third-word p') })
 				
 				function wordCycle ( target ) {
 					const move = document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight

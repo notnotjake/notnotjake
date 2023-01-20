@@ -6,7 +6,6 @@
 Graph:
 - mobile support
 - lazy loading of the images
-- 11ty function to fill in dates
 - 11ty/njk hookup
 - connect to service (?) / establish workflow
 

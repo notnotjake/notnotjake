@@ -211,6 +211,15 @@ date: Last Modified
 					{% for week in contribution.graph %}
 						{% for day in week.week %}
 							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
+								{% if day.picture %}
+									<!-- <p>{{ day.picture.webp }}</p> -->
+									
+									<picture>
+										<source srcset="{{ day.picture.webp}}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %}
+								
 								<!-- {% if day.picture %}
 									<picture class="placeholder">
 										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">

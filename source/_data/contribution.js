@@ -120,9 +120,7 @@ module.exports = function () {
 			day.dateShort = xDay.toFormat('MMM d')
 			if (xDay > today) {
 				day.level = 'future'
-				day.description = ''
-				day.icon = ''
-				day.picture = ''
+				day.description = 'Adventure Awaits!'
 			}
 			else if ( data[xYear]?.[xMonth]?.[xDate] ) {
 				day.level = data[xYear][xMonth][xDate].level

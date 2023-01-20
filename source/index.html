@@ -202,65 +202,33 @@ date: Last Modified
 				</div>
 			</div>
 			
-			<!-- <div class="graph">
-				<div class="flex">
-					<div class="week-0">
-						<p class="label">Now</p>
-						<a href="" class="future" id="gd-01-07-23" data-date="01-07-23"></a>
-						<a href="" class="future" id="gd-01-06-23" data-date="01-06-23"></a>
-						<a href="" class="high" id="gd-01-05-23" data-date="01-05-23"></a>
-						<a href="" class="med" id="gd-01-04-23" data-date="01-04-23"></a>
-						<a href="" class="low" id="gd-01-03-23" data-date="01-03-23"></a>
-						<a href="" class="release" id="gd-01-02-23" data-date="01-02-23">
-							<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="">
-						</a>
-						<a href="" id="gd-01-01-23" data-date="01-01-23"></a>
-					</div>
-					{% for week in weeks %}
-					<div class="week">
-						<p class="label">{{ week[1] }}</p>
-						{% for day in days %}
-							<a href=""></a>
-						{% endfor %}
-					</div>
-					{% endfor %}
-					<div class="more">
-						<a href="">History</a>
-						<a href="">More Graphs</a>
-						<p>This graph shows what I've done over the past year.</p>
-					</div>
-				</div>
-			</div> -->
-			
 			<div class="graph-hover">
 				<div class="container">
 					<div class="activity hide" id="gt-empty" data-date="empty">
-						<!-- <picture>
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-						</picture>
-						<picture class="loading-lazy">
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
-						</picture> -->
 						<p>zZzz<span class="date">Jan 9</span></p>
 					</div>
-					<div class="activity hide" id="gt-01-05-23" data-date="01-05-23">
-						<!-- <picture>
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-						</picture>
-						<picture class="loading-lazy">
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/01-05-23.jpg">
-						</picture> -->
-						<p>Worked on my new site<span class="date">Jan 9</span></p>
-					</div>
+					
+					{% for week in contribution.graph %}
+						{% for day in week.week %}
+							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
+								<!-- {% if day.picture %}
+									<picture class="placeholder">
+										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
+										<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
+									</picture>
+									<picture class="loading-lazy">
+										<source srcset="{{ day.picture.webp }}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %} -->
+								
+								<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
+							</div>
+						{% endfor %}
+					{% endfor %}
+					
 				</div>
 			</div>
-			
-			<!-- <p>{{ contribution.2022.12.17.description }}</p> -->
-			<p>{{ contribution.data.2023.01.01.description }}</p>
 			
 			<div class="profile">
 				
@@ -712,7 +680,7 @@ date: Last Modified
 					let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
 					
 					let targetElemDate = '01-05-23'
-					let targetSelector = 'div.graph-hover div.activity[data-date="' + targetElemDate + '"]'
+					let targetSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
 					
 					a.addEventListener('mouseenter', () => {
 						document.querySelector(targetSelector).classList.remove('hide')

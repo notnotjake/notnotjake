@@ -116,6 +116,7 @@ module.exports = function () {
 			const xDate = xDay.toFormat('dd')
 			
 			day.date = xDay.toFormat(dateFormat)
+			day.dateShort = xDay.toFormat('MMM d')
 			if (xDay > today) {
 				day.level = 'future'
 				day.description = ''
@@ -131,8 +132,6 @@ module.exports = function () {
 			else {
 				day.level = ''
 				day.description = 'zZzzz'
-				day.icon = ''
-				day.picture = ''
 			}
 			
 			week.push(day)

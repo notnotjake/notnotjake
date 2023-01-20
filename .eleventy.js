@@ -37,7 +37,7 @@ module.exports = function(eleventyConfig) {
 	
 	// Convert the page date to a nicer format
 	eleventyConfig.addShortcode("prettyDate", ( pageDate ) => {
-		return DateTime.fromJSDate(pageDate, {zone: 'est'}).toLocaleString(DateTime.DATE_MED)
+		return DateTime.fromJSDate(pageDate, {zone: 'America/New_York'}).toLocaleString(DateTime.DATE_MED)
 	})
 	
 	// Returns the current year at time of build

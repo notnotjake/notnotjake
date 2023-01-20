@@ -6,56 +6,64 @@ module.exports = function () {
 	let data = {
 		'2023': {
 			'01': {
-				'01': {
-					"description": "Testing Descriptions",
-					"level": "high",
-					"icon": "",
-					"picture": {
-						"webp": "",
-						"jpg": ""
-					}
+				'11': {
+					"description": "Learned SvelteKit",
+					"level": "low"
 				},
-				'03': {
-					"description": "Testing Descriptions",
-					"level": "med",
-					"icon": "",
+				'12': {
+					"description": "Lots of work on my website",
+					"level": "med"
+				},
+				'13': {
+					"description": "Good strategy lunch",
+					"level": "low"
+				},
+				'15': {
+					"description": "Lots of work on my website",
+					"level": "med"
+				},
+				'16': {
+					"description": "Work on my website",
+					"level": "med"
+				},
+				'17': {
+					"description": "Work for client",
+					"level": "high"
+				},
+				'18': {
+					"description": "Back at my apartment",
+					"level": "low",
 					"picture": {
-						"webp": "",
-						"jpg": ""
+						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2023-01-18.webp",
+						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2023-01-18.jpg"
 					}
 				},
 				'19': {
-					"description": "Testing Descriptions",
-					"level": "special",
-					"picture": {
-						"webp": "",
-						"jpg": ""
-					}
+					"description": "Lots of work on my website",
+					"level": "med"
 				}
 			}
 		},
 		'2022': {
 			'12': {
 				'17': {
-					"description": "Graduated from JMU",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg",
+					"description": "Graduated from JMU. Finally.",
+					"level": "high",
 					"picture": {
-						"webp": "",
-						"jpg": ""
+						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.webp",
+						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.jpg"
 					}
 				}
 			},
 			'11': {
-				'30': {
-					"description": "Graduated from JMU",
-					"level": "low",
-					"icon": "",
+				'06': {
+					"description": "Crashed and Hurt",
+					"level": "high",
 					"picture": {
-						"webp": "",
-						"jpg": ""
+						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.webp",
+						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.jpg"
 					}
-				}
+				},
 			}
 		}
 	}

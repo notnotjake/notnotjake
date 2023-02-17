@@ -1,5 +1,15 @@
 {
+	"baseURL": "https://www.notnotjake.com",
 	"name": "!!Jake",
-	"description": "I'm Jake! I post the things I'm working on and that interest me.",
-	"baseURL": "https://www.notnotjake.com"
+	"description": "I'm Jake! I move ideas to product and am obsessed with the process. I share what I'm learning, what I'm thinking, and what I'm building, here on this site",
+	"author": "@_notnotjake",
+	"twitter": "_notnotjake",
+	"favicon": "https://large-assets.notnotjake.com/images/site/favicon.png",
+	"image": "",
+	"fathom": {
+		"use": true,
+		"url": "https://joy-books.notnotjake.com/script.js",
+		"id": "QMSKHICJ"
+	},
+	"feed": false
 }

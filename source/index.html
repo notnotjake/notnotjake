@@ -1,86 +1,11 @@
 ---
 date: Last Modified
+style: '/css/pages/index.css'
 ---
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!--Site Info-->
-		<meta charset="utf-8">
-		<title>!!JAKE</title>
-		<meta name="author" content="Jake Gooch">
-		<!-- Site Info [End] -->
-		
-		<!-- OpenGraph -->
-		<meta property="og:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
-		<meta property="og:site_name" content="Not Not Jake">
-		<meta property="og:url" content="{{ site.baseURL }}{{ page.url }}">
-		<meta property="og:type" content="website">
-		<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-		<meta property="og:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
-		<!-- OpenGraph [End] -->
-		
-		<!-- Twitter Cards -->
-		<meta property="twitter:card" content="summary">
-		<meta property="twitter:site" content="@_notnotjake">
-		<meta property="twitter:creator" content="@_notnotjake">
-		<meta property="twitter:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
-		<meta property="twitter:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-		<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
-		<!-- Twitter Cards [End] -->
-		
-		<!-- Fonts -->
-		<style>
-			/* SONO - VARIABLE */
-			@font-face {
-				font-family: 'Sono Var';
-				src: url('https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2') format("woff2-variations");
-				font-weight: 200 800;
-			}
-			/* GT MARU - VARIABLE */
-			@font-face {
-				font-family: 'Maru Var';
-				src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
-				font-style: normal;
-			}
-			/* GT PRESSURA - VARIABLE */
-			@font-face {
-				font-family: 'Pressura Var';
-				src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
-				font-style: normal;
-			}
-			/* COURIER PRIME - 700 */
-			@font-face {
-				font-family: 'Courier Prime';
-				font-style: bold;
-				font-weight: 700;
-				src: local(''),
-					url('https://assets.notnotjake.com/fonts/courier-prime-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-					url('https://assets.notnotjake.com/fonts/courier-prime-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-				font-display: swap;
-			}
-		</style>
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/courier-prime-700.woff2" type="font/woff2" crossorigin>
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/sono/Sono-Variable.woff2" type="font/woff2" crossorigin>
-		<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin>
-		
-		<link rel="preconnect" href="https://rsms.me/">
-		<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-		<!-- Fonts [End] -->
-		
-		<!-- Appearance-->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-		<link rel="icon" type="image/png" href="https://assets.notnotjake.com/images/favicon.png">
-		
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
-		<link rel="stylesheet" type="text/css" href="/css/pages/index.css">
-		<!-- Appearance [End] -->
-		
-		<!-- Feeds -->
-		<!-- Feeds [End] -->
-		
-		<!-- Fathom Analytics -->
-		<script src="https://joy-books.notnotjake.com/script.js" data-site="QMSKHICJ" defer></script>
-		<!-- Fathom Analytics [End] -->
+		{% include "partials/_head.njk" %}
 	</head>
 	<body>
 		<div id="splash" class="hide">
@@ -211,25 +136,12 @@ date: Last Modified
 					{% for week in contribution.graph %}
 						{% for day in week.week %}
 							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
-								{% if day.picture %}
-									<!-- <p>{{ day.picture.webp }}</p> -->
-									
+								{% if day.picture %}									
 									<picture>
 										<source srcset="{{ day.picture.webp}}">
 										<img src="{{ day.picture.jpg }}">
 									</picture>
 								{% endif %}
-								
-								<!-- {% if day.picture %}
-									<picture class="placeholder">
-										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-										<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg" alt="Playful Question Marks (loading)">
-									</picture>
-									<picture class="loading-lazy">
-										<source srcset="{{ day.picture.webp }}">
-										<img src="{{ day.picture.jpg }}">
-									</picture>
-								{% endif %} -->
 								
 								<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
 							</div>
@@ -302,28 +214,25 @@ date: Last Modified
 						<p>Research</p>
 						<p>Listening</p>
 						<p>Inspiration</p>
+						<p>Problem</p>
 						<p>Research</p>
 						<p>Learning</p>
 						<p>Listening</p>
 						<p>Inspiration</p>
 					</div>
-					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
-						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-					</svg> -->
 					<div class="second-word">
 						<p>Thinking</p>
 						<p>Strategy</p>
 						<p>Writing</p>
 						<p>Insight</p>
+						<p>Process</p>
 					</div>
-					<!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-short" viewBox="3 0 10 16">
-						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
-					</svg> -->
 					<div class="third-word">
 						<p>Sharing</p>
 						<p>Execution</p>
 						<p>Making</p>
 						<p>Product</p>
+						<p>Shipping</p>
 						<p>Deliver</p>
 						<p>Execution</p>
 						<p>Making</p>

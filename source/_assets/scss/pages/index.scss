@@ -118,7 +118,7 @@ header > a.more-button {
 	border-radius: 50px 0 0 50px;
 }
 
-header svg {
+header img {
 	height: 21px;
 	width: 21px;
 }
@@ -144,7 +144,7 @@ header ul li.scrolling-home-button {
 	padding: 0;
 	display: none;
 }
-header ul li.scrolling-home-button svg {
+header ul li.scrolling-home-button img {
 	height: 50px;
 	width: 21px;
 }
@@ -935,7 +935,7 @@ div.footer > div.links {
 	margin: auto;
 	width: fit-content;
 }
-div.footer svg {
+div.footer a svg {
 	height: 31px;
 	width: 31px;
 	color: #6793b2;
@@ -949,66 +949,7 @@ div.footer picture, div.footer img {
 	height: 90px;
 	max-width: 100px;
 }
-#beach-ball {
-	position: absolute;
-	top: 80px;
-	left: 12vw;
-}
-#pillar {
-	position: absolute;
-	top: 190px;
-	right: 9vw;
-}
-#sun {
-	position: absolute;
-	top: 40px;
-	right: 23vw;
-}
-#wave {
-	position: absolute;
-	top: 150px;
-	left: 29vw;
-	z-index: 3;
-}
-@media (max-width: 1200px) {
-	#beach-ball {
-		position: absolute;
-		top: 80px;
-		left: 3vw;
-	}
-	#pillar {
-		display: none;
-	}
-	#sun {
-		position: absolute;
-		top: 40px;
-		right: 9vw;
-	}
-	#wave {
-		position: absolute;
-		top: 140px;
-		right: 20vw;
-		z-index: 3;
-	}
-}
-@media (max-width: 700px) {
-	#beach-ball {
-		position: absolute;
-		top: 100px;
-		left: -23px;
-	}
-	#pillar {
-		display: none;
-	}
-	#sun {
-		position: absolute;
-		top: 40px;
-		right: -30px;
-	}
-	#wave {
-		display: none;
-	}
-}
+
 .footer-wrapper {
 	position: absolute;
 	bottom: 0;
@@ -1057,6 +998,8 @@ Splash (New Visitor)
 }
 #splash .site-title {
 	width: 100%;
+	height: 2rem;
+	margin-top: 1.7rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1068,9 +1011,8 @@ Splash (New Visitor)
 	text-decoration: none;
 	color: var(--site-orange);
 }
-#splash .site-title span {
-	margin-right: 9px;
-	fill: var(--site-orange);
+#splash .site-title img {
+	height: 100%;
 }
 #splash div {
 	flex-grow: 1;
@@ -1080,14 +1022,12 @@ Splash (New Visitor)
 	padding: 30px;
 }
 #splash div.scroll-indicator {
-	// fill: hsl(36deg, 60%, 79%);
 	position: absolute;
 	bottom: 20px;
 	width: 100%;
 	animation: fadeIn 800ms;
 }
-#splash div.scroll-indicator svg {
-	// fill: hsl(36deg, 60%, 79%);
+#splash div.scroll-indicator img {
 	margin: auto;
 }
 #splash div.scroll-indicator svg * {

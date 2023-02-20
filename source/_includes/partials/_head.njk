@@ -1,54 +1,60 @@
 <!-- Site Info -->
 <meta charset="utf-8">
-<title>{{ site.name}} {% if title %} - {{ title }} {% endif %} </title>
-<meta name="author" content="Jake Gooch">
-<meta name="description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-{% if cannonical %} <link rel="canonical" href="{{ cannonical }}"> {% endif %}
+<title>{{ site.name}}{% if title %} - {{ title }}{% endif %}</title>
+{% if site.author %}<meta name="author" content="{{ site.author }}">{% endif %}
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+{% if cannonical %}<link rel="canonical" href="{{ cannonical }}">{% endif %}
+<!-- Site Info [End] -->
+
 
 <!-- OpenGraph -->
-<meta property="og:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
-<meta property="og:site_name" content="Not Not Jake">
-<meta property="og:url" content="{{ site.baseURL }}{{ page.url }}">
+<meta property="og:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
+<meta property="og:site_name" content="{{ site.name}}">
+<meta property="og:url" content="{{ site.baseURL}}">
 <meta property="og:type" content="website">
-<meta property="og:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-<meta property="og:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="og:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
+<!-- OpenGraph [End] -->
+
 
 <!-- Twitter Cards -->
 <meta property="twitter:card" content="summary">
-<meta property="twitter:site" content="@_notnotjake">
-<meta property="twitter:creator" content="@_notnotjake">
-<meta property="twitter:title" content="!!Jake{% if title %}- {{ title }}{% endif %}">
-<meta property="twitter:description" content="{% if description %} {{ description }} {% else %} {{ site.description }} {% endif %}">
-<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}https://www.notnotjake.com/images/sharing-sitewide.png{% endif %}">
+<meta property="twitter:site" content="{{ site.twitter }}">
+<meta property="twitter:creator" content="">
+<meta property="twitter:title" content="{{ site.name}}{% if title %} - {{ title }}{% endif %}">
+<meta property="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta property="twitter:image" content="{% if image %}{{ image }}{% else %}{{ site.image}}{% endif %}">
+<!-- Twitter Cards [End] -->
+
 
 <!-- Fonts -->
-<style>
-	/* GT MARU - VARIABLE */
-	@font-face {
-		font-family: 'Maru Var';
-		src: url('https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2') format('woff2-variations');
-		font-style: normal;
-	}
-	/* GT PRESSURA - VARIABLE */
-	@font-face {
-		font-family: 'Pressura Var';
-		src: url('https://assets.notnotjake.com/fonts/pressura/GT-Pressura-Trial-VF.woff2') format('woff2-variations');
-		font-style: normal;
-	}
-</style>
-<link rel="preload" as="font" href="https://assets.notnotjake.com/fonts/maru/GT-Maru-Trial-VF.woff2" type="font/woff2" crossorigin>
+{% include "partials/_fonts.njk" %}
 
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<!-- Fonts [End] -->
+
 
 <!-- Appearance -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
-<link rel="apple-touch-icon" href="https://www.notnotjake.com/images/favicon.png">
-<link rel="icon" type="image/png" sizes="271x271" href="https://www.notnotjake.com/images/favicon.png">
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-{% if style %} <link rel="stylesheet" type="text/css" href="{{ style }}"> {% endif %}
 
-<!--Feeds-->
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+{% if style %}<link rel="stylesheet" type="text/css" href="{{style}}">{% endif %}
+	
+<link rel="apple-touch-icon" href="{{ site.favicon }}">
+<link rel="icon" type="image/png" sizes="271x271" href="{{ site.favicon }}">
+<!-- Appearance [End] -->
+
+
+<!-- Feeds -->
+{% if feed %}
+{{feed}}
+{% endif %}
+<!-- Feeds [End] -->
+
 
 <!-- Fathom Analytics -->
-<script src="https://joy-books.notnotjake.com/script.js" data-site="QMSKHICJ" defer></script>
+{% if site.fathom.use %}
+<script src="{{site.fathom.url}}" data-site="{{site.fathom.id}}" defer></script>
+{% endif %}
+<!-- Fathom Analytics [End] -->

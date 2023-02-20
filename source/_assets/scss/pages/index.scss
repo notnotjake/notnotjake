@@ -761,6 +761,20 @@ main div.card.latest-posts ul a span {
 	height: 400%;
 }
 
+div.footer:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 6rem;
+	top: 0;
+	transform: translateY(-6rem);
+	background-image: linear-gradient(to bottom, 
+		#EEF0F0 0%,
+		#4133A8 70%,
+		#09041E 100%
+	);
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Last Note
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -927,6 +941,11 @@ div.footer {
 	width: 100%;
 	padding-top: 90px;
 	overflow: hidden;
+	
+	background-image: linear-gradient(to bottom, 
+		#09041E 0%,
+		#2E1985 100%
+	);
 }
 div.footer > div.links {
 	display: flex;

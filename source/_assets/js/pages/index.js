@@ -324,7 +324,7 @@ document.querySelector('main').addEventListener('scroll', () => {
 Last Note
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 if ( !prefersReducedMotion ) {
-	document.querySelector('#last-note').classList.remove('hide')
+	document.querySelector('#last-note div.container').classList.remove('hide')
 	
 	gsap.delayedCall(0.0, () => { wordCycle('div.last-note div.first-word p') })
 	gsap.delayedCall(0.6, () => { wordCycle('div.last-note div.second-word p') })

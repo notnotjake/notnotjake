@@ -1,5 +1,39 @@
 <footer class="width-narrow">
-	<p class="site-info"><span class="thanks">THANKS FOR VISITING!</span><span>&#169; 2022 Jake Gooch</span> • <a href="https://www.11ty.dev">Built with <img src="https://large-assets.notnotjake.com/images/site/icon-11ty.png"> 11ty</a> • <a href="https://www.netlify.com">Hosted on <img src="https://large-assets.notnotjake.com/images/site/icon-netlify.png"> Netlify</a> • <a href="https://github.com/notnotjake/notnotjake-11ty">Code on <img src="https://large-assets.notnotjake.com/images/site/icon-github.png"> GitHub</a>
+	<div class="wrapper">
+		<div class="static">
+			<p class="message">Thanks for visiting!</p>
+			<p class="copyright">&copy; {% year %} Jake Gooch</p>
+		</div>
+		
+		<div class="expands">
+			<a href="{{ page.url }}" onclick="return copyURL()">🔗</a>
+				
+			<a href="mailto:jake@notnotjake.com?subject=Hey!">📫</a>
+			
+			<a href="/tech" onclick="return expandFooter()">🌐</a>
+		</div>
+	</div>
+
+	<p class="tech-expanded hide">
+		<a href="https://www.11ty.dev">Built with <img src="https://large-assets.notnotjake.com/images/site/icon-11ty.png"> 11ty</a> • <a href="https://www.netlify.com">Hosted on <img src="https://large-assets.notnotjake.com/images/site/icon-netlify.png"> Netlify</a> • <a href="https://github.com/notnotjake/notnotjake-11ty">Code on <img src="https://large-assets.notnotjake.com/images/site/icon-github.png"> GitHub</a> • <span class="last-updated">Updated {% prettyDate page.date %}</span>
 	</p>
-	<p class="last-updated">Last Updated {% prettyDate page.date %}</p>
 </footer>
+
+<script>
+	function copyURL () {
+		console.log('A')
+		
+		return false
+	}
+	
+	function expandFooter() {		
+		const p = document.querySelector('footer p.tech-expanded')
+		if ( p.classList.contains('hide') ) {
+			p.classList.remove('hide')
+		}
+		else {
+			p.classList.add('hide')
+		}
+		return false
+	}
+</script>

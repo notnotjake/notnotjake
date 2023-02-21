@@ -1,6 +1,6 @@
 :root {
 	--footer-bg: #C7E3FF;
-	--footer-obg: #d6dee0;
+	--footer-obg: hsla(213, 100%, 94%, 0.2);
 }
 // @media (prefers-color-scheme: dark) {
 // 	:root {
@@ -9,55 +9,68 @@
 // 	}
 // }
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Footer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 footer {
-	min-height: 100px;
-	font-family: 'Inter V', 'Inter', 'Avenir', 'sans-serif';
-	padding: 20px 0;
-	margin-bottom: 14px;
-	background: #eef0f0;
-}
-footer p.site-info, footer p.last-updated {
-	padding-left: 0.6em;
-}
-footer p.site-info {
-	font-size: 16px;
-	padding: 0.6em 0.6em;
-	margin: 0.5em 0;
-	background-color: var(--footer-obg);
-	border-radius: 10px;
-	font-weight: 400;
-	overflow: scroll;
-	white-space:nowrap;
-}
-footer p.site-info span {
+	margin-bottom: 2.3rem;
+	
+	font-family: 'Inter V', 'Inter', 'sans-serif';
+	color: white;
 	font-weight: 500;
+	font-size: 1.2rem;
+	
+	div.wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		
+		padding: 0.9rem 1.2rem;
+		background-color: var(--footer-obg);
+		border-radius: 0.8rem;
+	}
+	
+	.static {
+		.message {
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+		.copyright {
+			font-size: 0.95rem;
+			opacity: 0.8;
+		}
+	}
+	
+	.expands {
+		display: flex;
+		flex-direction: row;
+		gap: 1.3rem;
+		a {
+			text-decoration: none;
+		}
+	}
+	
+	p.tech-expanded {
+		font-size: 1.2rem;
+		color: white;
+		padding: 1rem 1.2rem 0;
+		
+		a {
+			color: inherit;
+			white-space: nowrap;
+			text-decoration: underline;
+			text-decoration-color: hsla(0, 0%, 100%, 0.4);
+		}
+		a:hover {
+			text-decoration-color: hsla(0, 0%, 100%, 0.9);
+		}
+		span.last-updated {
+			font-family: 'Courier', ui-monospace, monospace;
+			font-style: normal;
+			opacity: 0.8;
+		}
+		img {
+			height: 1.7rem;
+			transform: translateY(0.4rem);
+			display: inline;
+		}
+	}
 }
-footer p.site-info span.thanks {
-	font-weight: 600;
-	font-size: 18px;
-	margin-right: 12px;
-}
-footer p.site-info img {
-	height: 25px;
-	border-radius: 15%;
-	vertical-align: middle;
-	display: inline;
-}
-footer p.site-info a {
-	color: unset;
-	text-decoration: none;
-}
-footer p.site-info a:hover {
-	text-decoration: underline;
-}
-footer p.site-info a:visited {
-	color: unset;
-}
-footer p.last-updated {
-	font-family: 'Courier', 'Courier Prime';
-	filter: opacity(80%);
-}
-/* Footer [End] */

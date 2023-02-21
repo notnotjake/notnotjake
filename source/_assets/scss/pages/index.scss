@@ -50,7 +50,7 @@ Overscrolls
 	bottom: 0;
 	z-index: -2;
 	transform: translateY(299px);
-	background-image: linear-gradient(to bottom, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+	background-image: linear-gradient(to bottom, hsl(252, 100%, 38%), hsl(230, 76%, 53%) 50%);
 }
 .overscroll-bottom_mobile {
 	height: 200px;
@@ -58,7 +58,7 @@ Overscrolls
 	position: fixed;
 	bottom: 0;
 	z-index: -3;
-	background-image: linear-gradient(to top, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+	background-image: linear-gradient(to top, hsl(252, 100%, 38%), hsl(230, 76%, 53%) 50%);
 }
 /* Overscrolls [End] */
 
@@ -837,7 +837,7 @@ div.last-note div.first-word p {
 		#88d894
 	);
 	background: linear-gradient(to right,
-		#ffffff 0%, 
+		#daf6e3 0%, 
 		#5ed270 80%,
 		#5ed270 100%
 	);
@@ -871,8 +871,9 @@ div.last-note div.third-word p {
 	);
 	background: linear-gradient(to right,
 		#1cd67b 0%,
-		#24a2d8 50%,
-		#2776ed 100%
+		#24a2d8 30%,
+		#3031f4 60%,
+		#1472ff 80%
 	);
 	-webkit-background-clip: text;
 	background-clip: text;
@@ -966,8 +967,40 @@ div.footer a svg {
 	transition: all 300ms;
 }
 div.footer > div.links a:hover svg {
-	color: #0b80ff;
+	color: #d8ebff;
 	transition: color 250ms;
+}
+div.footer > div.links a:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5rem;
+	height: 5rem;
+	transform: translateX(calc(-2.5rem + 15.5px)) translateY(calc(-2.5rem + 15.5px)) scale(2);
+	transform-origin: center;
+	pointer-events: none;
+	
+	background: transparent;
+	background: radial-gradient(circle, hsla(0, 0%, 0%, 0), hsla(219, 100%, 62%, 0.19), hsla(216, 94%, 42%, 0) 70%);
+	
+	opacity: 0;
+	transition: all 300ms ease-out;
+}
+div.footer > div.links a:hover:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 5rem;
+	height: 5rem;
+	transform: translateX(calc(-2.5rem + 15.5px)) translateY(calc(-2.5rem + 15.5px));
+	
+	background: transparent;
+	background: radial-gradient(circle, hsla(0, 0%, 0%, 0), hsla(219, 100%, 62%, 0.19), hsla(216, 94%, 42%, 0) 70%);
+	
+	opacity: 1;
+	scale: 1;
 }
 div.footer picture, div.footer img {
 	height: 90px;

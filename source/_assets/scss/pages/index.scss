@@ -3,6 +3,7 @@
 	--animation-delay: 25ms;
 	
 	--blocks-color: #D6D7D8;
+	--background-color-main: hsla(180, 6%, 94%, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -432,55 +433,120 @@ div.graph > div.flex > div > a:nth-of-type(7) {
 }
 /* Timeline Block [End] */
 
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Sentence
+Bio Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-article.sentence {
-	text-align: center;
+article#bio {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 0 0;
-	padding-top: clamp(40px, 10vh, 90px);
-	padding-bottom: clamp(40px, 10vh, 90px);
-	padding-left: 10px;
-	padding-right: 10px;
-	z-index: 0;
-}
-article.sentence h1 {
-	font-family: 'Pressura Var', 'Maru Var', sans-serif;
-	font-variation-settings: "wght" 490, "wdth" 110, "ital" 0.15;
-	font-size: 1.7em;
-	line-height: 1.5;
-	font-weight: 550;
-	letter-spacing: 0.0em;
-	max-width: 57ch;
+	padding-top: 0.8rem;
+	padding-bottom: 6rem;
 	text-align: center;
+	
+	div.profile-picture {
+		height: 6rem;
+		overflow: hidden;
+		margin-bottom: 1.7rem;
+		picture, img {
+			height: 100%;
+			opacity: 0.93;
+			transform: scale(0.9) translateY(9%);
+			transform-origin: bottom;
+			transition: all 500ms;
+		}
+	}
+	div.profile-picture:after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 10%;
+		bottom: 0;
+		left: 0;
+		background: linear-gradient(to bottom,
+			hsla(180, 6%, 94%, 0) 0%,
+			hsla(180, 6%, 94%, 0.3) 50%,
+			var(--background-color-main) 100%
+		);
+	}
+	div.profile-picture:hover picture,
+	div.profile-picture:hover img {
+		opacity: 1;
+		transform: scale(1) translateY(0%);
+	}
+	h1 {
+		font-family: 'Pressura Var', 'Maru Var', sans-serif;
+		font-variation-settings: "wght" 490, "wdth" 110, "ital" 0.15;
+		font-size: 1.7em;
+		line-height: 1.5;
+		font-weight: 550;
+		letter-spacing: 0.0em;
+		max-width: 59ch;
+		padding-left: 0.9rem;
+		padding-right: 0.9rem;
+		button {
+			all: unset;
+			cursor: cell;
+		}
+		img {
+			height: 1em;
+			width: 1em;
+			display: inline;
+			object-fit: contain;
+			margin: 0 0.05em -0.15em;
+		}
+		span.define {
+			border-bottom: 2px dotted rgb(157, 157, 157);
+		}
+		span.definition {
+			border-bottom: 2px dotted rgb(157, 157, 157);
+			color: rgb(86, 86, 86);
+			font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+		}
+		span.expand {
+			background: hsl(0, 0%, 89%);
+			font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
+			padding: 4px 8px 2px;
+			border-radius: 6px;
+			color: black;
+			white-space: nowrap;
+		}
+		span.expansion {
+			color: rgb(0, 0, 0);
+			font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.5;
+			animation: bio-expand 500ms;
+		}
+	}
+	p {
+		color: hsl(0, 0%, 43%);
+		font-size: 1.05em;
+		padding: 0.3em;
+	}
+	ul {
+		padding-top: 0.8rem;
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+		
+		li {
+			list-style: none;
+		}
+		a, a:visited {
+			font-size: 1.1em;
+			font-weight: 510;
+			color: black;
+			transition: color 100ms ease-in-out;
+		}
+		a:hover {
+			color: hsl(213, 95%, 47%);
+		}
+		a:active {
+			color: hsl(186, 59%, 54%);
+		}
+	}
 }
-article.sentence img {
-	height: 1em;
-	width: 1em;
-	display: inline;
-	object-fit: contain;
-	margin: 0 0.05em -0.15em;
-}
-
-article.sentence h1 span.expand {
-	background: hsl(0, 0%, 89%);
-	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
-	padding: 4px 8px 2px;
-	border-radius: 6px;
-	color: black;
-	white-space: nowrap;
-}
-article.sentence h1 span.expansion {
-	color: rgb(0, 0, 0);
-	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.5;
-	animation-name: expandIn;
-	animation-duration: 500ms; 
-}
-@keyframes expandIn {
+@keyframes bio-expand {
 	0% { 
 		opacity: 0; 
 		color: rgb(0, 119, 255);
@@ -497,52 +563,7 @@ article.sentence h1 span.expansion {
 		background: hsl(0, 0%, 89%, 0%);
 	}
 }
-article.sentence h1 span.define {
-	// text-decoration: underline;
-	border-bottom: 2px dotted rgb(157, 157, 157);
-}
-article.sentence h1 span.definition {
-	// display: none;
-	border-bottom: 2px dotted rgb(157, 157, 157);
-	color: rgb(86, 86, 86);
-	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
-}
-article.sentence button {
-	border: none;
-	background: none;
-	cursor: cell;
-	color: unset;
-}
-
-article.sentence > p {
-	text-align: center;
-	color: hsl(0, 0%, 43%);
-	font-size: 1.05em;
-	padding: 0.3em;
-}
-article.sentence div a {
-	font-size: 1.1em;
-	font-weight: 510;
-	padding-top: 0.6em;
-	color: black;
-}
-article.sentence div a:visited {
-	color: black;
-}
-article.sentence div a:hover {
-	color: hsl(213, 48%, 55%);
-	transition: color 100ms ease-in-out;
-}
-article.sentence div a:active {
-	color: hsl(186, 59%, 54%);
-}
-article.sentence div {
-	display: flex;
-	align-items: center;
-	gap: 18px;
-	justify-content: center;
-}
-/* The Sentence [End] */
+/* Bio Section [End] */
 
 
 div.dark {
@@ -1238,7 +1259,6 @@ Splash (New Visitor)
 	}
 }
 
-
 @keyframes splash_scroll-indicator {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
@@ -1299,7 +1319,6 @@ Splash (New Visitor)
 	from { filter: opacity(10%); transform: scaleX(108%); }
 	to { filter: opacity(100%); transform: scaleX(100%); }
 }
-
 
 @media (max-width: 1100px) {
 	#splash div h1 {

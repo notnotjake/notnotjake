@@ -270,7 +270,7 @@ style: '/css/pages/index.css'
 		
 		<!-- Cookie Decides if First Time -->
 		<script>
-			if ( document.cookie == '' ) {
+			if ( !decodeURIComponent(document.cookie).includes('crumb') ) {
 				document.cookie = 'crumb'
 				document.querySelector('#splash').classList.remove('hide')
 			}

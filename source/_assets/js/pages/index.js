@@ -28,8 +28,6 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				]
 			})
 		}
-		// Show a scroll indicator
-		document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
 	})
 	
 	/* Scroll Handler: triggers at 250px scroll-y

@@ -1087,9 +1087,91 @@ Splash (New Visitor)
 		backdrop-filter: blur(0.4rem);
 		-webkit-backdrop-filter: blur(0.4rem);
 	}
+	div.starfield {
+		position: absolute;
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		
+		span {
+			position: absolute;
+			// top: 0;
+			// left: 0;
+			height: 3px;
+			width: 3px;
+			border-radius: 50%;
+			background: hsl(211, 81%, 79%);
+			box-shadow: 0 0 0.9rem 0.2rem hsla(0, 0%, 100%, 0.4);
+		}
+		span.bright {
+			background: hsl(57, 100%, 92%);
+		}
+		span.star1 {
+			top: 24%;
+			left: 5%;
+		}
+		span.star2 {
+			top: 30%;
+			left: 10%;
+		}
+		span.star3 {
+			top: 50%;
+			left: 7%;
+		}
+		span.star4 {
+			top: 50%;
+			left: 30%;
+		}
+		span.star5 {
+			top: 71%;
+			left: 38%;
+		}
+		span.star6 {
+			top: 69%;
+			left: 58%;
+		}
+		span.star7 {
+			top: 47%;
+			left: 63%;
+		}
+		span.star8 {
+			top: 25%;
+			left: 53%;
+		}
+		span.star9 {
+			top: 29%;
+			left: 75%;
+		}
+		span.star10 {
+			top: 18%;
+			left: 82%;
+			opacity: 0.6;
+		}
+		span.star11 {
+			top: 28%;
+			left: 87%;
+		}
+		span.star12 {
+			top: 38%;
+			left: 91%;
+		}
+		span.star13 {
+			top: 40%;
+			left: 93%;
+		}
+		span.star14 {
+			top: 59%;
+			left: 96%;
+		}
+		span.star15 {
+			top: 73%;
+			left: 85%;
+		}
+		
+	}
 	
 	> * {
-		z-index: 4;
+		z-index: 5;
 	}
 	
 	a.site-title {
@@ -1110,11 +1192,19 @@ Splash (New Visitor)
 		h1 {
 			font-size: clamp(12vw, 12vw, 9.2em);
 			line-height: 0.9;
-			margin-bottom: 0.3em;
+			// margin-bottom: 0.3em;
+			
+			padding: 0.2em 0;
 			
 			font-weight: 400; /* Animation Start Value */
 			transform: scale(94%); /* Animation Start Value */
 			color: hsl(205, 67%, 31%); /* Animation Start Value */
+			background: hsl(205, 67%, 31%);
+			
+			background-clip: text;
+			-webkit-background-clip: text;
+			text-fill-color: transparent;
+			-webkit-text-fill-color: transparent;
 		}
 		h1:nth-of-type(1) {
 			animation: splash_h1 0.9s 0.2s forwards;
@@ -1128,7 +1218,7 @@ Splash (New Visitor)
 			padding: 0 3rem;
 			color: hsl(26, 75%, 91%);
 		
-			animation: splash_h2 0.5s 1.3s forwards;
+			animation: splash_h2 0.6s 1.5s forwards;
 			filter: opacity(10%); /* Animation Start Value */
 			transform: scaleX(108%); /* Animation Start Value */
 			a, a:visited, a:active {
@@ -1146,25 +1236,69 @@ Splash (New Visitor)
 	}
 }
 
-/* Animations */
+// Animations
 @keyframes splash_scroll-indicator {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
 }
 @keyframes splash_h1 {
-	0% { transform: scale(94%); }
-	14% { color: hsl(280, 65%, 57%); }
-	30% { color: hsl(52, 100%, 50%); }
-	55% { color: hsl(156, 100%, 50%); }
-	80% { transform: scale(100%); }
-	100% { font-weight: 800; transform: scale(100%); color: hsl(177, 100%, 52%); }
+	0% {
+		transform: scale(94%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
+	14% {
+		background: hsl(280, 65%, 57%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
+	30% {
+		background: hsl(52, 100%, 50%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
+	55% {
+		background: hsl(156, 100%, 50%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
+	80% { 
+		transform: scale(100%);
+		background: hsla(213, 76%, 52%, 1) 60%;
+		background-clip: text;
+		-webkit-background-clip: text;
+		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
+	100% { 
+		font-weight: 800; 
+		transform: scale(100%); 
+		
+		background: linear-gradient(to bottom,
+			hsla(190, 98%, 48%, 1) 10%,
+			hsla(213, 76%, 52%, 1) 60%,
+			hsla(315, 100%, 83%, 0.9) 96%,
+		);
+		background-clip: text;
+		-webkit-background-clip: text;
+		text-fill-color: transparent;
+		-webkit-text-fill-color: transparent;
+	}
 }
 @keyframes splash_h2 {
 	from { filter: opacity(10%); transform: scaleX(108%); }
 	to { filter: opacity(100%); transform: scaleX(100%); }
 }
 
-/* Screen Size Rules */
+// Screen Size Rules
 @media (max-width: 1100px) {
 	#splash h1 {
 		font-size: 13.9vw;

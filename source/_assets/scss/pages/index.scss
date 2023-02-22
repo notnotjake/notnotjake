@@ -1168,7 +1168,6 @@ Splash (New Visitor)
 			top: 73%;
 			left: 85%;
 		}
-		
 	}
 	
 	> * {
@@ -1309,10 +1308,11 @@ Splash (New Visitor)
 	}
 }
 @media (max-width: 650px) {
-	#splash div h2 {
-		font-size: 8.8vw;
+	#splash div h1 {
+		font-size: 13vw;
 	}
 	#splash div h2 {
+		font-size: 8.8vw;
 		padding: 0;
 	}
 	#splash div {

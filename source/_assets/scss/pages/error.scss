@@ -1,0 +1,127 @@
+html, body {
+	background: hsl(125, 5%, 13%);
+	font-family: 'Sono Var', 'Inter V', 'Inter', ui-monospace, monospace;
+	color: hsl(132, 98%, 34%);
+	text-shadow: 0 0 0.19em hsla(123, 100%, 30%, 0.6);
+}
+h1 {
+	margin-bottom: 0.6em;
+}
+h2 {
+	max-width: 30ch;
+	line-height: 1.5;
+}
+main {
+	margin: auto;
+	width: 80%;
+	height: 100%;
+	max-width: 100ch;
+	padding: 4rem 1rem;
+	
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+}
+@media (max-width: 70rem) {
+	main {
+		width: 100%;
+		align-items: center;
+	}
+	h1, h2 {
+		text-align: center;
+	}
+}
+
+#radar {
+	margin-top: 4rem;
+	width: 20rem;
+	height: 20rem;
+	border-radius: 50%;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	background: hsla(132, 5%, 15%, 0.9);
+	box-shadow: 
+		inset 0 0.22rem 0.4rem hsla(118, 20%, 65%, 0.15),
+		inset 0 -0.24rem 0.7rem hsla(118, 5%, 2%, 0.5),
+		0 0 0 0.25rem hsl(0, 0%, 0%);
+	
+	--inner-screen-size: 88%;
+	
+	> * {
+		position: absolute;
+		width: var(--inner-screen-size);
+		height: var(--inner-screen-size);
+		border-radius: 50%;
+	}
+	#screen {
+		background: hsla(132, 52%, 8%, 0.5);
+		background: radial-gradient(50% 50% at 50% 50%, 
+			hsla(118, 29%, 10%, 1) 0%, 
+			hsla(118, 65%, 3%, 1) 100%);
+		box-shadow: 
+			inset 0 0px 3px hsla(118, 34%, 51%, 0.21);
+	}
+	.ring {
+		background: transparent;
+		box-shadow: inset 0 0 0.2rem hsla(0, 0%, 100%, 0.13);
+	}
+	.r1 {
+		width: calc(var(--inner-screen-size) * 0.80);
+		height: calc(var(--inner-screen-size) * 0.80);
+	}
+	.r2 {
+		width: calc(var(--inner-screen-size) * 0.55);
+		height: calc(var(--inner-screen-size) * 0.55);
+	}
+	.r3 {
+		width: calc(var(--inner-screen-size) * 0.30);
+		height: calc(var(--inner-screen-size) * 0.30);
+	}
+	.axis {
+		position: absolute;
+		background: hsla(0, 0%, 100%, 0.12);
+	}
+	.x {
+		width: var(--inner-screen-size);
+		height: 0.1rem;
+	}
+	.y {
+		width: 0.1rem;
+		height: var(--inner-screen-size);
+	}
+	#cone {
+		z-index: 3;
+		width: var(--inner-screen-size);
+		height: var(--inner-screen-size);
+		background: conic-gradient(from 180deg at 50% 50%,
+			hsl(0, 0%, 94%) 0deg, 
+			hsl(0, 0%, 0%) 270deg, 
+			hsl(0, 0%, 0%) 359.96deg, 
+			hsl(0, 0%, 94%) 360deg
+		);
+		opacity: 0.8;
+		mix-blend-mode: color-dodge;
+		
+		animation: rotate 8s linear infinite;
+	}
+	#highlight {
+		z-index: 4;
+		width: 100%;
+		height: 100%;
+		background: radial-gradient(42% 53% at 35% 105%,
+			hsla(118, 40%, 45%, 0.3) 0%,
+			hsla(118, 34%, 51%, 0) 48.9%
+		);
+		
+		animation: rotate 8s linear infinite;
+	}
+}
+@keyframes rotate {
+	0% { transform: rotate(0); }
+	50% { transform: rotate(-180deg); }
+	100% { transform: rotate(-360deg); }
+}

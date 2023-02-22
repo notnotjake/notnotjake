@@ -1195,7 +1195,6 @@ Splash (New Visitor)
 			// margin-bottom: 0.3em;
 			
 			padding: 0.2em 0;
-			
 			font-weight: 400; /* Animation Start Value */
 			transform: scale(94%); /* Animation Start Value */
 			color: hsl(205, 67%, 31%); /* Animation Start Value */
@@ -1211,6 +1210,9 @@ Splash (New Visitor)
 		}
 		h1:nth-of-type(2) {
 			animation: splash_h1 0.9s 0.9s forwards;
+		}
+		h1::selection {
+			background: hsla(262, 100%, 57%, 0.3);
 		}
 		h2 {
 			letter-spacing: -0.06em;

@@ -1,6 +1,6 @@
-# ❇️😍 Creating Delightful&&Meaningful Experiences is my goal
+# ❇️😍 Creating Delightful&&Meaningful Experiences
 
-Hi, I'm Jake! *I'm passionate about creating great user experiences*. I combine Code **(2+ yrs experience)**, Design **(lifelong obsession)**, and Marketing **(college degree)** to create web experiences that wow users, and deliver results for my clients at [Light Dance](https://www.lightdance.design)
+👆That's my goal.  Hi, I'm Jake! *I'm passionate about creating great user experiences*. I combine Code **(2+ yrs experience)**, Design **(lifelong obsession)**, and Marketing **(college degree)** to create web experiences that wow users, and deliver results for my clients at [Light Dance](https://www.lightdance.design)
 
 **Proficient @**
 - HTML, CSS, Git

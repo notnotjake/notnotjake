@@ -3,3 +3,8 @@
   publish = "public"
   
   command = "npm run build"
+  
+[[redirects]]
+  from = "/*"
+  to = "/error/index.html"
+  status = 404

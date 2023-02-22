@@ -8,7 +8,11 @@ style: '/css/pages/index.css'
 		{% include "partials/_head.njk" %}
 	</head>
 	<body>
-		<div id="splash" class="hide">
+		<div id="splash" class="">
+			<div class="dark"></div>
+			<div class="gradient-bottom"></div>
+			<div class="blur"></div>
+			
 			<a href="https://www.notnotjake.com" class="site-title">
 				<img src="https://large-assets.notnotjake.com/images/site/monospace-logo.svg" alt="!!Jake">
 			</a>
@@ -254,7 +258,7 @@ style: '/css/pages/index.css'
 				document.querySelector('#splash').classList.remove('hide')
 			}
 			if ( !document.querySelector('#splash').classList.contains('hide') ) {
-				document.body.style.background = '#54258F'
+				document.body.style.background = '#100068'
 				document.querySelector('header').classList.remove('header-background')
 				document.querySelector('.overscroll-top').style.display = 'none'
 				document.querySelector('.overscroll-top_mobile').style.display= 'none'

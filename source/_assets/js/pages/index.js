@@ -44,7 +44,7 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 		}
 		else if ( window.scrollY < scrollTriggerY ) {
 			// document.body.style.background = '#54258F'
-			updateBodyBackground("#54258F")
+			updateBodyBackground("#100068")
 		}
 		else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 			scrollPastSplash()

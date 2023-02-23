@@ -8,7 +8,7 @@ style: '/css/pages/index.css'
 		{% include "partials/_head.njk" %}
 	</head>
 	<body>
-		<div id="splash" class="">
+		<div id="splash" class="hide">
 			<div class="dark"></div>
 			<div class="gradient-bottom"></div>
 			<div class="blur"></div>
@@ -290,10 +290,21 @@ style: '/css/pages/index.css'
 		<div class="overscroll-bottom_mobile"></div>
 		
 		<!-- Cookie Decides if First Time -->
-		<script>
+		<script>			
 			if ( !decodeURIComponent(document.cookie).includes('crumb') ) {
 				document.cookie = 'crumb'
 				document.querySelector('#splash').classList.remove('hide')
+				
+				if ( window.navigator.userAgent.toLowerCase().includes('chrome') && 'scrollRestoration' in history) {
+					// Disables scroll stuff in Chrome based browsers
+					history.scrollRestoration = 'manual';
+				}
+			}
+			else {
+				if ( window.navigator.userAgent.toLowerCase().includes('chrome') && 'scrollRestoration' in history) {
+					// Disables scroll stuff in Chrome based browsers
+					history.scrollRestoration = 'auto';
+				}
 			}
 			if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				document.body.style.background = '#100068'

@@ -1,6 +1,6 @@
 :root {
 	--animation-time: 290ms;
-	--animation-delay: 25ms;
+	--animation-delay: 25ms; // should move to graph section
 	
 	--blocks-color: #D6D7D8;
 	--background-color-main: hsla(180, 6%, 94%, 1);
@@ -24,51 +24,37 @@ div.wrapper {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Overscrolls
+Over-scrolls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.overscroll-top {
+div.overscroll {
 	height: 300px;
 	width: 100%;
 	position: fixed;
-	top: 0;
 	z-index: -2;
+}
+div.overscroll.top {
+	top: 0;
 	transform: translateY(-299px);
-	background-image: linear-gradient(to bottom, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
-	// background: rgba(221, 201, 249, 1.0);
+	background-image: linear-gradient(to bottom, hsl(211, 76%, 54%), hsl(265, 80%, 88%));
 }
-.overscroll-top_mobile {
-	height: 200px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	z-index: -3;
-	background-image: linear-gradient(to top, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
-}
-.overscroll-bottom {
-	height: 300px;
-	width: 100%;
-	position: fixed;
+div.overscroll.bottom {
 	bottom: 0;
-	z-index: -2;
 	transform: translateY(299px);
 	background-image: linear-gradient(to bottom, hsl(252, 100%, 38%), hsl(230, 76%, 53%) 50%);
 }
-.overscroll-bottom_mobile {
+div.overscroll.mobile {
 	height: 200px;
-	width: 100%;
-	position: fixed;
-	bottom: 0;
 	z-index: -3;
-	background-image: linear-gradient(to top, hsl(252, 100%, 38%), hsl(230, 76%, 53%) 50%);
+	transform: none;
 }
-/* Overscrolls [End] */
+/* Over-scrolls [End] */
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Header / Story Ticker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 header {
 	height: 50px;
-	// padding: 0 10px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -1040,12 +1026,9 @@ div.footer::after {
 	width: 100%;
 	left: 0;
 	bottom: 0;
-	// background-image: linear-gradient(to top,
-	// 	rgba(147, 184, 246, 1) 0%, 
-	// 	// #b4caee 25%,
-	// 	rgba(237, 240, 240, 0) 60%);
 }
 /* Footer [End] */
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Splash (New Visitor)
@@ -1132,8 +1115,6 @@ Splash (New Visitor)
 		
 		span {
 			position: absolute;
-			// top: 0;
-			// left: 0;
 			height: 3px;
 			width: 3px;
 			border-radius: 50%;
@@ -1228,7 +1209,6 @@ Splash (New Visitor)
 		h1 {
 			font-size: clamp(12vw, 12vw, 9.2em);
 			line-height: 0.9;
-			// margin-bottom: 0.3em;
 			
 			padding: 0.2em 0;
 			font-weight: 400; /* Animation Start Value */
@@ -1273,7 +1253,6 @@ Splash (New Visitor)
 		animation: splash_scroll-indicator 800ms 3.1s forwards;
 	}
 }
-
 @keyframes splash_scroll-indicator {
 	0% { opacity: 0; }
 	100% { opacity: 1; }
@@ -1334,7 +1313,6 @@ Splash (New Visitor)
 	from { filter: opacity(10%); transform: scaleX(108%); }
 	to { filter: opacity(100%); transform: scaleX(100%); }
 }
-
 @media (max-width: 1100px) {
 	#splash div h1 {
 		font-size: 13.5vw;

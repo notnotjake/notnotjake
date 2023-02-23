@@ -41,17 +41,15 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 			return
 		}
 		else if ( window.scrollY < scrollTriggerY ) {
-			// document.body.style.background = '#54258F'
 			updateBodyBackground("#100068")
 		}
 		else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 			scrollPastSplash()
+			console.log('a')
 		}
 		else {
-			// document.body.style.background = '#edf0f0'
 			updateBodyBackground("#edf0f0")
 		}
-		
 	}
 	window.addEventListener('scroll', splashScroll)
 	
@@ -82,8 +80,9 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				document.querySelector('#splash').classList.add('hide')
 				document.body.style.background = '#edf0f0'
 				document.querySelector('header').classList.add('header-background-animation')
-				document.querySelector('.overscroll-top').style.display = 'block'
-				document.querySelector('.overscroll-top_mobile').style.display= 'block'
+				document.querySelectorAll('div.overscroll').forEach( (i) => {
+					i.style.display = 'block'
+				})
 			}
 		})
 	}

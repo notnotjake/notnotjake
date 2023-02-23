@@ -8,7 +8,7 @@ style: '/css/pages/index.css'
 		{% include "partials/_head.njk" %}
 	</head>
 	<body>
-		<div id="splash" class="">
+		<div id="splash" class="hide">
 			<div class="dark"></div>
 			<div class="gradient-bottom"></div>
 			<div class="blur"></div>
@@ -61,121 +61,119 @@ style: '/css/pages/index.css'
 		
 		<div class="overscroll top"></div>
 		<div class="overscroll top mobile"></div>
-		
-		<div class="wrapper">
 			
-			<header class="header-background">
-				<a href="https://www.notnotjake.com" class="home-button">
+		<nav>
+			<div class="background show"></div>
+			<a href="https://www.notnotjake.com" class="home">
+				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
+			</a>
+			<ul>
+				<li class="home">
 					<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
-				</a>
-				<ul>
-					<li class="scrolling-home-button">
-						<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
-					</li>
-					
-					<div class="copy1">
-						{%- for post in collections.posts reversed limit:5 -%}
-						<a href="{{ post.url }}">
-							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
-								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
-							</li>
-						</a>
-						{%- endfor -%}
-						<a href="">
-							<li class="splash-mini">
-								<p>Delight&&Meaning <span>• That's my goal</span></p>
-							</li>
-						</a>
-					</div>
-					<div class="copy2 hide">
-						{%- for post in collections.posts reversed limit:5 -%}
-						<a href="{{ post.url }}">
-							<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
-								<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
-							</li>
-						</a>
-						{%- endfor -%}
-						<a href="">
-							<li class="splash-mini">
-								<p>Delight&&Meaning <span>• That's my goal</span></p>
-							</li>
-						</a>
-						<a href="">
-							<li class="">
-								<p>Older Posts</p>
-							</li>
-						</a>
-					</div>
-				</ul>
-				<a href="/more" class="more-button">
-					<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
-				</a>
-			</header>
-			
-			<div class="graph">
-				<div class="flex">
-					{% for week in contribution.graph %}
-					<div class="week">
-						<p class="label">{{ week.label }}</p>
-						{% for day in week.week %}
-						<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
-							{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
-						</a>
-						{% endfor %}
-					</div>
+				</li>
+				
+				<div id="scroll-collection-1">
+					{%- for post in collections.posts reversed limit:5 -%}
+					<a href="{{ post.url }}">
+						<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
+							<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
+						</li>
+					</a>
+					{%- endfor -%}
+					<a href="">
+						<li class="splash-mini">
+							<p>Delight&&Meaning <span>• That's my goal</span></p>
+						</li>
+					</a>
+				</div>
+				<div id="scroll-collection-2" class="hide">
+					{%- for post in collections.posts reversed limit:5 -%}
+					<a href="{{ post.url }}">
+						<li style="background: {% if post.data.theme-color %} {{ post.data.theme-color }} {% else %} #6f7a8c {% endif %}">
+							<p>{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span></p>
+						</li>
+					</a>
+					{%- endfor -%}
+					<a href="">
+						<li class="splash-mini">
+							<p>Delight&&Meaning <span>• That's my goal</span></p>
+						</li>
+					</a>
+					<a href="">
+						<li class="">
+							<p>Older Posts</p>
+						</li>
+					</a>
+				</div>
+			</ul>
+			<a href="/more" class="more">
+				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
+			</a>
+		</nav>
+		
+		<div class="graph">
+			<div class="flex">
+				{% for week in contribution.graph %}
+				<div class="week">
+					<p class="label">{{ week.label }}</p>
+					{% for day in week.week %}
+					<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
+						{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
+					</a>
 					{% endfor %}
-					
-					<div class="more">
-						<a href="">History</a>
-						<a href="">More Graphs</a>
-						<p>This graph shows what I've done over the past year.</p>
-					</div>
+				</div>
+				{% endfor %}
+				
+				<div class="more">
+					<a href="">History</a>
+					<a href="">More Graphs</a>
+					<p>This graph shows what I've done over the past year.</p>
 				</div>
 			</div>
-			
-			<div class="graph-hover">
-				<div class="container">
-					<div class="activity hide" id="gt-empty" data-date="empty">
-						<p>zZzz<span class="date">Jan 9</span></p>
-					</div>
-					
-					{% for week in contribution.graph %}
-						{% for day in week.week %}
-							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
-								{% if day.picture %}									
-									<picture>
-										<source srcset="{{ day.picture.webp}}">
-										<img src="{{ day.picture.jpg }}">
-									</picture>
-								{% endif %}
-								
-								<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
-							</div>
-						{% endfor %}
-					{% endfor %}
-					
-				</div>
-			</div>
-			
-			<article id="bio">
-				<div class="profile-picture">
-					<picture>
-						<source srcset="https://large-assets.notnotjake.com/images/index/prof-pic.webp?v=1">
-						<img src="https://large-assets.notnotjake.com/images/index/prof-pic.png">
-					</picture>
-				</div>
-				
-				<h1>Hi&mdash;I'm <button type="button" id="btn-d1" onClick="expandDef('1')"><span class="define" id="prm-d1">Jake</span><span class="definition hide" id="alt-d1">optimistic, persistent, and intense</span></button>! I'm <button type="button" id="btn-e1" onClick="expansion('1')"><span class="expand" id="prm-e1">passionate<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/passion.svg" alt="Red heart icon"></span></button> about creating <button type="button" id="btn-d2" onClick="expandDef('2')"><span class="define" id="prm-d2">great</span><span class="definition hide" id="alt-d2">delightful and meaningful</span></button> user experiences.<span class="expansion hide" id="ex-e1"> I believe we can help people unlock their potential, and explore the world.</span> At <button type="button" id="btn-e2" onClick="expansion('2')"><span class="expand" id="prm-e2"><img src="https://large-assets.notnotjake.com/images/index/sentence-svg/light-dance.svg" alt="Icon. Light blue. Shaped like a spinning top or a starburst of light.">LightDance</span></button> I build web experiences<span class="expansion hide" id="ex-e2"> that wow users, and deliver results for my clients</span>. Online, I share <button type="button" id="btn-e3" onClick="expansion('3')"><span class="expand" id="prm-e3">cool things I make <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="Icon of a hand"></span></button><span class="expansion hide" id="ex-e3"> from design, to art, to photography</span>, thoughts about products, and the <button type="button" id="btn-e4" onClick="expansion('4')"><span class="expand" id="prm-e4">future <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/future.svg" alt="Spiral icon"></span></button>. <span class="expansion hide" id="ex-e4">The future is the only way, but the past is full of learning. My writing on this site connects those dots, and explores my own views on where I want to go in life.</span></h1>
-				
-				<p>Jan 9 '23&mdash;VA, USA</p>
-				
-				<ul>
-					<li><a href="mailto:jake@notnotjake.com?subject=Hi!">Contact</a></li>
-					<li><a href="https://www.lightdance.design">Hire Me</a></li>
-					<li><a href="https://read.cv/notnotjake">Resume</a></li>
-				</ul>
-			</article>
 		</div>
+		
+		<div class="graph-hover">
+			<div class="container">
+				<div class="activity hide" id="gt-empty" data-date="empty">
+					<p>zZzz<span class="date">Jan 9</span></p>
+				</div>
+				
+				{% for week in contribution.graph %}
+					{% for day in week.week %}
+						<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
+							{% if day.picture %}									
+								<picture>
+									<source srcset="{{ day.picture.webp}}">
+									<img src="{{ day.picture.jpg }}">
+								</picture>
+							{% endif %}
+							
+							<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
+						</div>
+					{% endfor %}
+				{% endfor %}
+				
+			</div>
+		</div>
+		
+		<article id="bio">
+			<div class="profile-picture">
+				<picture>
+					<source srcset="https://large-assets.notnotjake.com/images/index/prof-pic.webp?v=1">
+					<img src="https://large-assets.notnotjake.com/images/index/prof-pic.png">
+				</picture>
+			</div>
+			
+			<h1>Hi&mdash;I'm <button type="button" id="btn-d1" onClick="expandDef('1')"><span class="define" id="prm-d1">Jake</span><span class="definition hide" id="alt-d1">optimistic, persistent, and intense</span></button>! I'm <button type="button" id="btn-e1" onClick="expansion('1')"><span class="expand" id="prm-e1">passionate<img src="https://large-assets.notnotjake.com/images/index/sentence-svg/passion.svg" alt="Red heart icon"></span></button> about creating <button type="button" id="btn-d2" onClick="expandDef('2')"><span class="define" id="prm-d2">great</span><span class="definition hide" id="alt-d2">delightful and meaningful</span></button> user experiences.<span class="expansion hide" id="ex-e1"> I believe we can help people unlock their potential, and explore the world.</span> At <button type="button" id="btn-e2" onClick="expansion('2')"><span class="expand" id="prm-e2"><img src="https://large-assets.notnotjake.com/images/index/sentence-svg/light-dance.svg" alt="Icon. Light blue. Shaped like a spinning top or a starburst of light.">LightDance</span></button> I build web experiences<span class="expansion hide" id="ex-e2"> that wow users, and deliver results for my clients</span>. Online, I share <button type="button" id="btn-e3" onClick="expansion('3')"><span class="expand" id="prm-e3">cool things I make <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/made.svg" alt="Icon of a hand"></span></button><span class="expansion hide" id="ex-e3"> from design, to art, to photography</span>, thoughts about products, and the <button type="button" id="btn-e4" onClick="expansion('4')"><span class="expand" id="prm-e4">future <img src="https://large-assets.notnotjake.com/images/index/sentence-svg/future.svg" alt="Spiral icon"></span></button>. <span class="expansion hide" id="ex-e4">The future is the only way, but the past is full of learning. My writing on this site connects those dots, and explores my own views on where I want to go in life.</span></h1>
+			
+			<p>Jan 9 '23&mdash;VA, USA</p>
+			
+			<ul>
+				<li><a href="mailto:jake@notnotjake.com?subject=Hi!">Contact</a></li>
+				<li><a href="https://www.lightdance.design">Hire Me</a></li>
+				<li><a href="https://read.cv/notnotjake">Resume</a></li>
+			</ul>
+		</article>
 			
 		<div class="dark">
 			<main>
@@ -306,7 +304,7 @@ style: '/css/pages/index.css'
 			}
 			if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				document.body.style.background = '#100068'
-				document.querySelector('header').classList.remove('header-background')
+				document.querySelector('nav div.background').classList.remove('show')
 				document.querySelectorAll('.overscroll.top').forEach( (i) => {
 					i.style.display = 'none'
 				})				

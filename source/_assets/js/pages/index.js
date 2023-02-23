@@ -14,7 +14,7 @@ Splash (if visible)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 if ( !document.querySelector('#splash').classList.contains('hide') ) {
 	
-	document.querySelector('header').classList.remove('header-background')
+	document.querySelector('nav div.background').classList.remove('show')
 	
 	/* Scroll Hint Bounce (after 3.5s if under 10px scrolled)
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -79,7 +79,7 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 			onComplete: () => {
 				document.querySelector('#splash').classList.add('hide')
 				document.body.style.background = '#edf0f0'
-				document.querySelector('header').classList.add('header-background-animation')
+				document.querySelector('nav div.background').classList.add('show')
 				document.querySelectorAll('div.overscroll').forEach( (i) => {
 					i.style.display = 'block'
 				})
@@ -95,18 +95,18 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Header, Marquee
+Nav, Marquee
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 if ( !prefersReducedMotion ) {
 	/* Only continues if Prefers-Reduced-Motion is OFF
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	
-	document.querySelector('header ul div.copy2').classList.remove('hide')
+	document.querySelector('#scroll-collection-2').classList.remove('hide')
 	
-	const header = document.querySelector('header')
-	const headerScroller = document.querySelector('header ul')
-	const headerContent1 = document.querySelector('header ul div.copy1')
-	const headerContent2 = document.querySelector('header ul div.copy2')
+	const header = document.querySelector('nav')
+	const headerScroller = document.querySelector('nav ul')
+	const headerContent1 = document.querySelector('#scroll-collection-1')
+	const headerContent2 = document.querySelector('#scroll-collection-2')
 	
 	const speed = 60 // Set the horiz. scroll speed for marquee
 	const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
@@ -183,7 +183,7 @@ if ( !prefersReducedMotion ) {
 		})
 	})
 }
-/* Header, Marquee [End] */
+/* Nav, Marquee [End] */
 
 
 

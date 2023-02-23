@@ -19,8 +19,9 @@ body {
 	color: #454545;
 	font-family: "Maru Var", sans-serif;
 }
-div.wrapper {
-	background: #eef0f0;
+
+body > * {
+	background: var(--background-color-main);
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -51,24 +52,17 @@ div.overscroll.mobile {
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Header / Story Ticker
+Nav Story Ticker
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-header {
-	height: 50px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background: #EDF0F0;
-}
-.header-background::before {
+nav.header-background::before {
 	content: "";
 	position: absolute;
-	height: 50px;
+	height: inherit;
 	width: 100%;
 	left: 0;
 	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0) 60%);
 }
-.header-background-animation::before {
+nav.header-background-animation::before {
 	content: "";
 	position: absolute;
 	height: 50px;
@@ -78,129 +72,151 @@ header {
 	animation-name: header-background;
 	animation-duration: 1s;
 }
-@keyframes header-background {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-}
-header > a {
-	position: absolute;
-	top: 0;
-	height: 50px;
-	width: 41px;
-	z-index: 2;
-	background-image: linear-gradient(to bottom, rgba(221, 201, 249, 1.0), rgba(237, 240, 240, 0.7) 60%);
-	// opacity: 0.8;
-	padding: 10px;
+nav {
+	height: 3.125rem;
 	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
-	backdrop-filter: blur(3px);
-	-webkit-backdrop-filter: blur(3px);
-}
-header > a.home-button {
-	left: 0;
-	border-radius: 0 50px 50px 0;
-}
-header > a.more-button {
-	right: 0;
-	border-radius: 50px 0 0 50px;
-}
-
-header img {
-	height: 21px;
-	width: 21px;
-}
-header ul {
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 12px;
-	padding: 0 41px;
-	list-style-type: none;
-	overflow: scroll;
-	-ms-overflow-style: none; /* Edge hide scrollbar */
-	scrollbar-width: none; /* FF hide scrollbar */
-}
-header ul::-webkit-scrollbar {
-	display: none; /* Safari, Chrome hide scrollbar */
-}
-header ul li.scrolling-home-button {
-	background: none;
-	padding: 0;
-	display: none;
-}
-header ul li.scrolling-home-button img {
-	height: 50px;
-	width: 21px;
-}
-header ul div {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 12px;
-	height: 100%;
-}
-header ul a {
-	white-space: nowrap;
-	text-decoration: none;
-	height: calc(100% - 15px);
-	transition: transform 500ms;
-}
-header ul a:hover {
-	transform: scale(1.01);
-	filter: brightness(1.1);
-}
-header li {
-	height: 100%;
-	display: flex;
-	align-items: center;
+	justify-content: space-between;
 	
-	padding: 0 17px;
-	flex-shrink: 0;
-	font-family: 'Maru Var', 'Sono Var', sans-serif;
-	font-style: normal;
-	font-size: 1.3em;
-	font-weight: 500;
-	color: white;
-	background-color: #6f7a8c;
-	border-radius: 20px;
-}
-header li span.subtitle {
-	opacity: .85;
-	font-style: italic;
-	font-size: 0.9em;
-}
-header li.splash-mini {
-	background-image: linear-gradient(#9400ff, #5c00ff);
-	color: rgba(207, 229, 255, 1);
-	font-family: 'Sono Var';
-	font-weight: 550;
-}
-header li.splash-mini span {
-	font-family: 'Maru Var';
-	font-size: 0.9em;
-	color: rgba(255, 255, 255, 0.91);
-	font-style: italic;
-}
+	--background-gradient: linear-gradient(to bottom, 
+		hsla(265, 80%, 88%, 1), 
+		hsla(180, 9%, 94%, 0) 60%
+	);
+	--button-gradient: linear-gradient(to bottom, 
+		hsla(265, 80%, 88%, 1), 
+		hsla(180, 9%, 94%, 0.7) 60%);
 
-@media (max-width: 750px) {
-	header > a.more-button {
+	
+	div.background {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		background: var(--background-gradient);
+		opacity: 0;
+		transition: opacity 1s;
+	}
+	div.background.show {
+		opacity: 1;
+	}
+	
+	> a {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 2.57rem;
+		z-index: 2;
+		background: var(--button-gradient);
+		padding: 0.625rem;
+		display: flex;
+		align-items: center;
+		backdrop-filter: blur(3px);
+		-webkit-backdrop-filter: blur(3px);
+	}
+	> a.home {
+		left: 0;
+		border-radius: 0 50% 50% 0;
+	}
+	> a.more {
+		right: 0;
+		border-radius: 50% 0 0 50%;
+	}
+	img {
+		height: 1.3125rem;
+		width: 1.3125rem;
+	}
+	ul {
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.75rem;
+		padding: 0 2.56rem;
+		list-style-type: none;
+		overflow: scroll;
+		-ms-overflow-style: none; /* Edge hide scrollbar */
+		scrollbar-width: none; /* FF hide scrollbar */
+		div {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: 0.75rem;
+			height: 100%;
+		}
+		a {
+			white-space: nowrap;
+			text-decoration: none;
+			height: calc(100% - 0.9375rem);
+			transition: transform 500ms;
+		}
+		a:hover {
+			transform: scale(1.01);
+			filter: brightness(1.1);
+		}
+		li {
+			height: 100%;
+			display: flex;
+			align-items: center;
+			
+			padding: 0 1.01rem;
+			flex-shrink: 0;
+			font-style: normal;
+			font-size: 1.3rem;
+			font-weight: 500;
+			color: white;
+			background-color: #6f7a8c;
+			border-radius: 5rem;
+			
+			span.subtitle {
+				opacity: .85;
+				font-style: italic;
+				font-size: 1.15rem;
+			}
+		}
+		li.splash-mini {
+			background: linear-gradient(
+				hsl(275, 100%, 50%), 
+				hsl(262, 100%, 50%)
+			);
+			color: rgba(207, 229, 255, 1);
+			font-family: 'Unbounded Var';
+			font-weight: 550;
+			span {
+				font-family: 'Maru Var';
+				font-size: 0.9em;
+				color: hsla(0, 0%, 100%, 0.91);
+				font-style: italic;
+			}
+		}
+	}
+	ul::-webkit-scrollbar {
+		display: none; /* Safari, Chrome hide scrollbar */
+	}
+	li.home {
+		background: none;
+		padding: 0;
 		display: none;
-	}
-	header > a.home-button {
-		display: none;
-	}
-	header ul li.scrolling-home-button {
-		display: block;
-	}
-	header ul {
-		padding-left: 10px;
-		padding-right: 10px;
 	}
 }
-/* Header [End] */
+@media (max-width: 46rem) {
+	nav {
+		> a.more,
+		> a.home {
+			display: none;
+		}
+		ul {
+			padding: 0 0.625rem;
+			li.home {
+				display: block;
+			}
+			
+		}
+	}
+}
+/* Nav Story Ticker [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Timeline Graph (Blocks)

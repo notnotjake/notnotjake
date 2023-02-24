@@ -46,7 +46,7 @@ div.overscroll.bottom {
 div.overscroll.mobile {
 	height: 200px;
 	z-index: -3;
-	transform: none;
+	transform: scale(-1, -1);
 }
 /* Over-scrolls [End] */
 

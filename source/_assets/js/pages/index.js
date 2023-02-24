@@ -192,8 +192,8 @@ if ( !prefersReducedMotion ) {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Graph Hover
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-document.querySelector('div.graph').addEventListener('mouseenter', () => {
-	const activityCard = document.querySelector('div.graph-hover div.container')
+document.querySelector('#timeline').addEventListener('mouseenter', () => {
+	const activityCard = document.querySelector('#timeline div.details-cards')
 	
 	window.addEventListener('mousemove', (e) => {
 		// Uses mouse position to place activity-card on x-axis
@@ -211,12 +211,11 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		
 		// Use mouse position to place activity card on y-axis
 		const mouseY = e.clientY
-		const offsetElement = document.querySelector('div.graph').getBoundingClientRect().top
+		const offsetElement = document.querySelector('#timeline div.canvas').getBoundingClientRect().top
 		const cardHeight = activityCard.offsetHeight
 		
 		if (cardHeight >= 50) {
 			const offsetY = mouseY - offsetElement - (0.3 * cardHeight)
-			// const offsetY = Math.min(mouseY - offsetElement - (0.3 * cardHeight), 130)
 			const boundOffsetY = Math.min(Math.max(offsetY, (-offsetElement + 15)), 130)
 			activityCard.style.top = boundOffsetY + "px"
 		}
@@ -227,7 +226,7 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		
 	})
 	
-	const graphDays = [...document.querySelectorAll('div.graph a')]
+	const graphDays = [...document.querySelectorAll('#timeline div.canvas a')]
 	
 	graphDays.forEach( (a) => {
 		// get a's data-date
@@ -235,7 +234,7 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
 		
 		let targetElemDate = '01-05-23'
-		let targetSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+		let targetSelector = '#timeline div.details-cards div.activity[data-date="' + date + '"]'
 		
 		a.addEventListener('mouseenter', () => {
 			document.querySelector(targetSelector).classList.remove('hide')

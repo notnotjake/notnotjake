@@ -111,35 +111,30 @@ style: '/css/pages/index.css'
 			</a>
 		</nav>
 		
-		<div class="graph">
-			<div class="flex">
-				{% for week in contribution.graph %}
-				<div class="week">
-					<p class="label">{{ week.label }}</p>
-					{% for day in week.week %}
-					<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
-						{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
-					</a>
+		<div id="timeline">
+			<div class="canvas">
+				<div class="wrapper">
+					{% for week in contribution.graph %}
+					<div class="week">
+						<p class="label">{{ week.label }}</p>
+						{% for day in week.week %}
+						<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
+							{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
+						</a>
+						{% endfor %}
+					</div>
 					{% endfor %}
-				</div>
-				{% endfor %}
-				
-				<div class="more">
-					<a href="">History</a>
-					<a href="">More Graphs</a>
-					<p>This graph shows what I've done over the past year.</p>
+					<div class="more">
+						<a href="">History</a>
+						<a href="">More Graphs</a>
+						<p>This graph shows what I've done over the past year.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-		<div class="graph-hover">
-			<div class="container">
-				<div class="activity hide" id="gt-empty" data-date="empty">
-					<p>zZzz<span class="date">Jan 9</span></p>
-				</div>
-				
-				{% for week in contribution.graph %}
-					{% for day in week.week %}
+			
+			<div class="details-cards">
+				{% for weeks in contribution.graph %}
+					{% for day in weeks.week %}
 						<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
 							{% if day.picture %}									
 								<picture>
@@ -152,9 +147,13 @@ style: '/css/pages/index.css'
 						</div>
 					{% endfor %}
 				{% endfor %}
+			</div>
+			
+			<div class="control-well">
 				
 			</div>
 		</div>
+		
 		
 		<article id="bio">
 			<div class="profile-picture">

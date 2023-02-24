@@ -219,105 +219,188 @@ nav {
 /* Nav Story Ticker [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Timeline (contribution activity)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#timeline {
+	--block-size: 2rem;
+	--block-radius: 0.18rem;
+	--block-gap: 0.31rem;
+	--block-color: hsl(210, 3%, 84%);
+	--block-color-future: hsl(0, 0%, 91%);
+	--block-color-low: hsl(130, 51%, 69%);
+	--block-color-med: hsl(130, 81%, 38%);
+	--block-color-high: hsl(130, 100%, 27%);
+	--block-color-shipped: linear-gradient(to top,
+		hsl(215, 92%, 51%),
+		hsl(210, 83%, 67%)
+	);
+	
+	div.canvas {
+		display: flex;
+		flex-direction: row-reverse;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-ms-overflow-style: none; /* Edge hide scrollbar */
+		scrollbar-width: none; /* FF hide scrollbar */
+		
+		div.wrapper {
+			display: flex;
+			justify-content: flex-start;
+			flex-direction: row-reverse;
+			gap: var(--block-gap);
+			padding: 0.625rem;
+		}
+		div.week {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: var(--block-gap);
+			p.label {
+				display: block;
+				min-height: var(--block-size);
+				width: var(--block-size);
+				margin-top: calc(-1 * var(--block-gap));
+				white-space: nowrap;
+				overflow-y: visible;
+			}
+			a {
+				display: block;
+				width: var(--block-size);
+				height: var(--block-size);
+				background-color: var(--block-color);
+				border-radius: var(--block-radius);
+				transition: filter 900ms;
+			}
+			a:hover {
+				filter: brightness(0.9);
+				transition: filter 0ms;
+			}
+			a.future {
+				background: var(--block-color-future);
+			}
+			a.low {
+				background: var(--block-color-low);
+			}
+			a.med {
+				background: var(--block-color-med);
+			}
+			a.high {
+				background: var(--block-color-high);
+			}
+			a.shipped {
+				background: var(--block-color-shipped);
+			}
+			a.special img {
+				--margin: 0.125rem;
+				width: calc(var(--block-size) - var(--margin));
+				height: calc(var(--block-size) - var(--margin));
+				object-fit: contain;
+				margin-left: var(--margin);
+				margin-top: var(--margin);
+			}
+		}
+		div.more {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: calc( 100% - 2rem );
+			width: 12.5rem;
+			margin-right: calc(2 * var(--block-gap));
+			background: hsla(0, 0%, 86%, 0.3);
+			border-radius: 0.625rem;
+			padding: 1.25rem;
+			gap: 1.15rem;
+			a {
+				white-space: nowrap;
+				background: hsla(0, 0%, 86%, 0.6);
+				font-weight: 550;
+				text-align: center;
+				padding: 0.25rem 1.25rem;
+				border-radius: 0.625rem;
+				font-size: 1rem;
+			}
+			a:hover {
+				background: hsla(0, 0%, 86%, 0.95);
+			}
+		}
+	}
+	div.canvas::-webkit-scrollbar {
+		display: none; /* Safari, Chrome hide scrollbar */
+	}
+	
+	div.details-cards {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		z-index: 3;
+		pointer-events: none;
+		div.activity {
+			width: 10rem;
+			min-height: 2.75rem;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 0.188rem;
+			opacity: 0;
+			animation: timeline-card 400ms 150ms forwards;
+			
+			--soft-shadow: 
+				0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.1),
+				0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.06);
+			img {
+				width: 100%;
+				height: 12.19rem;
+				object-fit: cover;
+				border-radius: 0.56rem;
+				background: white;
+				border: 0.125rem solid hsla(0, 0%, 100%, 0.9);
+				box-shadow: var(--soft-shadow);
+			}
+			p {
+				width: 100%;
+				max-height: 2.75rem;
+				padding: 0.1875rem 0.3125rem 0;
+				overflow: scroll;
+				font-size: 0.8rem;
+				line-height: 1.4;
+				border-radius: 0.4375rem;
+				color: hsl(0, 0%, 11%);
+				background: hsl(0, 0%, 97%);
+				box-shadow: var(--soft-shadow);
+				
+				span.date {
+					font-weight: 500;
+					color: hsl(0, 0%, 47%);
+					white-space: nowrap;
+				}
+				span.date::before {
+					content: " ";
+				}
+				span.level {
+					color: var(--block-color-med);
+				}
+			}
+		}
+	}
+	
+	div.control-well {
+		
+	}
+	
+	
+}
+@keyframes timeline-card {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+/* Timeline [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Timeline Graph (Blocks)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-div.graph {
-	display: flex;
-	flex-direction: row-reverse;
-	background: #EDF0F0;
-	
-	overflow-y: hidden;
-	overflow-x: scroll;
-	-ms-overflow-style: none; /* Edge hide scrollbar */
-	scrollbar-width: none; /* FF hide scrollbar */
-}
-div.graph::-webkit-scrollbar {
-	display: none; /* Safari, Chrome hide scrollbar */
-}
-div.graph div.flex {
-	padding: 10px;
-	display: flex;
-	justify-content: flex-start;
-	flex-direction: row-reverse;
-	gap: 5px;
-}
-div.graph div {
-	display: flex;
-	flex-direction: column-reverse;
-	gap: 5px;
-}
-div.graph p.label {
-	display: block;
-	min-height: 32px;
-	width: 32px;
-	margin-top: -5px;
-	vertical-align: top;
-	white-space: nowrap;
-	overflow-y: visible;
-}
-div.graph a {
-	display: block;
-	width: 32px;
-	height: 32px;
-	background-color: #D6D7D8;
-	border-radius: 2px;
-	transition: filter 900ms;
-}
-div.graph a.future {
-	background: rgba(231, 231, 231, 1);
-}
-div.graph a.low {
-	background: #87D894;
-}
-div.graph a.med {
-	background: #12B02B;
-}
-div.graph a.high {
-	background: #1576FF;
-}
-div.graph a.special img {
-	width: 28px;
-	height: 28px;
-	object-fit: contain;
-	margin-left: 2px;
-	margin-top: 2px;
-}
 
-div.graph a:hover {
-	filter: brightness(0.9);
-	transition: filter 0ms;
-}
-@media not all and (hover: hover) {
-	div.graph-hover {
-		display: none;
-	}
-	div.graph a:hover {
-		filter: none;
-	}
-}
-
-div.graph div.more {
-	height: calc( 100% - 32px );
-	width: 200px;
-	margin-right: 10px;
-	background: rgba(219, 219, 219, 0.3);
-	border-radius: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 20px;
-	gap: 14px;
-}
-div.graph div.more a {
-	width: fit-content;
-	white-space: nowrap;
-	background: rgba(219, 219, 219, 0.6);
-	font-weight: 550;
-	text-align: center;
-	padding: 4px 20px;
-	border-radius: 10px;
-	font-size: 1em;
-}
 
 div.graph-hover {
 	position: absolute;

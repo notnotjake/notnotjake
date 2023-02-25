@@ -464,12 +464,7 @@ Timeline (contribution activity)
 	from { opacity: 0; }
 	to { opacity: 1; }
 }
-/* Timeline [End] */
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Timeline - Load Animation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* Load Animation */
 @keyframes timeline-blocks {
 	0% {
 		background-color: var(--block-animation-start);
@@ -521,7 +516,7 @@ Timeline - Load Animation
 		animation-delay: calc(var(--animation-delay) * 7);
 	}
 }
-/* Timeline - Load Animation [End] */
+/* Timeline [End] */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

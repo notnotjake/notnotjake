@@ -180,7 +180,7 @@ if ( !prefersReducedMotion ) {
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Graph Hover
+Timeline Details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 document.querySelector('#timeline').addEventListener('mouseenter', () => {
 	const activityCard = document.querySelector('#timeline div.details-cards')
@@ -236,11 +236,7 @@ document.querySelector('#timeline').addEventListener('mouseenter', () => {
 		})
 	})
 })
-/* Graph Hover [End] */
-
-
-
-
+/* Timeline Details [End] */
 
 
 

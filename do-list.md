@@ -21,7 +21,7 @@
 	[ ] time based advance
 
 [ ] refactor code
-[ ] Dark theme
+[X] Dark theme
 [ ] P3 colors
 
 # /posts

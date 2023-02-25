@@ -1,10 +1,20 @@
 :root {
 	--background-color-main: hsla(180, 6%, 94%, 1);
+	--splash-background-color: hsl(249, 100%, 20%);
+	
+	--text-color-100: hsl(0, 0%, 11%);
+	--text-color-800: hsl(0, 0%, 27%);
+	--text-color-600: hsla(0, 0%, 100%, 1);
+	--text-color-400: hsla(0, 0%, 0%, 0.27);
 }
-
 @media (prefers-color-scheme: dark) {
 	:root {
-		--blocks-color: #D6D7D8;
+		--background-color-main: hsla(207, 15%, 12%, 1);
+		
+		--text-color-100: hsla(0, 0%, 100%, 1);
+		--text-color-800: hsla(0, 0%, 84%, 1);
+		--text-color-600: hsla(0, 0%, 100%, 1);
+		--text-color-400: hsla(0, 0%, 100%, .5);
 	}
 }
 
@@ -12,7 +22,8 @@ html { scroll-behavior: initial; }
 html:focus-within {scroll-behavior: unset;}
 
 body {
-	color: #454545;
+	color: var(--text-color-800);
+	background: var(--background-color-main);
 	font-family: "Maru Var", sans-serif;
 }
 
@@ -43,6 +54,14 @@ div.overscroll.mobile {
 	height: 200px;
 	z-index: -3;
 	transform: scale(-1, -1);
+}
+@media (prefers-color-scheme: dark) {
+	div.overscroll.top {
+		background-image: linear-gradient(to bottom, 
+			hsl(211, 76%, 54%), 
+			hsl(258, 81%, 30%)
+		);
+	}
 }
 /* Over-scrolls [End] */
 
@@ -162,8 +181,8 @@ nav {
 			font-style: normal;
 			font-size: 1.3rem;
 			font-weight: 500;
-			color: white;
-			background-color: #6f7a8c;
+			color: hsl(0, 0%, 100%);
+			background: hsl(217, 12%, 49%);
 			border-radius: 5rem;
 			
 			span.subtitle {
@@ -177,7 +196,7 @@ nav {
 				hsl(275, 100%, 50%), 
 				hsl(262, 100%, 50%)
 			);
-			color: rgba(207, 229, 255, 1);
+			color: hsla(212, 100%, 91%, 1);
 			font-family: 'Unbounded Var';
 			font-weight: 550;
 			span {
@@ -195,6 +214,17 @@ nav {
 		background: none;
 		padding: 0;
 		display: none;
+	}
+}
+@media (prefers-color-scheme: dark) {
+	nav {
+		--background-gradient: linear-gradient(to bottom, 
+			hsl(258, 81%, 30%), 
+			hsla(180, 9%, 94%, 0) 60%
+		);
+		--button-gradient: linear-gradient(to bottom, 
+			hsl(258, 81%, 30%), 
+			hsla(0, 0%, 31%, 0.7) 60%);
 	}
 }
 @media (max-width: 46rem) {
@@ -230,6 +260,7 @@ Timeline (contribution activity)
 		hsl(215, 92%, 51%),
 		hsl(210, 83%, 67%)
 	);
+	
 	--block-animation-start: hsla(174, 14%, 86%, 0);
 	--block-animation-flash: hsl(203, 100%, 56%);
 	
@@ -264,7 +295,7 @@ Timeline (contribution activity)
 				display: block;
 				width: var(--block-size);
 				height: var(--block-size);
-				background-color: var(--block-color);
+				background: var(--block-color);
 				border-radius: var(--block-radius);
 				transition: filter 900ms;
 			}
@@ -328,7 +359,6 @@ Timeline (contribution activity)
 	
 	div.details-cards {
 		position: absolute;
-		width: 100%;
 		height: 100%;
 		top: 0;
 		z-index: 3;
@@ -345,6 +375,8 @@ Timeline (contribution activity)
 			opacity: 0;
 			animation: timeline-card 400ms 150ms forwards;
 			
+			--detail-card-background: hsl(0, 0%, 97%);
+			--detail-card-border: 0.125rem solid hsla(0, 0%, 100%, 0.9);
 			--soft-shadow: 
 				0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.1),
 				0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.06);
@@ -353,8 +385,8 @@ Timeline (contribution activity)
 				height: 12.19rem;
 				object-fit: cover;
 				border-radius: 0.56rem;
-				background: white;
-				border: 0.125rem solid hsla(0, 0%, 100%, 0.9);
+				background: var(--detail-card-background);
+				border: var(--detail-card-border);
 				box-shadow: var(--soft-shadow);
 			}
 			p {
@@ -365,13 +397,13 @@ Timeline (contribution activity)
 				font-size: 0.8rem;
 				line-height: 1.4;
 				border-radius: 0.4375rem;
-				color: hsl(0, 0%, 11%);
-				background: hsl(0, 0%, 97%);
+				color: var(--text-color-800);
+				background: var(--detail-card-background);
 				box-shadow: var(--soft-shadow);
 				
 				span.date {
 					font-weight: 500;
-					color: hsl(0, 0%, 47%);
+					color: var(--text-color-400);
 					white-space: nowrap;
 				}
 				span.date::before {
@@ -389,6 +421,43 @@ Timeline (contribution activity)
 	}
 	
 	
+}
+@media (prefers-color-scheme: dark) {
+	#timeline {
+		--block-radius: 0.11rem;
+		--block-color: hsl(211, 5%, 28%);
+		--block-color-future: hsl(189, 7%, 17%);
+		--block-color-low: hsl(138, 38%, 21%);
+		--block-color-med: hsl(138, 75%, 26%);
+		--block-color-high: hsl(130, 100%, 35%);
+		--block-color-shipped: linear-gradient(to top,
+			hsl(215, 100%, 33%),
+			hsl(210, 60%, 44%)
+		);
+		--block-animation-start: hsla(174, 14%, 86%, 0);
+		--block-animation-flash: hsl(203, 100%, 56%);
+		
+		div.canvas div.week a {
+			box-shadow: 
+				inset 0 1px 0 0 hsla(0, 0%, 100%, 0.06),
+				0 1px 0 0 hsla(0, 0%, 0%, 1);
+		}
+		
+		div.details-cards div.activity {
+			--detail-card-background: hsl(0, 0%, 13%);
+			--detail-card-border: 0.125rem solid hsl(0, 0%, 13%);
+			--soft-shadow: 
+				0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.3),
+				0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.2);
+		}
+	}
+}
+@media (max-width: 46rem) {
+	#timeline {
+		--block-size: 1.8rem;
+		--block-radius: 0.13rem;
+		--block-gap: 0.28rem;
+	}
 }
 @keyframes timeline-card {
 	from { opacity: 0; }
@@ -454,50 +523,6 @@ Timeline - Load Animation
 }
 /* Timeline - Load Animation [End] */
 
-/* Timeline - Load Animation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@keyframes color-in {
-	0% {background-color: var(--masthead-offset); filter: brightness(110%) opacity(70%);}
-	55% {background-color: #1ca6ff; filter: opacity(40%);}
-	100% {background-color: var(--masthead-offset);}
-}
-
-div.graph > div.flex > div > a:nth-of-type(1) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 1);
-}
-div.graph > div.flex > div > a:nth-of-type(2) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 2);
-}
-div.graph > div.flex > div > a:nth-of-type(3) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 3);
-}
-div.graph > div.flex > div > a:nth-of-type(4) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 4);
-}
-div.graph > div.flex > div > a:nth-of-type(5) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 5);
-}
-div.graph > div.flex > div > a:nth-of-type(6) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 6);
-}
-div.graph > div.flex > div > a:nth-of-type(7) {
-	animation-name: color-in;
-	animation-duration: var(--animation-time);
-	animation-delay: calc(var(--animation-delay) * 7);
-}
-/* Timeline Block [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Bio Section
@@ -977,12 +1002,12 @@ div.last-note svg {
 div.last-note svg path {
 	fill: #42c15b;
 }
-@media (max-width: 850px) {
+@media (max-width: 53.125rem) {
 	div.last-note h1 {
 		width: 100%;
 	}
 }
-@media (max-width: 800px) {
+@media (max-width: 50rem) {
 	div.last-note {
 		width: 100%;
 		padding-left: 10px;
@@ -997,7 +1022,7 @@ div.last-note svg path {
 		max-width: 650px;
 	}
 }
-@media (max-width: 750px) {
+@media (max-width: 46.875rem) {
 	div.last-note div.container {
 		flex-direction: column;
 		gap: 12px;
@@ -1325,8 +1350,6 @@ Splash (New Visitor)
 		}
 	}
 	div.scroll-indicator {
-		// position: absolute;
-		// bottom: 1.2rem;
 		flex-grow: 0;
 		height: 2rem;
 		opacity: 0;
@@ -1393,7 +1416,7 @@ Splash (New Visitor)
 	from { filter: opacity(10%); transform: scaleX(108%); }
 	to { filter: opacity(100%); transform: scaleX(100%); }
 }
-@media (max-width: 1100px) {
+@media (max-width: 68.75rem) {
 	#splash div h1 {
 		font-size: 13.5vw;
 	}
@@ -1401,7 +1424,7 @@ Splash (New Visitor)
 		font-size: 6vw;
 	}
 }
-@media (max-width: 650px) {
+@media (max-width: 40.625rem) {
 	#splash div h1 {
 		font-size: 13vw;
 	}

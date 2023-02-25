@@ -41,14 +41,14 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 			return
 		}
 		else if ( window.scrollY < scrollTriggerY ) {
-			updateBodyBackground("#100068")
+			updateBodyBackground("var(--splash-background-color)")
 		}
 		else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 			scrollPastSplash()
 			console.log('a')
 		}
 		else {
-			updateBodyBackground("#edf0f0")
+			updateBodyBackground("var(--background-color-main)")
 		}
 	}
 	window.addEventListener('scroll', splashScroll)
@@ -78,7 +78,7 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 			duration: 1,
 			onComplete: () => {
 				document.querySelector('#splash').classList.add('hide')
-				document.body.style.background = '#edf0f0'
+				document.body.style.background = 'var(--background-color-main)'
 				document.querySelector('nav div.background').classList.add('show')
 				document.querySelectorAll('div.overscroll').forEach( (i) => {
 					i.style.display = 'block'

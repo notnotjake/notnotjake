@@ -133,20 +133,22 @@ style: '/css/pages/index.css'
 			</div>
 			
 			<div class="details-cards">
-				{% for weeks in contribution.graph %}
-					{% for day in weeks.week %}
-						<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
-							{% if day.picture %}									
-								<picture>
-									<source srcset="{{ day.picture.webp}}">
-									<img src="{{ day.picture.jpg }}">
-								</picture>
-							{% endif %}
-							
-							<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
-						</div>
+				<div class="container">
+					{% for weeks in contribution.graph %}
+						{% for day in weeks.week %}
+							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
+								{% if day.picture %}									
+									<picture>
+										<source srcset="{{ day.picture.webp}}">
+										<img src="{{ day.picture.jpg }}">
+									</picture>
+								{% endif %}
+								
+								<p>{% if day.description %} {{day.description}} {% else %} {{day.level}} {% endif %}<span class="date">{{day.dateShort}}</span></p>
+							</div>
+						{% endfor %}
 					{% endfor %}
-				{% endfor %}
+				</div>
 			</div>
 			
 			<div class="control-well">

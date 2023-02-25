@@ -5,6 +5,15 @@ module.exports = function () {
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	let data = {
 		'2023': {
+			'02': {
+				'17': {
+					"level": "med"
+				},
+				'18': {
+					"description": "Building for Client",
+					"level": "high"
+				}
+			},
 			'01': {
 				'11': {
 					"description": "Learned SvelteKit",

@@ -1,8 +1,4 @@
 :root {
-	--animation-time: 290ms;
-	--animation-delay: 25ms; // should move to graph section
-	
-	--blocks-color: #D6D7D8;
 	--background-color-main: hsla(180, 6%, 94%, 1);
 }
 
@@ -234,6 +230,8 @@ Timeline (contribution activity)
 		hsl(215, 92%, 51%),
 		hsl(210, 83%, 67%)
 	);
+	--block-animation-start: hsla(174, 14%, 86%, 0);
+	--block-animation-flash: hsl(203, 100%, 56%);
 	
 	div.canvas {
 		display: flex;
@@ -335,6 +333,7 @@ Timeline (contribution activity)
 		top: 0;
 		z-index: 3;
 		pointer-events: none;
+		
 		div.activity {
 			width: 10rem;
 			min-height: 2.75rem;
@@ -397,83 +396,65 @@ Timeline (contribution activity)
 }
 /* Timeline [End] */
 
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Timeline Graph (Blocks)
+Timeline - Load Animation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-
-div.graph-hover {
-	position: absolute;
-	width: 100%;
-	padding: 10px;
-	height: 260px;
-	transform: translateY(-306px);
-	pointer-events: none;
-	z-index: 3;
-}
-div.graph-hover div.container {
-	position: absolute;
-	// border: 1px solid red;
-}
-div.graph-hover div.activity {
-	width: 160px;
-	// height: 254px;
-	min-height: 44px;
-	opacity: 0;
-	z-index: 3;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	gap: 3px;
-	animation-name: fadeCardIn;
-	animation-duration: 400ms;
-	animation-delay: 150ms;
-	animation-fill-mode: forwards;
-}
-@keyframes fadeCardIn {
-	0% { opacity: 0; }
-	100% { opacity: 1; }
-}
-div.graph-hover .loading-lazy {
-	display: none;
-}
-div.graph-hover div.activity img {
-	width: 100%;
-	height: 195px;
-	object-fit: cover;
-	border-radius: 9px;
-	background: white;
-	border: 2px solid rgba(255, 255, 255, 0.9);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-}
-div.graph-hover div.activity p {
-	width: 100%;
-	max-height: 44px;
-	overflow: scroll;
-	line-height: 1.4;
-	padding: 3px 5px 0;
-	// margin-top: 3px;
-	font-size: 0.8em;
-	color: #1b1b1b;
-	border-radius: 7px;
-	background: hsl(0, 0%, 97%);
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-}
-div.graph-hover div.activity p span.date {
-	font-weight: 500;
-	color: hsl(0, 0%, 47%);
-	white-space: nowrap;
-}
-div.graph-hover div.activity p span.date::before {
-	content: " ";
-}
-div.graph-hover div.activity p span.level {
-	color: #30d079;
+@keyframes timeline-blocks {
+	0% {
+		background-color: var(--block-animation-start);
+		filter: brightness(110%) opacity(70%);}
+	55% {
+		background-color: var(--block-animation-flash);
+		filter: opacity(40%);}
+	100% {
+		background-color: var(--block-animation-start);
+	}
 }
 
+#timeline div.canvas div.week {
+	--animation-time: 290ms;
+	--animation-delay: 25ms;
+	
+	a:nth-of-type(1) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 1);
+	}
+	a:nth-of-type(2) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 2);
+	}
+	a:nth-of-type(3) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 3);
+	}
+	a:nth-of-type(4) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 4);
+	}
+	a:nth-of-type(5) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 5);
+	}
+	a:nth-of-type(6) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 6);
+	}
+	a:nth-of-type(7) {
+		animation-name: timeline-blocks;
+		animation-duration: var(--animation-time);
+		animation-delay: calc(var(--animation-delay) * 7);
+	}
+}
+/* Timeline - Load Animation [End] */
 
-/* Load Animation
+/* Timeline - Load Animation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @keyframes color-in {
 	0% {background-color: var(--masthead-offset); filter: brightness(110%) opacity(70%);}

@@ -91,9 +91,6 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 
 
 
-
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nav, Marquee
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -187,8 +184,6 @@ if ( !prefersReducedMotion ) {
 
 
 
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Graph Hover
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -212,7 +207,9 @@ document.querySelector('#timeline').addEventListener('mouseenter', () => {
 		// Use mouse position to place activity card on y-axis
 		const mouseY = e.clientY
 		const offsetElement = document.querySelector('#timeline div.canvas').getBoundingClientRect().top
-		const cardHeight = activityCard.offsetHeight
+		
+		
+		const cardHeight = document.querySelector('#timeline div.details-cards div.container').offsetHeight
 		
 		if (cardHeight >= 50) {
 			const offsetY = mouseY - offsetElement - (0.3 * cardHeight)

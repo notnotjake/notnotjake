@@ -4,17 +4,17 @@
 	
 	--text-color-100: hsl(0, 0%, 11%);
 	--text-color-800: hsl(0, 0%, 27%);
-	--text-color-600: hsla(0, 0%, 100%, 1);
+	--text-color-600: hsla(0, 0%, 46%, 1);
 	--text-color-400: hsla(0, 0%, 0%, 0.27);
 }
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color-main: hsla(207, 15%, 12%, 1);
 		
-		--text-color-100: hsla(0, 0%, 100%, 1);
-		--text-color-800: hsla(0, 0%, 84%, 1);
-		--text-color-600: hsla(0, 0%, 100%, 1);
-		--text-color-400: hsla(0, 0%, 100%, .5);
+		--text-color-100: hsla(0, 0%, 94%, 1);
+		--text-color-800: hsla(0, 0%, 80%, 1);
+		--text-color-600: hsla(0, 0%, 59%, 1);
+		--text-color-400: hsla(0, 0%, 100%, 0.5);
 	}
 }
 
@@ -447,6 +447,7 @@ Timeline (contribution activity)
 			--detail-card-background: hsl(0, 0%, 13%);
 			--detail-card-border: 0.125rem solid hsl(0, 0%, 13%);
 			--soft-shadow: 
+				inset 0 0 0 0.0625rem hsla(0, 0%, 100%, 0.12),
 				0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.3),
 				0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.2);
 		}
@@ -480,7 +481,6 @@ Timeline - Load Animation
 		background-color: var(--block-animation-start);
 	}
 }
-
 #timeline div.canvas div.week {
 	--animation-time: 290ms;
 	--animation-delay: 25ms;
@@ -536,6 +536,10 @@ article#bio {
 	padding-bottom: 6rem;
 	text-align: center;
 	
+	--bio-expand-background-start: hsla(0, 0%, 89%, 1);
+	--bio-expand-background-flash: hsla(0, 0%, 89%, 0.60);
+	--bio-expand-background-end: hsla(0, 0%, 89%, 0);
+	
 	div.profile-picture {
 		height: 6rem;
 		overflow: hidden;
@@ -576,6 +580,12 @@ article#bio {
 		max-width: 59ch;
 		padding-left: 0.9rem;
 		padding-right: 0.9rem;
+		
+		--underline: 2px dotted hsl(0, 0%, 62%);
+		--definition-color: hsl(0, 0%, 34%);
+		--expand-color: hsl(0, 0%, 0%);
+		--expand-button-background: hsl(0, 0%, 89%);
+		
 		button {
 			all: unset;
 			cursor: cell;
@@ -588,29 +598,29 @@ article#bio {
 			margin: 0 0.05em -0.15em;
 		}
 		span.define {
-			border-bottom: 2px dotted rgb(157, 157, 157);
+			border-bottom: var(--underline);
 		}
 		span.definition {
-			border-bottom: 2px dotted rgb(157, 157, 157);
-			color: rgb(86, 86, 86);
+			border-bottom: var(--underline);
+			color: var(--definition-color);
 			font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
 		}
 		span.expand {
-			background: hsl(0, 0%, 89%);
+			background: var(--expand-button-background);
 			font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.3;
 			padding: 4px 8px 2px;
 			border-radius: 6px;
-			color: black;
+			color: var(--expand-color);
 			white-space: nowrap;
 		}
 		span.expansion {
-			color: rgb(0, 0, 0);
+			color: var(--expand-color);
 			font-variation-settings: "wght" 550, "wdth" 110, "ital" 0.5;
 			animation: bio-expand 500ms;
 		}
 	}
 	p {
-		color: hsl(0, 0%, 43%);
+		color: var(--text-color-600);
 		font-size: 1.05em;
 		padding: 0.3em;
 	}
@@ -626,7 +636,7 @@ article#bio {
 		a, a:visited {
 			font-size: 1.1em;
 			font-weight: 510;
-			color: black;
+			color: var(--text-color-100);
 			transition: color 100ms ease-in-out;
 		}
 		a:hover {
@@ -641,17 +651,37 @@ article#bio {
 	0% { 
 		opacity: 0; 
 		color: rgb(0, 119, 255);
-		background: hsl(0, 0%, 89%);  
+		background: var(--bio-expand-background-start);  
 	}
 	50% { 
 		opacity: 1; 
 		color: rgb(0, 119, 255); 
-		background: hsl(0, 0%, 89%, 60%);
+		background: var(--bio-expand-background-flash);
 	}
 	100% { 
 		opacity: 1; 
-		color: black; 
-		background: hsl(0, 0%, 89%, 0%);
+		color: var(--text-color-100);
+		background: var(--bio-expand-background-end);
+	}
+}
+@media (prefers-color-scheme: dark) {
+	article#bio {
+		h1 {
+			--underline: 2px dotted hsl(0, 0%, 62%);
+			--definition-color: hsl(204, 7%, 69%);
+			--expand-color: hsl(192, 60%, 94%);
+			--expand-button-background: hsl(202, 17%, 8%);
+		}
+		div.profile-picture:after {
+			background: linear-gradient(to bottom,
+				hsla(0, 0%, 0%, 0) 0%,
+				var(--background-color-main) 100%
+			);
+		}
+		
+		--bio-expand-background-start: hsla(201, 78%, 15%, 1);
+		--bio-expand-background-flash: hsla(201, 93%, 21%, 0.85);
+		--bio-expand-background-end: hsla(201, 78%, 15%, 0);
 	}
 }
 /* Bio Section [End] */

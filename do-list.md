@@ -1,41 +1,53 @@
-# To Do List (Index)
-- Dark theme
-- P3 color range
+# To Do List 
 
-Graph:
-- mobile support
-- lazy loading of the images
+## dev
+[ ] static assets: in dev env i should link to assets in /static and in prod should link to assets.notnotjake.com to fix 403 errors on mobile from ip/localhost. exclude from git but keep folder in sync with server via transmit/nova
 
-- connect to service (?) / establish workflow
+## /index
+[X] Chromium splash bug
 
-Showcase:
-- content
-- ability to open them into cards and linked to their partial's page
+[ ] timeline:
+	[X] mobile design
+	[ ] lazy loading
+	[ ] backend service
+	
+[ ] footer mobile
+[ ] bottom of page dark transition
 
-- more immersive experience
-	- click sides of screen to advance
-	- dim the screen when focused
+[ ] showcase:
+	[ ] open in card, open in page
+	[ ] better design
+	[ ] button to advance
+	[ ] time based advance
 
-- improve scroll as scale
+[ ] refactor code
+[X] Dark theme
+[ ] P3 colors
 
+# /posts
+font changes(?)
+link to github history for page
+styling:
+- images
+- ul
+- links
+- code blocks
+- quote blocks
+- footnotes
+ability to comment on post on twitter
+link previews(?)
 
 # Content:
 - my goal (delight&&meaning)
+- connect to something bigger (my why)
 - belief stack
-- connect to something bigger
 - roadmap
-- welcome to the new site
-
-showcase:
-- finding our way
-- jmu graduate
-- monkey swingin
 
 # More Pages:
-- post
-- history / archive
+- archive
 - about
-- resume
+- daily activity/contribution page + roadmap/
 - showcase component/page
+- more graphs
 - the shelf
 - links

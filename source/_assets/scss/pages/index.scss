@@ -670,7 +670,7 @@ article#bio {
 			--underline: 2px dotted hsl(0, 0%, 62%);
 			--definition-color: hsl(204, 7%, 69%);
 			--expand-color: hsl(192, 60%, 94%);
-			--expand-button-background: hsl(202, 17%, 8%);
+			--expand-button-background: hsl(202, 22%, 6%);
 		}
 		div.profile-picture:after {
 			background: linear-gradient(to bottom,
@@ -689,7 +689,7 @@ article#bio {
 
 div.dark {
 	background-image: linear-gradient(to bottom, 
-		#EEF0F0 15%,
+		var(--background-color-main),
 		#4133A8 70%,
 		#09041E 80%
 	);

@@ -14,7 +14,7 @@ Splash (if visible)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 if ( !document.querySelector('#splash').classList.contains('hide') ) {
 	
-	document.querySelector('header').classList.remove('header-background')
+	document.querySelector('nav div.background').classList.remove('show')
 	
 	/* Scroll Hint Bounce (after 3.5s if under 10px scrolled)
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -28,8 +28,6 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 				]
 			})
 		}
-		// Show a scroll indicator
-		document.querySelector('#splash div.scroll-indicator').classList.remove('hide')
 	})
 	
 	/* Scroll Handler: triggers at 250px scroll-y
@@ -43,17 +41,14 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 			return
 		}
 		else if ( window.scrollY < scrollTriggerY ) {
-			// document.body.style.background = '#54258F'
-			updateBodyBackground("#100068")
+			updateBodyBackground("var(--splash-background-color)")
 		}
 		else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 			scrollPastSplash()
 		}
 		else {
-			// document.body.style.background = '#edf0f0'
-			updateBodyBackground("#edf0f0")
+			updateBodyBackground("var(--background-color-main)")
 		}
-		
 	}
 	window.addEventListener('scroll', splashScroll)
 	
@@ -82,10 +77,11 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 			duration: 1,
 			onComplete: () => {
 				document.querySelector('#splash').classList.add('hide')
-				document.body.style.background = '#edf0f0'
-				document.querySelector('header').classList.add('header-background-animation')
-				document.querySelector('.overscroll-top').style.display = 'block'
-				document.querySelector('.overscroll-top_mobile').style.display= 'block'
+				document.body.style.background = 'var(--background-color-main)'
+				document.querySelector('nav div.background').classList.add('show')
+				document.querySelectorAll('div.overscroll').forEach( (i) => {
+					i.style.display = 'block'
+				})
 			}
 		})
 	}
@@ -94,22 +90,19 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 
 
 
-
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Header, Marquee
+Nav, Marquee
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 if ( !prefersReducedMotion ) {
 	/* Only continues if Prefers-Reduced-Motion is OFF
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	
-	document.querySelector('header ul div.copy2').classList.remove('hide')
+	document.querySelector('#scroll-collection-2').classList.remove('hide')
 	
-	const header = document.querySelector('header')
-	const headerScroller = document.querySelector('header ul')
-	const headerContent1 = document.querySelector('header ul div.copy1')
-	const headerContent2 = document.querySelector('header ul div.copy2')
+	const header = document.querySelector('nav')
+	const headerScroller = document.querySelector('nav ul')
+	const headerContent1 = document.querySelector('#scroll-collection-1')
+	const headerContent2 = document.querySelector('#scroll-collection-2')
 	
 	const speed = 60 // Set the horiz. scroll speed for marquee
 	const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
@@ -137,9 +130,7 @@ if ( !prefersReducedMotion ) {
 	
 	/* Hover: stop scrolling with ease-out
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	header.addEventListener('mouseenter', () => {
-		console.log('Mouse Enter')
-		
+	header.addEventListener('mouseenter', () => {		
 		headerScrollTimelineDefault.kill()
 		
 		headerScrollControl.kill()
@@ -155,9 +146,7 @@ if ( !prefersReducedMotion ) {
 	})
 	/* Hover-Out: start up new scroller
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	headerScroller.addEventListener('mouseleave', () => {
-		console.log('Mouse Exit')
-		
+	headerScroller.addEventListener('mouseleave', () => {		
 		headerScrollControl.kill()
 		headerScrollControl.clear()
 		
@@ -186,17 +175,15 @@ if ( !prefersReducedMotion ) {
 		})
 	})
 }
-/* Header, Marquee [End] */
-
-
+/* Nav, Marquee [End] */
 
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Graph Hover
+Timeline Details
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-document.querySelector('div.graph').addEventListener('mouseenter', () => {
-	const activityCard = document.querySelector('div.graph-hover div.container')
+document.querySelector('#timeline').addEventListener('mouseenter', () => {
+	const activityCard = document.querySelector('#timeline div.details-cards')
 	
 	window.addEventListener('mousemove', (e) => {
 		// Uses mouse position to place activity-card on x-axis
@@ -214,12 +201,13 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		
 		// Use mouse position to place activity card on y-axis
 		const mouseY = e.clientY
-		const offsetElement = document.querySelector('div.graph').getBoundingClientRect().top
-		const cardHeight = activityCard.offsetHeight
+		const offsetElement = document.querySelector('#timeline div.canvas').getBoundingClientRect().top
+		
+		
+		const cardHeight = document.querySelector('#timeline div.details-cards div.container').offsetHeight
 		
 		if (cardHeight >= 50) {
 			const offsetY = mouseY - offsetElement - (0.3 * cardHeight)
-			// const offsetY = Math.min(mouseY - offsetElement - (0.3 * cardHeight), 130)
 			const boundOffsetY = Math.min(Math.max(offsetY, (-offsetElement + 15)), 130)
 			activityCard.style.top = boundOffsetY + "px"
 		}
@@ -230,7 +218,7 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		
 	})
 	
-	const graphDays = [...document.querySelectorAll('div.graph a')]
+	const graphDays = [...document.querySelectorAll('#timeline div.canvas a')]
 	
 	graphDays.forEach( (a) => {
 		// get a's data-date
@@ -238,7 +226,7 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
 		
 		let targetElemDate = '01-05-23'
-		let targetSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+		let targetSelector = '#timeline div.details-cards div.activity[data-date="' + date + '"]'
 		
 		a.addEventListener('mouseenter', () => {
 			document.querySelector(targetSelector).classList.remove('hide')
@@ -248,11 +236,7 @@ document.querySelector('div.graph').addEventListener('mouseenter', () => {
 		})
 	})
 })
-/* Graph Hover [End] */
-
-
-
-
+/* Timeline Details [End] */
 
 
 

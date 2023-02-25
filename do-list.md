@@ -1,6 +1,30 @@
 # To Do List 
 
-# Posts
+## dev
+[ ] static assets: in dev env i should link to assets in /static and in prod should link to assets.notnotjake.com to fix 403 errors on mobile from ip/localhost. exclude from git but keep folder in sync with server via transmit/nova
+
+## /index
+[X] Chromium splash bug
+
+[ ] graph:
+	[ ] mobile design
+	[ ] lazy loading
+	[ ] backend service
+	
+[ ] footer mobile
+[ ] bottom of page dark transition
+
+[ ] showcase:
+	[ ] open in card, open in page
+	[ ] better design
+	[ ] button to advance
+	[ ] time based advance
+
+[ ] refactor code
+[X] Dark theme
+[ ] P3 colors
+
+# /posts
 font changes(?)
 link to github history for page
 styling:
@@ -13,34 +37,17 @@ styling:
 ability to comment on post on twitter
 link previews(?)
 
-## Index
-- Dark theme
-- P3 color range
-Graph:
-- mobile support
-- lazy loading of the images
-- connect to service (?) / establish workflow
-Showcase:
-- ability to open them into cards and linked to their partial's page
-- more immersive experience
-	- click sides of screen to advance
-	- dim the screen when focused
-	- swiperjs(?)
-
 # Content:
 - my goal (delight&&meaning)
+- connect to something bigger (my why)
 - belief stack
-- connect to something bigger
 - roadmap
 
-showcase:
-- jmu graduate
-
 # More Pages:
-- post
-- history / archive
+- archive
 - about
-- resume
+- daily activity/contribution page + roadmap/
 - showcase component/page
+- more graphs
 - the shelf
 - links

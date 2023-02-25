@@ -6,8 +6,8 @@
 ## /index
 [X] Chromium splash bug
 
-[ ] graph:
-	[ ] mobile design
+[ ] timeline:
+	[X] mobile design
 	[ ] lazy loading
 	[ ] backend service
 	

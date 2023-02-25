@@ -6,12 +6,40 @@ module.exports = function () {
 	let data = {
 		'2023': {
 			'02': {
+				'07': {
+					"description": "Shipped site for friend",
+					"level": "shipped"
+				},
 				'17': {
 					"level": "med"
 				},
 				'18': {
 					"description": "Building for Client",
 					"level": "high"
+				},
+				'20': {
+					"description": "Shipped case study biz site",
+					"level": "shipped"
+				},
+				'21': {
+					"description": "I'm on Twitter 👋",
+					"level": "low"
+				},
+				'22': {
+					"description": "New Splash Screen 😍",
+					"level": "high"
+				},
+				'23': {
+					"description": "Work & Fun Today 👍",
+					"level": "med"
+				},
+				'24': {
+					"description": "Dark Mode is Here",
+					"level": "low"
+				},
+				'25': {
+					"description": "Shipped video for friend",
+					"level": "shipped"
 				}
 			},
 			'01': {

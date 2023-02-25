@@ -45,7 +45,6 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 		}
 		else if ( window.scrollY > scrollTriggerY && window.scrollY <= splashEndY ) {
 			scrollPastSplash()
-			console.log('a')
 		}
 		else {
 			updateBodyBackground("var(--background-color-main)")
@@ -131,9 +130,7 @@ if ( !prefersReducedMotion ) {
 	
 	/* Hover: stop scrolling with ease-out
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	header.addEventListener('mouseenter', () => {
-		console.log('Mouse Enter')
-		
+	header.addEventListener('mouseenter', () => {		
 		headerScrollTimelineDefault.kill()
 		
 		headerScrollControl.kill()
@@ -149,9 +146,7 @@ if ( !prefersReducedMotion ) {
 	})
 	/* Hover-Out: start up new scroller
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	headerScroller.addEventListener('mouseleave', () => {
-		console.log('Mouse Exit')
-		
+	headerScroller.addEventListener('mouseleave', () => {		
 		headerScrollControl.kill()
 		headerScrollControl.clear()
 		

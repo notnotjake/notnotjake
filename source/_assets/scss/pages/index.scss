@@ -319,12 +319,12 @@ Timeline (contribution activity)
 				background: var(--block-color-shipped);
 			}
 			a.special img {
-				--margin: 0.125rem;
+				--margin: 0.8rem;
 				width: calc(var(--block-size) - var(--margin));
 				height: calc(var(--block-size) - var(--margin));
 				object-fit: contain;
-				margin-left: var(--margin);
-				margin-top: var(--margin);
+				margin-left: calc(0.5 * var(--margin));
+				margin-top: calc(0.5 * var(--margin));
 			}
 		}
 		div.more {

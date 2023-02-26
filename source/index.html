@@ -119,7 +119,7 @@ style: '/css/pages/index.css'
 						<p class="label">{{ week.label }}</p>
 						{% for day in week.week %}
 						<a href="" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
-							{% if day.icon %}<img src="{{ day.icon }}" alt="">{% endif %}
+							{% if day.icon %}<img src="{{ day.icon }}">{% endif %}
 						</a>
 						{% endfor %}
 					</div>

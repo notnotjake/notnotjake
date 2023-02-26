@@ -216,125 +216,53 @@ style: '/css/pages/index.css'
 		</div>
 		
 		<div id="process">
-			
+			<div class="ticker">
+				<p class="w1">Problem</p>
+				<p class="w2">Process</p>
+				<p class="w3">Shipping</p>
+				<div id="starfield">
+					<span class="star1"></span>
+					<span class="star2"></span>
+					<span class="star3"></span>
+					<span class="star4"></span>
+					<span class="star5"></span>
+					<span class="star6"></span>
+					<span class="star7"></span>
+				</div>
+				<div class="highlight" id="top-light"></div>
+				<div class="highlight" id="bottom-light"></div>
+			</div>
+			<h1>Always working to make it <span>real</span>. <strong>Follow along on the journey</strong></h1>
 		</div>
 		
-		<div id="footer">
-			
+		<div id="follow">
+			<!-- Twitter -->
+			<a href="https://twitter.com/_notnotjake">
+				{% include "svg/icon-twitter.html" %}
+			</a>
+			<!-- Instagram -->
+			<a href="https://www.instagram.com/notnotjake">
+				{% include "svg/icon-instagram.html" %}
+			</a>
+			<!-- GitHub -->
+			<a href="https://github.com/notnotjake">
+				{% include "svg/icon-github.html" %}
+			</a>
+			<!-- Email -->
+			<a href="mailto:jake@notnotjake.com?subject=Hey!">
+				{% include "svg/icon-email.html" %}
+			</a>
 		</div>
 		
-		<div class="dark">
-			<main>
-				<div class="scroll-container">
-					<div class="card latest-posts">
-						<h2>Latest Posts</h2>
-						<ul>
-							{% for post in collections.posts reversed limit:8 %}
-							
-								<li><a href="{{ post.url }}">
-									{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</a>
-								</li>
-							
-							{% endfor %}
-						</ul>
-						<h3><a href="">Older Posts</a></h3>
-					</div>
-					
-					<a href="/projects/finding-our-way/" class="card">
-						<picture>
-							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
-							<img src="https://large-assets.notnotjake.com/images/index/showcase-assets/finding-our-way.jpg">
-						</picture>
-						<p class="title">Finding Our Way</p>
-						<p class="description">An illustrated story about going with the flow. <span>June 2022</span></p>
-					</a>
-					<a href="/projects/monkey-swingin/" class="card">
-						<picture>
-							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
-							<img src="https://large-assets.notnotjake.com/images/index/showcase-assets/monkey-swingin.jpeg">
-						</picture>
-						<p class="title">Monkey Swing'in</p>
-						<p class="description">Beautiful and durable "monkey fist" rope swings. Monkey see, Monkey Swing!</p>
-					</a>
-					<a href="javascript:void(0)" class="card">
-						<picture>
-							<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp">
-							<img src="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.jpg">
-						</picture>
-						<p class="title">Check Back Soon!</p>
-						<p class="description">I'll be adding a lot of content to the site over the next few weeks.</p>
-					</a>
-				</div>
-			</main>
-			
-			<div class="last-note" id="last-note">
-				<div class="container hide">
-					<div class="first-word">
-						<p>Learning</p>
-						<p>Research</p>
-						<p>Listening</p>
-						<p>Inspiration</p>
-						<p>Problem</p>
-						<p>Research</p>
-						<p>Learning</p>
-						<p>Listening</p>
-						<p>Inspiration</p>
-					</div>
-					<div class="second-word">
-						<p>Thinking</p>
-						<p>Strategy</p>
-						<p>Writing</p>
-						<p>Insight</p>
-						<p>Process</p>
-					</div>
-					<div class="third-word">
-						<p>Sharing</p>
-						<p>Execution</p>
-						<p>Making</p>
-						<p>Product</p>
-						<p>Shipping</p>
-						<p>Deliver</p>
-						<p>Execution</p>
-						<p>Making</p>
-						<p>Product</p>
-					</div>
-				</div>
-				<h1>Always working to make it <span>real</span>. <strong>Follow along on the journey</strong></h1>
-			</div>
-		</div>
-			
-			<div class="footer">
-				
-				<div class="links">
-					<!-- Twitter -->
-					<a href="https://twitter.com/_notnotjake">
-						{% include "svg/icon-twitter.html" %}
-					</a>
-					
-					<!-- Instagram -->
-					<a href="https://www.instagram.com/notnotjake">
-						{% include "svg/icon-instagram.html" %}
-					</a>
-					
-					<!-- GitHub -->
-					<a href="https://github.com/notnotjake">
-						{% include "svg/icon-github.html" %}
-					</a>
-					
-					<!-- Email -->
-					<a href="mailto:jake@notnotjake.com?subject=Hey!">
-						{% include "svg/icon-email.html" %}
-					</a>
-				</div>
-				
-				<div class="footer-wrapper">
-					{% include "partials/_footer.njk" %}
-				</div>
-			</div>
+		<div id="footer-wrapper">
+			{% include "partials/_footer.njk" %}
 		</div>
 		
 		<div class="overscroll bottom"></div>
 		<div class="overscroll bottom mobile"></div>
+		
+		
+		
 		
 		<!-- Cookie Decides if First Time -->
 		<script>			

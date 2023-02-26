@@ -743,11 +743,200 @@ Showcase
 
 
 #process {
-	height: 10rem;
+	// height: 10rem;
+	padding: 4rem;
 	background: linear-gradient(to bottom,
 		hsl(247, 53%, 43%),
 		hsl(252, 77%, 7%) 30%,
 	);
+	
+	.ticker {
+		--border-radius: 0.9rem;
+		
+		width: fit-content;
+		margin: 1.5rem auto;
+		min-height: 3rem;
+		border-radius: var(--border-radius);
+		background: linear-gradient(to bottom, 
+			hsl(183, 18%, 10%), 
+			hsl(245, 70%, 23%)
+		);
+		box-shadow: inset 0 0 0 0.12rem hsla(0, 0%, 100%, 0.12);
+		padding: 0.9rem 1.2rem;
+		
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		
+		p {
+			font-family: 'Unbounded Var';
+			font-size: 2rem;
+			font-weight: 600;
+			padding: 0 0.5rem;
+			z-index: 2;
+			
+			color: hsla(196, 34%, 78%, 1);
+		}
+		p.w1 {
+			background: linear-gradient(to bottom,
+				hsl(157, 3%, 55%),
+				hsl(221, 49%, 42%)
+			);
+			cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💡</text></svg>") 16 0,auto; /*!emojicursor.app*/
+		}
+		p.w2 {
+			background: linear-gradient(to bottom,
+				hsl(177, 10%, 79%),
+				hsl(230, 46%, 49%)
+			);
+			cursor: progress;
+		}
+		p.w3 {
+			background: linear-gradient(to bottom,
+				hsl(199, 100%, 89%) 30%,
+				hsl(199, 69%, 74%) 50%,
+				hsl(240, 83%, 70%) 80%,
+				hsl(240, 71%, 57%) 100%
+			);
+			cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✨</text></svg>") 16 0,auto; /*!emojicursor.app*/
+		}
+		p.w1, p.w2, p.w3 {
+			background-clip: text;
+			-webkit-background-clip: text;
+			text-fill-color: transparent;
+			-webkit-text-fill-color: transparent;
+		}
+		#starfield {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			z-index: 1;
+			span {
+				position: absolute;
+				height: 2px;
+				width: 2px;
+				border-radius: 50%;
+				background: hsl(211, 81%, 79%);
+				box-shadow: 
+					0 0 0.5rem 0.15rem hsla(0, 0%, 100%, 0.1);
+			}
+			.star1 {
+				right: 20%;
+				top: 19%;
+			}
+			.star2 {
+				right: 12%;
+				top: 10%;
+			}
+			.star3 {
+				right: 27%;
+				bottom: 12%;
+			}
+			.star4 {
+				right: 2%;
+				bottom: 40%;
+			}
+			.star5 {
+				right: 30%;
+				top: 8%;
+				background: hsl(211, 100%, 91%);
+			}
+			.star6 {
+				right: 8%;
+				bottom: 17%;
+				background: hsl(211, 100%, 91%);
+			}
+			.star7 {
+				right: 34%;
+				top: 26%;
+			}
+		}
+		.highlight {
+			position: absolute;
+			height: 0.12rem;
+			width: 20%;
+			background: linear-gradient(to right,
+				hsla(180, 17%, 86%, 0),
+				hsla(63, 55%, 89%, 1),
+				hsla(180, 17%, 86%, 0)
+			);
+			
+			animation-name: ticker-highlight;
+			animation-duration: 6s;
+			animation-iteration-count: infinite;
+		}
+		#top-light {
+			top: 0;
+			left: var(--border-radius);
+			opacity: 0;
+			
+			animation-delay: 0;			
+		}
+		#bottom-light {
+			bottom: 0;
+			left: var(--border-radius);
+			opacity: 0;
+			animation-delay: 2s;
+		}
+	}
+	.ticker:hover {
+		background: linear-gradient(to bottom, 
+			hsl(207, 44%, 12%), 
+			hsl(245, 67%, 27%)
+		);
+		box-shadow: inset 0 0 0 0.12rem hsla(0, 0%, 100%, 0.19);
+	}
+	h1 {
+		width: 90%;
+		max-width: 24ch;
+		margin: auto;
+		font-size: 2.4rem;
+		font-weight: 800;
+		letter-spacing: 0.12rem;
+		color: hsla(0, 0%, 100%, 0.85);
+		text-align: center;
+		font-family: 'Inter Var';
+		letter-spacing: -0.017em; 
+	}
+	h1 span {
+		font-style: italic;
+	}
+	h1 strong {
+		color: hsla(0, 0%, 100%, 0.55);
+		font-weight: 880;
+	}
+}
+@keyframes ticker-highlight {
+	0% {
+		opacity: 0;
+		left: var(--border-radius);
+	}
+	3% {
+		opacity: 1;
+	}
+	13% {
+		opacity: 1;
+	}
+	15% {
+		left: calc(80% - var(--border-radius));
+		opacity: 0;
+	}
+	100% {
+		left: var(--border-radius);
+		opacity: 0;
+	}
+}
+@media (max-width: 53.125rem) {
+	#process h1 {
+		width: 100%;
+	}
+}
+@media (max-width: 50rem) {
+	#follow h1 {
+		max-width: 40.625rem;
+	}
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -40,7 +40,8 @@ module.exports = function () {
 				},
 				'12': {
 					"description": "Time with family",
-					"level": "low"
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
 				},
 				'13': {
 					"level": "low"
@@ -129,7 +130,8 @@ module.exports = function () {
 			'12': {
 				'17': {
 					"description": "Graduated from JMU. Finally.",
-					"level": "high",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/life-event.svg",
 					"picture": {
 						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.webp",
 						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.jpg"
@@ -139,7 +141,8 @@ module.exports = function () {
 			'11': {
 				'06': {
 					"description": "Crashed and Hurt",
-					"level": "high",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg",
 					"picture": {
 						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.webp",
 						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.jpg"

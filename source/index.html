@@ -113,7 +113,7 @@ style: '/css/pages/index.css'
 		
 		<div id="timeline">
 			<div class="canvas">
-				<div class="wrapper">
+				<div class="scroll-container">
 					{% for week in contribution.graph %}
 					<div class="week">
 						<p class="label">{{ week.label }}</p>
@@ -175,6 +175,54 @@ style: '/css/pages/index.css'
 			</ul>
 		</article>
 		
+		<div id="showcase">
+			<div class="scroll-container">
+				<div class="card" id="latest-posts">
+					<h2>Latest Posts</h2>
+					<ul>
+						{% for post in collections.posts reversed limit:8 %}
+							<li><a href="{{ post.url }}">
+								{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+					<h3><a href="">Older Posts</a></h3>
+				</div>
+				
+				<a href="/projects/finding-our-way/" class="card">
+					<p class="controls">#Art #Personal</p>
+					
+					<picture>
+						<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->
+						<img src="https://large-assets.notnotjake.com/images/index/showcase-assets/finding-our-way.jpg">
+					</picture>
+					
+					<p class="title">Finding Our Way</p>
+					<p class="description">An illustrated story about going with the flow. <span>June 2022</span></p>
+				</a>
+				
+				<a href="/projects/monkey-swingin/" class="card">
+					
+					<p class="title">Monkey Swing'in</p>
+					<p class="description">Beautiful and durable "monkey fist" rope swings. Monkey see, Monkey Swing!</p>
+				</a>
+				
+				<a href="javascript:void(0)" class="card">
+					
+					<p class="title">Check Back Soon!</p>
+					<p class="description">I'll be adding a lot of content to the site over the next few weeks.</p>
+				</a>
+			</div>
+		</div>
+		
+		<div id="process">
+			
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+		
 		<div class="dark">
 			<main>
 				<div class="scroll-container">
@@ -191,6 +239,7 @@ style: '/css/pages/index.css'
 						</ul>
 						<h3><a href="">Older Posts</a></h3>
 					</div>
+					
 					<a href="/projects/finding-our-way/" class="card">
 						<picture>
 							<!-- <source srcset="https://large-assets.notnotjake.com/images/index/activity-img/placeholder.webp"> -->

@@ -26,6 +26,18 @@ module.exports = function () {
 					"description": "Shipped site for friend",
 					"level": "shipped"
 				},
+				'08': {
+					"description": "Medium",
+					"level": "med"
+				},
+				'09': {
+					"description": "Medium",
+					"level": "med"
+				},
+				'10': {
+					"description": "High",
+					"level": "high"
+				},
 				'12': {
 					"description": "Time with family",
 					"level": "low"

@@ -6,15 +6,47 @@ module.exports = function () {
 	let data = {
 		'2023': {
 			'02': {
+				'02': {
+					"description": "Shot video for friend",
+					"level": "high"	
+				},
+				'03': {
+					"description": "Worked on video",
+					"level": "low"
+				},
+				'04': {
+					"description": "Medium",
+					"level": "med"
+				},
+				'05': {
+					"description": "High",
+					"level": "high"
+				},
 				'07': {
 					"description": "Shipped site for friend",
 					"level": "shipped"
 				},
-				'17': {
+				'12': {
+					"description": "Time with family",
+					"level": "low"
+				},
+				'13': {
+					"level": "low"
+				},
+				'14': {
 					"level": "med"
 				},
+				'15': {
+					"level": "low"
+				},
+				'16': {
+					"level": "med"
+				},
+				'17': {
+					"level": "low"
+				},
 				'18': {
-					"description": "Building for Client",
+					"description": "I'm on Twitter 👋",
 					"level": "high"
 				},
 				'20': {
@@ -22,7 +54,7 @@ module.exports = function () {
 					"level": "shipped"
 				},
 				'21': {
-					"description": "I'm on Twitter 👋",
+					"description": "",
 					"level": "low"
 				},
 				'22': {

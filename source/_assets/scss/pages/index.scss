@@ -822,36 +822,54 @@ Process Section
 				background: hsl(211, 81%, 79%);
 				box-shadow: 
 					0 0 0.5rem 0.15rem hsla(0, 0%, 100%, 0.1);
+					
+				animation-name: process-stars;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
 			}
 			.star1 {
 				right: 20%;
 				top: 19%;
+				animation-duration: 5s;
+				animation-delay: 0;
 			}
 			.star2 {
 				right: 12%;
 				top: 10%;
+				animation-duration: 6.5s;
+				animation-delay: 0;
 			}
 			.star3 {
 				right: 27%;
 				bottom: 12%;
+				animation-duration: 5s;
+				animation-delay: 2.4s;
 			}
 			.star4 {
 				right: 2%;
 				bottom: 40%;
+				animation-duration: 6s;
+				animation-delay: 1.2s;
 			}
 			.star5 {
 				right: 30%;
 				top: 8%;
 				background: hsl(211, 100%, 91%);
+				animation-duration: 5s;
+				animation-delay: 400ms;
 			}
 			.star6 {
 				right: 8%;
 				bottom: 17%;
 				background: hsl(211, 100%, 91%);
+				animation-duration: 3s;
+				animation-delay: 2s;
 			}
 			.star7 {
 				right: 34%;
 				top: 26%;
+				animation-duration: 9s;
+				animation-delay: 2s;
 			}
 		}
 		.highlight {
@@ -929,7 +947,23 @@ Process Section
 		opacity: 0;
 	}
 }
-@media (max-width: 53rem) {
+@keyframes process-stars {
+	0% {
+		opacity: 0;
+		transform: translateX(-0.2rem);
+	}
+	5% {
+		opacity: 1;
+	}
+	95% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(0.3rem);
+	}
+}
+@media (max-width: 45rem) {
 	#process {
 		padding: 6rem 0.2rem 0;
 		

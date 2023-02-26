@@ -137,10 +137,10 @@ style: '/css/pages/index.css'
 					{% for weeks in contribution.graph %}
 						{% for day in weeks.week %}
 							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
-								{% if day.picture %}									
+								{% if day.photo %}
 									<picture>
-										<source srcset="{{ day.picture.webp}}">
-										<img src="{{ day.picture.jpg }}">
+										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/{{ day.date }}.webp">
+										<img src="https://large-assets.notnotjake.com/images/index/activity-img/{{ day.date }}.jpg">
 									</picture>
 								{% endif %}
 								

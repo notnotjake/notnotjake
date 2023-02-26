@@ -218,7 +218,7 @@ module.exports = function () {
 				day.level = data[xYear][xMonth][xDate].level
 				day.description = data[xYear][xMonth][xDate].description
 				day.icon = data[xYear][xMonth][xDate].icon
-				day.picture = data[xYear][xMonth][xDate].picture
+				day.photo = data[xYear][xMonth][xDate].photo
 			}
 			else {
 				day.level = ''

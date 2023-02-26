@@ -68,15 +68,18 @@ module.exports = function () {
 				},
 				'21': {
 					"description": "",
-					"level": "low"
+					"level": "low",
+					"photo": true
 				},
 				'22': {
 					"description": "New Splash Screen 😍",
-					"level": "high"
+					"level": "high",
+					"photo": true
 				},
 				'23': {
 					"description": "Work & Fun Today 👍",
-					"level": "med"
+					"level": "med",
+					"photo": true
 				},
 				'24': {
 					"description": "Dark Mode is Here",
@@ -115,10 +118,7 @@ module.exports = function () {
 				'18': {
 					"description": "Back at my apartment",
 					"level": "low",
-					"picture": {
-						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2023-01-18.webp",
-						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2023-01-18.jpg"
-					}
+					"photo": true
 				},
 				'19': {
 					"description": "Lots of work on my website",
@@ -132,10 +132,7 @@ module.exports = function () {
 					"description": "Graduated from JMU. Finally.",
 					"level": "special",
 					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/life-event.svg",
-					"picture": {
-						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.webp",
-						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.jpg"
-					}
+					"photo": true
 				}
 			},
 			'11': {
@@ -143,10 +140,7 @@ module.exports = function () {
 					"description": "Crashed and Hurt",
 					"level": "special",
 					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg",
-					"picture": {
-						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.webp",
-						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.jpg"
-					}
+					"photo": true
 				},
 			}
 		}

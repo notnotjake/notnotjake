@@ -4,7 +4,7 @@
 [ ] static assets: in dev env i should link to assets in /static and in prod should link to assets.notnotjake.com to fix 403 errors on mobile from ip/localhost. exclude from git but keep folder in sync with server via transmit/nova
 
 ## /index
-[X] Chromium splash bug
+[ ] dont scroll nav until past splash
 
 [ ] timeline:
 	[X] mobile design
@@ -12,7 +12,6 @@
 	[ ] backend service
 	
 [ ] footer mobile
-[ ] bottom of page dark transition
 
 [ ] showcase:
 	[ ] open in card, open in page
@@ -20,8 +19,6 @@
 	[ ] button to advance
 	[ ] time based advance
 
-[ ] refactor code
-[X] Dark theme
 [ ] P3 colors
 
 # /posts

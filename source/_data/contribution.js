@@ -26,9 +26,22 @@ module.exports = function () {
 					"description": "Shipped site for friend",
 					"level": "shipped"
 				},
+				'08': {
+					"description": "Medium",
+					"level": "med"
+				},
+				'09': {
+					"description": "Medium",
+					"level": "med"
+				},
+				'10': {
+					"description": "High",
+					"level": "high"
+				},
 				'12': {
 					"description": "Time with family",
-					"level": "low"
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
 				},
 				'13': {
 					"level": "low"
@@ -55,15 +68,18 @@ module.exports = function () {
 				},
 				'21': {
 					"description": "",
-					"level": "low"
+					"level": "low",
+					"photo": true
 				},
 				'22': {
 					"description": "New Splash Screen 😍",
-					"level": "high"
+					"level": "high",
+					"photo": true
 				},
 				'23': {
 					"description": "Work & Fun Today 👍",
-					"level": "med"
+					"level": "med",
+					"photo": true
 				},
 				'24': {
 					"description": "Dark Mode is Here",
@@ -102,10 +118,7 @@ module.exports = function () {
 				'18': {
 					"description": "Back at my apartment",
 					"level": "low",
-					"picture": {
-						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2023-01-18.webp",
-						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2023-01-18.jpg"
-					}
+					"photo": true
 				},
 				'19': {
 					"description": "Lots of work on my website",
@@ -117,21 +130,17 @@ module.exports = function () {
 			'12': {
 				'17': {
 					"description": "Graduated from JMU. Finally.",
-					"level": "high",
-					"picture": {
-						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.webp",
-						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-12-17.jpg"
-					}
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/life-event.svg",
+					"photo": true
 				}
 			},
 			'11': {
 				'06': {
 					"description": "Crashed and Hurt",
-					"level": "high",
-					"picture": {
-						"webp": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.webp",
-						"jpg": "https://large-assets.notnotjake.com/images/index/activity-img/2022-11-06.jpg"
-					}
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg",
+					"photo": true
 				},
 			}
 		}
@@ -203,7 +212,7 @@ module.exports = function () {
 				day.level = data[xYear][xMonth][xDate].level
 				day.description = data[xYear][xMonth][xDate].description
 				day.icon = data[xYear][xMonth][xDate].icon
-				day.picture = data[xYear][xMonth][xDate].picture
+				day.photo = data[xYear][xMonth][xDate].photo
 			}
 			else {
 				day.level = ''

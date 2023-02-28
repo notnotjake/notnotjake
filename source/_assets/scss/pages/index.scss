@@ -272,7 +272,7 @@ Timeline (contribution activity)
 		-ms-overflow-style: none; /* Edge hide scrollbar */
 		scrollbar-width: none; /* FF hide scrollbar */
 		
-		div.wrapper {
+		div.scroll-container {
 			display: flex;
 			justify-content: flex-start;
 			flex-direction: row-reverse;
@@ -319,12 +319,12 @@ Timeline (contribution activity)
 				background: var(--block-color-shipped);
 			}
 			a.special img {
-				--margin: 0.125rem;
+				--margin: 0.8rem;
 				width: calc(var(--block-size) - var(--margin));
 				height: calc(var(--block-size) - var(--margin));
 				object-fit: contain;
-				margin-left: var(--margin);
-				margin-top: var(--margin);
+				margin-left: calc(0.5 * var(--margin));
+				margin-top: calc(0.5 * var(--margin));
 			}
 		}
 		div.more {
@@ -682,482 +682,384 @@ article#bio {
 /* Bio Section [End] */
 
 
-div.dark {
-	background-image: linear-gradient(to bottom, 
-		var(--background-color-main),
-		#4133A8 70%,
-		#09041E 80%
-	);
-}
-
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Showcase Cards
+Showcase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-main {
+#showcase {
 	height: 60svh;
-	min-height: 200px;
-	padding: 10px 10px 18px;
+	min-height: 12.5rem;
+	padding: 0.625rem 0.625rem 1.125rem;
 	overflow-y: scroll;
-	margin-bottom: 70px;
-}
-main div.scroll-container {
-	transform-origin: 0%;
-	display: flex;
-	gap: 12px;
-	height: 100%;
-	// background: #b6bfcb;
-}
-main div.scroll-container::after {
-	content: "";
-	width: 1px;
-	min-width: 10px;
-	height: 100%;
-	position: relative;
-	display: inline-block;
-}
-.js-scale {
-	transform: scale(0.8);
-}
-
-main a.card {
-	position: relative;
-	height: 100%;
-	aspect-ratio: 14/12;
-	max-width: 77vw;
-	flex-shrink: 0;
-	border-radius: 15px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-	text-decoration: none;
-	transition: transform 250ms;
-	padding: 0.5rem;
-}
-main a.card picture, main a.card img {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	// padding: 2px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-radius: 13px;
-}
-main a.card a.related {
-	height: 20px;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-main a.card p {
-	padding: 0 0.8rem;
-	text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.2);
-}
-main a.card p.title {
-	color: white;
-	font-size: 1.5rem;
-	font-weight: 600;
-}
-main a.card p.description {
-	color: white;
-	font-size: 1.2rem;
-	font-weight: 500;
-	padding-bottom: 0.5rem;
-}
-main a.card p.description span {
-	opacity: 0.9;
-	font-size: 1.05rem;
-}
-main a.card:hover {
-	transform: scale(1.01);
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-main div.card:hover {
-	transform: scale(1.01);
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-}
-/* Showcase Cards [End] */
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Showcase Section: Latest Posts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-main div.card.latest-posts {
-	position: relative;
-	height: 100%;
-	max-width: 77vw;
-	flex-shrink: 0;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-	background: hsla(191, 83%, 81%, 1);
-	background-image: linear-gradient(to bottom,
-		hsl(201, 74%, 32%) 0%,
-		hsl(191, 63%, 56%) 20%,
-		hsl(191, 83%, 81%) 100%
+	overflow-x: visible;
+	background: linear-gradient(to bottom, 
+		var(--background-color-main),
+		hsl(258, 64%, 28%)
 	);
-	aspect-ratio: 8.8/12;
-	padding: 14px 10px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	border-radius: 15px;
-	transition: transform 250ms;	
-}
-main div.card.latest-posts:hover {
-	transform: scale(1.01);
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-}
-main div.card.latest-posts h2 {
-	margin-bottom: 12px;
-	text-align: center;
-	width: 100%;
-}
-main div.card.latest-posts h3 {
-	text-align: center;
-	width: 100%;
-	letter-spacing: -0.05em;
-}
-main div.card.latest-posts h3 a {
-	color: rgba(203, 141, 0, 1);
-}
-main div.card.latest-posts h3 a:hover {
-	color: rgba(124, 86, 0, 1);
-}
-main div.card.latest-posts ul {
-	font-family: 'Pressura Var', 'Inter Var', sans-serif;
-	list-style: none;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	gap: 9px;
-	flex-grow: 1;
-}
-main div.card.latest-posts ul::after {
-	content: "";
-	width: 100%;
-	height: 50px;
-	position: absolute;
-	bottom: 0;
-	// background: red;
-	background-image: linear-gradient(to bottom,
-		rgba(255, 237, 189, 0),
-		hsl(44, 99%, 87%)
-	);
-}
-main div.card.latest-posts li {
-	margin-bottom: 10px;
-}
-main div.card.latest-posts ul a {
-	color: rgba(3, 122, 213, 1);
-}
-main div.card.latest-posts ul a:hover {
-	color: rgba(46, 164, 255, 1);
-}
-main div.card.latest-posts ul a:visited {
-	color: rgba(96, 125, 147, 1);
-}
-main div.card.latest-posts ul a:visited:hover {
-	color: rgba(93, 162, 214, 1);
-}
-main div.card.latest-posts ul a {
-	padding: 6px 0;
-	border-radius: 8px;
-	// background: rgba(255, 255, 255, 0.3);
-	font-family: 'Pressura Var', 'Inter Var', sans-serif;
-	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0;
-	font-size: 1.4rem;
-	font-weight: 550;
-}
-main div.card.latest-posts ul a span {
-	font-weight: 400;
-	font-size: 1.28rem;
-	// font-style: italic;
-	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
-	opacity: 0.8;
-}
-
-/* Showcase Section: Latest Posts [End] */
-
-#roadmap {
-	background: rgb(233, 222, 189);
-	flex-direction: column;
-	// filter: brightness(1.1)
-}
-#roadmap div.image-container {
-	background-image: linear-gradient(to bottom,
-		rgb(254, 207, 66) 0%,
-		rgba(254, 207, 66, 0) 100%
-	);
-	filter: brightness(1.01);
-	overflow: hidden;
-	width: 100%;
-	height: 20%;
-	max-height: 160px;
-}
-#roadmap div.image-container::before {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	background-image: url("https://large-assets.notnotjake.com/images/index/showcase-assets/repeatable-dot-background.png");
-	background-repeat: repeat;
-	background-size: 25px;
-	transform: rotate(15deg);
-	transform-origin: top center;
-	width: 300%;
-	height: 400%;
-}
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Last Note
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-div.last-note {
-	font-family: 'Inter Var', sans-serif;
-	padding: 20px 0 10px;
-	width: 100%;
-	max-width: 750px;
-	margin-left: auto;
-	margin-right: auto;
-}
-div.last-note h1 {
-	width: 90%;
-	max-width: 24ch;
-	margin: auto;
-	font-size: 2.4rem;
-	font-weight: 800;
-	letter-spacing: 0.12rem;
-	color: hsla(0, 0%, 100%, 0.85);
-	text-align: center;
-	font-family: 'Inter Var';
-	letter-spacing: -0.017em; 
-}
-div.last-note h1 span {
-	// color: rgb(105, 105, 105);
-	font-style: italic;
-}
-div.last-note h1 strong {
-	color: hsla(0, 0%, 100%, 0.55);
-	font-weight: 880;
-}
-div.last-note div.container {
-	display: flex;
-	justify-content: space-between;
-	gap: 8px;
-	margin-bottom: 28px;
-}
-div.last-note div.container > div {
-	padding: 5px 0 10px;
-	flex-grow: 1;
-	display: flex;
-	height: 3.6rem;
-	overflow: hidden;
-}
-div.last-note p {
-	position: absolute;
-	top: -3.6rem;
-	height: 3.6rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	color: rgb(221, 221, 221);
-	font-size: 2.5rem;
-	font-weight: 800;
-	width: 100%;
-	// border: 1px solid red;
-}
-div.last-note div.first-word p {
-	justify-content: flex-end;
-	color: #88d894;
-	background: -webkit-linear-gradient(
-		#c1f3c8, 
-		#88d894
-	);
-	background: linear-gradient(to right,
-		#daf6e3 0%, 
-		#5ed270 80%,
-		#5ed270 100%
-	);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
-}
-div.last-note div.second-word p {
-	color: #14b02a;
-	background: -webkit-linear-gradient(
-		#88d894, 
-		#14b02a
-	);
-	background: linear-gradient(to right,
-		#5ed270 0%, 
-		#079c1c 70%,
-		#079c1c 100%
-	);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
-}
-div.last-note div.third-word p {
-	justify-content: flex-start;
-	color: #1576ff;
-	background: -webkit-linear-gradient(
-		#408fff, 
-		#367aff
-	);
-	background: linear-gradient(to right,
-		#1cd67b 0%,
-		#24a2d8 30%,
-		#3031f4 60%,
-		#1472ff 80%
-	);
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-	text-fill-color: transparent;
-}
-div.last-note svg {
-	height: 4em;
-	width: 24px;
-	fill: rgb(83, 96, 90);
-	color: #42c15b;
-	margin: 0 8px;
-}
-div.last-note svg path {
-	fill: #42c15b;
-}
-@media (max-width: 53.125rem) {
-	div.last-note h1 {
-		width: 100%;
+	
+	div.scroll-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		gap: 0.75rem;
+		height: 100%;
 	}
-}
-@media (max-width: 50rem) {
-	div.last-note {
-		width: 100%;
-		padding-left: 10px;
-		padding-right: 10px;
-	}
-	div.last-note div.container {
-		font-size: 2.0vw;
-		gap: 0px;
-		justify-content: center;
-	}
-	div.last-note h1 {
-		max-width: 650px;
-	}
-}
-@media (max-width: 46.875rem) {
-	div.last-note div.container {
+	
+	.card {
+		height: 100%;
+		position: relative;
+		aspect-ratio: 14/12;
+		max-width: 77vw;
+		flex-shrink: 0;
+		border-radius: 0.94rem;
+		display: flex;
 		flex-direction: column;
-		gap: 12px;
-		padding-left: 10px;
-		padding-right: 10px;
-		font-size: clamp(18px,4vw, 2.7em);
-		width: 100%;
-		max-width: 320px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	div.last-note div.first-word p {
-		justify-content: flex-start;
-		text-align: left;
-	}
-	div.last-note div.third-word p {
 		justify-content: flex-end;
-		text-align: right;
+		// background: hsl(0, 0%, 59%);
+		
+		background:  linear-gradient(to top, 
+			hsl(180, 9%, 15%), 
+			hsl(213, 39%, 4%)
+		);
+		
+		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+		text-decoration: none;
+		transition: transform 250ms;
+		padding: 0.5rem;
+		
+		p.controls {
+			position: absolute;
+			top: 0;
+			margin-top: -2rem;
+			height: 2rem;
+			width: 100%;
+			
+		}
+	}
+	.card:hover {
+		
 	}
 }
-/* Last Note [End] */
+/* Showcase [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Footer
+Process Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-div.footer {
-	height: 370px;
-	position: relative;
-	width: 100%;
-	padding-top: 90px;
-	overflow: hidden;
+#process {
+	padding: 6rem 1rem 0;
+	background: linear-gradient(to bottom,
+		hsl(258, 64%, 28%),
+		hsl(252, 77%, 7%) 30%,
+	);
 	
-	background-image: linear-gradient(to bottom, 
-		hsl(252, 77%, 7%) 0%,
-		hsl(252, 71%, 35%) 85%,
-		hsl(252, 100%, 38%) 100%
-		// hsl(211, 86%, 37%) 85%,
-		// hsl(211, 100%, 46%) 100%,
+	.ticker {
+		--border-radius: 0.9rem;
 		
+		width: fit-content;
+		margin: 1.5rem auto;
+		min-height: 3rem;
+		border-radius: var(--border-radius);
+		background: linear-gradient(to bottom, 
+			hsl(183, 18%, 10%), 
+			hsl(245, 70%, 23%)
+		);
+		box-shadow: inset 0 0 0 0.12rem hsla(0, 0%, 100%, 0.12);
+		padding: 0.9rem 1.2rem;
+		
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		justify-content: center;
+		
+		p {
+			font-family: 'Unbounded Var';
+			font-size: 2rem;
+			font-weight: 600;
+			padding: 0 0.5rem;
+			z-index: 2;
+			
+			color: hsla(196, 34%, 78%, 1);
+		}
+		p.w1 {
+			background: linear-gradient(to bottom,
+				hsl(157, 3%, 55%),
+				hsl(221, 49%, 42%)
+			);
+			cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>💡</text></svg>") 16 0,auto; /*!emojicursor.app*/
+		}
+		p.w2 {
+			background: linear-gradient(to bottom,
+				hsl(177, 10%, 79%),
+				hsl(230, 46%, 49%)
+			);
+			cursor: progress;
+		}
+		p.w3 {
+			background: linear-gradient(to bottom,
+				hsl(199, 100%, 89%) 30%,
+				hsl(199, 69%, 74%) 50%,
+				hsl(240, 83%, 70%) 80%,
+				hsl(240, 71%, 57%) 100%
+			);
+			cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>✨</text></svg>") 16 0,auto; /*!emojicursor.app*/
+		}
+		p.w1, p.w2, p.w3 {
+			background-clip: text;
+			-webkit-background-clip: text;
+			text-fill-color: transparent;
+			-webkit-text-fill-color: transparent;
+		}
+		#starfield {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			top: 0;
+			z-index: 1;
+			span {
+				position: absolute;
+				height: 2px;
+				width: 2px;
+				border-radius: 50%;
+				background: hsl(211, 81%, 79%);
+				box-shadow: 
+					0 0 0.5rem 0.15rem hsla(0, 0%, 100%, 0.1);
+					
+				animation-name: process-stars;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+			}
+			.star1 {
+				right: 20%;
+				top: 19%;
+				animation-duration: 5s;
+				animation-delay: 0;
+			}
+			.star2 {
+				right: 12%;
+				top: 10%;
+				animation-duration: 6.5s;
+				animation-delay: 0;
+			}
+			.star3 {
+				right: 27%;
+				bottom: 12%;
+				animation-duration: 5s;
+				animation-delay: 2.4s;
+			}
+			.star4 {
+				right: 2%;
+				bottom: 40%;
+				animation-duration: 6s;
+				animation-delay: 1.2s;
+			}
+			.star5 {
+				right: 30%;
+				top: 8%;
+				background: hsl(211, 100%, 91%);
+				animation-duration: 5s;
+				animation-delay: 400ms;
+			}
+			.star6 {
+				right: 8%;
+				bottom: 17%;
+				background: hsl(211, 100%, 91%);
+				animation-duration: 3s;
+				animation-delay: 2s;
+			}
+			.star7 {
+				right: 34%;
+				top: 26%;
+				animation-duration: 9s;
+				animation-delay: 2s;
+			}
+		}
+		.highlight {
+			position: absolute;
+			height: 0.12rem;
+			width: 20%;
+			background: linear-gradient(to right,
+				hsla(180, 17%, 86%, 0),
+				hsla(63, 55%, 89%, 1),
+				hsla(180, 17%, 86%, 0)
+			);
+			
+			animation-name: ticker-highlight;
+			animation-duration: 6s;
+			animation-iteration-count: infinite;
+		}
+		#top-light {
+			top: 0;
+			left: var(--border-radius);
+			opacity: 0;
+			
+			animation-delay: 0;			
+		}
+		#bottom-light {
+			bottom: 0;
+			left: var(--border-radius);
+			opacity: 0;
+			animation-delay: 2s;
+		}
+	}
+	.ticker:hover {
+		background: linear-gradient(to bottom, 
+			hsl(207, 44%, 12%), 
+			hsl(245, 67%, 27%)
+		);
+		box-shadow: inset 0 0 0 0.12rem hsla(0, 0%, 100%, 0.19);
+	}
+	h1 {
+		width: 90%;
+		max-width: 24ch;
+		margin: auto;
+		font-size: 2.4rem;
+		font-weight: 800;
+		letter-spacing: 0.12rem;
+		color: hsla(0, 0%, 100%, 0.85);
+		text-align: center;
+		font-family: 'Inter Var';
+		letter-spacing: -0.017em; 
+	}
+	h1 span {
+		font-style: italic;
+	}
+	h1 strong {
+		color: hsla(0, 0%, 100%, 0.55);
+		font-weight: 880;
+	}
+}
+@keyframes ticker-highlight {
+	0% {
+		opacity: 0;
+		left: var(--border-radius);
+	}
+	3% {
+		opacity: 1;
+	}
+	13% {
+		opacity: 1;
+	}
+	15% {
+		left: calc(80% - var(--border-radius));
+		opacity: 0;
+	}
+	100% {
+		left: var(--border-radius);
+		opacity: 0;
+	}
+}
+@keyframes process-stars {
+	0% {
+		opacity: 0;
+		transform: translateX(-0.2rem);
+	}
+	5% {
+		opacity: 1;
+	}
+	95% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateX(0.3rem);
+	}
+}
+@media (max-width: 45rem) {
+	#process {
+		padding: 6rem 0.2rem 0;
+		
+		.ticker {
+			padding: 0.8rem 0.5rem;
+			margin-bottom: 2.3rem;
+			p {
+				font-size: 1.4rem;
+				padding: 0 0.2rem;
+				font-weight: 500;
+			}
+		}
+		h1 {
+			width: 100%;
+			font-size: 2.1rem;
+		}
+	}
+}
+/* Process Section [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Follow Links
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#follow {
+	width: 100%;
+	padding: 6rem 1rem;
+	background: linear-gradient(to bottom, 
+		hsl(252, 77%, 7%) 30%,
+		hsl(252, 71%, 35%)
+	);
+	
+	display: flex;
+	justify-content: center;
+	
+	.container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		gap: 1.8rem;
+		a svg {
+			height: 2rem;
+			width: 2rem;
+			color: hsl(229, 81%, 84%);
+			fill: currentColor;
+			transition: all 300ms;
+		}
+		a:hover svg {
+			color: hsl(211, 100%, 92%);
+		}
+		a:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 5rem;
+			height: 5rem;
+			transform: 
+				translateX(calc(-2.5rem + 15.5px)) 
+				translateY(calc(-2.5rem + 15.5px)) 
+				scale(2);
+			transform-origin: center;
+			pointer-events: none;
+			
+			background: transparent;
+			background: radial-gradient(circle, 
+				hsla(0, 0%, 0%, 0), 
+				hsla(219, 100%, 58%, 0.225), 
+				hsla(216, 94%, 42%, 0) 70%
+			);
+			
+			opacity: 0;
+			transition: all 300ms ease-out;
+		}
+		a:hover:after {
+			transform: 
+				translateX(calc(-2.5rem + 15.5px)) 
+				translateY(calc(-2.5rem + 15.5px))
+				scale(1);
+			opacity: 1;
+		}
+	}
+}
+/* Follow Links [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Footer Wrapper
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#footer-wrapper {
+	width: 100%;
+	padding-bottom: 0.18rem;
+	background-image: linear-gradient(to bottom, 
+		hsl(252, 71%, 35%),
+		hsl(252, 100%, 38%)
 	);
 }
-div.footer > div.links {
-	display: flex;
-	flex-direction: row;
-	gap: 27px;
-	margin: auto;
-	width: fit-content;
-}
-div.footer a svg {
-	height: 31px;
-	width: 31px;
-	color: #b3bff7;
-	fill: currentColor;
-	transition: all 300ms;
-}
-div.footer > div.links a:hover svg {
-	color: #d8ebff;
-	transition: color 250ms;
-}
-div.footer > div.links a:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 5rem;
-	height: 5rem;
-	transform: translateX(calc(-2.5rem + 15.5px)) translateY(calc(-2.5rem + 15.5px)) scale(2);
-	transform-origin: center;
-	pointer-events: none;
-	
-	background: transparent;
-	background: radial-gradient(circle, hsla(0, 0%, 0%, 0), hsla(219, 100%, 62%, 0.19), hsla(216, 94%, 42%, 0) 70%);
-	
-	opacity: 0;
-	transition: all 300ms ease-out;
-}
-div.footer > div.links a:hover:after {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 5rem;
-	height: 5rem;
-	transform: translateX(calc(-2.5rem + 15.5px)) translateY(calc(-2.5rem + 15.5px));
-	
-	background: transparent;
-	background: radial-gradient(circle, hsla(0, 0%, 0%, 0), hsla(219, 100%, 62%, 0.19), hsla(216, 94%, 42%, 0) 70%);
-	
-	opacity: 1;
-	scale: 1;
-}
-div.footer picture, div.footer img {
-	height: 90px;
-	max-width: 100px;
-}
-
-.footer-wrapper {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-div.footer::after {
-	content: "";
-	position: absolute;
-	height: 50px;
-	width: 100%;
-	left: 0;
-	bottom: 0;
-}
-/* Footer [End] */
+/* Footer Wrapper [End] */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1462,3 +1364,198 @@ Splash (New Visitor)
 	}
 }
 /* Splash [END] */
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+LEGACY CODE - NEEDS REFACTOR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Showcase Cards
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+main {
+	height: 60svh;
+	min-height: 200px;
+	padding: 10px 10px 18px;
+	overflow-y: scroll;
+	margin-bottom: 70px;
+}
+main div.scroll-container {
+	transform-origin: 0%;
+	display: flex;
+	gap: 12px;
+	height: 100%;
+	// background: #b6bfcb;
+}
+main div.scroll-container::after {
+	content: "";
+	width: 1px;
+	min-width: 10px;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+}
+.js-scale {
+	transform: scale(0.8);
+}
+
+main a.card {
+	position: relative;
+	height: 100%;
+	aspect-ratio: 14/12;
+	max-width: 77vw;
+	flex-shrink: 0;
+	border-radius: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	text-decoration: none;
+	transition: transform 250ms;
+	padding: 0.5rem;
+}
+main a.card picture, main a.card img {
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+	// padding: 2px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 13px;
+}
+main a.card a.related {
+	height: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+main a.card p {
+	padding: 0 0.8rem;
+	text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.2);
+}
+main a.card p.title {
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+main a.card p.description {
+	color: white;
+	font-size: 1.2rem;
+	font-weight: 500;
+	padding-bottom: 0.5rem;
+}
+main a.card p.description span {
+	opacity: 0.9;
+	font-size: 1.05rem;
+}
+main a.card:hover {
+	transform: scale(1.01);
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+main div.card:hover {
+	transform: scale(1.01);
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+}
+/* Showcase Cards [End] */
+
+
+/* Showcase Section: Latest Posts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+main div.card.latest-posts {
+	position: relative;
+	height: 100%;
+	max-width: 77vw;
+	flex-shrink: 0;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+	background: hsla(191, 83%, 81%, 1);
+	background-image: linear-gradient(to bottom,
+		hsl(201, 74%, 32%) 0%,
+		hsl(191, 63%, 56%) 20%,
+		hsl(191, 83%, 81%) 100%
+	);
+	aspect-ratio: 8.8/12;
+	padding: 14px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	border-radius: 15px;
+	transition: transform 250ms;	
+}
+main div.card.latest-posts:hover {
+	transform: scale(1.01);
+	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
+}
+main div.card.latest-posts h2 {
+	margin-bottom: 12px;
+	text-align: center;
+	width: 100%;
+}
+main div.card.latest-posts h3 {
+	text-align: center;
+	width: 100%;
+	letter-spacing: -0.05em;
+}
+main div.card.latest-posts h3 a {
+	color: rgba(203, 141, 0, 1);
+}
+main div.card.latest-posts h3 a:hover {
+	color: rgba(124, 86, 0, 1);
+}
+main div.card.latest-posts ul {
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+	list-style: none;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 9px;
+	flex-grow: 1;
+}
+main div.card.latest-posts ul::after {
+	content: "";
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0;
+	// background: red;
+	background-image: linear-gradient(to bottom,
+		rgba(255, 237, 189, 0),
+		hsl(44, 99%, 87%)
+	);
+}
+main div.card.latest-posts li {
+	margin-bottom: 10px;
+}
+main div.card.latest-posts ul a {
+	color: rgba(3, 122, 213, 1);
+}
+main div.card.latest-posts ul a:hover {
+	color: rgba(46, 164, 255, 1);
+}
+main div.card.latest-posts ul a:visited {
+	color: rgba(96, 125, 147, 1);
+}
+main div.card.latest-posts ul a:visited:hover {
+	color: rgba(93, 162, 214, 1);
+}
+main div.card.latest-posts ul a {
+	padding: 6px 0;
+	border-radius: 8px;
+	// background: rgba(255, 255, 255, 0.3);
+	font-family: 'Pressura Var', 'Inter Var', sans-serif;
+	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0;
+	font-size: 1.4rem;
+	font-weight: 550;
+}
+main div.card.latest-posts ul a span {
+	font-weight: 400;
+	font-size: 1.28rem;
+	// font-style: italic;
+	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+	opacity: 0.8;
+}
+/* Showcase Section: Latest Posts [End] */

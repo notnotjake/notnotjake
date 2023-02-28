@@ -12,8 +12,10 @@ if ( window.matchMedia("(prefers-reduced-motion: reduce)").matches ) {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Splash (if visible)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-if ( !document.querySelector('#splash').classList.contains('hide') ) {
-	
+if ( document.querySelector('#splash').classList.contains('hide') ) {
+	startNavScroll()
+}
+else {
 	document.querySelector('nav div.background').classList.remove('show')
 	
 	/* Scroll Hint Bounce (after 3.5s if under 10px scrolled)
@@ -33,10 +35,12 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 	/* Scroll Handler: triggers at 250px scroll-y
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	function splashScroll (e) {
-		let scrollTriggerY = 250
+		let scrollTriggerY = 200
 		let splashEndY = document.querySelector('#splash').offsetHeight
 		
 		if ( document.querySelector('#splash').classList.contains('hide') ) {
+			startNavScroll()
+			console.log('a')
 			window.removeEventListener('scroll', splashScroll)
 			return
 		}
@@ -48,16 +52,17 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 		}
 		else {
 			updateBodyBackground("var(--background-color-main)")
+			startNavScroll()
 		}
 	}
 	window.addEventListener('scroll', splashScroll)
 	
-	// Function for changing the theme-color/body color
+	// Helper Function for changing the theme-color/body color
 	function updateBodyBackground ( arg ) {
-		gsap.to('body', { background: arg, duration: 1})
+		gsap.to('body', { background: arg, duration: 1.2})
 	}
 	
-	// Function called by scroll handler
+	// Handles scrolling splash away - function called by scroll handler
 	function scrollPastSplash () {
 		window.removeEventListener('scroll', splashScroll)
 		
@@ -68,20 +73,21 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 		// Scroll to current position minus splash element's height
 		gsap.to(window, {
 			scrollTo: {x: scrollTo, y: 0, autoKill: false, ease: 'power2.in'},
-			duration: 1
+			duration: 0.8
 		})
 		
 		// Move splash element off top, then hide
 		gsap.to('#splash', {
 			marginTop: splashHeight,
-			duration: 1,
+			duration: 0.8,
 			onComplete: () => {
 				document.querySelector('#splash').classList.add('hide')
-				document.body.style.background = 'var(--background-color-main)'
+				updateBodyBackground('var(--background-color-main)')
 				document.querySelector('nav div.background').classList.add('show')
 				document.querySelectorAll('div.overscroll').forEach( (i) => {
 					i.style.display = 'block'
 				})
+				startNavScroll()
 			}
 		})
 	}
@@ -93,10 +99,91 @@ if ( !document.querySelector('#splash').classList.contains('hide') ) {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nav, Marquee
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-if ( !prefersReducedMotion ) {
-	/* Only continues if Prefers-Reduced-Motion is OFF
-	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	
+// let headerScrollTimelineDefault = ''
+// if ( !prefersReducedMotion ) {
+// 	/* Only continues if Prefers-Reduced-Motion is OFF
+// 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// 	
+// 	document.querySelector('#scroll-collection-2').classList.remove('hide')
+// 	
+// 	const header = document.querySelector('nav')
+// 	const headerScroller = document.querySelector('nav ul')
+// 	const headerContent1 = document.querySelector('#scroll-collection-1')
+// 	const headerContent2 = document.querySelector('#scroll-collection-2')
+// 	
+// 	const speed = 60 // Set the horiz. scroll speed for marquee
+// 	const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
+// 	let scrollDuration = scrollEnd / speed
+// 
+// 	
+// 	/* On Load: Start scroll
+// 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// 	// On load: start scrolling to end, after 2s delay
+// 	headerScrollTimelineDefault = gsap.timeline()
+// 	headerScrollTimelineDefault.to(headerScroller, {
+// 		scrollTo: {y:0, x: 20, autoKill: true},
+// 		duration: 1.9,
+// 		delay: 1.9,
+// 		ease: 'power3.in'
+// 	})
+// 	headerScrollTimelineDefault.to(headerScroller, {
+// 		scrollTo: {y: 0, x: scrollEnd, autoKill: true},
+// 		duration: scrollDuration,
+// 		ease: 'linear'
+// 	})
+// 	headerScrollTimelineDefault.pause()
+// 	
+// 	let headerScrollControl = gsap.timeline() // Used by mouse enter/leave to reset the animation
+// 	
+// 	/* Hover: stop scrolling with ease-out
+// 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// 	header.addEventListener('mouseenter', () => {		
+// 		headerScrollTimelineDefault.kill()
+// 		
+// 		headerScrollControl.kill()
+// 		headerScrollControl.clear()
+// 		
+// 		let scrollEase = headerScroller.scrollLeft + 10
+// 		headerScrollControl.to(headerScroller, {
+// 				scrollTo: {x: scrollEase, y: 0, autoKill: true},
+// 				duration: 0.8,
+// 				ease: 'power3.out'
+// 			})
+// 		headerScrollControl.play()
+// 	})
+// 	/* Hover-Out: start up new scroller
+// 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// 	headerScroller.addEventListener('mouseleave', () => {		
+// 		headerScrollControl.kill()
+// 		headerScrollControl.clear()
+// 		
+// 		let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
+// 		scrollDuration = scrollDistanceToEnd / speed
+// 		
+// 		headerScrollControl.to(headerScroller, {
+// 			scrollTo: {x: scrollEnd, y: 0, autoKill: true},
+// 			duration: scrollDuration,
+// 			ease: 'linear'
+// 		})
+// 		headerScrollControl.play()
+// 	})
+// 	/* Finger-Up: when touch event ends, start up new scroller
+// 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// 	headerScroller.addEventListener('touchend', () => {
+// 		let scrollDistanceToEnd = scrollEnd - headerScroller.scrollLeft
+// 		scrollDuration = scrollDistanceToEnd / speed
+// 		
+// 		gsap.delayedCall(0.5, () => {
+// 			gsap.to(headerScroller, {
+// 				scrollTo: {x: scrollEnd, y: 0, autoKill: true},
+// 				duration: scrollDuration,
+// 				ease: 'linear'
+// 			})
+// 		})
+// 	})
+// }
+
+function startNavScroll () {
 	document.querySelector('#scroll-collection-2').classList.remove('hide')
 	
 	const header = document.querySelector('nav')
@@ -104,19 +191,19 @@ if ( !prefersReducedMotion ) {
 	const headerContent1 = document.querySelector('#scroll-collection-1')
 	const headerContent2 = document.querySelector('#scroll-collection-2')
 	
-	const speed = 60 // Set the horiz. scroll speed for marquee
+	const speed = 55 // Set the horiz. scroll speed for marquee
 	const scrollEnd = headerContent1.offsetWidth + headerContent2.offsetWidth
 	let scrollDuration = scrollEnd / speed
-
+	
 	
 	/* On Load: Start scroll
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	// On load: start scrolling to end, after 2s delay
-	let headerScrollTimelineDefault = gsap.timeline()
+	headerScrollTimelineDefault = gsap.timeline()
 	headerScrollTimelineDefault.to(headerScroller, {
 		scrollTo: {y:0, x: 20, autoKill: true},
-		duration: 1.9,
-		delay: 1.9,
+		duration: 1.3,
+		delay: 1.2,
 		ease: 'power3.in'
 	})
 	headerScrollTimelineDefault.to(headerScroller, {
@@ -203,7 +290,6 @@ document.querySelector('#timeline').addEventListener('mouseenter', () => {
 		const mouseY = e.clientY
 		const offsetElement = document.querySelector('#timeline div.canvas').getBoundingClientRect().top
 		
-		
 		const cardHeight = document.querySelector('#timeline div.details-cards div.container').offsetHeight
 		
 		if (cardHeight >= 50) {
@@ -215,11 +301,9 @@ document.querySelector('#timeline').addEventListener('mouseenter', () => {
 			const offsetY = mouseY - offsetElement - 18
 			activityCard.style.top = offsetY + "px"
 		}
-		
 	})
 	
 	const graphDays = [...document.querySelectorAll('#timeline div.canvas a')]
-	
 	graphDays.forEach( (a) => {
 		// get a's data-date
 		let date = a.dataset.date
@@ -243,59 +327,59 @@ document.querySelector('#timeline').addEventListener('mouseenter', () => {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Showcase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-const showcase = document.querySelector('main div.scroll-container')
-const showcaseContainer = document.querySelector('main')
-const showcaseCards = document.querySelector('main div.card')
-
-showcase.classList.add('js-scale')
-
-let showcaseTimeline = gsap.timeline({
-	scrollTrigger: {
-		trigger: showcase,
-		start: "top 65%",
-		end: "center 55%",
-		scrub: 0.5
-	}
-})
-showcaseTimeline.to(showcase, {scale: 1}, 'showcase-start')
-showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')			
-
-// ScrollTrigger.create({
-// 	trigger: showcase,
-// 	start: "center center",
-// 	onEnter: () => {
-// 		console.log("entered")
+// const showcase = document.querySelector('#showcase div.scroll-container')
+// const showcaseContainer = document.querySelector('#showcase')
+// const showcaseCards = document.querySelector('#showacase .card')
+// 
+// showcase.classList.add('js-scale')
+// 
+// let showcaseTimeline = gsap.timeline({
+// 	scrollTrigger: {
+// 		trigger: showcase,
+// 		start: "top 65%",
+// 		end: "center 55%",
+// 		scrub: 0.5
 // 	}
 // })
-
-// Keep the transform-origin correct
-document.querySelector('main').addEventListener('scroll', () => {
-	let scrollElementWidth = showcaseContainer.offsetWidth
-	let elementWidth = showcase.getBoundingClientRect().width
-	
-	let scrollPosition = showcaseContainer.scrollLeft
-	let scrollWidth = showcaseContainer.scrollWidth
-	
-	let scrollPercent = 100 * (scrollPosition / (scrollWidth - scrollElementWidth))
-	
-	
-	// console.log(scrollPercent)
-	
-	// let scaleFactor = elementTrueWidth / elementWidth
-	
-	// showcase.style.transformOrigin = scrollPos
-	
-	if (scrollPercent > 95) {
-		showcase.style.transformOrigin = "right"
-	}
-	else if (scrollPosition < 5) {
-		showcase.style.transformOrigin = "left"
-	}
-	else {
-		showcase.style.transformOrigin = scrollPercent
-	}
-	
-})
+// showcaseTimeline.to(showcase, {scale: 1}, 'showcase-start')
+// showcaseTimeline.to('main', {height: "60svh"}, 'showcase-start')			
+// 
+// // ScrollTrigger.create({
+// // 	trigger: showcase,
+// // 	start: "center center",
+// // 	onEnter: () => {
+// // 		console.log("entered")
+// // 	}
+// // })
+// 
+// // Keep the transform-origin correct
+// document.querySelector('main').addEventListener('scroll', () => {
+// 	let scrollElementWidth = showcaseContainer.offsetWidth
+// 	let elementWidth = showcase.getBoundingClientRect().width
+// 	
+// 	let scrollPosition = showcaseContainer.scrollLeft
+// 	let scrollWidth = showcaseContainer.scrollWidth
+// 	
+// 	let scrollPercent = 100 * (scrollPosition / (scrollWidth - scrollElementWidth))
+// 	
+// 	
+// 	// console.log(scrollPercent)
+// 	
+// 	// let scaleFactor = elementTrueWidth / elementWidth
+// 	
+// 	// showcase.style.transformOrigin = scrollPos
+// 	
+// 	if (scrollPercent > 95) {
+// 		showcase.style.transformOrigin = "right"
+// 	}
+// 	else if (scrollPosition < 5) {
+// 		showcase.style.transformOrigin = "left"
+// 	}
+// 	else {
+// 		showcase.style.transformOrigin = scrollPercent
+// 	}
+// 	
+// })
 
 /* Showcase */
 
@@ -307,49 +391,49 @@ document.querySelector('main').addEventListener('scroll', () => {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Last Note
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-if ( !prefersReducedMotion ) {
-	document.querySelector('#last-note div.container').classList.remove('hide')
-	
-	gsap.delayedCall(0.0, () => { wordCycle('div.last-note div.first-word p') })
-	gsap.delayedCall(0.6, () => { wordCycle('div.last-note div.second-word p') })
-	gsap.delayedCall(1.2, () => { wordCycle('div.last-note div.third-word p') })
-	
-	function wordCycle ( target ) {
-		const move = document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
-		const el = gsap.utils.toArray(target)
-		const length = el.length
-		
-		el.forEach( ( p, i ) => {
-			const pHeight = p.offsetHeight
-			
-			const hangTime = 4
-			const moveSpeed = 1
-			const nonoverlapDuration = moveSpeed + hangTime
-			const stagger = i * nonoverlapDuration
-			const delayBetween = (length * nonoverlapDuration) - nonoverlapDuration -1
-			
-			gsap.delayedCall(stagger, () => {
-				gsap.timeline({repeat: -1})
-					.to(p, {
-						y: pHeight,
-						opacity: 1,
-						duration: moveSpeed
-					}, 0)
-					.to(p, {
-						y: 2 * pHeight,
-						opacity: 0,
-						delay: hangTime,
-						duration: 1
-					}, '>')
-					.to(p, {
-						y: 0,
-						opacity: 0,
-						duration: delayBetween
-					}, '>')
-			})
-		})
-	}
-}
+// if ( !prefersReducedMotion ) {
+// 	document.querySelector('#last-note div.container').classList.remove('hide')
+// 	
+// 	gsap.delayedCall(0.0, () => { wordCycle('div.last-note div.first-word p') })
+// 	gsap.delayedCall(0.6, () => { wordCycle('div.last-note div.second-word p') })
+// 	gsap.delayedCall(1.2, () => { wordCycle('div.last-note div.third-word p') })
+// 	
+// 	function wordCycle ( target ) {
+// 		const move = document.querySelector('div.last-note p:nth-of-type(1)').offsetHeight
+// 		const el = gsap.utils.toArray(target)
+// 		const length = el.length
+// 		
+// 		el.forEach( ( p, i ) => {
+// 			const pHeight = p.offsetHeight
+// 			
+// 			const hangTime = 4
+// 			const moveSpeed = 1
+// 			const nonoverlapDuration = moveSpeed + hangTime
+// 			const stagger = i * nonoverlapDuration
+// 			const delayBetween = (length * nonoverlapDuration) - nonoverlapDuration -1
+// 			
+// 			gsap.delayedCall(stagger, () => {
+// 				gsap.timeline({repeat: -1})
+// 					.to(p, {
+// 						y: pHeight,
+// 						opacity: 1,
+// 						duration: moveSpeed
+// 					}, 0)
+// 					.to(p, {
+// 						y: 2 * pHeight,
+// 						opacity: 0,
+// 						delay: hangTime,
+// 						duration: 1
+// 					}, '>')
+// 					.to(p, {
+// 						y: 0,
+// 						opacity: 0,
+// 						duration: delayBetween
+// 					}, '>')
+// 			})
+// 		})
+// 	}
+// }
 /* Last Note [End] */
 
 

@@ -12,6 +12,6 @@
 - Advanced Express
 - PostgreSQL & general how to do database
 
-Other Experience: Postmark Transactional Email, MailGun Broadcast Email, Beta Testing & Feedback, Shell scripting, Mac Automation, Writing Business Plan, Professional Sales, Integrated Marketing Communications, Marketing Analytics, Excel Genius.
+Experience With: Postmark Transactional Email, MailGun Broadcast Email, Beta Testing & Feedback, Shell scripting, Mac Automation, Writing Business Plan, Professional Sales, Integrated Marketing Communications, Marketing Analytics, Excel Genius.
 
 Other Interests: Digital Art, Welding, Poetry, SCUBA Diving

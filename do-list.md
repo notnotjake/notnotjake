@@ -19,8 +19,6 @@
 	[ ] button to advance
 	[ ] time based advance
 
-[ ] P3 colors
-
 # /posts
 font changes(?)
 link to github history for page
@@ -39,12 +37,12 @@ link previews(?)
 - connect to something bigger (my why)
 - belief stack
 - roadmap
+- more graphs
 
 # More Pages:
 - archive
 - about
 - daily activity/contribution page + roadmap/
 - showcase component/page
-- more graphs
 - the shelf
 - links

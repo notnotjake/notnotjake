@@ -85,6 +85,14 @@ module.exports = function () {
 				'25': {
 					"description": "Shipped video for friend",
 					"level": "shipped"
+				},
+				'26': {
+					"description": "Worked on new web pages",
+					"level": "low"
+				},
+				'27': {
+					"description": "New site, new biz. Tech Help",
+					"level": "shipped"
 				}
 			},
 			'01': {

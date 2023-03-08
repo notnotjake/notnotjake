@@ -40,9 +40,7 @@
 
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 {% if style %}
-{%- for sheet in style -%}
-<link rel="stylesheet" type="text/css" href="{{sheet}}">
-{%- endfor -%}
+<link rel="stylesheet" type="text/css" href="{{style}}">
 {% endif %}
 	
 <link rel="apple-touch-icon" href="{{ site.favicon }}">

@@ -5,6 +5,31 @@ module.exports = function () {
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	let data = {
 		'2023': {
+			'03': {
+				'03': {
+					"description": "Hangin with friends",
+					"level": "med"
+				},
+				'08': {
+					"description": "Writing",
+					"level": "med"
+				},
+				'16': {
+					"description": "Celebrated aunt's 101 bday",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg",
+					"photo": true
+				},
+				'17': {
+					"description": "Tesla roadtrip",
+					"level": "low",
+					"photo": true
+				},
+				'18': {
+					"description": "Met with client. Time with fam",
+					"level": "med"
+				}
+			},
 			'02': {
 				'02': {
 					"description": "Shot video for friend",
@@ -96,6 +121,9 @@ module.exports = function () {
 				'27': {
 					"description": "New site, new biz. Tech Help",
 					"level": "shipped"
+				},
+				'28': {
+					"level": "low"
 				}
 			},
 			'01': {

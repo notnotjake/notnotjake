@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		{% include "partials/_head.njk" %}
-	</head>
-	<body>
-		<main>
-			<nav class="width-narrow">
-				<a href="/" class="home-button">
-					<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
-				</a>
-				<h2><a href="{{page.url}}">{{ title }} <span>{{ subtitle }}</span></a></h2>
-				<a href="/more" class="more-button">
-					<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
-				</a>
-			</nav>
-			
-			<header class="width-narrow">
-				<h1>{{ title }}</h1>
-				<h2>{{ subtitle }}</h2>
-				<p><time datetime="{{ date }}">{% prettyDate page.date %}</p>
-			</header>
-			
-			<article class="width-narrow">
-				{{content | safe}}
-			</article>
-			
-			<div class="footer">
-				{% include "partials/_footer.njk" %}
-			</div>
-		</main>
+<head>
+	{% include "partials/_head.njk" %}
+</head>
+<body>
+	<main>
+		<nav class="width-narrow">
+			<a href="/" class="home-button">
+				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
+			</a>
+			<h2><a href="{{page.url}}">{{ title }} <span>{{ subtitle }}</span></a></h2>
+			<a href="/more" class="more-button">
+				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
+			</a>
+		</nav>
 		
-		<div class="overscroll-bottom"></div>
-		<div class="overscroll-bottom_mobile"></div>
-	</body>
+		<header class="width-narrow">
+			<h1>{{ title }}</h1>
+			<h2>{{ subtitle }}</h2>
+			<p><time datetime="{{ date }}">{% prettyDate page.date %}</p>
+		</header>
+		
+		<article class="width-narrow">
+			{{content | safe}}
+		</article>
+		
+		<div class="footer">
+			{% include "partials/_footer.njk" %}
+		</div>
+	</main>
+	
+	<div class="overscroll-bottom"></div>
+	<div class="overscroll-bottom_mobile"></div>
+</body>
 </html>

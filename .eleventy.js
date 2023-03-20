@@ -13,6 +13,13 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"source/_assets/js": "js"
 	})
+	/* DEV Environment: Passthrough Static Assets
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	if ( process.env.MY_ENVIRONMENT !== "prod" ) {
+		eleventyConfig.addPassthroughCopy({
+			"static": "static"
+		})
+	}
 	
 	
 	/* SHORTCODE: Prettify Page Dates

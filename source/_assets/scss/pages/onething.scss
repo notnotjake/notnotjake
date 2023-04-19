@@ -1,0 +1,40 @@
+html, body {
+	background: hsla(35, 8%, 84%, 1);
+	color: hsla(46, 5%, 16%, 1);
+	font-family: 'Inter';
+}
+
+h1 {
+	font-weight: 900;
+	letter-spacing: -0.015em;
+	text-align: center;
+	color: hsla(51, 4%, 66%, 1);
+	padding-top: 0.5rem;
+	padding-bottom: 0.1rem;
+	span {
+		color: hsla(42, 2%, 55%, 1);
+	}
+}
+h2 {
+	text-align: center;
+	font-family: serif;
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: hsla(25, 7%, 40%, 1);
+}
+main {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+img {
+	max-width: 20rem;
+}
+
+img.rotated {
+	transform: rotate(-3deg);
+}

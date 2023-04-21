@@ -1238,6 +1238,8 @@ Splash (New Visitor)
 		padding: 4rem 2rem;
 		gap: 0.5rem;
 		
+		border: 1px solid red;
+		
 		h1 {
 			font-size: clamp(12vw, 12vw, 9.2em);
 			line-height: 0.9;
@@ -1246,12 +1248,9 @@ Splash (New Visitor)
 			font-weight: 400; /* Animation Start Value */
 			transform: scale(94%); /* Animation Start Value */
 			color: hsl(205, 67%, 31%); /* Animation Start Value */
-			background: hsl(205, 67%, 31%);
+		}
+		> h1 {
 			
-			background-clip: text;
-			-webkit-background-clip: text;
-			text-fill-color: transparent;
-			-webkit-text-fill-color: transparent;
 		}
 		h1:nth-of-type(1) {
 			animation: splash_h1 0.9s 0.4s forwards;
@@ -1275,6 +1274,32 @@ Splash (New Visitor)
 				color: #1289e4;
 			}
 		}
+		div.shadow {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			border: 1px solid red;
+			h1 {
+				font-weight: 800;
+				transform: scale(1);
+				opacity: 1;
+				
+				background: linear-gradient(to bottom,
+					hsla(190, 98%, 48%, 1) 10%,
+					hsla(213, 76%, 52%, 1) 60%,
+					hsla(315, 100%, 83%, 0.9) 96%,
+				);
+				background-clip: text;
+				-webkit-background-clip: text;
+				text-fill-color: transparent;
+				-webkit-text-fill-color: transparent;
+				
+				// animation: splash_h1_shadow 0.5s 0.8s forwards;
+			}
+		}
 	}
 	div.scroll-indicator {
 		flex-grow: 0;
@@ -1290,54 +1315,28 @@ Splash (New Visitor)
 @keyframes splash_h1 {
 	0% {
 		transform: scale(94%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
 	}
 	14% {
-		background: hsl(280, 65%, 57%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
+		color: hsl(280, 65%, 57%);
 	}
 	30% {
-		background: hsl(52, 100%, 50%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
+		color: hsl(52, 100%, 50%);
 	}
 	55% {
-		background: hsl(156, 100%, 50%);
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
+		color: hsl(156, 100%, 50%);
 	}
 	80% { 
 		transform: scale(100%);
-		background: hsla(213, 76%, 52%, 1) 60%;
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
+		color: hsla(213, 76%, 52%, 1) 60%;
 	}
 	100% { 
 		font-weight: 800; 
 		transform: scale(100%); 
-		
-		background: linear-gradient(to bottom,
-			hsla(190, 98%, 48%, 1) 10%,
-			hsla(213, 76%, 52%, 1) 60%,
-			hsla(315, 100%, 83%, 0.9) 96%,
-		);
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
 	}
+}
+@keyframes splash_h1_shadow {
+	from { opacity: 0; }
+	to { opacity: 1; }
 }
 @keyframes splash_h2 {
 	from { filter: opacity(10%); transform: scaleX(108%); }

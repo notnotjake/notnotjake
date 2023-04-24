@@ -1,40 +1,127 @@
+:root {
+	--text-dark: hsla(25, 7%, 40%, 1);
+	--text-med: hsla(42, 2%, 55%, 1);
+	--text-light: hsla(51, 4%, 66%, 1);
+}
+
 html, body {
 	background: hsla(35, 8%, 84%, 1);
 	color: hsla(46, 5%, 16%, 1);
 	font-family: 'Inter';
+	
+	animation: bg 2s ease-in-out forwards;
 }
 
-h1 {
-	font-weight: 900;
-	letter-spacing: -0.015em;
-	text-align: center;
-	color: hsla(51, 4%, 66%, 1);
-	padding-top: 0.5rem;
-	padding-bottom: 0.1rem;
-	span {
-		color: hsla(42, 2%, 55%, 1);
+div.wrapper {
+	display: flex;
+	min-height: 100svh;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+nav {
+	width: 100%;
+	padding: 0.4rem;
+	
+	a img, svg {
+		height: 1.3125rem;
+		width: 1.3125rem;
+		margin: auto;
 	}
 }
-h2 {
-	text-align: center;
-	font-family: serif;
-	font-weight: bold;
-	font-size: 1.2rem;
-	color: hsla(25, 7%, 40%, 1);
+nav.control {
+	
 }
+
 main {
 	height: 100%;
 	width: 100%;
+	padding: 0.5rem 0.5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	
+	div.polaroid {
+		max-width: 20rem;
+		padding: 0.5rem 0.5rem 2.3rem;
+		
+		background: hsl(43, 24%, 93%);
+		border-radius: 0.1rem;
+		box-shadow: 0 0.3rem 0.4rem 0 hsla(0, 0%, 0%, 0.15);
+		transform: rotate(-3deg);
+		
+		animation: polaroid_in 4s ease-in-out forwards;
+		
+		div.picture {
+			div.overlay {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 2;
+				box-shadow: inset 0.07rem 0.09rem 0.3rem 0.04rem hsla(0, 0%, 0%, 0.1);	
+				
+				animation: overlay_in 5.3s cubic-bezier(0.53, 0.24, 0.89, 0.33) forwards;		
+			}
+			img {
+				opacity: 0; // Anim start
+				animation: photo_in 5.3s cubic-bezier(0.53, 0.24, 0.89, 0.33) forwards;
+			}
+		}
+	}
+	img.descriptor {
+		max-width: 20rem;
+		
+		opacity: 0; // Anim start
+		transform: translateY(4rem); // Anim start
+		animation: descriptor_in 1.2s 4.5s ease-out forwards;
+	}
 }
 
-img {
-	max-width: 20rem;
+@keyframes photo_in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes overlay_in {
+	from {
+		box-shadow: inset 0.07rem 0.09rem 0.3rem 0.04rem hsla(0, 0%, 0%, 0);
+	}
+	to {
+		box-shadow: inset 0.07rem 0.09rem 0.3rem 0.04rem hsla(0, 0%, 0%, 0.1);
+	}
+}
+@keyframes polaroid_in {
+	from {
+		scale: 1.2;
+		transform: rotate(0);
+	}
+	to {
+		scale: 1;
+		transform: rotate(-3deg);
+	}
+}
+@keyframes descriptor_in {
+	from {
+		opacity: 0;
+		transform: translateY(4rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
-img.rotated {
-	transform: rotate(-3deg);
+@keyframes bg {
+	from {
+		background: hsla(35, 3%, 62%, 1);
+	}
+	to {
+		background: hsla(35, 8%, 84%, 1);
+	}
 }

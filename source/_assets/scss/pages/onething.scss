@@ -14,7 +14,7 @@ html, body {
 
 div.wrapper {
 	display: flex;
-	min-height: 100svh;
+	min-height: 100dvh;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -77,6 +77,11 @@ main {
 		opacity: 0; // Anim start
 		transform: translateY(4rem); // Anim start
 		animation: descriptor_in 1.2s 4.5s ease-out forwards;
+	}
+}
+@media (max-width: 68.75rem) {
+	main div.polaroid {
+		max-width: 15rem;
 	}
 }
 

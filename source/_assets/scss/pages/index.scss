@@ -1230,7 +1230,7 @@ Splash (New Visitor)
 			height: 100%;
 		}
 	}
-	div {
+	div.copy {
 		flex-grow: 1;
 		display: flex;
 		flex-direction: column;
@@ -1238,25 +1238,17 @@ Splash (New Visitor)
 		padding: 4rem 2rem;
 		gap: 0.5rem;
 		
-		border: 1px solid red;
+		// border: 1px solid red;
 		
 		h1 {
 			font-size: clamp(12vw, 12vw, 9.2em);
 			line-height: 0.9;
+			white-space: nowrap;
 			
 			padding: 0.2em 0;
 			font-weight: 400; /* Animation Start Value */
 			transform: scale(94%); /* Animation Start Value */
 			color: hsl(205, 67%, 31%); /* Animation Start Value */
-		}
-		> h1 {
-			
-		}
-		h1:nth-of-type(1) {
-			animation: splash_h1 0.9s 0.4s forwards;
-		}
-		h1:nth-of-type(2) {
-			animation: splash_h1 0.9s 0.9s forwards;
 		}
 		h1::selection {
 			background: hsla(262, 100%, 57%, 0.3);
@@ -1266,12 +1258,22 @@ Splash (New Visitor)
 			font-size: clamp(5vw, 5vw, 5.8em);
 			padding: 0 3rem;
 			color: hsl(26, 75%, 91%);
-		
-			animation: splash_h2 0.6s 1.5s forwards;
+			
 			filter: opacity(10%); /* Animation Start Value */
 			transform: scaleX(108%); /* Animation Start Value */
+			
+			animation: splash_h2 0.6s 1.8s forwards;
+			
 			a, a:visited, a:active {
 				color: #1289e4;
+			}
+		}
+		div.normal {
+			h1:nth-of-type(1) {
+				animation: splash_h1 0.9s 0.4s forwards;
+			}
+			h1:nth-of-type(2) {
+				animation: splash_h1 0.9s 1.1s forwards;
 			}
 		}
 		div.shadow {
@@ -1281,11 +1283,11 @@ Splash (New Visitor)
 			width: 100%;
 			height: 100%;
 			padding: 0;
-			border: 1px solid red;
+			// border: 1px solid red;
 			h1 {
 				font-weight: 800;
 				transform: scale(1);
-				opacity: 1;
+				opacity: 0;
 				
 				background: linear-gradient(to bottom,
 					hsla(190, 98%, 48%, 1) 10%,
@@ -1296,8 +1298,12 @@ Splash (New Visitor)
 				-webkit-background-clip: text;
 				text-fill-color: transparent;
 				-webkit-text-fill-color: transparent;
-				
-				// animation: splash_h1_shadow 0.5s 0.8s forwards;
+			}
+			h1:nth-of-type(1) {
+				animation: splash_h1_shadow 0.5s 1.0s forwards;
+			}
+			h1:nth-of-type(2) {
+				animation: splash_h1_shadow 0.5s 1.7s forwards;
 			}
 		}
 	}
@@ -1327,7 +1333,7 @@ Splash (New Visitor)
 	}
 	80% { 
 		transform: scale(100%);
-		color: hsla(213, 76%, 52%, 1) 60%;
+		color: hsla(213, 76%, 52%, 1);
 	}
 	100% { 
 		font-weight: 800; 
@@ -1343,18 +1349,18 @@ Splash (New Visitor)
 	to { filter: opacity(100%); transform: scaleX(100%); }
 }
 @media (max-width: 68.75rem) {
-	#splash div h1 {
+	#splash div.copy h1 {
 		font-size: 13.5vw;
 	}
-	#splash div h2 {
+	#splash div.copy h2 {
 		font-size: 6vw;
 	}
 }
 @media (max-width: 40.625rem) {
-	#splash div h1 {
+	#splash div.copy h1 {
 		font-size: 13vw;
 	}
-	#splash div h2 {
+	#splash div.copy h2 {
 		font-size: 8.8vw;
 		padding: 0;
 	}

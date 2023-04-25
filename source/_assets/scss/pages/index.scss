@@ -1152,6 +1152,10 @@ Splash (New Visitor)
 			border-radius: 50%;
 			background: hsl(211, 81%, 79%);
 			box-shadow: 0 0 0.9rem 0.2rem hsla(0, 0%, 100%, 0.4);
+			
+			animation-name: stars_twinkle;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
 		}
 		span.bright {
 			background: hsl(57, 100%, 92%);
@@ -1159,63 +1163,93 @@ Splash (New Visitor)
 		span.star1 {
 			top: 24%;
 			left: 5%;
+			animation-duration: 5s;
+			animation-delay: 0s;
 		}
 		span.star2 {
 			top: 30%;
 			left: 10%;
+			animation-duration: 4.3s;
+			animation-delay: 1.3s;
 		}
 		span.star3 {
 			top: 50%;
 			left: 7%;
+			animation-duration: 6s;
+			animation-delay: 0.4s;
 		}
 		span.star4 {
 			top: 50%;
 			left: 30%;
+			animation-duration: 5.3s;
+			animation-delay: 0.2s;
 		}
 		span.star5 {
 			top: 71%;
 			left: 38%;
+			animation-duration: 4.8s;
+			animation-delay: 0s;
 		}
 		span.star6 {
 			top: 69%;
 			left: 58%;
+			animation-duration: 5.5s;
+			animation-delay: 1.2s;
 		}
 		span.star7 {
 			top: 47%;
 			left: 63%;
+			animation-duration: 4.5s;
+			animation-delay: 0.5s;
 		}
 		span.star8 {
 			top: 25%;
 			left: 53%;
+			animation-duration: 6.1s;
+			animation-delay: 0.8s;
 		}
 		span.star9 {
 			top: 29%;
 			left: 75%;
+			animation-duration: 5.2s;
+			animation-delay: 0.1s;
 		}
 		span.star10 {
 			top: 18%;
 			left: 82%;
 			opacity: 0.6;
+			animation-duration: 4.9s;
+			animation-delay: 0.2s;
 		}
 		span.star11 {
 			top: 28%;
 			left: 87%;
+			animation-duration: 5.3s;
+			animation-delay: 0s;
 		}
 		span.star12 {
 			top: 38%;
 			left: 91%;
+			animation-duration: 4.6s;
+			animation-delay: 0s;
 		}
 		span.star13 {
 			top: 40%;
 			left: 93%;
+			animation-duration: 7s;
+			animation-delay: 0s;
 		}
 		span.star14 {
 			top: 59%;
 			left: 96%;
+			animation-duration: 5.8s;
+			animation-delay: 0s;
 		}
 		span.star15 {
 			top: 73%;
 			left: 85%;
+			animation-duration: 5.4s;
+			animation-delay: 0.4s;
 		}
 	}
 	
@@ -1348,6 +1382,23 @@ Splash (New Visitor)
 	from { filter: opacity(10%); transform: scaleX(108%); }
 	to { filter: opacity(100%); transform: scaleX(100%); }
 }
+@keyframes stars_twinkle {
+	0% {
+		opacity: 0;
+		transform: translateY(0);
+	}
+	5% {
+		opacity: 1;
+	}
+	95% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-1.6rem);
+	}
+}
+
 @media (max-width: 68.75rem) {
 	#splash div.copy h1 {
 		font-size: 13.5vw;

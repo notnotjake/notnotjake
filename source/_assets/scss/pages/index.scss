@@ -762,10 +762,10 @@ Process Section
 		min-height: 3rem;
 		border-radius: var(--border-radius);
 		background: linear-gradient(to bottom, 
-			hsl(183, 18%, 10%), 
+			hsl(206, 18%, 10%), 
 			hsl(245, 70%, 23%)
 		);
-		box-shadow: inset 0 0 0 0.12rem hsla(0, 0%, 100%, 0.12);
+		box-shadow: inset 0 0 0 0.12rem hsla(215, 100%, 93%, 0.12);
 		padding: 0.9rem 1.2rem;
 		
 		display: flex;
@@ -1318,7 +1318,6 @@ Splash (New Visitor)
 			width: 100%;
 			height: 100%;
 			padding: 0;
-			// border: 1px solid red;
 			h1 {
 				font-weight: 800;
 				transform: scale(1);
@@ -1356,6 +1355,8 @@ Splash (New Visitor)
 @keyframes splash_h1 {
 	0% {
 		transform: scale(94%);
+		font-weight: 400;
+		color: hsl(205, 67%, 31%)
 	}
 	14% {
 		color: hsl(280, 65%, 57%);
@@ -1373,6 +1374,7 @@ Splash (New Visitor)
 	100% { 
 		font-weight: 800; 
 		transform: scale(100%); 
+		color: hsla(213, 76%, 52%, 1);
 	}
 }
 @keyframes splash_h1_shadow {
@@ -1416,7 +1418,7 @@ Splash (New Visitor)
 		font-size: 8.8vw;
 		padding: 0;
 	}
-	#splash div {
+	#splash div.copy {
 		padding: 0px;
 	}
 }

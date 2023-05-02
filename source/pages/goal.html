@@ -53,9 +53,17 @@ style: '/css/pages/goal.css'
 		<a href="/" class="site-title">
 			<img src="https://large-assets.notnotjake.com/images/site/monospace-logo.svg" alt="!!Jake">
 		</a>
-		<div>
-			<h1>Delight++</h1>
-			<h1>Meaning++</h1>
+		<div class="copy">
+			<div class="headline">
+				<div class="normal">
+					<h1>Delight++</h1>
+					<h1>Meaning++</h1>
+				</div>
+				<div class="shadow">
+					<h1>Delight++</h1>
+					<h1>Meaning++</h1>
+				</div>
+			</div>
 			<h2>This is my goal:</h2>
 		</div>
 		<div class="scroll-indicator">
@@ -86,27 +94,42 @@ style: '/css/pages/goal.css'
 		
 		<p id="emphasis">This all adds up for me to my goal, which is to <span>create delightful and meaningful experiences.</span> Let me break that down</p>
 	</article>
+		
+	<div class="container">
 	
-	<div id="curved-gradient">
-		<div></div>
+	<div id="explainer-header">
+		
+		<div id="curved-gradient">
+			<div></div>
+		</div>
+		
+		<div class="inside">
+			<div id="gradient-shim"></div>
+			
+			<div id="scrolling-headline">
+				<h1><span id="h1-creating">Creating</span> ✤ <span id="h1-delightful">Delightful</span> && <span id="h1-meaningful">Meaningful</span> ✸ <span id="h1-experiences">Experiences</span></h1>
+			</div>
+			<div class="divider"></div>
+			<div class="glow"></div>
+		</div>
+		
+		
 	</div>
 	
+
+	
 	<div id="scroll-section">
-		<div id="gradient-shim"></div>
-		<!-- <div id="scrolling-headline">
-			<h1>Creating ✤ Delightful && Meaningful ✸ Experiences</h1>
-		</div> -->
 		
 		<div class="heading">
 			<div class="divider"></div>
 			<div class="glow"></div>
-			<h1><span id="h1-creating">Creating</span> <span id="h1-delightful">Delightful</span> <span>and</span><br><span id="h1-meaningful">Meaningful</span> <span id="h1-experiences">Experiences</span></h1>
+			<!-- <h1><span id="h1-creating">Creating</span> <span id="h1-delightful">Delightful</span> <span>and</span><br><span id="h1-meaningful">Meaningful</span> <span id="h1-experiences">Experiences</span></h1> -->
 		</div>
 		
 		<div class="paragraph">
 			<p id="p-creating">If one is to confront the future and try to impact it, they can either create or destroy. Destruction <em>can</em> be a noble act, but rarely. Far more impactful is creating something. To add something to the world&mdash;to give something back&mdash;is <a href="https://stevejobsarchive.com/">"to show your deep appreciation for the species"</a></p>
 			
-			<p id="p-delightful">Life is short and full of all kinds of suffering. A little delight can go a long way to lifting the human spirit. Delight has the ability to shake one out of their hum-drum state of mind, inspire them, and spark new life</p>
+			<p id="p-delightful" class="focused">Life is short and full of all kinds of suffering. A little delight can go a long way to lifting the human spirit. Delight has the ability to shake one out of their hum-drum state of mind, inspire them, and spark new life</p>
 			
 			<p id="p-meaningful">Inside our little worlds, we can feel small and like life is pointless. But we're all part of something bigger, the human experience. I'm inspired by the great people and great works all around me. We can live life in pursuit of our own pleasures, and then maybe life doesn't mean anything, or embrace the challenge of life, connect with something bigger than yourself, and in doing so can make life meaningful.</p>
 			
@@ -114,11 +137,20 @@ style: '/css/pages/goal.css'
 		</div>		
 	</div>
 	
+	</div>
+	
 	<div id="transition-out">
 		<div class="behind"></div>
 		<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1082 389" width="1082" height="389">
-			<path class="hide" id="scroll-svg2" fill="hsl(272, 65%, 4%)" fill-rule="evenodd" d="M0 57.303C180.333 19.652 360.667.826 541 .826c180.333 0 360.667 18.826 541 56.477V339.68c-180.333-37.651-360.667-56.477-541-56.477-180.333 0-360.667 18.826-541 56.477V57.303Z"/>
-			<path class="" id="scroll-svg1" fill="url(#MyGradient)" fill-rule="evenodd" d="M0 0c180.333 70.55 360.667 105.826 541 105.826 180.333 0 360.667-35.275 541-105.826v282.378c-180.333 70.55-360.667 105.826-541 105.826-180.333 0-360.667-35.275-541-105.826V0Z"/>
+			<defs>
+				<linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+				  <stop offset="30%" style="stop-color:hsl(272, 65%, 4%);stop-opacity:1" />
+				  <stop offset="85%" style="stop-color:hsl(248, 85%, 23%);stop-opacity:1" />
+				  <stop offset="100%" style="stop-color:hsl(242, 59%, 46%);stop-opacity:1" />
+				</linearGradient>
+			  </defs>
+			<path class="hide" id="scroll-svg2" fill="url(#grad1)" fill-rule="evenodd" d="M0 57.303C180.333 19.652 360.667.826 541 .826c180.333 0 360.667 18.826 541 56.477V339.68c-180.333-37.651-360.667-56.477-541-56.477-180.333 0-360.667 18.826-541 56.477V57.303Z"/>
+			<path class="" id="scroll-svg1" fill="url(#grad1)" fill-rule="evenodd" d="M0 0c180.333 70.55 360.667 105.826 541 105.826 180.333 0 360.667-35.275 541-105.826v282.378c-180.333 70.55-360.667 105.826-541 105.826-180.333 0-360.667-35.275-541-105.826V0Z"/>
 		</svg>
 	</div>
 	
@@ -138,18 +170,6 @@ style: '/css/pages/goal.css'
 	<script>
 		gsap.registerPlugin(ScrollTrigger)
 		
-		//
-		// Scroll the 'goal' text across screen
-		// gsap.to('#scrolling-headline h1', {
-		// 	translateX: -1 * (document.querySelector('#scrolling-headline h1').offsetWidth - window.innerWidth),
-		// 	scrollTrigger: {
-		// 		trigger: '#scroll-section',
-		// 		start: 'top 80%',
-		// 		end: 'top 0%',
-		// 		scrub: 1.5
-		// 	}
-		// })
-		//
 		// Change the background to dark
 		gsap.to('#scroll-section', {
 			background: 'hsl(272, 65%, 4%)',
@@ -160,239 +180,263 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
-		//
-		// Animate title and paragraph text
-		let explainerTimeline = gsap.timeline({
+		gsap.to('#explainer-header div.inside', {
+			background: 'hsl(272, 65%, 4%)',
 			scrollTrigger: {
 				trigger: '#scroll-section',
-				pin: true,
-				start: '50% 50%',
-				end: '+=3500',
-				scrub: 1.5,
-				snap: {
-					snapTo: 'labelsDirectional',
-					duration: {min: 0.1, max: 0.15},
-					delay: 0,
-					ease: 'power1.inOut'
-				}
+				start: 'top 70%',
+				end: 'top 0%',
+				scrub: true
 			}
 		})
+		
+		
+		/* Scroll text across
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+		gsap.to('#scrolling-headline h1', {
+			translateX: -1 * (document.querySelector('#scrolling-headline h1').offsetWidth - window.innerWidth) - 150,
+			scrollTrigger: {
+				trigger: '#scroll-section',
+				start: 'top 64px',
+				end: 'bottom top',
+				// pin: '#explainer-header',
+				scrub: 1.5
+			}
+		})
+		
+		//
+		// Animate title and paragraph text
+		// let explainerTimeline = gsap.timeline({
+		// 	scrollTrigger: {
+		// 		trigger: '#scroll-section',
+		// 		pin: true,
+		// 		start: '50% 50%',
+		// 		end: '+=3500',
+		// 		scrub: 1.5,
+		// 		snap: {
+		// 			snapTo: 'labelsDirectional',
+		// 			duration: {min: 0.1, max: 0.15},
+		// 			delay: 0,
+		// 			ease: 'power1.inOut'
+		// 		}
+		// 	}
+		// })
 		
 		let brightText = 'linear-gradient(to bottom, hsla(205, 72%, 87%, 1) 0%, hsla(196, 70%, 86%, 1) 15%, hsla(242, 66%, 90%, 1) 55%, hsla(226, 71%, 83%, 1) 70%, hsla(224, 75%, 95%, 1) 80%)'
 		let darkText = 'linear-gradient(to bottom, hsla(259, 100%, 80%, 1) 0%, hsla(258, 44%, 39%, 1) 15%, hsla(240, 40%, 26%, 1) 55%, hsla(227, 44%, 26%, 1) 80%, hsla(227, 53%, 20%, 1) 100%)'
 		
 		
-		let dwellTime = '>+=5'
-		let actTime = '>+=1'
-		
-		explainerTimeline.addLabel('start', 0)
-		explainerTimeline.addLabel('creating-in', 1)
-		explainerTimeline.addLabel('creating-hold', 6)
-		explainerTimeline.addLabel('delightful-in', 7)
-		explainerTimeline.addLabel('delightful-hold', 12)
-		explainerTimeline.addLabel('meaningful-in', 13)
-		explainerTimeline.addLabel('meaningful-hold', 18)
-		explainerTimeline.addLabel('experiences-in', 19)
-		explainerTimeline.addLabel('experiences-hold', 24)
-		explainerTimeline.addLabel('end', 25)
-		
-		// Creating slide coming in from nothing
-		explainerTimeline.fromTo('#h1-creating', 
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			'creating-in'
-		)
-		explainerTimeline.fromTo('#p-creating',
-			{
-				opacity: 0,
-				scale: 0.85,
-				translateY: 30
-			},
-			{
-				opacity: 1,
-				scale: 1,
-				translateY: 0
-			},
-			'creating-in'
-		)
-		// Delightful slide coming in, creating going out
-		explainerTimeline.fromTo('#h1-creating',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			'delightful-in'
-		)
-		explainerTimeline.fromTo('#h1-delightful',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			'delightful-in'
-		)
-		explainerTimeline.fromTo('#p-creating',
-			{
-				opacity: 1,
-				scale: 1,
-			},
-			{
-				opacity: 0,
-				scale: 0.9,
-			},
-			'delightful-in'
-		)
-		explainerTimeline.fromTo('#p-delightful',
-			{
-				opacity: 0,
-				scale: 0.85,
-				translateY: 30
-			},
-			{
-				opacity: 1,
-				scale: 1,
-				translateY: 0,
-				delay: 1
-			},
-			'delightful-in'
-		)
-		// meaningful coming in, delightful going out
-		explainerTimeline.fromTo('#h1-delightful',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			'meaningful-in'
-		)
-		explainerTimeline.fromTo('#h1-meaningful',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			'meaningful-in'
-		)
-		explainerTimeline.fromTo('#p-delightful',
-			{
-				opacity: 1,
-				scale: 1,
-			},
-			{
-				opacity: 0,
-				scale: 0.9,
-			},
-			'meaningful-in'
-		)
-		explainerTimeline.fromTo('#p-meaningful',
-			{
-				opacity: 0,
-				scale: 0.85,
-				translateY: 30
-			},
-			{
-				opacity: 1,
-				scale: 1,
-				translateY: 0,
-				delay: 1
-			},
-			'meaningful-in'
-		)
-		// experiences coming in, meaningful going out
-		explainerTimeline.fromTo('#h1-meaningful',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			'experiences-in'
-		)
-		explainerTimeline.fromTo('#h1-experiences',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			'experiences-in'
-		)
-		explainerTimeline.fromTo('#p-meaningful',
-			{
-				opacity: 1,
-				scale: 1,
-			},
-			{
-				opacity: 0,
-				scale: 0.9,
-			},
-			'experiences-in'
-		)
-		explainerTimeline.fromTo('#p-experiences',
-			{
-				opacity: 0,
-				scale: 0.85,
-				translateY: 30
-			},
-			{
-				opacity: 1,
-				scale: 1,
-				translateY: 0,
-				delay: 1
-			},
-			'experiences-in'
-		)
-		
-		explainerTimeline.fromTo('#h1-experiences',
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: brightText
-			},
-			{
-				backgroundClip: 'text',
-				textFillColor: 'transparent',
-				background: darkText
-			},
-			'experiences-hold'
-		)
+		// let dwellTime = '>+=5'
+		// let actTime = '>+=1'
+		// 
+		// explainerTimeline.addLabel('start', 0)
+		// explainerTimeline.addLabel('creating-in', 1)
+		// explainerTimeline.addLabel('creating-hold', 6)
+		// explainerTimeline.addLabel('delightful-in', 7)
+		// explainerTimeline.addLabel('delightful-hold', 12)
+		// explainerTimeline.addLabel('meaningful-in', 13)
+		// explainerTimeline.addLabel('meaningful-hold', 18)
+		// explainerTimeline.addLabel('experiences-in', 19)
+		// explainerTimeline.addLabel('experiences-hold', 24)
+		// explainerTimeline.addLabel('end', 25)
+		// 
+		// // Creating slide coming in from nothing
+		// explainerTimeline.fromTo('#h1-creating', 
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	'creating-in'
+		// )
+		// explainerTimeline.fromTo('#p-creating',
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.85,
+		// 		translateY: 30
+		// 	},
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 		translateY: 0
+		// 	},
+		// 	'creating-in'
+		// )
+		// // Delightful slide coming in, creating going out
+		// explainerTimeline.fromTo('#h1-creating',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	'delightful-in'
+		// )
+		// explainerTimeline.fromTo('#h1-delightful',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	'delightful-in'
+		// )
+		// explainerTimeline.fromTo('#p-creating',
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 	},
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.9,
+		// 	},
+		// 	'delightful-in'
+		// )
+		// explainerTimeline.fromTo('#p-delightful',
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.85,
+		// 		translateY: 30
+		// 	},
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 		translateY: 0,
+		// 		delay: 1
+		// 	},
+		// 	'delightful-in'
+		// )
+		// // meaningful coming in, delightful going out
+		// explainerTimeline.fromTo('#h1-delightful',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	'meaningful-in'
+		// )
+		// explainerTimeline.fromTo('#h1-meaningful',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	'meaningful-in'
+		// )
+		// explainerTimeline.fromTo('#p-delightful',
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 	},
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.9,
+		// 	},
+		// 	'meaningful-in'
+		// )
+		// explainerTimeline.fromTo('#p-meaningful',
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.85,
+		// 		translateY: 30
+		// 	},
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 		translateY: 0,
+		// 		delay: 1
+		// 	},
+		// 	'meaningful-in'
+		// )
+		// // experiences coming in, meaningful going out
+		// explainerTimeline.fromTo('#h1-meaningful',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	'experiences-in'
+		// )
+		// explainerTimeline.fromTo('#h1-experiences',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	'experiences-in'
+		// )
+		// explainerTimeline.fromTo('#p-meaningful',
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 	},
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.9,
+		// 	},
+		// 	'experiences-in'
+		// )
+		// explainerTimeline.fromTo('#p-experiences',
+		// 	{
+		// 		opacity: 0,
+		// 		scale: 0.85,
+		// 		translateY: 30
+		// 	},
+		// 	{
+		// 		opacity: 1,
+		// 		scale: 1,
+		// 		translateY: 0,
+		// 		delay: 1
+		// 	},
+		// 	'experiences-in'
+		// )
+		// 
+		// explainerTimeline.fromTo('#h1-experiences',
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: brightText
+		// 	},
+		// 	{
+		// 		backgroundClip: 'text',
+		// 		textFillColor: 'transparent',
+		// 		background: darkText
+		// 	},
+		// 	'experiences-hold'
+		// )
 		
 		
 		gsap.to('#scroll-svg1', {

@@ -208,65 +208,62 @@ style: '/css/pages/goal.css'
 			console.log('The window was resized')
 			windowWidth = window.innerWidth
 			gsap.set('#scrolling-headline h1', {
-				translateX: (('50vw') - (0.5 * h1Creating.offsetWidth))
+				translateX: ((0.5 * windowWidth) - (0.5 * h1Creating.offsetWidth))
 			})
 		})
 		
 		gsap.set('#scrolling-headline h1', {
-			translateX: (('50vw') - (0.5 * h1Creating.offsetWidth))
+			translateX: ((0.5 * windowWidth) - (0.5 * h1Creating.offsetWidth))
 		})
 		
 		function focusOn( element ) {
 			gsap.to('#scrolling-headline h1', {
-				translateX: (('50vw') - (element.offsetLeft + (0.5 * element.offsetWidth))),
+				translateX: ((0.5 * windowWidth) - (element.offsetLeft + (0.5 * element.offsetWidth))),
 				duration: 0.5
 			})
 		}
 		
 		// Move to DELIGHTFUL
 		gsap.to('#scrolling-headline h1', {
-			translateX: (('50vw') - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth))),
+			translateX: ((0.5 * windowWidth) - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth))),
 			duration: 0.5,
 			scrollTrigger: {
 				trigger: '#p-delightful',
 				start: 'top 70%',
 				end: 'top 50%',
-				scrub: 1,
-				invalidateOnRefresh: true
+				scrub: 1
 			}
 		})
 		// Move to MEANINGFUL
 		gsap.fromTo('#scrolling-headline h1', 
 			{
-				translateX: (('50vw') - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth)))
+				translateX: ((0.5 * windowWidth) - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth)))
 			},
 			{
-				translateX: '50vw' - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)),
+				translateX: ((0.5 * windowWidth) - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth))),
 				duration: 0.5,
 				scrollTrigger: {
 					trigger: '#p-meaningful',
 					start: 'top 70%',
 					end: 'top 50%',
 					scrub: 1,
-					markers: true,
-					invalidateOnRefresh: true
+					markers: true
 				}
 			}
 		)
 		// Move to EXPERIENCES
 		gsap.fromTo('#scrolling-headline h1', 
 			{
-				translateX: (('50vw') - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)))
+				translateX: ((0.5 * windowWidth) - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)))
 			},
 			{
-				translateX: (('50vw') - (h1Experiences.offsetLeft + (0.5 * h1Experiences.offsetWidth))),
+				translateX: ((0.5 * windowWidth) - (h1Experiences.offsetLeft + (0.5 * h1Experiences.offsetWidth))),
 				duration: 0.5,
 				scrollTrigger: {
 					trigger: '#p-experiences',
 					start: 'top 70%',
 					end: 'top 50%',
-					scrub: 1,
-					invalidateOnRefresh: true
+					scrub: 1
 				}
 			}
 		)

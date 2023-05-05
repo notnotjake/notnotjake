@@ -79,6 +79,7 @@ article {
 	font-family: 'Inter Var';
 	width: 100%;
 	padding: 3rem 0 0rem;
+	z-index: 2;
 	> * {
 		max-width: 45rem;
 		margin: auto;
@@ -132,69 +133,132 @@ article {
 /* Article [End] */
 
 
+#curved-gradient {
+	width: 100%;
+	z-index: 0;
+	
+	margin-top: -10rem;
+	
+	display: flex;
+	align-items: center;
+	
+	div.gradient {
+		width: 100vw;
+		height: 80vw;
+		max-height: 680px;
+		background: radial-gradient(100% 95% at 50% 0%, 
+			hsla(300, 100%, 98%, 0) 0%, 
+			hsla(307, 100%, 97%, 0.08) 53%, 
+			hsla(310, 100%, 77%, 1) 71%, 
+			hsla(273, 61%, 45%, 1) 87%, 
+			hsla(255, 100%, 39%, 1) 100%
+		);
+	}
+	div.blur {
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		position: absolute;
+		top: 0;
+		left: 0;
+		backdrop-filter: blur(1.4rem);
+		-webkit-backdrop-filter: blur(1.4rem);
+	}
+}
+// @media (max-width: 40.625rem) {
+// 	#curved-gradient {
+// 		overflow: hidden;
+// 		display: flex;
+// 		
+// 		div {
+// 			width: 200%;
+// 		}
+// 	}
+// }
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Scrolling Section
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #explainer-header {
 	position: -webkit-sticky;
 	position: sticky;
-	top: -530px;
-	
+	top: 0rem;
 	z-index: 3;
 	
-	
-	
-	#curved-gradient {
-		width: 100%;
-		div {
+	div.stack {
+		> * {
+			position: absolute;
+			top: 0;
 			width: 100%;
-			aspect-ratio: 2.4;
-			background: radial-gradient(130% 100% at 50% -6.1e-16%, 
-				hsla(300, 100%, 98%, 0) 0%, 
-				hsla(307, 100%, 97%, 0.08) 53%, 
-				hsla(310, 100%, 77%, 1) 71%, 
-				hsla(273, 61%, 45%, 1) 87%, 
-				hsla(255, 100%, 39%, 1) 100%
+			height: 100%;
+		}
+	}
+	div.text-occlusion.stack {
+		height: 6rem;
+		width: 100%;
+		opacity: 0;	
+		div.text-cutoff {
+			background: linear-gradient(to bottom,
+				hsla(272, 65%, 4%, 1) 0%,
+				hsla(272, 65%, 4%, 0.85) 25%,
+				hsla(272, 62%, 4%, 0)
+			);
+		}
+		div.text-blur {
+			-webkit-backdrop-filter: blur(0.2rem);
+			backdrop-filter: blur(0.2rem);
+			mask: linear-gradient(to bottom,
+				hsla(0, 0%, 100%, 1),
+				hsla(0, 0%, 0%, 0)
 			);
 		}
 	}
-	@media (max-width: 40.625rem) {
-		#curved-gradient {
-			overflow: hidden;
-			display: flex;
-			
-			div {
-				width: 200%;
-			}
-		}
-	}
-	
-	div.inside {
-		background: hsl(233, 85%, 35%);
-	}
-
-	#gradient-shim {
+	div.gradient.stack {
 		position: absolute;
 		top: 0;
-		width: 100%;
 		height: 12rem;
-		background: linear-gradient(to bottom,
-			hsla(255, 100%, 39%, 1),
-			hsla(255, 0%, 0%, 0)
-		);
-	}
-	
-	#scrolling-headline {
-		padding-top: 0.2rem;
 		width: 100%;
-		height: 6rem;
+		z-index: 5;
+		> div {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+		div.gradient {
+			background: linear-gradient(to bottom,
+				hsla(255, 100%, 39%, 1),
+				hsla(255, 0%, 0%, 0)
+			);
+		}
+		div.glow {
+			position: relative;
+			height: 20rem;
+			top: 3rem;
+			width: 100%;
+			margin: auto;
+			z-index: 1;
+			background: radial-gradient(50% 100% at 50% 7%,
+				hsla(256, 70%, 20%, 0.795),
+				hsla(256, 0%, 0%, 0)
+			);
+		}
+	}
+
+	#scrolling-headline {
+		// padding: 1rem 0;
+		width: 100%;
+		height: 7.2rem;
 		overflow: hidden;
+		background: hsla(255, 100%, 39%, 1);
 		
 		h1 {
 			position: absolute;
-			top: 0;
+			bottom: 0.2rem;
 			left: 0;
-			margin: 0 4rem;
+			// margin: 0 4rem;
+			z-index: 10;
 			
 			font-family: 'Unbounded Var';
 			font-size: 5rem;
@@ -245,69 +309,38 @@ Scrolling Section
 
 
 
+
+// div.divider {
+	// position: relative;
+	// margin-top: 3rem;
+	// height: 0.12rem;
+	// width: calc(100% - 1.5rem);
+	// max-width: 48rem;
+	// margin: auto;
+	// background: linear-gradient(to right,
+	// 	hsla(216, 24%, 47%, 0) 0%,
+	// 	hsla(216, 100%, 94%, 0.65) 40%,
+	// 	hsla(216, 100%, 94%, 0.65) 60%,
+	// 	hsla(216, 24%, 47%, 0) 100%,
+	// );
+// }
+
+
+
+
 #scroll-section {
-	height: 100lvh;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	// justify-content: space-between;
 	gap: 1.2rem;
-	background: hsl(233, 85%, 35%);
+	background: hsla(255, 100%, 39%, 1);
+	
+	padding-top: 6rem;
+	margin-top: -6rem;
 	
 	z-index: 1;
 	
-	
-	div.heading {
-		flex-grow: 0;
-		flex-shrink: 0;
-		width: 100%;
-		max-width: 55rem;
-		div.divider {
-			height: 0.12rem;
-			width: calc(100% - 1.5rem);
-			margin: auto;
-			background: linear-gradient(to right,
-				hsla(216, 24%, 47%, 0) 0%,
-				hsla(216, 100%, 94%, 0.65) 40%,
-				hsla(216, 100%, 94%, 0.65) 60%,
-				hsla(216, 24%, 47%, 0) 100%,
-			);
-		}
-		div.glow {
-			position: absolute;
-			width: 100%;
-			height: 20rem;
-			top: 0;
-			background: radial-gradient(50% 100% at 50% 7%,
-				hsla(256, 70%, 20%, 0.795),
-				hsla(256, 0%, 0%, 0)
-			);
-		}
-		h1 {
-			padding-top: 1.7rem;
-			text-align: center;
-			font-family: 'Unbounded Var';
-			font-weight: 500;
-			font-size: 2.5rem;
-			color: hsl(211, 2%, 50%);
-			line-height: 1.3;
-			margin-bottom: 2.3rem;
-			
-			span {
-				background: linear-gradient(to bottom,
-					hsla(259, 100%, 80%, 1) 0%,
-					hsla(258, 44%, 39%, 1) 15%,
-					hsla(240, 40%, 26%, 1) 55%,
-					hsla(227, 44%, 26%, 1) 80%,
-					hsla(227, 53%, 20%, 1) 100%
-				);
-				background-clip: text;
-				-webkit-background-clip: text;
-				text-fill-color: transparent;
-				-webkit-text-fill-color: transparent;
-			}
-		}
-	}
 	div.paragraph {
 		width: 100%;
 		max-width: 42rem;
@@ -315,15 +348,31 @@ Scrolling Section
 		flex-shrink: 0;
 		flex-grow: 1;
 		font-family: 'Inter Var';
+		
+		// margin-top: 15rem;
+		
+		// min-height: 300vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		
+		// overflow-y: scroll;
+		scroll-snap-type: y mandatory;
+		
 		p {
 			width: 100%;
 			color: hsla(229, 56%, 90%, 1);
 			font-size: 1.5rem;
 			font-weight: 500;
-			opacity: 0.7;
-			margin-bottom: 1.8rem;
+			opacity: 0.3;
+			// margin-bottom: 1.8rem;
+			// margin-bottom: 20rem;
+			margin: 10rem 0;
 			
-			transition: all 1.5s ease-in-out;
+			// min-height: 50vh;
+			scroll-snap-align: start;
+			
+			// transition: all 1.5s ease-in-out;
 		}
 		p.focused {
 			// font-weight: 600;
@@ -331,6 +380,9 @@ Scrolling Section
 			line-height: 1.4;
 			letter-spacing: -0.01em;
 			opacity: 1;
+		}
+		p:last-of-type {
+			// margin-bottom: 0;
 		}
 		a, a:hover, a:visited {
 			color: hsla(215, 44%, 78%, 1);
@@ -341,11 +393,13 @@ Scrolling Section
 /* Scrolling Section [End] */
 
 #transition-out {
-	width: calc(100% + 2px);
-	margin-left: -1px;
+	width: 100%;
 	background: hsl(186, 19%, 81%);
+	overflow-x: hidden;
 	svg {
-		width: 100%;
+		width: calc(100% + 2px);
+		max-width: 200%;
+		margin-left: -1px;
 		height: auto;
 	}
 	.behind {

@@ -92,44 +92,39 @@ style: '/css/pages/goal.css'
 		
 		<p>I believe that every human is full of potential and hidden depth, and that the world is full of amazing beauty. I want to build products which help us dive deeper into our own potential, and explore our world.</p>
 		
-		<p id="emphasis">This all adds up for me to my goal, which is to <span>create delightful and meaningful experiences.</span> Let me break that down</p>
+		<p id="emphasis">This all adds up for me to my goal, which is to <span>create delightful and meaningful experiences.</span> Let me break that down:</p>
 	</article>
-		
+	
 	<div class="container">
+		
+	<div id="curved-gradient">
+		<div class="blur"></div>
+		<div class="gradient"v></div>
+	</div>
 	
 	<div id="explainer-header">
-		
-		<div id="curved-gradient">
-			<div></div>
+		<div id="scrolling-headline">
+			<h1><span id="h1-creating">Creating</span> ✤ <span id="h1-delightful">Delightful</span> && <span id="h1-meaningful">Meaningful</span> ✸ <span id="h1-experiences">Experiences</span></h1>
 		</div>
-		
-		<div class="inside">
-			<div id="gradient-shim"></div>
-			
-			<div id="scrolling-headline">
-				<h1><span id="h1-creating">Creating</span> ✤ <span id="h1-delightful">Delightful</span> && <span id="h1-meaningful">Meaningful</span> ✸ <span id="h1-experiences">Experiences</span></h1>
-			</div>
-			<div class="divider"></div>
-			<div class="glow"></div>
+		<div class="text-occlusion stack">
+			<div class="text-cutoff"></div>
+			<div class="text-blur"></div>
+			<div class="fill"></div>
 		</div>
-		
-		
+		{% comment %} <div class="divider"></div> {% endcomment %}
+		<div class="gradient stack">
+			<div class="gradient"></div>
+			{% comment %} <div class="blur"></div> {% endcomment %}
+			{% comment %} <div class="glow"></div> {% endcomment %}
+		</div>
 	</div>
 	
 
-	
 	<div id="scroll-section">
-		
-		<div class="heading">
-			<div class="divider"></div>
-			<div class="glow"></div>
-			<!-- <h1><span id="h1-creating">Creating</span> <span id="h1-delightful">Delightful</span> <span>and</span><br><span id="h1-meaningful">Meaningful</span> <span id="h1-experiences">Experiences</span></h1> -->
-		</div>
-		
 		<div class="paragraph">
 			<p id="p-creating">If one is to confront the future and try to impact it, they can either create or destroy. Destruction <em>can</em> be a noble act, but rarely. Far more impactful is creating something. To add something to the world&mdash;to give something back&mdash;is <a href="https://stevejobsarchive.com/">"to show your deep appreciation for the species"</a></p>
 			
-			<p id="p-delightful" class="focused">Life is short and full of all kinds of suffering. A little delight can go a long way to lifting the human spirit. Delight has the ability to shake one out of their hum-drum state of mind, inspire them, and spark new life</p>
+			<p id="p-delightful">Life is short and full of all kinds of suffering. A little delight can go a long way to lifting the human spirit. Delight has the ability to shake one out of their hum-drum state of mind, inspire them, and spark new life</p>
 			
 			<p id="p-meaningful">Inside our little worlds, we can feel small and like life is pointless. But we're all part of something bigger, the human experience. I'm inspired by the great people and great works all around me. We can live life in pursuit of our own pleasures, and then maybe life doesn't mean anything, or embrace the challenge of life, connect with something bigger than yourself, and in doing so can make life meaningful.</p>
 			
@@ -137,7 +132,7 @@ style: '/css/pages/goal.css'
 		</div>		
 	</div>
 	
-	</div>
+	</div> <!-- End of container -->
 	
 	<div id="transition-out">
 		<div class="behind"></div>
@@ -153,7 +148,7 @@ style: '/css/pages/goal.css'
 			<path class="" id="scroll-svg1" fill="url(#grad1)" fill-rule="evenodd" d="M0 0c180.333 70.55 360.667 105.826 541 105.826 180.333 0 360.667-35.275 541-105.826v282.378c-180.333 70.55-360.667 105.826-541 105.826-180.333 0-360.667-35.275-541-105.826V0Z"/>
 		</svg>
 	</div>
-	
+		
 	<article id="conclusion">
 		<p>Our experiences add up to our lives, so creating a delightful and meaningful experience for others is deeply motivating for me. I am hopeful for the future but realize we face enormous challenges. I choose to embrace life and live for something greater than myself. <span>Dare to Confront the Future.</span></p>
 	</article>
@@ -180,7 +175,7 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
-		gsap.to('#explainer-header div.inside', {
+		gsap.to('#scrolling-headline', {
 			background: 'hsl(272, 65%, 4%)',
 			scrollTrigger: {
 				trigger: '#scroll-section',
@@ -189,18 +184,69 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		gsap.to('#explainer-header div.text-occlusion', {
+			opacity: 1,
+			scrollTrigger: {
+				trigger: '#scroll-section',
+				start: 'top 10%',
+				end: 'top 0%',
+				scrub: true
+			}
+		})
 		
 		
 		/* Scroll text across
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-		gsap.to('#scrolling-headline h1', {
-			translateX: -1 * (document.querySelector('#scrolling-headline h1').offsetWidth - window.innerWidth) - 150,
+		const h1Creating = document.querySelector('#h1-creating')
+		const h1Delightful = document.querySelector('#h1-delightful')
+		const h1Meaningful = document.querySelector('#h1-meaningful')
+		const h1Experiences = document.querySelector('#h1-experiences')
+		
+		let h1CreatingWidth = h1Creating.offsetWidth
+		let h1DelightfulWidth = h1Delightful.offsetWidth
+		let h1MeaningfulWidth = h1Meaningful.offsetWidth
+		let h1ExperiencesWidth = h1Experiences.offsetWidth
+		
+		
+		gsap.set('#scrolling-headline h1', {
+			translateX: ((0.5 * window.innerWidth) - (0.5 * h1CreatingWidth))
+		})
+		
+		gsap.to('#p-creating', {
+			opacity: 1,
 			scrollTrigger: {
-				trigger: '#scroll-section',
-				start: 'top 64px',
-				end: 'bottom top',
-				// pin: '#explainer-header',
-				scrub: 1.5
+				trigger: '#p-creating',
+				start: 'top 90%',
+				end: 'top 80%',
+				scrub: true
+			}
+		})
+		gsap.to('#p-delightful', {
+			opacity: 1,
+			scrollTrigger: {
+				trigger: '#p-delightful',
+				start: 'top 90%',
+				end: 'top 80%',
+				scrub: true,
+				markers: true
+			}
+		})
+		gsap.to('#p-meaningful', {
+			opacity: 1,
+			scrollTrigger: {
+				trigger: '#p-meaningful',
+				start: 'top 90%',
+				end: 'top 80%',
+				scrub: true
+			}
+		})
+		gsap.to('#p-experiences', {
+			opacity: 1,
+			scrollTrigger: {
+				trigger: '#p-experiences',
+				start: 'top 90%',
+				end: 'top 80%',
+				scrub: true
 			}
 		})
 		
@@ -224,219 +270,6 @@ style: '/css/pages/goal.css'
 		
 		let brightText = 'linear-gradient(to bottom, hsla(205, 72%, 87%, 1) 0%, hsla(196, 70%, 86%, 1) 15%, hsla(242, 66%, 90%, 1) 55%, hsla(226, 71%, 83%, 1) 70%, hsla(224, 75%, 95%, 1) 80%)'
 		let darkText = 'linear-gradient(to bottom, hsla(259, 100%, 80%, 1) 0%, hsla(258, 44%, 39%, 1) 15%, hsla(240, 40%, 26%, 1) 55%, hsla(227, 44%, 26%, 1) 80%, hsla(227, 53%, 20%, 1) 100%)'
-		
-		
-		// let dwellTime = '>+=5'
-		// let actTime = '>+=1'
-		// 
-		// explainerTimeline.addLabel('start', 0)
-		// explainerTimeline.addLabel('creating-in', 1)
-		// explainerTimeline.addLabel('creating-hold', 6)
-		// explainerTimeline.addLabel('delightful-in', 7)
-		// explainerTimeline.addLabel('delightful-hold', 12)
-		// explainerTimeline.addLabel('meaningful-in', 13)
-		// explainerTimeline.addLabel('meaningful-hold', 18)
-		// explainerTimeline.addLabel('experiences-in', 19)
-		// explainerTimeline.addLabel('experiences-hold', 24)
-		// explainerTimeline.addLabel('end', 25)
-		// 
-		// // Creating slide coming in from nothing
-		// explainerTimeline.fromTo('#h1-creating', 
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	'creating-in'
-		// )
-		// explainerTimeline.fromTo('#p-creating',
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.85,
-		// 		translateY: 30
-		// 	},
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 		translateY: 0
-		// 	},
-		// 	'creating-in'
-		// )
-		// // Delightful slide coming in, creating going out
-		// explainerTimeline.fromTo('#h1-creating',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	'delightful-in'
-		// )
-		// explainerTimeline.fromTo('#h1-delightful',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	'delightful-in'
-		// )
-		// explainerTimeline.fromTo('#p-creating',
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 	},
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.9,
-		// 	},
-		// 	'delightful-in'
-		// )
-		// explainerTimeline.fromTo('#p-delightful',
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.85,
-		// 		translateY: 30
-		// 	},
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 		translateY: 0,
-		// 		delay: 1
-		// 	},
-		// 	'delightful-in'
-		// )
-		// // meaningful coming in, delightful going out
-		// explainerTimeline.fromTo('#h1-delightful',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	'meaningful-in'
-		// )
-		// explainerTimeline.fromTo('#h1-meaningful',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	'meaningful-in'
-		// )
-		// explainerTimeline.fromTo('#p-delightful',
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 	},
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.9,
-		// 	},
-		// 	'meaningful-in'
-		// )
-		// explainerTimeline.fromTo('#p-meaningful',
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.85,
-		// 		translateY: 30
-		// 	},
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 		translateY: 0,
-		// 		delay: 1
-		// 	},
-		// 	'meaningful-in'
-		// )
-		// // experiences coming in, meaningful going out
-		// explainerTimeline.fromTo('#h1-meaningful',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	'experiences-in'
-		// )
-		// explainerTimeline.fromTo('#h1-experiences',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	'experiences-in'
-		// )
-		// explainerTimeline.fromTo('#p-meaningful',
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 	},
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.9,
-		// 	},
-		// 	'experiences-in'
-		// )
-		// explainerTimeline.fromTo('#p-experiences',
-		// 	{
-		// 		opacity: 0,
-		// 		scale: 0.85,
-		// 		translateY: 30
-		// 	},
-		// 	{
-		// 		opacity: 1,
-		// 		scale: 1,
-		// 		translateY: 0,
-		// 		delay: 1
-		// 	},
-		// 	'experiences-in'
-		// )
-		// 
-		// explainerTimeline.fromTo('#h1-experiences',
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: brightText
-		// 	},
-		// 	{
-		// 		backgroundClip: 'text',
-		// 		textFillColor: 'transparent',
-		// 		background: darkText
-		// 	},
-		// 	'experiences-hold'
-		// )
 		
 		
 		gsap.to('#scroll-svg1', {

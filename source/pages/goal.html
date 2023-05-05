@@ -104,7 +104,7 @@ style: '/css/pages/goal.css'
 	
 	<div id="explainer-header">
 		<div id="scrolling-headline">
-			<h1><span id="h1-creating">Creating</span> ✤ <span id="h1-delightful">Delightful</span> && <span id="h1-meaningful">Meaningful</span> ✸ <span id="h1-experiences">Experiences</span></h1>
+			<h1><span id="h1-creating">Creating</span>✤<span id="h1-delightful">Delightful</span>&&<span id="h1-meaningful">Meaningful</span>✸<span id="h1-experiences">Experiences</span></h1>
 		</div>
 		<div class="text-occlusion stack">
 			<div class="text-cutoff"></div>
@@ -202,15 +202,76 @@ style: '/css/pages/goal.css'
 		const h1Meaningful = document.querySelector('#h1-meaningful')
 		const h1Experiences = document.querySelector('#h1-experiences')
 		
-		let h1CreatingWidth = h1Creating.offsetWidth
-		let h1DelightfulWidth = h1Delightful.offsetWidth
-		let h1MeaningfulWidth = h1Meaningful.offsetWidth
-		let h1ExperiencesWidth = h1Experiences.offsetWidth
+		let windowWidth = window.innerWidth
 		
+		window.addEventListener('resize', () => {
+			console.log('The window was resized')
+			windowWidth = window.innerWidth
+			gsap.set('#scrolling-headline h1', {
+				translateX: (('50vw') - (0.5 * h1Creating.offsetWidth))
+			})
+		})
 		
 		gsap.set('#scrolling-headline h1', {
-			translateX: ((0.5 * window.innerWidth) - (0.5 * h1CreatingWidth))
+			translateX: (('50vw') - (0.5 * h1Creating.offsetWidth))
 		})
+		
+		function focusOn( element ) {
+			gsap.to('#scrolling-headline h1', {
+				translateX: (('50vw') - (element.offsetLeft + (0.5 * element.offsetWidth))),
+				duration: 0.5
+			})
+		}
+		
+		// Move to DELIGHTFUL
+		gsap.to('#scrolling-headline h1', {
+			translateX: (('50vw') - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth))),
+			duration: 0.5,
+			scrollTrigger: {
+				trigger: '#p-delightful',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 1,
+				invalidateOnRefresh: true
+			}
+		})
+		// Move to MEANINGFUL
+		gsap.fromTo('#scrolling-headline h1', 
+			{
+				translateX: (('50vw') - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth)))
+			},
+			{
+				translateX: '50vw' - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)),
+				duration: 0.5,
+				scrollTrigger: {
+					trigger: '#p-meaningful',
+					start: 'top 70%',
+					end: 'top 50%',
+					scrub: 1,
+					markers: true,
+					invalidateOnRefresh: true
+				}
+			}
+		)
+		// Move to EXPERIENCES
+		gsap.fromTo('#scrolling-headline h1', 
+			{
+				translateX: (('50vw') - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)))
+			},
+			{
+				translateX: (('50vw') - (h1Experiences.offsetLeft + (0.5 * h1Experiences.offsetWidth))),
+				duration: 0.5,
+				scrollTrigger: {
+					trigger: '#p-experiences',
+					start: 'top 70%',
+					end: 'top 50%',
+					scrub: 1,
+					invalidateOnRefresh: true
+				}
+			}
+		)
+		
+		
 		
 		gsap.to('#p-creating', {
 			opacity: 1,
@@ -227,8 +288,7 @@ style: '/css/pages/goal.css'
 				trigger: '#p-delightful',
 				start: 'top 90%',
 				end: 'top 60%',
-				scrub: true,
-				markers: true
+				scrub: true
 			}
 		})
 		gsap.to('#p-meaningful', {
@@ -249,24 +309,6 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
-		
-		//
-		// Animate title and paragraph text
-		// let explainerTimeline = gsap.timeline({
-		// 	scrollTrigger: {
-		// 		trigger: '#scroll-section',
-		// 		pin: true,
-		// 		start: '50% 50%',
-		// 		end: '+=3500',
-		// 		scrub: 1.5,
-		// 		snap: {
-		// 			snapTo: 'labelsDirectional',
-		// 			duration: {min: 0.1, max: 0.15},
-		// 			delay: 0,
-		// 			ease: 'power1.inOut'
-		// 		}
-		// 	}
-		// })
 		
 		let brightText = 'linear-gradient(to bottom, hsla(205, 72%, 87%, 1) 0%, hsla(196, 70%, 86%, 1) 15%, hsla(242, 66%, 90%, 1) 55%, hsla(226, 71%, 83%, 1) 70%, hsla(224, 75%, 95%, 1) 80%)'
 		let darkText = 'linear-gradient(to bottom, hsla(259, 100%, 80%, 1) 0%, hsla(258, 44%, 39%, 1) 15%, hsla(240, 40%, 26%, 1) 55%, hsla(227, 44%, 26%, 1) 80%, hsla(227, 53%, 20%, 1) 100%)'

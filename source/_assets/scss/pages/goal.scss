@@ -143,7 +143,6 @@ article {
 #curved-gradient {
 	width: 100%;
 	z-index: 0;
-	
 	margin-top: -10rem;
 	
 	display: flex;
@@ -154,7 +153,7 @@ article {
 		height: 80vw;
 		max-height: 680px;
 		background: radial-gradient(100% 95% at 50% 0%, 
-			hsla(300, 100%, 98%, 0) 0%, 
+			hsla(180, 6%, 94%, 0) 0%, 
 			hsla(307, 100%, 97%, 0.08) 53%, 
 			hsla(310, 100%, 77%, 1) 71%, 
 			hsla(273, 61%, 45%, 1) 87%, 
@@ -172,16 +171,11 @@ article {
 		-webkit-backdrop-filter: blur(1.4rem);
 	}
 }
-// @media (max-width: 40.625rem) {
-// 	#curved-gradient {
-// 		overflow: hidden;
-// 		display: flex;
-// 		
-// 		div {
-// 			width: 200%;
-// 		}
-// 	}
-// }
+@media (max-width: 40.625rem) {
+	#curved-gradient {
+		margin-top: 0;
+	}
+}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -254,12 +248,10 @@ Scrolling Section
 	}
 
 	#scrolling-headline {
-		// padding: 1rem 0;
 		width: 100%;
 		height: 7.2rem;
 		overflow: hidden;
 		background: hsla(255, 100%, 39%, 1);
-			
 		h1 {
 			position: absolute;
 			margin-left: 50%;
@@ -282,7 +274,6 @@ Scrolling Section
 			-webkit-background-clip: text;
 			text-fill-color: transparent;
 			-webkit-text-fill-color: transparent;
-			
 			span {
 				background: linear-gradient(to bottom,
 					hsla(230, 61%, 51%, 1) 0%,
@@ -296,19 +287,17 @@ Scrolling Section
 				text-fill-color: transparent;
 				-webkit-text-fill-color: transparent;
 			}
-			#h1-creating,
-			#h1-delightful,
-			#h1-meaningful,
-			#h1-experiences {
-				background-clip: text;
-				-webkit-background-clip: text;
-				text-fill-color: transparent;
-				-webkit-text-fill-color: transparent;
-			}
 		}
 	}
 }
-
+@media (max-width: 40.625rem) {
+	#explainer-header #scrolling-headline {
+		height: 5rem;
+	}
+	#explainer-header #scrolling-headline h1 {
+		font-size: 2.8rem;
+	}
+}
 
 
 #scroll-section {

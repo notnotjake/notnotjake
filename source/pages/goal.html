@@ -208,7 +208,7 @@ style: '/css/pages/goal.css'
 		
 		let textFill = {
 			bright: 'linear-gradient(to bottom, hsla(205, 72%, 87%, 1) 0%, hsla(196, 70%, 86%, 1) 15%, hsla(242, 66%, 90%, 1) 55%, hsla(226, 71%, 83%, 1) 70%, hsla(224, 75%, 95%, 1) 80%)',
-			dark: 'linear-gradient(to bottom, hsla(259, 100%, 80%, 1) 0%, hsla(258, 44%, 39%, 1) 15%, hsla(240, 40%, 26%, 1) 55%, hsla(227, 44%, 26%, 1) 80%, hsla(227, 53%, 20%, 1) 100%)'
+			dark: 'linear-gradient(to bottom, hsla(230, 61%, 51%, 1) 0%, hsla(255, 78%, 46%, 1) 25%, hsla(240, 57%, 45%, 1) 55%, hsla(227, 78%, 28%, 1) 72%, hsla(235, 76%, 27%, 1) 80%)'
 		}
 
 		
@@ -242,6 +242,7 @@ style: '/css/pages/goal.css'
 			}
 		})
 		
+		
 		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Delightful
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -260,13 +261,21 @@ style: '/css/pages/goal.css'
 			}
 		})
 		// Bright Fill
-		gsap.to('#h1-delightful', {
+		gsap.fromTo('#h1-delightful', 
+		{
+			backgroundClip: 'text',
+			textFillColor: 'transparent',
+			background: textFill.dark
+		},
+		{
+			backgroundClip: 'text',
+			textFillColor: 'transparent',
 			background: textFill.bright,
 			scrollTrigger: {
 				trigger: '#p-delightful',
 				start: 'top 70%',
 				end: 'top 50%',
-				scrub: 1.5
+				scrub: 1.2
 			}
 		})
 		// Fade in Paragraph
@@ -279,6 +288,7 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		
 		
 		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Meaningful
@@ -297,6 +307,24 @@ style: '/css/pages/goal.css'
 				scrub: 0.25
 			}
 		})
+		// Bright Fill
+		gsap.fromTo('#h1-meaningful', 
+		{
+			backgroundClip: 'text',
+			textFillColor: 'transparent',
+			background: textFill.dark
+		},
+		{
+			backgroundClip: 'text',
+			textFillColor: 'transparent',
+			background: textFill.bright,
+			scrollTrigger: {
+				trigger: '#p-meaningful',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 1.2
+			}
+		})
 		// Fade in Paragraph
 		gsap.to('#p-meaningful', {
 			opacity: 1,
@@ -307,6 +335,7 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		
 		
 		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		Experiences
@@ -324,6 +353,24 @@ style: '/css/pages/goal.css'
 				end: 'top 50%',
 				scrub: 0.25			}
 		})
+		// Bright Fill
+		gsap.fromTo('#h1-experiences', 
+		{
+			backgroundClip: 'text',
+			textFillColor: 'transparent',
+			background: textFill.dark
+		},
+		{
+			backgroundClip: 'text',
+			textFillColor: 'transparent',
+			background: textFill.bright,
+			scrollTrigger: {
+				trigger: '#p-experiences',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 1.2
+			}
+		})
 		// Fade in Paragraph
 		gsap.to('#p-experiences', {
 			opacity: 1,
@@ -334,6 +381,7 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		
 		
 		
 		

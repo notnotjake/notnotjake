@@ -252,12 +252,12 @@ Scrolling Section
 		height: 7.2rem;
 		overflow: hidden;
 		background: hsla(255, 100%, 39%, 1);
-		
+			
 		h1 {
 			position: absolute;
+			margin-left: 50%;
 			bottom: 0.2rem;
 			left: 0;
-			// margin: 0 4rem;
 			z-index: 10;
 			
 			font-family: 'Unbounded Var';
@@ -297,6 +297,12 @@ Scrolling Section
 					hsla(226, 71%, 83%, 1) 70%, 
 					hsla(224, 75%, 95%, 1) 80%
 				);
+				background-clip: text;
+				-webkit-background-clip: text;
+				text-fill-color: transparent;
+				-webkit-text-fill-color: transparent;
+			}
+			#h1-delightful {
 				background-clip: text;
 				-webkit-background-clip: text;
 				text-fill-color: transparent;
@@ -360,8 +366,6 @@ Scrolling Section
 			font-weight: 500;
 			opacity: 0.3;
 			margin: 10rem 0;
-			
-			border: 1px solid red;
 		}
 		a, a:hover, a:visited {
 			color: hsla(215, 44%, 78%, 1);

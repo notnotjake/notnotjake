@@ -195,6 +195,7 @@ style: '/css/pages/goal.css'
 		})
 		
 		
+		
 		/* Scroll text across
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 		const h1Creating = document.querySelector('#h1-creating')
@@ -204,72 +205,33 @@ style: '/css/pages/goal.css'
 		
 		let windowWidth = window.innerWidth
 		
-		window.addEventListener('resize', () => {
-			console.log('The window was resized')
-			windowWidth = window.innerWidth
-			gsap.set('#scrolling-headline h1', {
-				translateX: ((0.5 * windowWidth) - (0.5 * h1Creating.offsetWidth))
-			})
-		})
+		
+		let textFill = {
+			bright: 'linear-gradient(to bottom, hsla(205, 72%, 87%, 1) 0%, hsla(196, 70%, 86%, 1) 15%, hsla(242, 66%, 90%, 1) 55%, hsla(226, 71%, 83%, 1) 70%, hsla(224, 75%, 95%, 1) 80%)',
+			dark: 'linear-gradient(to bottom, hsla(259, 100%, 80%, 1) 0%, hsla(258, 44%, 39%, 1) 15%, hsla(240, 40%, 26%, 1) 55%, hsla(227, 44%, 26%, 1) 80%, hsla(227, 53%, 20%, 1) 100%)'
+		}
+
 		
 		gsap.set('#scrolling-headline h1', {
-			translateX: ((0.5 * windowWidth) - (0.5 * h1Creating.offsetWidth))
+			translateX: (-0.5 * h1Creating.offsetWidth)
 		})
 		
-		function focusOn( element ) {
-			gsap.to('#scrolling-headline h1', {
-				translateX: ((0.5 * windowWidth) - (element.offsetLeft + (0.5 * element.offsetWidth))),
-				duration: 0.5
-			})
-		}
 		
-		// Move to DELIGHTFUL
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Creating
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+		// Translate Headline
 		gsap.to('#scrolling-headline h1', {
-			translateX: ((0.5 * windowWidth) - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth))),
-			duration: 0.5,
+			translateX: ( -0.5 * h1Creating.offsetWidth),
+			duration: 0.9,
 			scrollTrigger: {
-				trigger: '#p-delightful',
+				trigger: '#p-creating',
 				start: 'top 70%',
 				end: 'top 50%',
-				scrub: 1
+				scrub: 0.25
 			}
 		})
-		// Move to MEANINGFUL
-		gsap.fromTo('#scrolling-headline h1', 
-			{
-				translateX: ((0.5 * windowWidth) - (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth)))
-			},
-			{
-				translateX: ((0.5 * windowWidth) - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth))),
-				duration: 0.5,
-				scrollTrigger: {
-					trigger: '#p-meaningful',
-					start: 'top 70%',
-					end: 'top 50%',
-					scrub: 1,
-					markers: true
-				}
-			}
-		)
-		// Move to EXPERIENCES
-		gsap.fromTo('#scrolling-headline h1', 
-			{
-				translateX: ((0.5 * windowWidth) - (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)))
-			},
-			{
-				translateX: ((0.5 * windowWidth) - (h1Experiences.offsetLeft + (0.5 * h1Experiences.offsetWidth))),
-				duration: 0.5,
-				scrollTrigger: {
-					trigger: '#p-experiences',
-					start: 'top 70%',
-					end: 'top 50%',
-					scrub: 1
-				}
-			}
-		)
-		
-		
-		
+		// Fade in Paragraph
 		gsap.to('#p-creating', {
 			opacity: 1,
 			scrollTrigger: {
@@ -279,6 +241,35 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Delightful
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+		// Translate Headline
+		gsap.fromTo('#scrolling-headline h1', {
+			translateX: ( -1 * (h1Creating.offsetLeft + (0.5 * h1Creating.offsetWidth)))
+		},
+		{
+			translateX: ( -1 * (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth))),
+			duration: 0.9,
+			scrollTrigger: {
+				trigger: '#p-delightful',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 0.25
+			}
+		})
+		// Bright Fill
+		gsap.to('#h1-delightful', {
+			background: textFill.bright,
+			scrollTrigger: {
+				trigger: '#p-delightful',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 1.5
+			}
+		})
+		// Fade in Paragraph
 		gsap.to('#p-delightful', {
 			opacity: 1,
 			scrollTrigger: {
@@ -288,6 +279,25 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Meaningful
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+		// Translate Headline
+		gsap.fromTo('#scrolling-headline h1', {
+			translateX: ( -1 * (h1Delightful.offsetLeft + (0.5 * h1Delightful.offsetWidth)))
+		},
+		{
+			translateX: ( -1 * (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth))),
+			duration: 0.9,
+			scrollTrigger: {
+				trigger: '#p-meaningful',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 0.25
+			}
+		})
+		// Fade in Paragraph
 		gsap.to('#p-meaningful', {
 			opacity: 1,
 			scrollTrigger: {
@@ -297,6 +307,24 @@ style: '/css/pages/goal.css'
 				scrub: true
 			}
 		})
+		
+		/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Experiences
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+		// Translate Headline
+		gsap.fromTo('#scrolling-headline h1', {
+			translateX: ( -1 * (h1Meaningful.offsetLeft + (0.5 * h1Meaningful.offsetWidth)))
+		},
+		{
+			translateX: ( -1 * (h1Experiences.offsetLeft + (0.5 * h1Experiences.offsetWidth))),
+			duration: 0.9,
+			scrollTrigger: {
+				trigger: '#p-experiences',
+				start: 'top 70%',
+				end: 'top 50%',
+				scrub: 0.25			}
+		})
+		// Fade in Paragraph
 		gsap.to('#p-experiences', {
 			opacity: 1,
 			scrollTrigger: {
@@ -307,10 +335,15 @@ style: '/css/pages/goal.css'
 			}
 		})
 		
-		let brightText = 'linear-gradient(to bottom, hsla(205, 72%, 87%, 1) 0%, hsla(196, 70%, 86%, 1) 15%, hsla(242, 66%, 90%, 1) 55%, hsla(226, 71%, 83%, 1) 70%, hsla(224, 75%, 95%, 1) 80%)'
-		let darkText = 'linear-gradient(to bottom, hsla(259, 100%, 80%, 1) 0%, hsla(258, 44%, 39%, 1) 15%, hsla(240, 40%, 26%, 1) 55%, hsla(227, 44%, 26%, 1) 80%, hsla(227, 53%, 20%, 1) 100%)'
 		
 		
+		
+		
+		
+		
+		
+		
+		// Animate the SVG arch at end
 		gsap.to('#scroll-svg1', {
 			morphSVG: '#scroll-svg2',
 			scrollTrigger: {

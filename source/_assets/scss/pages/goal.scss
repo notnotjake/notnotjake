@@ -315,9 +315,7 @@ Scrolling Section
 	div.paragraph {
 		width: 100%;
 		max-width: 42rem;
-		flex-basis: 40%;
-		flex-shrink: 0;
-		flex-grow: 1;
+		padding: 0 1rem;
 		font-family: 'Inter Var';
 		
 		margin-top: 15rem;

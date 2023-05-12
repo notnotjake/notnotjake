@@ -688,7 +688,41 @@ article#bio {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Showcase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#showcase-wip {
+	min-height: 40vh;
+	width: 100%;
+	background: linear-gradient(to bottom,
+		hsl(258, 6%, 10%),
+		hsl(258, 14%, 8%)
+	);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.17);
+	padding: 4rem;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	h2 {
+		transform: rotate(-3deg);
+		font-size: 1.9rem;
+	}
+	p {
+		padding-top: 0.5rem;
+		color: hsl(48, 100%, 50%);
+		transform: rotate(-3deg);
+		font-size: 2.5rem;
+	}
+	h3 {
+		transform: rotate(-3deg);
+		font-weight: 400;
+		font-style: italic;
+		padding-top: 0.8em;
+		color: hsl(220, 22%, 59%);
+	}
+}
 #showcase {
+	display: none;
+	
 	height: 60svh;
 	min-height: 12.5rem;
 	padding: 0.625rem 0.625rem 1.125rem;

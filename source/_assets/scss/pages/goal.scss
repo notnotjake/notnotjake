@@ -289,14 +289,10 @@ Scrolling Section
 				text-fill-color: transparent;
 				-webkit-text-fill-color: transparent;
 			}
-			#h1-creating {
-				background: linear-gradient(to bottom, 
-					hsla(205, 72%, 87%, 1) 0%, 
-					hsla(196, 70%, 86%, 1) 15%, 
-					hsla(242, 66%, 90%, 1) 55%, 
-					hsla(226, 71%, 83%, 1) 70%, 
-					hsla(224, 75%, 95%, 1) 80%
-				);
+			#h1-creating,
+			#h1-delightful,
+			#h1-meaningful,
+			#h1-experiences {
 				background-clip: text;
 				-webkit-background-clip: text;
 				text-fill-color: transparent;

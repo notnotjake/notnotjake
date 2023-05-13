@@ -174,7 +174,7 @@ div.overscroll.mobile {
 }
 
 #text {
-	position: absolute;
+	// position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -192,19 +192,19 @@ div.overscroll.mobile {
 		font-style: italic;
 		font-size: 3.65vw;
 		line-height: 1.24;
-		letter-spacing: -0.01em;
+		// letter-spacing: -0.01em;
 		
-		color: black;
+		color: hsla(233, 80%, 61%, 1.00);
 		
-		background: linear-gradient(to bottom,
-			hsl(255, 93%, 73%),
-			hsl(224, 85%, 48%)
-		);
-		
-		background-clip: text;
-		-webkit-background-clip: text;
-		text-fill-color: transparent;
-		-webkit-text-fill-color: transparent;
+		// background: linear-gradient(to bottom,
+		// 	hsl(255, 93%, 73%),
+		// 	hsl(224, 85%, 48%)
+		// );
+		// 
+		// background-clip: text;
+		// -webkit-background-clip: text;
+		// text-fill-color: transparent;
+		// -webkit-text-fill-color: transparent;
 	}
 	#line-8 {
 		font-weight: 400;
@@ -225,5 +225,46 @@ div.overscroll.mobile {
 @media (max-width: 45rem) {
 	#text p {
 		font-size: 4.3vw;
+	}
+}
+
+#card {
+	width: 100%;
+	padding: 8rem 3rem;
+	background: linear-gradient(to bottom, 
+		hsla(233, 100%, 50%, 1) 0%, 
+		hsla(226, 100%, 62%, 1) 41%, 
+		hsla(221, 100%, 68%, 1) 100%);
+	color: white;
+	
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+	h1 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 400;
+		font-style: normal;
+		font-size: 3.4rem;
+	}
+	h2 {
+		font-family: 'Petrona', sans-serif;
+		font-weight: 100;
+		font-size: 3.2rem;
+		
+		margin-bottom: 9rem;
+	}
+	p {
+		font-family: 'Petrona', sans-serif;
+		font-size: 1.5rem;
+		margin-bottom: 4rem;
+		span {
+			font-weight: 100;
+			font-style: italic;
+		}
+	}
+	p.occasion {
+		font-size: 1.8rem;
 	}
 }

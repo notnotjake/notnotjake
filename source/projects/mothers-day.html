@@ -85,88 +85,107 @@ style: '/css/pages/mothers-day.css'
 			}
 		})
 		
-		poemTextBuild.fromTo(line1.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05}
-		)
 		
-		poemTextBuild.fromTo(line2.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
-			'>2'
-		)
+		function timelineKeys ( pref ) {
+			const moveDistance = 40
+			const setDuration = 1.5
+			const setStagger = 0.05
+			const timingDelay = '>2'
+			
+			if (pref === 'gradient') {
+				poemTextBuild.fromTo(line1.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger}
+				)
+				
+				poemTextBuild.fromTo(line2.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger},
+					timingDelay
+				)
+				
+				poemTextBuild.fromTo(line3.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger},
+					timingDelay
+				)
+				
+				poemTextBuild.fromTo(line4.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger},
+					timingDelay
+				)
+				
+				poemTextBuild.fromTo(line5.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger},
+					timingDelay
+				)
+				
+				poemTextBuild.fromTo(line6.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger},
+					timingDelay
+				)
+				
+				poemTextBuild.fromTo(line7.chars, 
+					{y: moveDistance, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+					{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: setDuration, ease: 'power3', stagger: setStagger},
+					timingDelay
+				)
+				
+			}
+			else {
+				poemTextBuild.fromTo(line1.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05}
+				)
+				
+				poemTextBuild.fromTo(line2.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
+					'>2'
+				)
+				
+				poemTextBuild.fromTo(line3.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
+					'>2'
+				)
+				
+				poemTextBuild.fromTo(line4.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
+					'>2'
+				)
+				
+				poemTextBuild.fromTo(line5.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
+					'>2'
+				)
+				
+				poemTextBuild.fromTo(line6.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
+					'>2'
+				)
+				
+				poemTextBuild.fromTo(line7.chars, 
+					{y: 50, opacity: 0},
+					{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
+					'>2'
+				)
+			}
+		}
 		
-		poemTextBuild.fromTo(line3.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
-			'>2'
-		)
+		if ( window.navigator.userAgent.toLowerCase().includes('chrome') ) {
+			timelineKeys('gradient')
+		}
+		else {
+			timelineKeys()
+		}
 		
-		poemTextBuild.fromTo(line4.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
-			'>2'
-		)
-		
-		poemTextBuild.fromTo(line5.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
-			'>2'
-		)
-		
-		poemTextBuild.fromTo(line6.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
-			'>2'
-		)
-		
-		poemTextBuild.fromTo(line7.chars, 
-			{y: 50, opacity: 0},
-			{y: 0, opacity: 1, duration: 1, ease: 'power3', stagger: 0.05},
-			'>2'
-		)
-		
-		// poemTextBuild.fromTo(line1.chars, 
-		// 	{y: 50, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05}
-		// )
-		// 
-		// poemTextBuild.fromTo(line2.chars, 
-		// 	{y: 50, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
-		// 	'>2'
-		// )
-		// 
-		// poemTextBuild.fromTo(line3.chars, 
-		// 	{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
-		// 	'>2'
-		// )
-		// 
-		// poemTextBuild.fromTo(line4.chars, 
-		// 	{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
-		// 	'>2'
-		// )
-		// 
-		// poemTextBuild.fromTo(line5.chars, 
-		// 	{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
-		// 	'>2'
-		// )
-		// 
-		// poemTextBuild.fromTo(line6.chars, 
-		// 	{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
-		// 	'>2'
-		// )
-		// 
-		// poemTextBuild.fromTo(line7.chars, 
-		// 	{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
-		// 	{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
-		// 	'>2'
-		// )
-		// 
 		poemTextBuild.fromTo(line8.chars, 
 			{scale: 0.5, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
 			{scale: 1, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: popColor, duration: 1, ease: 'power3', stagger: 0.05},

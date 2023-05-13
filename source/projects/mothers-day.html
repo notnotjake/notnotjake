@@ -42,6 +42,13 @@ style: '/css/pages/mothers-day.css'
 			<p id="line-8">But only one mother the whole world over.</p>
 		</div>
 		
+		<div id="card">
+			<h1>Thank You.</h1>
+			<h2>With Love,</h2>
+			<p class="occasion"><strong>Mothers Day.</strong> May 14th, 2023.</p>
+			<p>Poem modified from <em>"Only One Mother"</em> by George Cooper</p>
+		</div>
+		
 	</div>
 	
 	<div class="overscroll bottom"></div>
@@ -57,35 +64,73 @@ style: '/css/pages/mothers-day.css'
 		gsap.registerPlugin(ScrollTrigger)
 		
 		let fillColor = 'linear-gradient(to bottom, hsl(255, 93%, 73%), hsl(224, 85%, 48%))'
+		let popColor = 'linear-gradient(to bottom, hsl(47, 100%, 94%), hsl(54, 100%, 46%))'
 		
 		let line1 = new SplitText(document.querySelector('#line-1'), {type: "chars,words"})
-		gsap.fromTo(line1.chars, 
-		{
-			y: 20, 
-			opacity: 0,
-			textFillColor: 'transparent',
-			webkitBackgroundClip: 'text',
-			backgroundClip: 'text',
-			background: fillColor
-		},
-		{
-			y: 0, 
-			opacity: 1,
-			textFillColor: 'transparent',
-			webkitBackgroundClip: 'text',
-			backgroundClip: 'text',
-			background: fillColor,
-			duration: 0.3, 
-			ease: 'power3', 
-			stagger: 0.05,
+		let line2 = new SplitText(document.querySelector('#line-2'), {type: "chars,words"})
+		let line3 = new SplitText(document.querySelector('#line-3'), {type: "chars,words"})
+		let line4 = new SplitText(document.querySelector('#line-4'), {type: "chars,words"})
+		let line5 = new SplitText(document.querySelector('#line-5'), {type: "chars,words"})
+		let line6 = new SplitText(document.querySelector('#line-6'), {type: "chars,words"})
+		let line7 = new SplitText(document.querySelector('#line-7'), {type: "chars,words"})
+		let line8 = new SplitText(document.querySelector('#line-8'), {type: "chars,words"})
+		
+		let poemTextBuild = gsap.timeline({
 			scrollTrigger: {
 				trigger: '#text',
 				start: 'top top',
-				end: '+=100',
+				end: '+=5000',
 				pin: true,
-				scrub: 1.5
+				scrub: 2.5
 			}
 		})
+		
+		poemTextBuild.fromTo(line1.chars, 
+			{y: 50, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05}
+		)
+		
+		poemTextBuild.fromTo(line2.chars, 
+			{y: 50, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2'
+		)
+		
+		poemTextBuild.fromTo(line3.chars, 
+			{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2'
+		)
+		
+		poemTextBuild.fromTo(line4.chars, 
+			{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2'
+		)
+		
+		poemTextBuild.fromTo(line5.chars, 
+			{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2'
+		)
+		
+		poemTextBuild.fromTo(line6.chars, 
+			{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2'
+		)
+		
+		poemTextBuild.fromTo(line7.chars, 
+			{y: 20, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{y: 0, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2'
+		)
+		
+		poemTextBuild.fromTo(line8.chars, 
+			{scale: 0.5, opacity: 0, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: fillColor},
+			{scale: 1, opacity: 1, textFillColor: 'transparent', webkitBackgroundClip: 'text', backgroundClip: 'text', background: popColor, duration: 1, ease: 'power3', stagger: 0.05},
+			'>2.9'
+		)
 		
 		
 	</script>

@@ -1,0 +1,93 @@
+---
+date: Last Modified
+title: 'mothers-day'
+style: '/css/pages/mothers-day.css'
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% include "partials/_head.njk" %}
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="overscroll top"></div>
+	<div class="overscroll top mobile"></div>
+	
+	<div id="wrapper">
+		
+		<div id="background">
+			<div class="lighting-1"></div>
+			<div class="lighting-2"></div>
+			<div class="lighting-3"></div>
+			
+			<div class="blur"></div>
+			
+			<div class="blues"></div>
+			<div class="pinks"></div>
+			<div class="yellows"></div>
+		</div>
+		
+		<div id="text">
+			<p id="line-1">Hundreds of stars across the night sky</p>
+			<p id="line-2">Hundreds of shells on the ocean shores</p>
+			<p id="line-3">Hundreds of birds that go singing by</p>
+			<p id="line-4">Hundreds of paths through the forest floors</p>
+			<div class="space"></div>
+			<p id="line-5">Hundreds of dewdrops to greet the dawn</p>
+			<p id="line-6">Hundreds of bees in the purple clover</p>
+			<p id="line-7">Hundreds butterflies on the lawn</p>
+			<p id="line-8">But only one mother the whole world over.</p>
+		</div>
+		
+	</div>
+	
+	<div class="overscroll bottom"></div>
+	<div class="overscroll bottom mobile"></div>
+	
+	
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+	<script src="/js/SplitText.min.js"></script>
+	
+	<script>
+		gsap.registerPlugin(ScrollTrigger)
+		
+		let fillColor = 'linear-gradient(to bottom, hsl(255, 93%, 73%), hsl(224, 85%, 48%))'
+		
+		let line1 = new SplitText(document.querySelector('#line-1'), {type: "chars,words"})
+		gsap.fromTo(line1.chars, 
+		{
+			y: 20, 
+			opacity: 0,
+			textFillColor: 'transparent',
+			webkitBackgroundClip: 'text',
+			backgroundClip: 'text',
+			background: fillColor
+		},
+		{
+			y: 0, 
+			opacity: 1,
+			textFillColor: 'transparent',
+			webkitBackgroundClip: 'text',
+			backgroundClip: 'text',
+			background: fillColor,
+			duration: 0.3, 
+			ease: 'power3', 
+			stagger: 0.05,
+			scrollTrigger: {
+				trigger: '#text',
+				start: 'top top',
+				end: '+=100',
+				pin: true,
+				scrub: 1.5
+			}
+		})
+		
+		
+	</script>
+</body>
+</html>

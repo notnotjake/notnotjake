@@ -30,6 +30,11 @@ style: '/css/pages/mothers-day.css'
 			<div class="yellows"></div>
 		</div>
 		
+		<div id="splash">
+			<h1>Dear Mom,</h1>
+			<p>Scroll</p>
+		</div>
+		
 		<div id="text">
 			<p id="line-1">Hundreds of stars across the night sky</p>
 			<p id="line-2">Hundreds of shells on the ocean shores</p>
@@ -58,10 +63,46 @@ style: '/css/pages/mothers-day.css'
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
 	<script src="/js/SplitText.min.js"></script>
 	
 	<script>
 		gsap.registerPlugin(ScrollTrigger)
+		gsap.registerPlugin(ScrollToPlugin)
+		
+		gsap.fromTo('#splash h1', {
+			y: 20,
+			scale: 0.9,
+			opacity: 0
+		},
+		{
+			y: 0,
+			scale: 1,
+			opacity: 1,
+			duration: 1.2,
+			ease: 'power2',
+			delay: 1.3
+		})
+		gsap.delayedCall(3.3, () => {
+			if ( document.documentElement.scrollTop < 20 ) {
+				// Scroll bounce
+				gsap.to(window, {
+					keyframes: [
+						{scrollTo: '50', ease: 'Power1.easeOut', duration: 0.4},
+						{scrollTo: '0', ease: 'Power3.easeIn', duration: 0.6}
+					]
+				})
+				// Show 'scroll' hint
+				gsap.fromTo('#splash p', {
+					opacity: 0,
+				},
+				{
+					opacity: 1,
+					duration: 3,
+					ease: 'power3.out'
+				})
+			}
+		})
 		
 		let fillColor = 'linear-gradient(to bottom, hsl(255, 93%, 73%), hsl(224, 85%, 48%))'
 		let popColor = 'linear-gradient(to bottom, hsl(47, 100%, 94%), hsl(54, 100%, 46%))'
@@ -84,7 +125,6 @@ style: '/css/pages/mothers-day.css'
 				scrub: 2.5
 			}
 		})
-		
 		
 		function timelineKeys ( pref ) {
 			const moveDistance = 40

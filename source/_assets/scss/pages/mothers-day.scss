@@ -173,6 +173,27 @@ div.overscroll.mobile {
 	}
 }
 
+#splash {
+	width: 100%;
+	font-family: 'Petrona', serif;
+	text-align: center;
+	
+	h1 {
+		font-weight: 100;
+		color: white;
+		font-size: 18vw;
+	}
+	p {
+		opacity: 0;
+		font-weight: 300;
+		font-style: italic;
+		color: white;
+		font-size: 4vw;
+		padding-top: 2rem;
+		text-shadow: 0.1rem 0.1rem 0.5rem hsla(0, 0%, 0%, 0.09);
+	}
+}
+
 #text {
 	// position: absolute;
 	width: 100%;

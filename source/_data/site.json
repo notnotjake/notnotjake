@@ -8,7 +8,7 @@
 	"image": "",
 	"fathom": {
 		"use": true,
-		"url": "https://joy-books.notnotjake.com/script.js",
+		"url": "https://cdn.usefathom.com/script.js",
 		"id": "QMSKHICJ"
 	},
 	"feed": false

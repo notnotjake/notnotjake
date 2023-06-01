@@ -183,16 +183,6 @@ style: '/css/pages/index.css'
 			</ul>
 		</article>
 		
-		<div id="showcase-wip">
-			<h2>Showcase</h2>
-			<p>Coming Soon!</p>
-			<h2>Showcase</h2>
-			<p>Coming Soon!</p>
-			<h2>Showcase</h2>
-			<p>Coming Soon!</p>
-			<h3>✽ I Pinky Promise</h3>
-		</div>
-		
 		<div id="showcase">
 			<div class="scroll-container">
 				<div class="card" id="latest-posts">
@@ -233,8 +223,18 @@ style: '/css/pages/index.css'
 			</div>
 		</div>
 		
-		<div id="process">
-			<div class="ticker">
+		<div id="footend">
+			<div class="bg line"></div>
+			<div class="bg top"></div>
+			<div class="bg bottom"></div>
+			<div class="bg blur"></div>
+			<div class="bg lighting">
+				<div class="m1"></div>
+				<div class="m2"></div>
+				<div class="m3"></div>
+			</div>
+			
+			<div class="process">
 				<p class="w1">Problem</p>
 				<p class="w2">Process</p>
 				<p class="w3">Shipping</p>
@@ -250,33 +250,31 @@ style: '/css/pages/index.css'
 				<div class="highlight" id="top-light"></div>
 				<div class="highlight" id="bottom-light"></div>
 			</div>
+			
 			<h1>Always working to make it <span>real</span>. <strong>Follow along on the journey</strong></h1>
-		</div>
-		
-		<div id="follow">
-			<div class="container">
-				<!-- Twitter -->
-				<a href="https://twitter.com/_notnotjake">
-					{% include "svg/icon-twitter.html" %}
-				</a>
-				<!-- Instagram -->
-				<a href="https://www.instagram.com/notnotjake">
-					{% include "svg/icon-instagram.html" %}
-				</a>
-				<!-- GitHub -->
-				<a href="https://github.com/notnotjake">
-					{% include "svg/icon-github.html" %}
-				</a>
-				<!-- Email -->
-				<a href="mailto:jake@notnotjake.com?subject=Hey!">
-					{% include "svg/icon-email.html" %}
-				</a>
+			
+			<div class="follow">
+				<div class="container">
+					<a href="https://twitter.com/_notnotjake">
+						{% include "svg/icon-twitter.html" %}
+					</a>
+					<a href="https://www.instagram.com/notnotjake">
+						{% include "svg/icon-instagram.html" %}
+					</a>
+					<a href="https://github.com/notnotjake">
+						{% include "svg/icon-github.html" %}
+					</a>
+					<a href="mailto:jake@notnotjake.com?subject=Hey!">
+						{% include "svg/icon-email.html" %}
+					</a>
+				</div>
+			</div>
+			
+			<div class="footer-wrapper">
+				{% include "partials/_footer.njk" %}
 			</div>
 		</div>
 		
-		<div id="footer-wrapper">
-			{% include "partials/_footer.njk" %}
-		</div>
 		
 		<div class="overscroll bottom"></div>
 		<div class="overscroll bottom mobile"></div>

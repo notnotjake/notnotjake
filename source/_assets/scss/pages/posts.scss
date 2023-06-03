@@ -1,15 +1,46 @@
+:root {
+	--window-color: hsla(0, 0%, 93%, 1);
+	--background-main: hsla(199, 19%, 88%, 1);
+	--accent-line-top: hsla(199, 10%, 73%, 1);
+	
+	--text-main: #454545;
+	
+	--headers-shadow: 0 1px 0 hsla(0, 0%, 100%, 1);
+}
+@media (prefers-color-scheme: dark ) {
+	:root {
+		--window-color: hsla(0, 0%, 15%, 1);
+		--background-main: hsla(216, 8%, 18%, 1);
+		--accent-line-top: hsla(216, 7%, 25%, 1);
+		
+		--text-main: #e8e8e8;
+		
+		--headers-shadow: 0 1px 0 hsla(0, 0%, 100%, 1);
+	}
+}
+
 html {
-	backgrond: #eef0f0;
+	// background: var(--window-color);
 }
 body {
-	color: #454545;
+	color: var(--text-main);
 	font-family: "Maru Var", sans-serif;
 	z-index: 2;
 }
 
 main {
-	background: #eef0f0;
+	background: var(--background-main);
 	z-index: 2;
+}
+
+
+div.line-top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background: var(--accent-line-top);
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,18 +91,27 @@ header {
 	font-family: 'Pressura Var', 'Inter Var', sans-serif;
 	
 	h1 {
-		font-size: 2.2rem;
-		margin-bottom: 0.04em;
-	}
-	h2 {
 		font-size: 1.8rem;
-		font-weight: 500;
-		font-variation-settings: "wght" 500, "wdth" 110, "ital" 0.5;
-		opacity: 0.8;
+		text-align: center;
+		margin-bottom: 0.04em;
+		font-variation-settings: "wght" 600, "wdth" 110, "ital" 0.5;
+		letter-spacing: -0.015em;
+		text-shadow: var(--headers-shadow);
+		span.subtitle {
+			font-size: 1.8rem;
+			font-weight: 400;
+			font-variation-settings: "wght" 400, "wdth" 100, "ital" 0.5;
+			letter-spacing: -0.01em;
+			opacity: 0.8;
+		}
 	}
 	p {
+		text-align: center;
 		font-size: 1.3rem;
 		margin-top: 0.7em;
+		span {
+			font-size: 1rem;
+		}
 	}
 }
 /* Header [End] */
@@ -85,15 +125,6 @@ article {
 	padding-bottom: clamp(100px, 25vh, 250px);
 	font-family: 'Avenir', 'Inter Var', sans-serif;
 	min-height: calc(100vh - 300px);
-	
-	p:nth-of-type(1) {
-		font-family: 'Baskerville';
-		font-weight: bold;
-		font-size: 1.8rem;
-		line-height: 1.4;
-		letter-spacing: -0.01em;
-		max-width: 80%;
-	}
 	
 	p {
 		font-size: 1.1rem;
@@ -152,3 +183,11 @@ div.footer::after {
 		rgba(237, 240, 240, 0) 60%);
 }
 /* Footer [End] */
+
+
+
+@media (prefers-color-scheme: dark ) {
+	div.line-top {
+		background: hsla(216, 7%, 25%, 1);
+	}
+}

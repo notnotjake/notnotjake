@@ -185,12 +185,13 @@ style: '/css/pages/index.css'
 		
 		<div id="showcase">
 			<div class="scroll-container">
-				<div class="card" id="latest-posts">
-					<h2>Latest Posts</h2>
+				<div class="card latest">
+					<div class="gizmos"></div>
+					<h2>Latest Writing</h2>
 					<ul>
 						{% for post in collections.posts reversed limit:8 %}
 							<li><a href="{{ post.url }}">
-								{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</a>
+								{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort}}</span></a>
 							</li>
 						{% endfor %}
 					</ul>

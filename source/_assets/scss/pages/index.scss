@@ -689,14 +689,16 @@ article#bio {
 Showcase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 #showcase {	
-	height: 60svh;
+	--br: 0.94rem;
+	
+	height: 54svh;
 	min-height: 12.5rem;
 	padding: 0.625rem 0.625rem 1.125rem;
 	overflow-y: scroll;
 	overflow-x: visible;
 	background: linear-gradient(to bottom, 
 		var(--background-color-main),
-		hsl(222, 90%, 66%)
+		hsl(222, 76%, 70%)
 	);
 	
 	div.scroll-container {
@@ -707,27 +709,36 @@ Showcase
 		height: 100%;
 	}
 	
+	/* Image Card
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	.card {
 		height: 100%;
 		position: relative;
-		aspect-ratio: 14/12;
+		aspect-ratio: 1.2;
 		max-width: 77vw;
 		flex-shrink: 0;
-		border-radius: 0.94rem;
+		border-radius: var(--br);
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-end;
 		// background: hsl(0, 0%, 59%);
 		
 		background:  linear-gradient(to top, 
-			hsl(180, 9%, 15%), 
-			hsl(213, 39%, 4%)
+			hsl(213, 10%, 79%),
+			hsl(180, 8%, 85%)
 		);
 		
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 		text-decoration: none;
 		transition: transform 250ms;
 		padding: 0.5rem;
+		
+		p.title {
+			font-family: 'Inter Var';
+			font-weight: 600;
+			letter-spacing: -0.017em;
+			font-size: 2rem;
+		}
 		
 		p.controls {
 			position: absolute;
@@ -737,9 +748,103 @@ Showcase
 			width: 100%;
 			
 		}
+		
+		picture, img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: var(--br);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 	.card:hover {
 		
+	}
+	
+	
+	/* Latest Writing Card
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	div.card.latest {
+		color: white;
+		aspect-ratio: 10/14;
+		justify-content: flex-start;
+		padding: 1.8rem 0.8rem 1rem;
+		background: linear-gradient(to top,
+			hsl(180,9%,15%),
+			hsl(213,29%,4%)
+		);
+		div.gizmos {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 5rem;
+			border-radius: 0.94rem 0.94rem 0 0;
+			overflow: hidden;
+			
+			// background: rgba(255, 0, 0, 0.373);
+		}
+		h2 {
+			font-family: 'Pressura Var';
+			font-size: 2.2rem;
+			font-weight: 600;
+			text-align: center;
+			margin-bottom: 1rem;
+			color: hsla(218, 78%, 53%, 1.00);
+			background: linear-gradient(to bottom,
+				hsl(205, 90%, 67%),
+				hsl(229, 100%, 94%)
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			text-fill-color: transparent;
+			-webkit-text-fill-color: transparent;
+		}
+		ul {
+			flex-grow: 1;
+			list-style: none;
+			li {
+				font-size: 1.2rem;
+				padding-bottom: 0.7rem;
+				font-weight: 500;
+				span.subtitle {
+					font-weight: 400;
+					font-style: italic;
+					font-size: 1.1rem;
+				}
+				span.date {
+					font-family: 'Pressura Var';
+					font-size: 1.1rem;
+					opacity: 0.8;
+					// font-style: italic;
+				}
+				a {
+					color: white;
+					text-decoration: none;
+				}
+			}
+		}
+		h3 {
+			margin: auto;
+			a {
+				display: inline-block;
+				color: rgb(232, 232, 232);
+				text-decoration: none;
+				background: rgb(63, 63, 63);
+				padding: 0.4rem 0.8rem;
+				border-radius: 2rem;
+			}
+		}
+	}
+}
+@media (prefers-color-scheme: dark ) {
+	#showcase {
+		background: linear-gradient(to bottom, 
+			var(--background-color-main),
+			hsl(253, 40%, 18%)
+		);
 	}
 }
 /* Showcase [End] */
@@ -838,6 +943,7 @@ FootEnd Section
 		height: 1px;
 		z-index: 4;
 		background: hsla(210, 100%, 97%, 0.5);
+		mix-blend-mode: soft-light;
 	}
 	
 	// 'Make it Real' Text 

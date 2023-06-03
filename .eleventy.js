@@ -24,8 +24,18 @@ module.exports = function(eleventyConfig) {
 	
 	/* SHORTCODE: Prettify Page Dates
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	eleventyConfig.addShortcode("prettyDate", ( pageDate ) => {
-		return DateTime.fromJSDate(pageDate, {zone: 'America/New_York'}).toLocaleString(DateTime.DATE_MED)
+	eleventyConfig.addShortcode("prettyDate", function ( pageDate ) {
+		let d = DateTime.fromJSDate(pageDate, {zone: 'America/New_York'}).toLocaleString(DateTime.DATE_MED)
+		return d
+	})
+	/* SHORTCODE: Prettify Page Dates SHORT
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	eleventyConfig.addFilter("prettyDateShort", function( xDate ) {
+		
+		let d = DateTime.fromJSDate(xDate, {zone: 'America/New_York'})
+		d = d.toFormat('MMM d')
+		return d
+		
 	})
 	/* SHORTCODE: Current Year
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

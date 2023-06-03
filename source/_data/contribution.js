@@ -186,7 +186,7 @@ module.exports = function () {
 	
 	
 	/* 
-	Here's what the data should look like:
+	Here's what the outputted data should look like:
 	[
 		{
 			week: [

@@ -693,22 +693,22 @@ Showcase
 	
 	height: 54svh;
 	min-height: 12.5rem;
-	padding: 0.625rem 0.625rem 1.125rem;
-	overflow-y: scroll;
-	overflow-x: visible;
 	background: linear-gradient(to bottom, 
 		var(--background-color-main),
 		hsl(222, 76%, 70%)
 	);
 	
 	div.scroll-container {
+		width: 100%;
+		height: 100%;
+		overflow-x: scroll;
+		padding: 1.2rem 2rem;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
-		gap: 0.75rem;
-		height: 100%;
+		gap: 1rem;
 	}
-	
+		
 	/* Image Card
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	.card {
@@ -731,22 +731,32 @@ Showcase
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 		text-decoration: none;
 		transition: transform 250ms;
-		padding: 0.5rem;
 		
-		p.title {
-			font-family: 'Inter Var';
-			font-weight: 600;
-			letter-spacing: -0.017em;
-			font-size: 2rem;
+		div.info {
+			width: 100%;
+			border-radius: var(--br);
+			padding: 3rem 1.2rem 1.3rem;
+			background: linear-gradient(to bottom,
+				hsla(0, 0%, 0%, 0),
+				hsla(0, 0%, 0%, 0.5) 60%,
+			);
+			
+			color: hsla(207, 18%, 92%, 1);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 		
-		p.controls {
-			position: absolute;
-			top: 0;
-			margin-top: -2rem;
-			height: 2rem;
-			width: 100%;
-			
+		p.title {
+			font-family: 'Pressura Var';
+			font-weight: 600;
+			letter-spacing: -0.017em;
+			font-size: 3rem;
+		}
+		p.description {
+			font-family: 'Maru Var';
+			font-weight: 500;
+			font-size: 1.1rem;
 		}
 		
 		picture, img {
@@ -763,6 +773,15 @@ Showcase
 		
 	}
 	
+	.card.simple {
+		background: linear-gradient(to bottom,
+			hsl(220,29%,8%),
+			hsl(220, 12%, 13%)
+		);
+		box-shadow: 
+			inset 0 1px 0 0 hsla(0, 0%, 100%, 0.12),
+			inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.3);
+	}
 	
 	/* Latest Writing Card
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -775,6 +794,9 @@ Showcase
 			hsl(180,9%,15%),
 			hsl(213,29%,4%)
 		);
+		box-shadow: 
+			inset 0 1px 0 0 hsla(0, 0%, 100%, 0.12),
+			inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.3);
 		div.gizmos {
 			position: absolute;
 			top: 0;
@@ -848,6 +870,40 @@ Showcase
 	}
 }
 /* Showcase [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Showcase Cards Expanded
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.cards.expanded {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	padding: 6rem 2rem 0;
+	z-index: 10;
+	overflow-y: scroll;
+	background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(0.35rem);
+	-webkit-backdrop-filter: blur(0.35rem);
+	
+	> div {
+		width: 100%;
+		max-width: 60rem;
+		border-radius: 1.5rem 1.5rem 0 0;
+		box-shadow: 
+			inset 0 1px 1px 0 hsla(0, 0%, 100%, 0.7)
+			0 0 2px 0.5rem hsla(0, 0%, 0%, 0.23)
+		;
+	}
+	
+	div.latest {
+		height: 100rem;
+		background: rgb(225, 230, 234);
+		margin: auto;
+	}
+}
+/* Showcase Cards Expanded [End] */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 FootEnd Section
@@ -1744,198 +1800,3 @@ Splash (New Visitor)
 	}
 }
 /* Splash [END] */
-
-
-
-
-
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-LEGACY CODE - NEEDS REFACTOR
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-/* Showcase Cards
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-main {
-	height: 60svh;
-	min-height: 200px;
-	padding: 10px 10px 18px;
-	overflow-y: scroll;
-	margin-bottom: 70px;
-}
-main div.scroll-container {
-	transform-origin: 0%;
-	display: flex;
-	gap: 12px;
-	height: 100%;
-	// background: #b6bfcb;
-}
-main div.scroll-container::after {
-	content: "";
-	width: 1px;
-	min-width: 10px;
-	height: 100%;
-	position: relative;
-	display: inline-block;
-}
-.js-scale {
-	transform: scale(0.8);
-}
-
-main a.card {
-	position: relative;
-	height: 100%;
-	aspect-ratio: 14/12;
-	max-width: 77vw;
-	flex-shrink: 0;
-	border-radius: 15px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-	text-decoration: none;
-	transition: transform 250ms;
-	padding: 0.5rem;
-}
-main a.card picture, main a.card img {
-	object-fit: cover;
-	width: 100%;
-	height: 100%;
-	// padding: 2px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	border-radius: 13px;
-}
-main a.card a.related {
-	height: 20px;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-main a.card p {
-	padding: 0 0.8rem;
-	text-shadow: 0 2.5px 5px rgba(0, 0, 0, 0.2);
-}
-main a.card p.title {
-	color: white;
-	font-size: 1.5rem;
-	font-weight: 600;
-}
-main a.card p.description {
-	color: white;
-	font-size: 1.2rem;
-	font-weight: 500;
-	padding-bottom: 0.5rem;
-}
-main a.card p.description span {
-	opacity: 0.9;
-	font-size: 1.05rem;
-}
-main a.card:hover {
-	transform: scale(1.01);
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-}
-
-main div.card:hover {
-	transform: scale(1.01);
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-}
-/* Showcase Cards [End] */
-
-
-/* Showcase Section: Latest Posts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-main div.card.latest-posts {
-	position: relative;
-	height: 100%;
-	max-width: 77vw;
-	flex-shrink: 0;
-	box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
-	background: hsla(191, 83%, 81%, 1);
-	background-image: linear-gradient(to bottom,
-		hsl(201, 74%, 32%) 0%,
-		hsl(191, 63%, 56%) 20%,
-		hsl(191, 83%, 81%) 100%
-	);
-	aspect-ratio: 8.8/12;
-	padding: 14px 10px;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	border-radius: 15px;
-	transition: transform 250ms;	
-}
-main div.card.latest-posts:hover {
-	transform: scale(1.01);
-	box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.05);
-}
-main div.card.latest-posts h2 {
-	margin-bottom: 12px;
-	text-align: center;
-	width: 100%;
-}
-main div.card.latest-posts h3 {
-	text-align: center;
-	width: 100%;
-	letter-spacing: -0.05em;
-}
-main div.card.latest-posts h3 a {
-	color: rgba(203, 141, 0, 1);
-}
-main div.card.latest-posts h3 a:hover {
-	color: rgba(124, 86, 0, 1);
-}
-main div.card.latest-posts ul {
-	font-family: 'Pressura Var', 'Inter Var', sans-serif;
-	list-style: none;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	gap: 9px;
-	flex-grow: 1;
-}
-main div.card.latest-posts ul::after {
-	content: "";
-	width: 100%;
-	height: 50px;
-	position: absolute;
-	bottom: 0;
-	// background: red;
-	background-image: linear-gradient(to bottom,
-		rgba(255, 237, 189, 0),
-		hsl(44, 99%, 87%)
-	);
-}
-main div.card.latest-posts li {
-	margin-bottom: 10px;
-}
-main div.card.latest-posts ul a {
-	color: rgba(3, 122, 213, 1);
-}
-main div.card.latest-posts ul a:hover {
-	color: rgba(46, 164, 255, 1);
-}
-main div.card.latest-posts ul a:visited {
-	color: rgba(96, 125, 147, 1);
-}
-main div.card.latest-posts ul a:visited:hover {
-	color: rgba(93, 162, 214, 1);
-}
-main div.card.latest-posts ul a {
-	padding: 6px 0;
-	border-radius: 8px;
-	// background: rgba(255, 255, 255, 0.3);
-	font-family: 'Pressura Var', 'Inter Var', sans-serif;
-	font-variation-settings: "wght" 550, "wdth" 110, "ital" 0;
-	font-size: 1.4rem;
-	font-weight: 550;
-}
-main div.card.latest-posts ul a span {
-	font-weight: 400;
-	font-size: 1.28rem;
-	// font-style: italic;
-	font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
-	opacity: 0.8;
-}
-/* Showcase Section: Latest Posts [End] */

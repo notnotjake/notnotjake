@@ -695,18 +695,53 @@ Showcase
 	min-height: 12.5rem;
 	background: linear-gradient(to bottom, 
 		var(--background-color-main),
-		hsl(222, 76%, 70%)
+		hsl(219, 91%, 82%)
 	);
 	
 	div.scroll-container {
 		width: 100%;
 		height: 100%;
 		overflow-x: scroll;
+		-ms-overflow-style: none;  /* IE and Edge */
+		scrollbar-width: none;  /* Firefox */
 		padding: 1.2rem 2rem;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: nowrap;
 		gap: 1rem;
+	}
+	div.scroll-container::-webkit-scrollbar {
+		display: none;
+	}
+	div.scroll-faders {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		// background: rgba(255, 0, 0, 0.526);
+		z-index: 5;
+		pointer-events: none;
+		div {
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 2rem;
+		}
+		div:nth-of-type(1) {
+			left: 0;
+			background: linear-gradient(to right,
+				var(--background-color-main),
+				hsla(180, 6%, 94%, 0)
+			);
+		}
+		div:nth-of-type(2) {
+			right: 0;
+			background: linear-gradient(to left,
+				var(--background-color-main),
+				hsla(180, 6%, 94%, 0)
+			);
+		}
 	}
 		
 	/* Image Card
@@ -786,17 +821,16 @@ Showcase
 	/* Latest Writing Card
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	div.card.latest {
-		color: white;
+		color: hsl(226, 13%, 19%);
 		aspect-ratio: 10/14;
 		justify-content: flex-start;
 		padding: 1.8rem 0.8rem 1rem;
 		background: linear-gradient(to top,
-			hsl(180,9%,15%),
-			hsl(213,29%,4%)
+			hsl(198, 9%, 83%),
+			hsl(213, 11%, 80%)
 		);
 		box-shadow: 
-			inset 0 1px 0 0 hsla(0, 0%, 100%, 0.12),
-			inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.3);
+			inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.12);
 		div.gizmos {
 			position: absolute;
 			top: 0;
@@ -816,8 +850,8 @@ Showcase
 			margin-bottom: 1rem;
 			color: hsla(218, 78%, 53%, 1.00);
 			background: linear-gradient(to bottom,
-				hsl(205, 90%, 67%),
-				hsl(229, 100%, 94%)
+				hsl(221, 98%, 56%),
+				hsl(212, 98%, 69%)
 			);
 			background-clip: text;
 			-webkit-background-clip: text;
@@ -843,7 +877,7 @@ Showcase
 					// font-style: italic;
 				}
 				a {
-					color: white;
+					color: hsl(226, 25%, 23%);
 					text-decoration: none;
 				}
 			}
@@ -852,9 +886,9 @@ Showcase
 			margin: auto;
 			a {
 				display: inline-block;
-				color: rgb(232, 232, 232);
+				color: hsl(226, 25%, 23%);
 				text-decoration: none;
-				background: rgb(63, 63, 63);
+				background: rgb(188, 188, 188);
 				padding: 0.4rem 0.8rem;
 				border-radius: 2rem;
 			}
@@ -867,6 +901,32 @@ Showcase
 			var(--background-color-main),
 			hsl(253, 40%, 18%)
 		);
+		div.card.latest {
+			background: linear-gradient(to top,
+				hsl(180,9%,15%),
+				hsl(213,29%,4%)
+			);
+			box-shadow: 
+				inset 0 1px 0 0 hsla(0, 0%, 100%, 0.12),
+				inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.3);
+			h2 {
+				background: linear-gradient(to bottom,
+					hsl(205, 90%, 67%),
+					hsl(229, 100%, 94%)
+				);
+				background-clip: text;
+				-webkit-background-clip: text;
+				text-fill-color: transparent;
+				-webkit-text-fill-color: transparent;
+			}
+			ul li a {
+				color: hsl(210, 40%, 92%);
+			}
+			h3 a {
+				background: rgb(63, 63, 63);
+				color: rgb(232, 232, 232);
+			}
+		}
 	}
 }
 /* Showcase [End] */
@@ -998,8 +1058,8 @@ FootEnd Section
 	div.line {
 		height: 1px;
 		z-index: 4;
-		background: hsla(210, 100%, 97%, 0.5);
-		mix-blend-mode: soft-light;
+		background: hsla(210, 100%, 96%, 0.805);
+		mix-blend-mode: normal;
 	}
 	
 	// 'Make it Real' Text 
@@ -1273,6 +1333,11 @@ FootEnd Section
 		div.bottom {
 			// none atm
 		}
+		div.line {
+			background: hsla(210, 100%, 97%, 0.5);
+			mix-blend-mode: soft-light;
+		}
+		
 		div.lighting {
 			opacity: 0.2;
 		}

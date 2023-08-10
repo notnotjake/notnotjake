@@ -111,36 +111,25 @@ details summary::-webkit-details-marker {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Overscrolls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.overscroll.top {
-	height: 300px;
+.overscroll {
 	width: 100%;
 	position: fixed;
-	top: 0;
+	height: 300px;
 	z-index: -2;
+}
+.overscroll.top {
+	top: 0;
 	transform: translateY(-299px);
 	background: var(--overscroll-top);
 }
-.overscroll.top.mobile {
-	height: 200px;
-	width: 100%;
-	position: fixed;
-	top: 0;
-	z-index: -3;
-}
 .overscroll.bottom {
-	height: 300px;
-	width: 100%;
-	position: fixed;
 	bottom: 0;
-	z-index: -2;
 	transform: translateY(299px);
 	background: var(--overscroll-bottom);
 }
-.overscroll.bottom.mobile {
+.overscroll.mobile {
 	height: 200px;
-	width: 100%;
-	position: fixed;
-	bottom: 0;
 	z-index: -3;
+	transform: translateY(0) scale(-1, -1);
 }
 /* Overscrolls [End] */

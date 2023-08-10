@@ -91,7 +91,7 @@ details summary::-webkit-details-marker {
 	margin-right: auto;
 }
 .width-narrow {
-	width: clamp(300px, 85%, 45rem);
+	width: clamp(300px, 80%, 42rem);
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -111,39 +111,36 @@ details summary::-webkit-details-marker {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Overscrolls
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.overscroll-top {
+.overscroll.top {
 	height: 300px;
 	width: 100%;
 	position: fixed;
 	top: 0;
 	z-index: -2;
 	transform: translateY(-299px);
-	background-image: linear-gradient(to bottom, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
-	// background: rgba(221, 201, 249, 1.0);
+	background: var(--overscroll-top);
 }
-.overscroll-top_mobile {
+.overscroll.top.mobile {
 	height: 200px;
 	width: 100%;
 	position: fixed;
 	top: 0;
 	z-index: -3;
-	background-image: linear-gradient(to top, rgba(47, 134, 226, 1), rgba(221, 201, 249, 1.0));
 }
-.overscroll-bottom {
+.overscroll.bottom {
 	height: 300px;
 	width: 100%;
 	position: fixed;
 	bottom: 0;
 	z-index: -2;
 	transform: translateY(299px);
-	background-image: linear-gradient(to bottom, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
+	background: var(--overscroll-bottom);
 }
-.overscroll-bottom_mobile {
+.overscroll.bottom.mobile {
 	height: 200px;
 	width: 100%;
 	position: fixed;
 	bottom: 0;
 	z-index: -3;
-	background-image: linear-gradient(to top, rgba(147, 184, 246, 1), rgba(45, 72, 251, 1) 50%);
 }
 /* Overscrolls [End] */

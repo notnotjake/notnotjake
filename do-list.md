@@ -33,15 +33,12 @@ ability to comment on post on twitter
 link previews(?)
 
 # Content:
-- my goal (delight&&meaning)
 - connect to something bigger (my why)
 - belief stack
 - roadmap
 - more graphs
 
 # More Pages:
-- archive
-- about
 - daily activity/contribution page + roadmap/
 - showcase component/page
 - the shelf

@@ -2,6 +2,15 @@
 	--background-color-main: hsla(180, 6%, 94%, 1);
 	--splash-background-color: hsl(249, 100%, 20%);
 	
+	--overscroll-top: linear-gradient(to bottom, 
+		hsl(211, 76%, 54%), 
+		hsl(265, 80%, 88%)
+	);
+	--overscroll-bottom: linear-gradient(to bottom, 
+		hsla(185, 76%, 62%, 1.00), 
+		hsl(195, 100%, 85%) 50%
+	);
+	
 	--text-color-100: hsl(0, 0%, 11%);
 	--text-color-800: hsl(0, 0%, 27%);
 	--text-color-600: hsla(0, 0%, 46%, 1);
@@ -10,6 +19,15 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color-main: hsla(207, 15%, 12%, 1);
+		
+		--overscroll-top: linear-gradient(to bottom, 
+			hsl(211, 76%, 54%), 
+			hsl(258, 81%, 30%)
+		);
+		--overscroll-bottom: linear-gradient(to bottom, 
+			hsla(237, 74%, 50%, 1.00), 
+			hsl(230, 76%, 53%) 50%
+		);
 		
 		--text-color-100: hsla(0, 0%, 94%, 1);
 		--text-color-800: hsla(0, 0%, 80%, 1);
@@ -30,40 +48,6 @@ body {
 body > * {
 	background: var(--background-color-main);
 }
-
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Over-scrolls
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-div.overscroll {
-	height: 300px;
-	width: 100%;
-	position: fixed;
-	z-index: -2;
-}
-div.overscroll.top {
-	top: 0;
-	transform: translateY(-299px);
-	background-image: linear-gradient(to bottom, hsl(211, 76%, 54%), hsl(265, 80%, 88%));
-}
-div.overscroll.bottom {
-	bottom: 0;
-	transform: translateY(299px);
-	background-image: linear-gradient(to bottom, hsl(252, 100%, 38%), hsl(230, 76%, 53%) 50%);
-}
-div.overscroll.mobile {
-	height: 200px;
-	z-index: -3;
-	transform: scale(-1, -1);
-}
-@media (prefers-color-scheme: dark) {
-	div.overscroll.top {
-		background-image: linear-gradient(to bottom, 
-			hsl(211, 76%, 54%), 
-			hsl(258, 81%, 30%)
-		);
-	}
-}
-/* Over-scrolls [End] */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1153,9 +1137,13 @@ FootEnd Section
 		}
 	}
 	
-	// Footer
-	div.footer-wrapper {
-		padding-bottom: 0.18rem;
+	// Copywright
+	p.copyright {
+		font-family: 'Inter Var', 'Inter V', 'Inter', sans-serif;
+		color: hsla(0, 0%, 100%, 0.8);
+		padding-bottom: 1rem;
+		width: 100%;
+		text-align: center;
 	}
 	
 	// Process Graphic

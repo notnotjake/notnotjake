@@ -4,6 +4,8 @@
 	{% include "partials/_head.njk" %}
 </head>
 <body>
+	<div class="overscroll top"></div>
+	<div class="overscroll top mobile"></div>
 	<main>
 		<div class="line-top"></div>
 		
@@ -11,7 +13,7 @@
 			<a href="/" class="home-button">
 				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
 			</a>
-			<h2><a href="{{page.url}}">{{ title }} <span>{{ subtitle }}</span></a></h2>
+			<h2><a href="/posts/series/{{series}}">{% if series %}Part of <span>&lsquo;{{ series }}&rsquo;</span> Series{% endif %}</a></h2>
 			<a href="/more" class="more-button">
 				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
 			</a>
@@ -26,12 +28,35 @@
 			{{content | safe}}
 		</article>
 		
-		<div class="footer">
-			{% include "partials/_footer.njk" %}
+		<div id="footend">
+			<div class="bg gradient"></div>
+			<div class="bg top"></div>
+			<div class="bg bottom"></div>
+			<div class="bg blur"></div>
+			<div class="bg lighting">
+				<div class="m1"></div>
+				<div class="m2"></div>
+				<div class="m3"></div>
+			</div>
+			
+			<h1>Thanks for Reading!</h1>
+			
+			<div class="engage">
+				<div class="bg top"></div>
+				<div class="bg bottom"></div>
+				<div class="bg blur"></div>
+				<div class="bg border"></div>
+				
+				<a href="">Share</a>
+				<p>&bull;</p>
+				<a href="">Reply</a>
+			</div>
+			
+			<p class="copyright">&copy; {% year %} Jake Gooch</p>
 		</div>
 	</main>
 	
-	<div class="overscroll-bottom"></div>
-	<div class="overscroll-bottom_mobile"></div>
+	<div class="overscroll bottom"></div>
+	<div class="overscroll bottom mobile"></div>
 </body>
 </html>

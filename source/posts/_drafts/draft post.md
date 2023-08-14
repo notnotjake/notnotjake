@@ -3,6 +3,6 @@ title: Draft Post
 year: 2023
 date: Last Modified
 ---
-# This is a sample draft post
+This is a *sample draft post*. Drafts aren't gonna show up in the collections of [posts](/posts/). They can be found at a modified address: `posts/preview/year/title-slug`.
 
-A draft post should not show up in collections of posts and should be located at their normal link, prepended by /p/ (as in _preview_)
+This is useful to look at writing in it's final form as this helps with editing. There are currently no methods for scheduling a post to go out. It would probably be possible to rig something up, but I think that would go against the spirit of 11ty.

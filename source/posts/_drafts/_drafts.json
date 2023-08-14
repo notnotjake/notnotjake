@@ -1,6 +1,6 @@
 {
 	"layout": "posts",
-	"permalink": "/p/posts/{{ year }}/{{ title | slug }}/",
+	"permalink": "/posts/preview/{{ year }}/{{ title | slug }}/",
 	"tags": "drafts",
 	"draft": true,
 	"eleventyExcludeFromCollections": true

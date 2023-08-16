@@ -8,6 +8,9 @@
 	<div class="overscroll top mobile"></div>
 	<main>
 		<div class="line-top"></div>
+		{% if draft %}
+		<div class="draft"><strong>Preview</strong>&mdash;This is a Draft ⚠️</div>
+		{% endif %}
 		
 		<nav class="width-narrow">
 			<a href="/" class="home-button">
@@ -26,7 +29,16 @@
 		
 		<article class="width-narrow">
 			{{content | safe}}
-		</article>		
+			
+			{% if draft %}
+			<div class="urls">
+				<hr>
+				<p>Preview URL: </br><code>{{ site.baseURL }}{{ page.url }}</code></p>
+				<p>Published URL: </br><code>{{ site.baseURL }}/posts/{{ year }}/{{ title | slugify }}</code></p>
+			</div>
+			{% endif %}
+		</article>
+		
 	</main>
 	
 	<div class="blank"></div>

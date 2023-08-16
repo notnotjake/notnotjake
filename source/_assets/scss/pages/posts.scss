@@ -60,6 +60,22 @@ div.line-top {
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Draft Notice
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.draft {
+	top: 2px;
+	width: 100%;
+	margin: 0;
+	background: #ffb100;
+	color: #000000;
+	text-align: center;
+	strong {
+		font-weight: 500;
+	}
+}
+/* Draft Notice [End] */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Nav Element
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 nav {

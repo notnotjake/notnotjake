@@ -24,7 +24,7 @@
 		
 		<header class="width-narrow">
 			<h1>{{ title }} <span class="subtitle">{{ subtitle }}</span></h1>
-			<p><time datetime="{{ date }}">{% prettyDate page.date %} &bull; 9<span>MIN</span> Read</p>
+			<p><time datetime="{{ date }}">{% prettyDate page.date %} &bull; {{ content | timeToRead }}<span>MIN</span> Read</p>
 		</header>
 		
 		<article class="width-narrow">

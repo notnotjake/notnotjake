@@ -1,6 +1,5 @@
 const {DateTime} = require('luxon')
 
-
 module.exports = function(eleventyConfig) {
 	/* Watch CSS & JS files for changes
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -43,6 +42,17 @@ module.exports = function(eleventyConfig) {
 		return `${new Date().getFullYear()}`
 	})
 	
+	/* FILTER: Time to Read
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	eleventyConfig.addFilter("timeToRead", function ( content ) {
+		content = content.replace(/(<([^>]+)>)/gi, '')
+		let matches = content.match(/[\u0400-\u04FF]+|\S+\s*/g)
+		let count = matches !== null ? matches.length : 0
+		
+		const wpm = 200
+		let mins = Math.round( count / wpm )
+		return mins.toString()
+	})
 
 	/* Environment Production|Dev
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

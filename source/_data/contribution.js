@@ -5,6 +5,152 @@ module.exports = function () {
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	let data = {
 		'2023': {
+			'08': {
+				'01': {
+					"description": "Feel shitty",
+					"level": "low"
+				},
+				'02': {
+					"description": "Lots of ideas",
+					"level": "high"
+				},
+				'03': {
+					"description": "ACTION!",
+					"level": "high"
+				},
+				'04': {
+					"description": "Great art fellowship",
+					"level": "shipped"
+				},
+				'07': {
+					"description": "Oppenheimer 15 70mm IMAX",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'08': {
+					"description": "worked. yawn.",
+					"level": "low"
+				},
+				'09': {
+					"description": "Design'in",
+					"level": "med"
+				},
+				'10': {
+					"description": "Cool new footer on posts",
+					"level": "shipped"
+				},
+				'11': {
+					"description": "Rushed graphic design job",
+					"level": "shipped"
+				},
+				'12': {
+					"description": "Fun @ OBX. New paddleboard",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'13': {
+					"description": "Fun @ OBX",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'14': {
+					"description": "Designing",
+					"level": "med"
+				},
+				'15': {
+					"description": "Ideas with client",
+					"level": "high"
+				},
+				'16': {
+					"description": "Web dev'ing",
+					"level": "med"
+				},
+				'17': {
+					"description": "Writing",
+					"level": "med"
+				},
+				'18': {
+					"description": "Web Dev for Client",
+					"level": "med"
+				}
+			},
+			'07': {
+				'01': {
+					"description": "Family Pool Party",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'15': {
+					"description": "Start of Camp OBX :)",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'16': {
+					"description": "OBX Vacay",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'17': {
+					"description": "Maint Work",
+					"level": "med"
+				},
+				'18': {
+					"description": "OBX Vacay",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'19': {
+					"description": "I <3 OBX",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'20': {
+					"description": "Work catchup",
+					"level": "med"
+				},
+				'21': {
+					"description": "OBX Vacay",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'22': {
+					"description": "OBX Vacay",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'23': {
+					"description": "Moving out of apartment",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/life-event.svg"
+				},
+				'24': {
+					"description": "Been very Healthy",
+					"level": "high"
+				},
+				'25': {
+					"description": "New, Fresh Site",
+					"level": "high"
+				},
+				'26': {
+					"description": "Good day of work",
+					"level": "med"
+				},
+				'27': {
+					"description": "Planning..",
+					"level": "low"
+				},
+				'28': {
+					"description": "Great people",
+					"level": "high"
+				},
+				'30': {
+					"description": "Personal Projects Exploration",
+					"level": "med"
+				},
+				'31': {
+					"description": "Feel dead"
+				},
+			},
 			'03': {
 				'03': {
 					"description": "Hangin with friends",

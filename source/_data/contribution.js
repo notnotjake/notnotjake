@@ -45,13 +45,11 @@ module.exports = function () {
 				},
 				'12': {
 					"description": "Fun @ OBX. New paddleboard",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'13': {
 					"description": "Fun @ OBX",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'14': {
 					"description": "Designing",
@@ -72,23 +70,40 @@ module.exports = function () {
 				'18': {
 					"description": "Web Dev for Client",
 					"level": "med"
+				},
+				'19': {
+					"description": "Learning Japanese",
+					"level": "low"
+				},
+				'20': {
+					"description": "Family Pool Party",
+					"level": "personal"
+				},
+				'21': {
+					"description": "Server maintenance 😬",
+					"level": "high"
+				},
+				'22': {
+					"description": "Improving server infra",
+					"level": "med"
+				},
+				'23': {
+					"description": "Nice site improvements",
+					"level": "med"
 				}
 			},
 			'07': {
 				'01': {
 					"description": "Family Pool Party",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'15': {
 					"description": "Start of Camp OBX :)",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'16': {
 					"description": "OBX Vacay",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'17': {
 					"description": "Maint Work",
@@ -96,13 +111,11 @@ module.exports = function () {
 				},
 				'18': {
 					"description": "OBX Vacay",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'19': {
 					"description": "I <3 OBX",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'20': {
 					"description": "Work catchup",
@@ -110,13 +123,11 @@ module.exports = function () {
 				},
 				'21': {
 					"description": "OBX Vacay",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'22': {
 					"description": "OBX Vacay",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'23': {
 					"description": "Moving out of apartment",
@@ -211,8 +222,7 @@ module.exports = function () {
 				},
 				'12': {
 					"description": "Time with family",
-					"level": "special",
-					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+					"level": "personal"
 				},
 				'13': {
 					"level": "low"

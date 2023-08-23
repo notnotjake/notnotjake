@@ -61,9 +61,9 @@
 			<div class="bg blur"></div>
 			<div class="bg border"></div>
 			
-			<a href="">Share</a>
+			<a id="share" href="javascript:void()">Share</a>
 			<p>&bull;</p>
-			<a href="">Reply</a>
+			<a id="reply" href="">Reply</a>
 		</div>
 		
 		<p class="copyright">&copy; {% year %} Jake Gooch</p>
@@ -71,5 +71,40 @@
 	
 	<div class="overscroll bottom"></div>
 	<div class="overscroll bottom mobile"></div>
+	
+	<!-- Share Button -->
+	<script>
+		const btnShare = document.querySelector('#share')
+		const btnReply = document.querySelector('#reply')
+		
+		const shareData = {
+			title: 'Title',
+			text: 'Text',
+			url: window.location.href
+		}
+		
+		btnShare.addEventListener('click', () => {
+			
+			if (navigator.share && navigator.canShare(shareData)) {
+				navigator.share(shareData)
+				.then( () => console.log('Successful Share'))
+				.catch( () => console.log('Share Failed'))
+			}
+			else {
+				navigator.clipboard.writeText(window.location.href)
+				.then( () => console.log('Successful Copy'))
+				.catch( () => console.log('Copy Failed'))
+			}
+			
+			navigator.share({
+				title: 'Title',
+				text: 'Test',
+				url: window.location.href
+			})
+			.then( () => console.log('Successful Share'))
+			.catch( () => console.log('Share Failed'))
+		})
+	</script>
+	<!-- Share Button -->
 </body>
 </html>

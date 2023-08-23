@@ -241,10 +241,18 @@ Timeline (contribution activity)
 	--block-color-med: hsl(130, 81%, 38%);
 	--block-color-high: hsl(130, 100%, 27%);
 	--block-color-shipped: linear-gradient(to top,
-		hsl(215, 92%, 51%),
-		hsl(210, 83%, 67%)
+		hsl(215, 100%, 75%) 0%,
+		hsl(215, 100%, 63%) 30%,
+		hsl(221, 100%, 50%)
 	);
-	
+	--block-color-special: linear-gradient(to bottom,
+		hsl(210, 3%, 84%),
+		hsl(250, 71%, 87%)
+	);
+	--block-color-personal: linear-gradient(to bottom,
+		hsl(237, 77%, 82%),
+		hsl(282, 100%, 75%)
+	);	
 	--block-animation-start: hsla(174, 14%, 86%, 0);
 	--block-animation-flash: hsl(203, 100%, 56%);
 	
@@ -301,6 +309,12 @@ Timeline (contribution activity)
 			}
 			a.shipped {
 				background: var(--block-color-shipped);
+			}
+			a.special {
+				background: var(--block-color-special);
+			}
+			a.personal {
+				background: var(--block-color-personal);
 			}
 			a.special img {
 				--margin: 0.8rem;
@@ -418,9 +432,18 @@ Timeline (contribution activity)
 		--block-color-med: hsl(138, 75%, 26%);
 		--block-color-high: hsl(130, 100%, 35%);
 		--block-color-shipped: linear-gradient(to top,
-			hsl(215, 100%, 46%),
-			hsl(210, 77%, 47%)
+			hsl(203, 80%, 78%) 0%,
+			hsl(201, 100%, 57%) 30%,
+			hsl(210, 93%, 47%)
 		);
+		--block-color-special: linear-gradient(to bottom,
+			hsl(211, 5%, 28%),
+			hsl(219, 51%, 28%)
+		);
+		--block-color-personal: linear-gradient(to bottom,
+			hsla(262, 94%, 47%, 1),
+			hsl(270, 35%, 47%)
+		);	
 		--block-animation-start: hsla(174, 14%, 86%, 0);
 		--block-animation-flash: hsl(203, 100%, 56%);
 		

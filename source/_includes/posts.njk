@@ -63,7 +63,11 @@
 			
 			<a id="share" href="javascript:void()">Share</a>
 			<p>&bull;</p>
-			<a id="reply" href="javascript:void()">Reply</a>
+			{% if reply %}
+			<a id="reply" href="{{ reply }}">Reply</a>
+			{% else %}
+			<a id="reply" href="mailto:jake@notnotjake.com?subject=Replying to your post: {{ title}}&body=%0A%0ALink to Post:%0A{{ site.baseURL }}{{ page.url}}">Reply</a>
+			{% endif %}
 			
 			<p id="copied" class="">Copied Link</p>
 		</div>
@@ -74,19 +78,18 @@
 	<div class="overscroll bottom"></div>
 	<div class="overscroll bottom mobile"></div>
 	
-	<!-- Share Button -->
+	<!-- Share & Reply Buttons -->
 	<script>
 		const btnShare = document.querySelector('#share')
 		const btnReply = document.querySelector('#reply')
 		
 		const shareData = {
-			title: 'Title',
-			text: 'Text',
+			title: document.querySelector('header h1').innerText,
+			text: '{{ description }}',
 			url: window.location.href
 		}
 		
 		btnShare.addEventListener('click', () => {
-			
 			if (navigator.share && navigator.canShare(shareData)) {
 				navigator.share(shareData)
 				.then( () => console.log('Successful Share'))

@@ -23,7 +23,7 @@
 		</nav>
 		
 		<header class="width-narrow">
-			<h1>{{ title }} <span class="subtitle">{{ subtitle }}</span></h1>
+			<h1><a href="{{ site.baseURL }}{{ page.url }}">{{ title }} <span class="subtitle">{{ subtitle }}</span></a></h1>
 			<p><time datetime="{{ date }}">{% prettyDate page.date %} &bull; {{ content | timeToRead }}<span>MIN</span> Read</p>
 		</header>
 		

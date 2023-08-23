@@ -63,7 +63,9 @@
 			
 			<a id="share" href="javascript:void()">Share</a>
 			<p>&bull;</p>
-			<a id="reply" href="">Reply</a>
+			<a id="reply" href="javascript:void()">Reply</a>
+			
+			<p id="copied" class="">Copied Link</p>
 		</div>
 		
 		<p class="copyright">&copy; {% year %} Jake Gooch</p>
@@ -92,17 +94,19 @@
 			}
 			else {
 				navigator.clipboard.writeText(window.location.href)
-				.then( () => console.log('Successful Copy'))
+				.then( () => {
+					console.log('Successful Copy')
+					document.querySelector('#copied').style.animation = null
+					setInterval( () => {
+						document.querySelector('#copied').style.animation = 'copy-alert 6s'
+					}, 50)
+				})
 				.catch( () => console.log('Copy Failed'))
 			}
+		})
+		
+		btnReply.addEventListener('click', () => {
 			
-			navigator.share({
-				title: 'Title',
-				text: 'Test',
-				url: window.location.href
-			})
-			.then( () => console.log('Successful Share'))
-			.catch( () => console.log('Share Failed'))
 		})
 	</script>
 	<!-- Share Button -->

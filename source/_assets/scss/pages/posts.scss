@@ -501,6 +501,17 @@ Footend
 			border-radius: 100px;
 			color: hsl(228, 100%, 58%);
 		}
+		
+		#copied {
+			position: absolute;
+			z-index: 0;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			color: hsla(0, 0%, 100%, 0);
+			font-size: 1.3rem;
+			font-weight: 500;
+		}
 	}
 	
 	// Copywright
@@ -511,6 +522,24 @@ Footend
 		margin-top: 3rem;
 		width: 100%;
 		text-align: center;
+	}
+}
+@keyframes copy-alert {
+	0% {
+		bottom: -1rem;
+		color: hsla(0, 0%, 100%, 0);
+	}
+	8% {
+		bottom: -2.5rem;
+		color: hsla(0, 0%, 100%, 0.8);
+	}
+	80% {
+		bottom: -2.5rem;
+		color: hsla(0, 0%, 100%, 0.8);
+	}
+	100% {
+		bottom: -3.5rem;
+		color: hsla(0, 0%, 100%, 0);
 	}
 }
 @media (max-width: 45rem) {

@@ -5,7 +5,7 @@
 	"author": "@_notnotjake",
 	"twitter": "_notnotjake",
 	"favicon": "https://large-assets.notnotjake.com/images/site/favicon.png",
-	"image": "",
+	"image": "https://large-assets.notnotjake.com/images/site/og-image.jpeg",
 	"fathom": {
 		"use": true,
 		"url": "https://cdn.usefathom.com/script.js",

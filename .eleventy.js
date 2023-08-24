@@ -61,16 +61,18 @@ module.exports = function(eleventyConfig) {
 			environment: process.env.MY_ENVIRONMENT || "dev"
 		}
 	}
-	/* SHORTCODE: Asset Links
+	/* SHORTCODE: Static Assets Linking
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	eleventyConfig.addShortcode("asset", (linkRelative, assetHost) => {
+	eleventyConfig.addShortcode("asset", (linkRelative) => {
+		console.log('test')
 		if ( process.env.MY_ENVIRONMENT === "prod" ) {
-			return `${assetHost}/${linkRelative}`
+			return `https://large-assets.notnotjake.com/${linkRelative}`
 		}
 		else {
-			return `../_assets/${linkRelative}`
+			return `/static/${linkRelative}`
 		}
 	})
+	
 	
 	
 	/* Set input/output

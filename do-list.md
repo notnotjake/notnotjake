@@ -1,14 +1,10 @@
 # To Do List 
 
-og-image (sitewide)
 series listing
 post listing refinement
 - collect by date
 - search ?
 - pagination
-
-## dev
-[ ] static assets: in dev env i should link to assets in /static and in prod should link to assets.notnotjake.com to fix 403 errors on mobile from ip/localhost. exclude from git but keep folder in sync with server via transmit/nova
 
 ## index
 [ ] don't scroll nav until past splash

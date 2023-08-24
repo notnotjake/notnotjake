@@ -16,7 +16,7 @@ I've put a lot of care into this site and I hope it's evident and appreciated. W
 Having your own site lets you control how you present yourself and your content. While the majority of your online interactions will still happen through other platforms, you can link to your site for people to find more about you and link to content hosted on your site where you have more control. You can tell a story in a more impactful way with total control over the experience.
 </br>Platforms thrive on a never ending stream of content and interactions which corrupts the longevity of anything you put on the platform. Owning your content, and hosting it on your own site gives you a space for content that's more long-lasting.
 
-There's something really exciting and fun about *sharing* something publicly. And there's something really fun and exciting about *building* something completely your own. A website is where those two *awesome's* combine!
+There's something really exciting and fun about *sharing* something publicly. And there's something really fun and exciting about *building* something completely your own. [A website](https://www.alexmolas.com/2023/07/15/nobody-cares-about-your-blog.html) is where those two *awesome's* combine!
 
 ## Site Details
 There's a homepage, posts, and there are boutique pages. It's a static site, built with 11ty and hosted on Netlify.

@@ -11,11 +11,8 @@ post listing refinement
 [ ] nav infinite scroll
 
 [ ] timeline:
-	[X] mobile design
 	[ ] lazy load images
 	[ ] backend service for updating !!
-	[ ] better styling for vacations/longer 'fun'
-	[ ] easy linking to 'shipped' stuff
 
 [ ] showcase:
 	[ ] open in card, open in page

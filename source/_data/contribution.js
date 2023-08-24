@@ -162,6 +162,13 @@ module.exports = function () {
 					"description": "Feel dead"
 				},
 			},
+			'05': {
+				'12': {
+					"description": "New Goal Page",
+					"level": "shipped",
+					"link": "https://www.notnotjake.com/goal/"
+				}
+			},
 			'03': {
 				'03': {
 					"description": "Hangin with friends",
@@ -241,7 +248,8 @@ module.exports = function () {
 				},
 				'18': {
 					"description": "I'm on Twitter 👋",
-					"level": "high"
+					"level": "high",
+					"link": "https://twitter.com/_notnotjake"
 				},
 				'20': {
 					"description": "Shipped case study biz site",
@@ -403,6 +411,7 @@ module.exports = function () {
 			else if ( data[xYear]?.[xMonth]?.[xDate] ) {
 				day.level = data[xYear][xMonth][xDate].level
 				day.description = data[xYear][xMonth][xDate].description
+				day.link = data[xYear][xMonth][xDate].link
 				day.icon = data[xYear][xMonth][xDate].icon
 				day.photo = data[xYear][xMonth][xDate].photo
 			}

@@ -1,4 +1,6 @@
-# To Do List 
+# To Do List
+
+posts list dark mode text color wrong
 
 series listing
 post listing refinement

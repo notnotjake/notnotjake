@@ -331,29 +331,38 @@ Timeline (contribution activity)
 			align-items: center;
 			justify-content: center;
 			height: calc( 100% - 2rem );
-			width: 12.5rem;
+			// width: 12.5rem;
 			margin-right: calc(2 * var(--block-gap));
-			background: hsla(0, 0%, 86%, 0.3);
+			// background: hsla(0, 0%, 86%, 0.3);
 			border-radius: 0.625rem;
-			padding: 1.25rem;
-			gap: 1.15rem;
+			// padding: 1.25rem;
+			// gap: 1.15rem;
 			a {
 				white-space: nowrap;
-				background: hsla(0, 0%, 86%, 0.6);
+				// background: hsla(0, 0%, 86%, 0.6);
 				font-weight: 550;
 				text-align: center;
 				padding: 0.25rem 1.25rem;
 				border-radius: 0.625rem;
 				font-size: 1rem;
+				transform: rotate(-90deg);
+				color: hsl(239, 88%, 55%);
 			}
 			a:hover {
-				background: hsla(0, 0%, 86%, 0.95);
+				background: hsla(0, 0%, 88%, 0.95);
+				color: black;
 			}
 		}
 	}
 	div.canvas::-webkit-scrollbar {
 		display: none; /* Safari, Chrome hide scrollbar */
 	}
+	
+	--detail-card-background: hsl(0, 0%, 97%);
+	--detail-card-border: 0.125rem solid hsla(0, 0%, 100%, 0.9);
+	--soft-shadow: 
+		0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.1),
+		0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.06);
 	
 	div.details-cards {
 		position: absolute;
@@ -373,11 +382,6 @@ Timeline (contribution activity)
 			opacity: 0;
 			animation: timeline-card 400ms 150ms forwards;
 			
-			--detail-card-background: hsl(0, 0%, 97%);
-			--detail-card-border: 0.125rem solid hsla(0, 0%, 100%, 0.9);
-			--soft-shadow: 
-				0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.1),
-				0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.06);
 			picture {
 				width: 100%;
 			}
@@ -413,6 +417,49 @@ Timeline (contribution activity)
 				span.level {
 					color: var(--block-color-med);
 				}
+			}
+		}
+	}
+	
+	div.tooltip {		
+		width: 100%;
+		height: var(--block-size);
+		padding-top: 0.35rem;
+		padding-right: 0.625rem;
+		margin-top: calc(-1 * var(--block-size) - 0.625rem);
+		overflow: visible;
+		z-index: 10;
+		svg {
+			margin-left: auto;
+			width: var(--block-size);
+			height: 1.4rem;
+			color: var(--text-color-600);
+			fill: currentColor;
+		}
+		svg:hover {
+			color: var(--text-color-800);
+			cursor: help;
+		}
+		svg:hover + p {
+			display: block;
+		}
+		p {
+			display: none;
+			
+			position: absolute;
+			bottom: -6.2rem;
+			right: 0.625rem;
+			color: var(--text-color-800);
+			max-width: 15rem;
+			
+			padding: 0.5rem 0.5rem;
+			font-size: 0.8rem;
+			line-height: 1.3;
+			border-radius: 0.4375rem;
+			background: var(--detail-card-background);
+			box-shadow: var(--soft-shadow);
+			em {
+				line-height: 1.3;
 			}
 		}
 	}
@@ -453,14 +500,13 @@ Timeline (contribution activity)
 				0 1px 0 0 hsla(0, 0%, 0%, 1);
 		}
 		
-		div.details-cards div.activity {
-			--detail-card-background: hsl(0, 0%, 13%);
-			--detail-card-border: 0.125rem solid hsl(0, 0%, 13%);
-			--soft-shadow: 
-				inset 0 0 0 0.0625rem hsla(0, 0%, 100%, 0.12),
-				0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.3),
-				0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.2);
-		}
+		--detail-card-background: hsl(0, 0%, 13%);
+		--detail-card-border: 0.125rem solid hsl(0, 0%, 13%);
+		--soft-shadow: 
+			inset 0 0 0 0.0625rem hsla(0, 0%, 100%, 0.12),
+			0 0.06rem 0.187rem 0 hsla(0, 0%, 0%, 0.3),
+			0 0.06rem 0.125rem 0 hsla(0, 0%, 0%, 0.2);
+		
 	}
 }
 @media (max-width: 46rem) {
@@ -696,6 +742,9 @@ article#bio {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Showcase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div.showcase-more {
+	
+}
 #showcase {	
 	--br: 0.94rem;
 	
@@ -829,10 +878,10 @@ Showcase
 	/* Latest Writing Card
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	div.card.latest {
+		padding: 1.8rem 0.8rem 1rem;
 		color: hsl(226, 13%, 19%);
 		aspect-ratio: 10/14;
 		justify-content: flex-start;
-		padding: 1.8rem 0.8rem 1rem;
 		background: linear-gradient(to top,
 			hsl(198, 9%, 83%),
 			hsl(213, 11%, 80%)
@@ -895,9 +944,9 @@ Showcase
 			margin: auto;
 			a {
 				display: inline-block;
-				color: hsl(226, 25%, 23%);
+				color: hsl(41, 8%, 24%);
 				text-decoration: none;
-				background: rgb(188, 188, 188);
+				background: hsl(40, 8%, 77%);
 				padding: 0.4rem 0.8rem;
 				border-radius: 2rem;
 			}
@@ -912,6 +961,32 @@ Showcase
 		}
 		div.scroll-faders div {
 			width: 1rem;
+		}
+		div.card.latest {
+			padding-top: 1rem;
+			h2 {
+				font-size: 1.8rem;
+				margin-bottom: 0;
+			}
+			ul li {
+				display: none;
+			}
+			ul li:first-child {
+				display: block;
+				font-size: 1.6rem;
+				padding: 1.1rem 0.7rem;
+				background: linear-gradient(to top,
+					hsla(218, 8%, 69%, 1),
+					hsla(230, 4%, 59%, 1)
+				);
+				box-shadow: 
+					0 0.2rem 0.4rem 0 hsla(0, 0%, 0%, 0.1),
+					inset 0 0 0 1px hsla(0, 0%, 0%, 0.05),
+					inset 0 -1px 0 0 hsla(0, 0%, 0%, 0.12)
+				;
+				border-radius: var(--br);
+				transform: rotate(-1deg);
+			}
 		}
 	}
 }

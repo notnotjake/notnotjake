@@ -133,9 +133,7 @@ style: '/css/pages/index.css'
 					</div>
 					{% endfor %}
 					<div class="more">
-						<a href="">History</a>
 						<a href="">More Graphs</a>
-						<p>This graph shows what I've done over the past year.</p>
 					</div>
 				</div>
 			</div>
@@ -157,6 +155,11 @@ style: '/css/pages/index.css'
 						{% endfor %}
 					{% endfor %}
 				</div>
+			</div>
+			
+			<div class="tooltip">
+				{% include "svg/question.html" %}
+				<p>This <em>Contribution Graph</em> shows my activity over the last 52 weeks. This graph is a personal rating of output and of life-enjoyment.</p>
 			</div>
 			
 			<div class="control-well">

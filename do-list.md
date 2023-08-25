@@ -1,7 +1,5 @@
 # To Do List
 
-pagination: series, year
-
 ## index
 - don't scroll nav until past splash
 - timeline:

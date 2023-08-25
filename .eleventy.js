@@ -75,37 +75,54 @@ module.exports = function(eleventyConfig) {
 		let mins = Math.round( count / wpm )
 		return mins.toString()
 	})
-	/* COLLECTION: Posts by Year
+	
+	
+	/* COLLECTION: Posts by Years
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	eleventyConfig.addCollection("postsByYear", (collection) => {
-		let postsByYear = {}
 		let posts = collection.getFilteredByGlob(["./source/posts/**/*.md"])
+		let result = {
+			years: [], // Array of years in descending order
+			posts: {} // Object of posts by year
+		}
 		posts.forEach( i => {
-			let y =i.data.year
-			if (!postsByYear[y]) {
-				postsByYear[y] = new Array()
+			let y = i.data.year
+			// Years Array
+			if (y && !result.years.includes(y)) {
+				result.years.push(y)
 			}
-			postsByYear[y].push( i )
+			// Posts by Year Object
+			if (y && !result.posts[y]) {
+				result.posts[y] = new Array()
+			}
+			result.posts[y].push( i )
 		})
-		console.log(postsByYear)
-		return postsByYear
+		result.years = result.years.sort().reverse() // Sort and reverse the years array
+		return result
 	});
-	/* COLLECTION: List of Series
+	/* COLLECTION: Posts by Series
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-	eleventyConfig.addCollection("allSeries", (collection) => {
-		let series = {}
+	eleventyConfig.addCollection("postsBySeries", (collection) => {
 		let posts = collection.getFilteredByGlob(["./source/posts/**/*.md"])
-		posts.forEach( p => {
-			if (p.data.series) {
-				let s = p.data.series
-				if (!series[s]) {
-					series[s] = new Array()
+		let result = {
+			series: [], // Array of series
+			posts: {} // Object of posts by year
+		}
+		posts.forEach( i => {
+			if ( i.data.series ) {
+				let s = i.data.series
+				// Series Array
+				if (!result.series.includes(s)) {
+					result.series.push(s)
 				}
-				series[s].push( p )
+				// Posts by Year Object
+				if (!result.posts[s]) {
+					result.posts[s] = new Array()
+				}
+				result.posts[s].push(i)
 			}
 		})
-		console.log(series)
-		return series
+		return result
 	});
 
 

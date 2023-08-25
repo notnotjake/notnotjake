@@ -1,11 +1,9 @@
 ---
-date: Last Modified
 title: 'Posts'
+permalink: '/posts/'
 layout: 'custom'
 style: '/css/pages/posts.css'
-permalink: '/posts/'
 eleventyExcludeFromCollections: true
-templateEngineOverride: njk
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +16,7 @@ templateEngineOverride: njk
 			<a href="/" class="home-button">
 				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
 			</a>
-			<h2><a href="/posts/series/{{series}}">{% if series %}Part of <span>&lsquo;{{ series }}&rsquo;</span> Series{% endif %}</a></h2>
+			<h2></h2>
 			<a href="/posts/" class="more-button">
 				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
 			</a>
@@ -30,20 +28,12 @@ templateEngineOverride: njk
 		</div>
 		
 		<div class="index list width-narrow">
-			<ul>
-				{% for post in collections.posts | reverse %}
-					<li><a href="{{ post.url }}">
-						{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort}}</span></a>
-					</li>
-				{% endfor %}
-			</ul>
-			
-			{% for year, posts in collections.postsByYear %}
-			<h2>{{ year }}</h2>
+			{% for year in collections.postsByYear.years %}
+				<h2><a href="/posts/{{year}}/">{{ year }}</a></h2>
 				<ul>
-					{% for post in posts | reverse %}
+					{% for post in collections.postsByYear.posts[year] reversed %}
 					<li><a href="{{ post.url }}">
-						{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | pageYear}}</span></a></li>
+						{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort }}</span></a></li>
 					{% endfor %}
 				</ul>
 			{% endfor %}

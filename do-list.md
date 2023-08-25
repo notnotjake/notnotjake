@@ -1,8 +1,6 @@
 # To Do List
 
-series listing
-post listing refinement
-- collect by date
+pagination: series, year
 
 ## index
 [ ] don't scroll nav until past splash
@@ -22,7 +20,6 @@ maybe rethink about sentence or just an expansion about me
 
 # posts
 footnotes
-link to gh history of page
 correct dates
 featured-image
 og-image default (posts specific)

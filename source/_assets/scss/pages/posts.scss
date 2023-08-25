@@ -283,12 +283,36 @@ div.index.header {
 }
 div.index.list {
 	max-width: 30rem;
+	padding-bottom: 17rem;
+	h2 {
+		text-align: center;
+		font-family: 'Pressura Var', 'Inter Var', sans-serif;
+		font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+		font-size: 1.2rem;
+		opacity: 0.9;
+		padding-bottom: 0.8rem;
+		span {
+			font-size: 1.4rem;
+			font-variation-settings: "wght" 500, "wdth" 110, "ital" 0.3;
+		}
+		a {
+			color: var(--text-600);
+		}
+		a:hover {
+			color: var(--text-blue);
+			text-decoration: underline;
+		}
+	}
 	ul {
 		li {
 			list-style: none;
-			margin-bottom: 0.9rem;
+			margin-bottom: 1rem;
 			font-size: 1.3rem;
 			font-weight: 500;
+			line-height: 1.15;
+			* {
+				line-height: inherit;
+			}
 			span.subtitle {
 				font-size: 1.2rem;
 				font-weight: 400;
@@ -304,7 +328,17 @@ div.index.list {
 				text-decoration: none;
 				color: var(--text-main);
 			}
+			a:hover {
+				color: var(--text-blue);
+			}
 		}
+	}
+	> a {
+		font-family: 'Pressura Var', 'Inter Var', sans-serif;
+		font-variation-settings: "wght" 400, "wdth" 110, "ital" 0.5;
+		font-size: 1.2rem;
+		padding-bottom: 0.8rem;
+		color: var(--text-300);
 	}
 }
 /* Index Pages (posts index, series index) [END]

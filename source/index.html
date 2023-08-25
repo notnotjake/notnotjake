@@ -72,14 +72,12 @@ style: '/css/pages/index.css'
 		
 		<nav>
 			<div class="background show"></div>
-			<a href="https://www.notnotjake.com" class="home">
-				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
-			</a>
 			<ul>
 				<li class="home">
-					<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
+					<a href="https://www.notnotjake.com" class="home" title="!!Jake Home">
+						<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
+					</a>
 				</li>
-				
 				<div id="scroll-collection-1">
 					{%- for post in collections.posts reversed limit:5 -%}
 					<a href="{{ post.url }}">
@@ -107,16 +105,18 @@ style: '/css/pages/index.css'
 							<p>Delight&&Meaning <span>• That's my goal</span></p>
 						</li>
 					</a>
-					<a href="">
+					<a href="/posts/">
 						<li class="">
 							<p>Older Posts</p>
 						</li>
 					</a>
 				</div>
+				<li class="more">
+					<a href="/posts/" class="more" title="All Posts">
+						<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
+					</a>
+				</li>
 			</ul>
-			<a href="/posts/" class="more">
-				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
-			</a>
 		</nav>
 		
 		<div id="timeline">
@@ -159,11 +159,14 @@ style: '/css/pages/index.css'
 			
 			<div class="tooltip">
 				{% include "svg/question.html" %}
-				<p>This <em>Contribution Graph</em> shows my activity over the last 52 weeks. This graph is a personal rating of output and of life-enjoyment.</p>
-			</div>
-			
-			<div class="control-well">
-				
+				<p>Scores how fulfilling each day has been over past 12mo. A micro-journal of important moments. Hover for surprises!
+					</br>
+					</br><span class="personal"></span> Personal
+					</br><span class="shipped"></span> Shipped
+					</br><span class="high"></span> High
+					</br><span class="med"></span> Medium
+					</br><span class="low"></span> Low
+				</p>
 			</div>
 		</div>
 		
@@ -186,6 +189,7 @@ style: '/css/pages/index.css'
 			</ul>
 		</article>
 		
+		<div class="showcase-more">See More →</div>
 		<div id="showcase">
 			<div class="scroll-faders">
 				<div></div>
@@ -193,15 +197,17 @@ style: '/css/pages/index.css'
 			</div>
 			<div class="scroll-container">
 				<div class="card latest">
-					<div class="gizmos"></div>
-					<h2>Latest Writing</h2>
-					<ul>
-						{% for post in collections.posts reversed limit:8 %}
-							<li><a href="{{ post.url }}">
-								{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort}}</span></a>
-							</li>
-						{% endfor %}
-					</ul>
+					<div class="list">
+						<div class="gizmos"></div>
+						<h2>Latest Writing</h2>
+						<ul>
+							{% for post in collections.posts reversed limit:8 %}
+								<li><a href="{{ post.url }}">
+									{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort}}</span></a>
+								</li>
+							{% endfor %}
+						</ul>
+					</div>
 					<h3><a href="/posts/">Older Posts</a></h3>
 				</div>
 				

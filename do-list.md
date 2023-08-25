@@ -1,7 +1,5 @@
 # To Do List
 
-posts list dark mode text color wrong
-
 series listing
 post listing refinement
 - collect by date
@@ -10,7 +8,6 @@ post listing refinement
 
 ## index
 [ ] don't scroll nav until past splash
-[ ] nav infinite scroll
 
 [ ] timeline:
 	[ ] lazy load images

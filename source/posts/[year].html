@@ -6,6 +6,8 @@ pagination:
   size: 1
   alias: year
 permalink: /posts/{{ year | slugify }}/
+eleventyComputed:
+  title: '{{year}} Posts'
 ---
 <div class="index header width-narrow">
 	<h1>Posts from {{ year }}</h1>

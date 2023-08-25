@@ -6,6 +6,8 @@ pagination:
   size: 1
   alias: series
 permalink: /posts/series/{{ series | slugify }}/
+eleventyComputed:
+  title: 'The {{series}} Series'
 ---
 <div class="index header width-narrow">
 	<h1>The {{ series }} Series</h1>

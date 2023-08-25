@@ -126,7 +126,7 @@ style: '/css/pages/index.css'
 					<div class="week">
 						<p class="label">{{ week.label }}</p>
 						{% for day in week.week %}
-						<a href="{% if day.link %}{{ day.link }}{% else %}javascript:void(){% endif %}" class="{{ day.level }}" id="gd-{{day.date}}" data-date="{{day.date}}">
+						<a href="{% if day.link %}{{ day.link }}{% else %}javascript:void(){% endif %}" class="{{ day.level }} {% if day.link %}linked{% endif %}" id="gd-{{day.date}}" data-date="{{day.date}}">
 							{% if day.icon %}<img src="{{ day.icon }}">{% endif %}
 						</a>
 						{% endfor %}
@@ -189,7 +189,6 @@ style: '/css/pages/index.css'
 			</ul>
 		</article>
 		
-		<div class="showcase-more">See More →</div>
 		<div id="showcase">
 			<div class="scroll-faders">
 				<div></div>

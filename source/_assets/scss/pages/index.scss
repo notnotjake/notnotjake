@@ -265,6 +265,9 @@ Timeline (contribution activity)
 				filter: brightness(0.9);
 				transition: filter 0ms;
 			}
+			a.linked:hover {
+				cursor: alias;
+			}
 			a.future {
 				background: var(--block-color-future);
 			}
@@ -445,10 +448,6 @@ Timeline (contribution activity)
 				background: var(--block-color-personal);
 			}
 		}
-	}
-	
-	div.control-well {
-		
 	}
 	
 	

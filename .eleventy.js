@@ -100,6 +100,18 @@ module.exports = function(eleventyConfig) {
 		result.years = result.years.sort().reverse() // Sort and reverse the years array
 		return result
 	});
+	eleventyConfig.addCollection("postsYears", (collection) => {
+		let posts = collection.getFilteredByGlob(["./source/posts/**/*.md"])
+		let result = []
+		posts.forEach( i => {
+			if (i.data.year && !result.includes(i.data.year)) {
+				result.push(i.data.year)
+			}
+		})
+		result = result.sort().reverse() // Sort and reverse the years array
+		return result
+	});
+	
 	/* COLLECTION: Posts by Series
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	eleventyConfig.addCollection("postsBySeries", (collection) => {
@@ -120,6 +132,16 @@ module.exports = function(eleventyConfig) {
 					result.posts[s] = new Array()
 				}
 				result.posts[s].push(i)
+			}
+		})
+		return result
+	});
+	eleventyConfig.addCollection("postsSeries", (collection) => {
+		let posts = collection.getFilteredByGlob(["./source/posts/**/*.md"])
+		let result = []
+		posts.forEach( i => {
+			if (i.data.series && !result.includes(i.data.series)) {
+				result.push(i.data.series)
 			}
 		})
 		return result

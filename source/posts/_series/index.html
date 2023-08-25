@@ -1,44 +1,23 @@
 ---
 title: 'Series'
 permalink: '/posts/series/'
-layout: 'custom'
-style: '/css/pages/posts.css'
+layout: 'library'
 eleventyExcludeFromCollections: true
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	{% include "partials/_head.njk" %}
-</head>
-<body>
-	<main class="index">
-		<nav class="width-narrow">
-			<a href="/" class="home-button">
-				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
-			</a>
-			<h2></h2>
-			<a href="/posts/" class="more-button">
-				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
-			</a>
-		</nav>
-		
-		<div class="index header width-narrow">
-			<h1>Series</h1>
-			<a href="/posts/">View All Posts→</a>
-		</div>
-		
-		<div class="index list width-narrow">
-			{% for series in collections.postsBySeries.series %}
-				<h2><a href="/posts/series/{{series}}/">The <span>{{series}}</span> Series</a></h2>
-				<ul>
-					{% for post in collections.postsBySeries.posts[series] limit:3 reversed %}
-					<li><a href="{{ post.url }}">
-						{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort }}</span></a></li>
-					{% endfor %}
-				</ul>
-				<a href="/posts/series/{{series}}/">Full Series</a>
-			{% endfor %}				
-		</div>
-	</main>
-</body>
-</html>
+<div class="index header width-narrow">
+	<h1>Series</h1>
+	<a href="/posts/">View All Posts→</a>
+</div>
+
+<div class="index list width-narrow">
+	{% for series in collections.postsBySeries.series %}
+		<h2><a href="/posts/series/{{series}}/">The <span>{{series}}</span> Series</a></h2>
+		<ul>
+			{% for post in collections.postsBySeries.posts[series] limit:3 reversed %}
+			<li><a href="{{ post.url }}">
+				{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort }}</span></a></li>
+			{% endfor %}
+		</ul>
+		<a href="/posts/series/{{series}}/">Full Series</a>
+	{% endfor %}				
+</div>

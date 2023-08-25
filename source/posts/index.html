@@ -1,43 +1,22 @@
 ---
 title: 'Posts'
 permalink: '/posts/'
-layout: 'custom'
-style: '/css/pages/posts.css'
+layout: 'library'
 eleventyExcludeFromCollections: true
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	{% include "partials/_head.njk" %}
-</head>
-<body>
-	<main class="index">
-		<nav class="width-narrow">
-			<a href="/" class="home-button">
-				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
-			</a>
-			<h2></h2>
-			<a href="/posts/" class="more-button">
-				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
-			</a>
-		</nav>
-		
-		<div class="index header width-narrow">
-			<h1>All Posts</h1>
-			<a href="/posts/series/">View by Series→</a>
-		</div>
-		
-		<div class="index list width-narrow">
-			{% for year in collections.postsByYear.years %}
-				<h2><a href="/posts/{{year}}/">{{ year }}</a></h2>
-				<ul>
-					{% for post in collections.postsByYear.posts[year] reversed %}
-					<li><a href="{{ post.url }}">
-						{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort }}</span></a></li>
-					{% endfor %}
-				</ul>
+<div class="index header width-narrow">
+	<h1>All Posts</h1>
+	<a href="/posts/series/">View by Series→</a>
+</div>
+
+<div class="index list width-narrow">
+	{% for year in collections.postsByYear.years %}
+		<h2><a href="/posts/{{year}}/">{{ year }}</a></h2>
+		<ul>
+			{% for post in collections.postsByYear.posts[year] reversed %}
+			<li><a href="{{ post.url }}">
+				{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort }}</span></a></li>
 			{% endfor %}
-		</div>
-	</main>
-</body>
-</html>
+		</ul>
+	{% endfor %}
+</div>

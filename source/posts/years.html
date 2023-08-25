@@ -1,0 +1,22 @@
+---
+layout: 'library'
+eleventyExcludeFromCollections: true
+pagination:
+  data: collections.postsYears
+  size: 1
+  alias: year
+permalink: /posts/{{ year | slugify }}/
+---
+<div class="index header width-narrow">
+	<h1>Posts from {{ year }}</h1>
+	<a href="/posts/">View All Posts→</a>
+</div>
+
+<div class="index list width-narrow">
+	<ul>
+		{% for post in collections.postsByYear.posts[year] reversed %}
+		<li><a href="{{ post.url }}">
+			{{ post.data.title }} <span class="subtitle">{{ post.data.subtitle }}</span> <span class="date">{{post.date | prettyDateShort }}</span></a></li>
+		{% endfor %}
+	</ul>
+</div>

@@ -1,8 +1,8 @@
 {
-	"layout": "posts",
-	"date": "Last Modified",
-	"style": "/css/pages/posts.css",
 	"permalink": "/posts/{{ year }}/{{ title | slug }}/",
 	"tags": "posts",
-	"description": "I write about x y and x. Check it out!"
+	"description": "I write about x y and x. Check it out!",
+	"date": "Last Modified",
+	"layout": "posts",
+	"style": "/css/pages/posts.css"
 }

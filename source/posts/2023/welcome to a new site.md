@@ -1,6 +1,5 @@
 ---
 title: "Welcome to My New Site!"
-year: 2023
 date: Last Modified
 description: "I'm happy to launch a brand new, completely overhauled, majorly improved, and highly considered website!"
 theme-color: "#008DFF"

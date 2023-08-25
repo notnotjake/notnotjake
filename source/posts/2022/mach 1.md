@@ -1,7 +1,6 @@
 ---
 title: "Mach 1"
 subtitle: "The First Batch of Apple Silicon Macs"
-year: 2022
 date: 2022-04-25
 description: "A lot of people are starting off with the performance and speed of these new Macs but I want to start with battery. It's basically doubled. Doubled. Need I say more."
 theme-color: "#32D0BB"

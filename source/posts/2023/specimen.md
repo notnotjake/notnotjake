@@ -2,7 +2,6 @@
 title: "Type Specimen Augustine"
 subtitle: "Let's See How it Looks"
 description: "Music is more than just enjoyable, it's necessary. Here's how I leverage Apple Music and other apps and services to get the most out of my listening time."
-year: 2023
 date: 2023-08-10
 theme-color: "#F38C0E"
 series: "Workflows"

@@ -1,7 +1,6 @@
 ---
 title: "Music Workflows"
 subtitle: "Turning it up to 11"
-year: 2023
 date: 2023-01-18
 description: "Music is more than just enjoyable, it's necessary. Here's how I leverage Apple Music and other apps and services to get the most out of my listening time."
 theme-color: "#5c43c8"

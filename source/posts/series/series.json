@@ -1,7 +1,0 @@
-{
-	"layout": "series",
-	"date": "Last Modified",
-	"style": "/css/pages/series.css",
-	"permalink": "/posts/series/{{ title | slug }}/",
-	"tags": "series"
-}

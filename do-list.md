@@ -3,8 +3,6 @@
 series listing
 post listing refinement
 - collect by date
-- search ?
-- pagination
 
 ## index
 [ ] don't scroll nav until past splash

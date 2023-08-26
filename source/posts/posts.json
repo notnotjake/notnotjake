@@ -2,6 +2,7 @@
 	"permalink": "/posts/{{ year }}/{{ title | slug }}/",
 	"tags": "posts",
 	"description": "I write about x y and x. Check it out!",
+	"image": "https://large-assets.notnotjake.com/images/site/og-image-posts.jpeg",
 	"date": "Last Modified",
 	"layout": "posts",
 	"style": "/css/pages/posts.css"

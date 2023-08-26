@@ -17,7 +17,6 @@
 - footnotes
 - correct dates
 - featured-image
-- og-image default (posts specific)
 
 # Content:
 - connect to something bigger (my why)

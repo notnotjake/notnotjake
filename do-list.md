@@ -18,6 +18,10 @@
 - correct dates
 - featured-image
 
+# library
+- 'new' tag
+- 'coming soon' entry for posts that are drafts
+
 # Content:
 - connect to something bigger (my why)
 - belief stack

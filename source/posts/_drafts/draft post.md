@@ -1,7 +1,5 @@
 ---
 title: Draft Post
-year: 2023
-date: Last Modified
 ---
 This is a *sample draft post*. Drafts aren't gonna show up in the collections of [posts](/posts/). They can be found at a modified address: `posts/preview/year/title-slug`.
 

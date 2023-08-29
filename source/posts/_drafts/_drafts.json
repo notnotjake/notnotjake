@@ -1,7 +1,8 @@
 {
-	"layout": "posts",
 	"permalink": "/posts/drafts/{{ year }}/{{ title | slug }}/",
 	"tags": "drafts",
+	"date": "Last Modified",
+	"year": "2023",
 	"draft": true,
 	"eleventyExcludeFromCollections": true
 }

@@ -126,7 +126,7 @@ style: '/css/pages/index.css'
 					<div class="week">
 						<p class="label">{{ week.label }}</p>
 						{% for day in week.week %}
-						<a href="{% if day.link %}{{ day.link }}{% else %}javascript:void(){% endif %}" class="{{ day.level }} {% if day.link %}linked{% endif %}" id="gd-{{day.date}}" data-date="{{day.date}}">
+						<a href="{% if day.link %}{{ day.link }}{% else %}javascript:void(){% endif %}" class="{{ day.level }} {% if day.link %}linked{% endif %}" id="gd-{{day.date}}" data-date="{{day.date}}" data-photo="{{day.photo}}">
 							{% if day.icon %}<img src="{{ day.icon }}">{% endif %}
 						</a>
 						{% endfor %}
@@ -145,8 +145,7 @@ style: '/css/pages/index.css'
 							<div class="activity hide" id="gt-{{ day.date }}" data-date="{{ day.date }}">
 								{% if day.photo %}
 									<picture>
-										<source srcset="https://large-assets.notnotjake.com/images/index/activity-img/{{ day.date }}.webp">
-										<img src="https://large-assets.notnotjake.com/images/index/activity-img/{{ day.date }}.jpg">
+										<!-- Lazyloads image if one exists (JS req) -->
 									</picture>
 								{% endif %}
 								

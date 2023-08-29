@@ -220,16 +220,23 @@ document.querySelector('#timeline').addEventListener('mouseenter', () => {
 	graphDays.forEach( (a) => {
 		// get a's data-date
 		let date = a.dataset.date
-		let mockSelector = 'div.graph-hover div.activity[data-date="' + date + '"]'
+		let photo = a.dataset.photo
 		
-		let targetElemDate = '01-05-23'
-		let targetSelector = '#timeline div.details-cards div.activity[data-date="' + date + '"]'
+		let targetSelector = document.querySelector('#timeline div.details-cards div.activity[data-date="' + date + '"]')
+		let photoSelector = document.querySelector('#timeline div.details-cards div.activity[data-date="' + date + '"] picture')
 		
 		a.addEventListener('mouseenter', () => {
-			document.querySelector(targetSelector).classList.remove('hide')
+			targetSelector.classList.remove('hide')
+			if ( a.dataset.photo ) {
+				const prefixURL = 'https://large-assets.notnotjake.com/images/index/activity-img/'
+				photoSelector.innerHTML = `
+					<source srcset="${prefixURL}${date}.webp">
+					<img src="${prefixURL}${date}.jpg">
+				`
+			}
 		})
 		a.addEventListener('mouseleave', () => {
-			document.querySelector(targetSelector).classList.add('hide')
+			targetSelector.classList.add('hide')
 		})
 	})
 })

@@ -90,6 +90,26 @@ module.exports = function () {
 				'23': {
 					"description": "Nice site improvements",
 					"level": "med"
+				},
+				'24': {
+					"description": "Avg day",
+					"level": "med"
+				},
+				'25': {
+					"description": "work for friend",
+					"level": "med"
+				},
+				'26': {
+					"description": "a good convo",
+					"level": "high"
+				},
+				'27': {
+					"description": "planning",
+					"level": "low"
+				},
+				'28': {
+					"description": "lots accomplished",
+					"level": "high"
 				}
 			},
 			'07': {

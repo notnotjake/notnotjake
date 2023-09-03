@@ -401,6 +401,8 @@ Timeline (contribution activity)
 			height: 1.4rem;
 			color: var(--text-color-600);
 			fill: currentColor;
+			background: var(--background-color-main);
+			border-radius: 2rem;
 		}
 		svg:hover {
 			color: var(--text-color-800);

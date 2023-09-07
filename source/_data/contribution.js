@@ -5,6 +5,35 @@ module.exports = function () {
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	let data = {
 		'2023': {
+			'09': {
+				'01': {
+					"level": "med"
+				},
+				'02': {
+					"description":"exciting new project",
+					"level": "high"
+				},
+				'03': {
+					"description": "OBX last time",
+					"level": "personal"
+				},
+				'04': {
+					"description": "Goodbye OBX",
+					"level": "personal"
+				},
+				'05': {
+					"description": "Paddleboard fun",
+					"level": "med"
+				},
+				'06': {
+					"description": "Distracted",
+					"level": "low"
+				},
+				'07': {
+					"description": "Launched new site",
+					"level": "shipped"
+				}
+			},
 			'08': {
 				'01': {
 					"description": "Feel shitty",
@@ -110,6 +139,16 @@ module.exports = function () {
 				'28': {
 					"description": "lots accomplished",
 					"level": "high"
+				},
+				'29': {
+					"level": "med"
+				},
+				'30': {
+					"description": "Running around town",
+					"level": "high"
+				},
+				'31': {
+					"level": "low"
 				}
 			},
 			'07': {

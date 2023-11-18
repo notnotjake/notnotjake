@@ -1,10 +1,6 @@
 node_modules
 .nova
 .DS_Store
-source/_assets/fonts
-source/_assets/images
-source/_assets/videos
-source/_assets/files
 static
 public/*
 !public/_redirects

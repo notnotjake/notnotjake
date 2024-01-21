@@ -4,7 +4,304 @@ module.exports = function () {
 	Get Data from ?
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 	let data = {
+		'2024': {
+			'01': {
+				'01': {
+					"description":"HPY NW YR. Talked to a cow.",
+					"level": "special",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'02': {
+					"level": "med"
+				},
+				'03': {
+					"level": "high"
+				},
+				'04': {
+					"level": "low"
+				},
+				'05': {
+					"description": "Project Check-In",
+					"level": "high"
+				},
+				'06': {
+					"description": "got new workout stuff",
+					"level": "personal"
+				},
+				'08': {
+					"description": "loving my habits",
+					"level": "med"
+				},
+				'09': {
+					"level": "high"
+				},
+				'10': {
+					"level": "high"
+				},
+				'11': {
+					"description": "new art video",
+					"level": "shipped"
+				},
+				'12': {
+					"level": "high"
+				},
+				'15': {
+					"level": "med"
+				},
+				'16': {
+					"level": "high"
+				},
+				'17': {
+					"description": "did podcast with friend",
+					"level": "high"
+				},
+				'18': {
+					"level": "low"
+				},
+				'19': {
+					"level": "high"
+				},
+				'20': {
+					"level": "high"
+				}
+			}
+		},
 		'2023': {
+			'12': {
+				'01': {
+					'level': 'med'
+				},
+				'02': {
+					'level': 'med'
+				},
+				'03': {
+					'level': 'low'
+				},
+				'05': {
+					'level': 'med'
+				},
+				'06': {
+					'level': 'med'
+				},
+				'07': {
+					'level': 'med'
+				},
+				'08': {
+					'level': 'high'
+				},
+				'10': {
+					'level': 'low'
+				},
+				'11': {
+					'level': 'high'
+				},
+				'12': {
+					'level': 'med'
+				},
+				'13': {
+					'level': 'med'
+				},
+				'14': {
+					'level': 'low'
+				},
+				'15': {
+					'level': 'high'
+				},
+				'16': {
+					'level': 'med'
+				},
+				'17': {
+					'description': 'Saw the new Ghibli. Great!',
+					'level': 'personal'
+				},
+				'18': {
+					'level': 'med'
+				},
+				'19': {
+					'level': 'med'
+				},
+				'20': {
+					'level': 'med'
+				},
+				'21': {
+					'level': 'high'
+				},
+				'22': {
+					'level': 'personal'
+				},
+				'24': {
+					"description": "1ST Time Midnight Mass",
+					"level": "personal",
+				},
+				'25': {
+					'description': 'I LOVE CHRISTMAS!!',
+					'level': 'personal'
+				},
+				'26': {
+					'description': 'FUN W FAM',
+					'level': 'personal'
+				},
+				'27': {
+					'description': 'is that a sore throat??',
+					'level': 'low'
+				},
+				'28': {
+					'description': 'oof i think im sick',
+					'level': 'low'
+				},
+				'29': {
+					'description': 'yep. def sick',
+					'level': 'med'
+				},
+				'31': {
+					'description': 'So Sick :('
+				}
+			},
+			'11': {
+				'01': {
+					'level': 'med'
+				},
+				'02': {
+					'level': 'high'
+				},
+				'03': {
+					'level': 'high'
+				},
+				'06': {
+					'level': 'med'
+				},
+				'07': {
+					'level': 'low'
+				},
+				'08': {
+					'level': 'med'
+				},
+				'09': {
+					'description': 'talked to awesome dev',
+					'level': 'high'
+				},
+				'10': {
+					'level': 'high'
+				},
+				'11': {
+					'level': 'med'
+				},
+				'14': {
+					'level': 'personal'
+				},
+				'15': {
+					'level': 'low'
+				},
+				'16': {
+					'level': 'med'
+				},
+				'17': {
+					'level': 'med'
+				},
+				'19': {
+					'level': 'low'
+				},
+				'20': {
+					'level': 'high'
+				},
+				'23': {
+					'description': 'Thanksgiving w Fam',
+					'level': 'personal'
+				},
+				'25': {
+					'description': 'shipped client work',
+					'level': 'shipped'
+				},
+				'27': {
+					'level': 'med'
+				},
+				'28': {
+					'level': 'med'
+				},
+				'29': {
+					'level': 'low'
+				},
+				'30': {
+					'level': 'high'
+				}
+			},
+			'10': {
+				'01': {
+					'level': 'low'
+				},
+				'02': {
+					'level': 'med'
+				},
+				'03': {
+					'level': 'high'
+				},
+				'05': {
+					'level': 'med'
+				},
+				'06': {
+					'level': 'personal'
+				},
+				'07': {
+					'level': 'med'
+				},
+				'08': {
+					'level': 'high'
+				},
+				'09': {
+					'level': 'low'
+				},
+				'10': {
+					'level': 'low'
+				},
+				'11': {
+					'level': 'med'
+				},
+				'12': {
+					'level': 'low'
+				},
+				'14': {
+					'level': 'personal'
+				},
+				'16': {
+					'level': 'med'
+				},
+				'17': {
+					'level': 'med'
+				},
+				'18': {
+					'level': 'med'
+				},
+				'19': {
+					'level': 'low'
+				},
+				'20': {
+					'level': 'low'
+				},
+				'21': {
+					'level': 'low'
+				},
+				'22': {
+					'level': 'med'
+				},
+				'23': {
+					'level': 'med'
+				},
+				'25': {
+					'level': 'med'
+				},
+				'26': {
+					'level': 'high'
+				},
+				'27': {
+					'level': 'low'
+				},
+				'30': {
+					'level': 'med'
+				},
+				'31': {
+					'level': 'low'
+				},
+			},
 			'09': {
 				'01': {
 					"level": "med"
@@ -32,6 +329,63 @@ module.exports = function () {
 				'07': {
 					"description": "Launched new site",
 					"level": "shipped"
+				},
+				'08': {
+					'level': 'high'
+				},
+				'09': {
+					'level': 'med'
+				},
+				'12': {
+					'level': 'high'
+				},
+				'13': {
+					'level': 'med'
+				},
+				'14': {
+					'level': 'med'
+				},
+				'15': {
+					'level': 'low'
+				},
+				'16': {
+					'level': 'low'
+				},
+				'17': {
+					'level': 'low'
+				},
+				'18': {
+					'level': 'med'
+				},
+				'19': {
+					'level': 'high'
+				},
+				'20': {
+					'level': 'high'
+				},
+				'23': {
+					'level': 'personal'
+				},
+				'24': {
+					'level': 'med'
+				},
+				'25': {
+					'level': 'high'
+				},
+				'26': {
+					'level': 'low'
+				},
+				'27': {
+					'level': 'med'
+				},
+				'28': {
+					'level': 'high'
+				},
+				'29': {
+					'level': 'med'
+				},
+				'30': {
+					'level': 'med'
 				}
 			},
 			'08': {

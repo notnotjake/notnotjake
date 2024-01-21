@@ -16,7 +16,7 @@
 			<a href="/" class="home-button">
 				<img src="https://large-assets.notnotjake.com/images/site/orange-circle.svg"/>
 			</a>
-			<h2><a href="/posts/series/{{series}}">{% if series %}Part of <span>&lsquo;{{ series }}&rsquo;</span> Series{% endif %}</a></h2>
+			<h2><a href="/posts/series/{{series | slugify}}">{% if series %}Part of <span>&lsquo;{{ series }}&rsquo;</span> Series{% endif %}</a></h2>
 			<a href="/posts/" class="more-button">
 				<img src="https://large-assets.notnotjake.com/images/site/grey-circle.svg"/>
 			</a>

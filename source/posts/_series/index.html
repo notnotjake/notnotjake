@@ -11,7 +11,7 @@ eleventyExcludeFromCollections: true
 
 <div class="index list width-narrow">
 	{% for series in collections.postsBySeries.series %}
-		<h2><a href="/posts/series/{{series}}/">The <span>{{series}}</span> Series</a></h2>
+		<h2><a href="/posts/series/{{series | slugify}}/">The <span>{{series}}</span> Series</a></h2>
 		<ul>
 			{% for post in collections.postsBySeries.posts[series] limit:3 reversed %}
 			<li><a href="{{ post.url }}">

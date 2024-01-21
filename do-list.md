@@ -1,7 +1,6 @@
 # To Do List
 
 **BUG**
-- on local dev, a series page (/posts/series/Workflows) resolves to a good page. Hosted on Cloudflare, it redirects to index. I have to suspect that's a 404 as that's the current 404 behavior (not ideal)
 - no 404 page (unclear how to solve with Cloudflare Pages...)
 
 ## index

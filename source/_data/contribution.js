@@ -3,8 +3,163 @@ module.exports = function () {
 	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	Get Data from ?
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	
+	// Level: low, med, high, shipped, personal, special
+	// ?Description: ~30 chars
+	// ?Link: (any url)
+	// ?Photo: bool
+	// ?Icon: 
+	//		https://large-assets.notnotjake.com/images/index/activity-img/life-event.svg
+	//		https://large-assets.notnotjake.com/images/index/activity-img/fun.svg
+	// 
+	
 	let data = {
 		'2024': {
+			'03': {
+				'01': {
+					"level": "special",
+					"description": "DUNE 2 IMAX 1.43:1. Life changed.",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'03': {
+					"level": "med"
+				},
+				'04': {
+					"level": "high"
+				},
+				'05': {
+					"level": "high"
+				},
+				'06': {
+					"level": "special",
+					"description": "Picked up new Aeron Chair",
+					"icon": "https://large-assets.notnotjake.com/images/index/activity-img/fun.svg"
+				},
+				'07': {
+					"level": "high"
+				},
+				'08': {
+					"level": "high"
+				},
+				'09': {
+					"level": "med"
+				},
+				'11': {
+					"level": "high"
+				},
+				'12': {
+					"level": "high"
+				},
+				'13': {
+					"level": "high"
+				},
+				'14': {
+					"level": "low"
+				},
+				'15': {
+					"level": "med"
+				},
+				'18': {
+					"level": "med"
+				},
+				'19': {
+					"level": "med"
+				},
+				'20': {
+					"level": "med"
+				},
+				'21': {
+					"level": "low"
+				},
+				'22': {
+					"level": "low"
+				},
+				'23': {
+					"level": "personal"
+				},
+				'24': {
+					"level": "low"
+				}
+			},
+			'02': {
+				'01': {
+					"level": "med"
+				},
+				'02': {
+					"level": "low"
+				},
+				'03': {
+					"level": "personal",
+					"description": "Art group hangout"
+				},
+				'04': {
+					"level": "personal",
+					"description": "Family time"
+				},
+				'05': {
+					"level": "med"
+				},
+				'06': {
+					"level": "med"
+				},
+				'07': {
+					"level": "low"
+				},
+				'08': {
+					"level": "med"
+				},
+				'09': {
+					"level": "med"
+				},
+				'10': {
+					"level": "med"
+				},
+				'12': {
+					"level": "med"
+				},
+				'13': {
+					"level": "low"
+				},
+				'14': {
+					"level": "med"
+				},
+				'15': {
+					"level": "high"
+				},
+				'16': {
+					"level": "med"
+				},
+				'18': {
+					"level": "low"
+				},
+				'19': {
+					"level": "high"
+				},
+				'20': {
+					"level": "high"
+				},
+				'21': {
+					"level": "high"
+				},
+				'22': {
+					"level": "med"
+				},
+				'23': {
+					"level": "low"
+				},
+				'24': {
+					"level": "med"
+				},
+				'26': {
+					"level": "med"
+				},
+				'28': {
+					"level": "med"
+				},
+				'29': {
+					"level": "high"
+				}
+			},
 			'01': {
 				'01': {
 					"description":"HPY NW YR. Talked to a cow.",
@@ -63,6 +218,36 @@ module.exports = function () {
 				},
 				'20': {
 					"level": "high"
+				},
+				'21': {
+					"level": "low"
+				},
+				'22': {
+					"level": "med"
+				},
+				'23': {
+					"level": "med"
+				},
+				'24': {
+					"level": "med"
+				},
+				'25': {
+					"level": "high"
+				},
+				'26': {
+					"level": "personal"
+				},
+				'27': {
+					"level": "personal"
+				},
+				'29': {
+					"level": "high"
+				},
+				'30': {
+					"level": "med"
+				},
+				'31': {
+					"level": "low"
 				}
 			}
 		},

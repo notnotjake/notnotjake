@@ -1,14 +1,19 @@
-# ❇️😍 Creating Delightful&&Meaningful Experiences
+**❇️😍 Creating Delightful&&Meaningful Experiences**
 
-👆That's my goal.  Hi, I'm Jake! *I'm passionate about creating great user experiences*. I combine programming experience, design, and marketing to create web experiences that wow users, and deliver results for clients
+Hi! I'm Jake 👆 That's my goal
 
-**Proficient @**
-- HTML, SCSS, Git (duh)
-- JS, SvelteKit, 11ty
-- Express, Ghost CMS
+Currently working on (Nov 24):
+- an iOS meditation timer app (first iOS app)
+- SveltKit dev tools (fonts and metadata) as well as a sveltekit starter template
+- SaaS side projects. Fooling around with ideas until something sticks.
+- Client work (most of which is not web development)
+
+**Proficient @:** SvelteKit TypeScript, Tailwind, Drizzle+SQLite, Express/Hono, Ghost CMS
+- Have used these tools for personal projects and client work building real world applications
 
 **Currently Learning:**
-- iOS Development: Swift, SwiftUI, SwiftData
+- iOS App Dev: Swift, SwiftUI, SwiftData
+- Backend Infra stuff (ansible, terraform, docker, etc) I've long hosted many of my sites on Linode, but want to have a more robust backend, infra, and devops strat.
 - Elixir Phoenix (LiveView seems really neat)
 
-I Also Have Experience With: Postmark Transactional Email, MailGun Broadcast Email, Shell scripting, Shopify API, AirTable API, PocketBase, SQL querying, Supabase, Fly.io, PM2, Linode Servers _*am not an expert at any_
+Additionally, Experience With: Postmark Transactional Email, MailGun Broadcast Email, Shell scripting, Shopify API, AirTable API, PocketBase, SQL, Supabase, Fly.io, PM2, Linode Servers

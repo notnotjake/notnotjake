@@ -1,19 +1,46 @@
-**❇️😍 Creating Delightful&&Meaningful Experiences**
+Last updated Jul 2025
 
-Hi! I'm Jake 👆 That's my goal
+**Building**
+Apps
+- Sun Tracking app (iOS, TestFlight)
+- Study app (iOS, App Store)
+- Video editor to clip long videos (macOS, TestFlight)
+- Meditation app (iOS, TestFlight)
+- Spring contracting tools (web, in development)
+- Go Notes (web, in development)
+SvelteKit community
+- Auth (testing)
+- Meta tags (npm)
+- Component Library (in development)
+- starter template (in development)
+Actual Work
+- Client Work (more marketing but with some app-y full stack)
 
-Currently working on (Nov 24):
-- an iOS meditation timer app (first iOS app)
-- SveltKit dev tools (fonts and metadata) as well as a sveltekit starter template
-- SaaS side projects. Fooling around with ideas until something sticks.
-- Client work (most of which is not web development)
+**Tech I Love**
+- SvelteKit
+- Hono
+- Tailwind
+- Resend & React Email
+- Vercel
 
-**Proficient @:** SvelteKit TypeScript, Tailwind, Drizzle+SQLite, Express/Hono, Ghost CMS
-- Have used these tools for personal projects and client work building real world applications
+**Tech I Like**
+- Typescript
+- SwiftUI
+- Drizzle
+- SQLite on Turso
+- Postgres on Neon
+- Upstash Redis
+- Railway
+- Hono
+- Ghost CMS
+- Prelude for SMS
 
-**Currently Learning:**
-- iOS App Dev: Swift, SwiftUI, SwiftData
-- Backend Infra stuff (ansible, terraform, docker, etc) I've long hosted many of my sites on Linode, but want to have a more robust backend, infra, and devops strat.
-- Elixir Phoenix (LiveView seems really neat)
-
-Additionally, Experience With: Postmark Transactional Email, MailGun Broadcast Email, Shell scripting, Shopify API, AirTable API, PocketBase, SQL, Supabase, Fly.io, PM2, Linode Servers
+**Learning/Investigating**
+- Terraform
+- Docker (use but can't say I really _know_ it deeply yet)
+- Go
+- Stacked Branches & Graphite
+- Upstash Queues and Scheduled jobs
+- AI calls (streaming speech-to-text, streaming LLM)
+- Posthog
+- Sentry.io

@@ -1,49 +1,45 @@
-Last updated Jul 2025
+Last updated Dec 2025
 
 **Building**
 
 - Apps
-  - Sun Tracking app (iOS, TestFlight)
-  - Study app (iOS, App Store)
-  - Video editor to clip long videos (macOS, TestFlight)
-  - Meditation app (iOS, TestFlight)
-  - Spring contracting tools (web, in development)
-  - Go Notes (web, in development)
+  - Spring: Tool for small contractors (web, in development)
+  - Brunell (web)
+  - Seasonal Playlists: Apple Music companion app (iOS, TestFlight)
+  - Tune In: Help with content addiction (iOS, App Store)
+  - Flip 7 Scoring: Card game companion app (iOS, App Store)
+  - Bolt Flashcards: Study with flashcards (iOS, App Store)
+  - Clear: Meditation timer app (iOS, TestFlight)
+  - Chomp: Todo list app (iOS, TestFlight)
 
 - SvelteKit community
-  - Auth (testing)
-  - Meta tags (npm)
-  - Component Library (in development)
-  - starter template (in development)
+  - [Seo Meta Tags](https://github.com/open-sky-dev/opensky-seo) (npm)
+  - [Remotes](https://github.com/open-sky-dev/opensky-remotes) helper utils (npm)
+  - [Style utilities](https://github.com/open-sky-dev/opensky-style) (npm)
 
 - Actual Work
-  - Client Work (more marketing but with some app-y full stack)
+  - Client Work: a bit of marketing but mostly fullstack solutions
 
 **Tech I Love**
-- SvelteKit
-- Hono
+- Railway ❤️
+- SvelteKit ❤️
+- Bun
 - Tailwind
 - Resend & React Email
-- Vercel
 
 **Tech I Like**
 - Typescript
 - SwiftUI
-- Drizzle
-- SQLite on Turso
-- Postgres on Neon
-- Upstash Redis
-- Railway
 - Hono
-- Ghost CMS
+- Drizzle
 - Prelude for SMS
+- Postgres
+- Redis
+- S3 (Railway now has buckets)
+- Ghost CMS
+- Docker
 
-**Learning/Investigating**
-- Terraform
-- Docker (use but can't say I really _know_ it deeply yet)
-- Go
-- Stacked Branches & Graphite
-- Upstash Queues and Scheduled jobs
-- AI calls (streaming speech-to-text, streaming LLM)
-- Posthog
-- Sentry.io
+**Learning**
+- Stacked Branches (& Graphite)
+- Product Analytics (ie Posthog)
+- Observability, Logging, Monitoring (sentry, axiom, better stack, etc)
